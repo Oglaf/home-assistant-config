@@ -1,0 +1,17 @@
+-== Watchman Report ==- 
+
+-== Congratulations, all 13 services from your config are available!
+
+-== Missing 3 entity(ies) from 55 found in your config:
++--------------------------------+---------+--------------------------------------------------------------+
+| Entity ID                      | State   | Location                                                     |
++--------------------------------+---------+--------------------------------------------------------------+
+| sensor.local_smart_plug_eletri | missing | .storage/lovelace:526                                        |
+| city                           |         |                                                              |
+| scene.feed ('Feed')            | unknown | .storage/lovelace:589                                        |
+| scene.mopping ('Mopping')      | unknown | .storage/lovelace:658                                        |
++--------------------------------+---------+--------------------------------------------------------------+
+
+-== Report created on 30 Dec 2022 02:42:52
+-== Parsed 22 files in 5.52s., ignored 0 files 
+-== Generated in: 0.43s. Validated in: 0.00s.

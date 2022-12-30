@@ -1,0 +1,72 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url: /hacsfiles/lovelace-card-mod/card-mod.js
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# PowerCalc
+powercalc:
+
+  # Device Tracker
+device_tracker:
+  - platform: ping
+    hosts:
+      christian_pc: 192.168.1.81
+# Binary Sensor
+binary_sensor:
+  - platform: ping
+    host: 204.2.229.94
+    name: "FFXIV"
+    count: 4
+    scan_interval: 30
+  - platform: ping
+    host: 8.8.8.8
+    name: "Google"
+    count: 4
+    scan_interval: 30
+  - platform: ping
+    host: 1.1.1.1
+    name: "Cloudfare"
+    count: 4
+    scan_interval: 30
+
+# Sensor
+sensor:
+  - platform: openhardwaremonitor
+    host: 192.168.1.198
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_use
+      - type: memory_use_percent
+
+# Proximity
+proximity:
+  home:
+    devices:
+      - device_tracker.m2010j19cg
+    tolerance: 50
+    unit_of_measurement: km
+
+# Cloudflare
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.0/24
+
+# Switch
+switch:
+  - platform: wake_on_lan
+    mac: A8:A1:59:45:CB:22
+    name: christian_pc_wol
+    broadcast_address: 192.168.1.255

@@ -1,0 +1,62 @@
+- id: '1672201353243'
+  alias: Update notifications
+  description: ''
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      reminder_hours: '24'
+      update_entities:
+      - update.home_assistant_core_update
+      - update.adguard_home_update
+      - update.home_assistant_operating_system_update
+      - update.home_assistant_supervisor_update
+      - update.cloudflared_update
+      mobile_app_device: e9e4e423ec942a0441f3c3405799cbcb
+      mobile_app_device_2: 2ef1666371710eae548562d960d36089
+      run_config_check: true
+      only_after: 09:00:00
+- id: '1672349680012'
+  alias: Alexa-IFFT - Turn off PC
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: alexa-ifft-turn-off-pc-Qo0cs6z0nqSKDQ_2vVKqnLw0
+  condition: []
+  action:
+  - service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: CHRISTIAN-PC
+  mode: single
+- id: '1672353016030'
+  alias: Turn off bedroom light after 1m
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - light.local_smart_light_1
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.local_smart_light_1
+  mode: single
+- id: '1672380948372'
+  alias: Daily maintenance
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:00:00
+  condition: []
+  action:
+  - service: hassio.backup_full
+    data: {}
+  - service: homeassistant.restart
+    data: {}
+  mode: single
