@@ -10,6 +10,7 @@ frontend:
 tts:
   - platform: google_translate
 
+# Include folders
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
@@ -22,6 +23,7 @@ device_tracker:
   - platform: ping
     hosts:
       christian_pc: 192.168.1.81
+
 # Binary Sensor
 binary_sensor:
   - platform: ping
@@ -49,16 +51,46 @@ sensor:
       - type: processor_use
       - type: memory_use
       - type: memory_use_percent
-
+  - platform: powercalc
+    entity_id: light.ews_410
+    linear:
+      attribute: brightness
+      min_power: 0.3
+      max_power: 10
+  - platform: powercalc
+    entity_id: light.local_smart_light_1
+    linear:
+      attribute: brightness
+      min_power: 0.3
+      max_power: 10
+  - platform: powercalc
+    entity_id: light.local_smart_light_2
+    linear:
+      attribute: brightness
+      min_power: 0.3
+      max_power: 10
+  - platform: powercalc
+    entity_id: media_player.living_room_tv
+    fixed:
+      power: 0
+      states_power:
+        media_player.living_room_tv|Playing: 58.65
 # Proximity
 proximity:
-  home:
+  home_christian:
+    zone: home
     devices:
       - device_tracker.m2010j19cg
     tolerance: 50
     unit_of_measurement: km
+  home_cecilia:
+    zone: home
+    devices:
+      - device_tracker.cecilia_sp
+    tolerance: 50
+    unit_of_measurement: km
 
-# Cloudflare
+# Cloudflare Tunnel
 http:
   use_x_forwarded_for: true
   trusted_proxies:
@@ -70,3 +102,43 @@ switch:
     mac: A8:A1:59:45:CB:22
     name: christian_pc_wol
     broadcast_address: 192.168.1.255
+
+# Template
+template:
+  - sensor:
+      - name: "Total Consumption"
+        unit_of_measurement: "kWh"
+        state: >
+          {{
+            [ states('sensor.local_smart_plug_1_consumption'),
+              states('sensor.local_smart_plug_2_consumption'),
+              states('sensor.local_smart_plug_3_consumption'),
+              states('sensor.local_smart_light_1_energy'),
+              states('sensor.local_smart_light_2_energy'),
+              states('sensor.ews_410_energy')]
+              | map('float') | sum | round (2)
+          }}
+  - sensor:
+      - name: "Tariff price"
+        unit_of_measurement: BRL/kWh
+        state: >
+          {% if is_state('select.monthly_energy', 'peak') %}
+              {{ 1.2839 }}
+          {% elif is_state('select.monthly_energy', 'shoulder') %}
+              {{ 0.86071 }}
+          {% elif is_state('select.monthly_energy', 'offpeak') %}
+              {{ 0.61755 }}
+          {% endif %}
+# Utility Meter
+utility_meter:
+  monthly_energy:
+    source: sensor.total_consumption
+    cycle: monthly
+    tariffs:
+      - peak
+      - shoulder
+      - offpeak
+    offset:
+      days: 20
+      hours: 0
+      minutes: 0

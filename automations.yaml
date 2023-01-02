@@ -29,7 +29,7 @@
       input: CHRISTIAN-PC
   mode: single
 - id: '1672353016030'
-  alias: Turn off bedroom light after 1m
+  alias: Turn off bedroom light after 5m
   description: ''
   trigger:
   - platform: state
@@ -59,4 +59,92 @@
     data: {}
   - service: homeassistant.restart
     data: {}
+  mode: single
+- id: '1672522611577'
+  alias: Tariff automation
+  description: Tariff automation
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  - platform: time
+    at: '17:00:00'
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: '19:00:00'
+  - platform: time
+    at: '21:00:00'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: time
+        after: '22:00:00'
+        before: '17:00:00'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: select.select_option
+        data:
+          option: offpeak
+        target:
+          entity_id: select.monthly_energy
+    - conditions:
+      - condition: time
+        after: '17:00:00'
+        before: '18:00:00'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: select.select_option
+        data:
+          option: shoulder
+        target:
+          entity_id: select.monthly_energy
+    - conditions:
+      - condition: time
+        after: '18:00:00'
+        before: '21:00:00'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: select.select_option
+        data:
+          option: peak
+        target:
+          entity_id: select.monthly_energy
+    - conditions:
+      - condition: time
+        after: '21:00:00'
+        before: '22:00:00'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: select.select_option
+        data:
+          option: shoulder
+        target:
+          entity_id: select.monthly_energy
+    default:
+    - service: select.select_option
+      data:
+        option: offpeak
+      target:
+        entity_id: select.monthly_energy
   mode: single
