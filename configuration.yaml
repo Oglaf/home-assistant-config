@@ -115,7 +115,8 @@ template:
               states('sensor.local_smart_plug_3_consumption'),
               states('sensor.local_smart_light_1_energy'),
               states('sensor.local_smart_light_2_energy'),
-              states('sensor.ews_410_energy')]
+              states('sensor.ews_410_energy'),
+              states('sensor.living_room_tv_energy')]
               | map('float') | sum | round (2)
           }}
   - sensor:
