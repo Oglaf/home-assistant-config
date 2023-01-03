@@ -72,9 +72,8 @@ sensor:
   - platform: powercalc
     entity_id: media_player.living_room_tv
     fixed:
-      power: 0
       states_power:
-        media_player.living_room_tv|Playing: 58.65
+        playing: 58.65
 # Proximity
 proximity:
   home_christian:
