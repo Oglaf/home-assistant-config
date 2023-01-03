@@ -148,3 +148,44 @@
       target:
         entity_id: select.monthly_energy
   mode: single
+- id: '1672690462412'
+  alias: Renew SSL certificate
+  description: ''
+  trigger:
+  - platform: time
+    at: input_datetime.ssl_auto_renewal
+  condition: []
+  action:
+  - service: notify.mobile_app_m2010j19cg
+    data:
+      message: SSL certificate auto renew has started
+  - service: hassio.addon_start
+    data:
+      addon: core_letsencrypt
+    enabled: true
+  - service: input_datetime.set_datetime
+    data:
+      datetime: "{% set change_days = '89' | int %} {{ strptime(states('input_datetime.ssl_auto_renewal'),
+        '%Y-%m-%d %H:%M:%S')\n   + timedelta(days=change_days) }}"
+    target:
+      entity_id: input_datetime.ssl_auto_renewal
+  mode: single
+- id: '1672712190023'
+  alias: Daily Christian-PC WoL
+  description: Bussiness day WoL
+  trigger:
+  - platform: time
+    at: 08:25:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.christian_pc_wol
+  mode: single
