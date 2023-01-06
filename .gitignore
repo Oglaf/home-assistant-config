@@ -21,6 +21,7 @@ tts
 .google.token 
 secrets.yaml
 ip_bans.yaml
+device_tracker.yaml
 known_devices.yaml
 home-assistant.log
 home-assistant.db
