@@ -14,15 +14,10 @@ tts:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+device_tracker: !include device_tracker.yaml
 
 # PowerCalc
 powercalc:
-
-  # Device Tracker
-device_tracker:
-  - platform: ping
-    hosts:
-      christian_pc: 192.168.1.81
 
 # Binary Sensor
 binary_sensor:
@@ -101,6 +96,11 @@ switch:
     mac: A8:A1:59:45:CB:22
     name: christian_pc_wol
     broadcast_address: 192.168.1.255
+    turn_off:
+      service: button.press
+      data:
+        addon: core_rpc_shutdown
+        input: CHRISTIAN-PC
 
 # Template
 template:
@@ -133,6 +133,17 @@ template:
 utility_meter:
   monthly_energy:
     source: sensor.total_consumption
+    cycle: monthly
+    tariffs:
+      - peak
+      - shoulder
+      - offpeak
+    offset:
+      days: 20
+      hours: 0
+      minutes: 0
+  pc_energy_cost:
+    source: sensor.local_smart_plug_2_consumption
     cycle: monthly
     tariffs:
       - peak

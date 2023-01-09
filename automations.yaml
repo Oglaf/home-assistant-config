@@ -14,7 +14,7 @@
       mobile_app_device: e9e4e423ec942a0441f3c3405799cbcb
       mobile_app_device_2: 2ef1666371710eae548562d960d36089
       run_config_check: true
-      only_after: 09:00:00
+      only_after: 00:00:00
 - id: '1672349680012'
   alias: Alexa-IFFT - Turn off PC
   description: ''
@@ -92,7 +92,9 @@
         data:
           option: offpeak
         target:
-          entity_id: select.monthly_energy
+          entity_id:
+          - select.monthly_energy
+          - select.pc_energy_cost
     - conditions:
       - condition: time
         after: '17:00:00'
@@ -108,7 +110,9 @@
         data:
           option: shoulder
         target:
-          entity_id: select.monthly_energy
+          entity_id:
+          - select.monthly_energy
+          - select.pc_energy_cost
     - conditions:
       - condition: time
         after: '18:00:00'
@@ -124,7 +128,9 @@
         data:
           option: peak
         target:
-          entity_id: select.monthly_energy
+          entity_id:
+          - select.monthly_energy
+          - select.pc_energy_cost
     - conditions:
       - condition: time
         after: '21:00:00'
@@ -140,13 +146,17 @@
         data:
           option: shoulder
         target:
-          entity_id: select.monthly_energy
+          entity_id:
+          - select.monthly_energy
+          - select.pc_energy_cost
     default:
     - service: select.select_option
       data:
         option: offpeak
       target:
-        entity_id: select.monthly_energy
+        entity_id:
+        - select.monthly_energy
+        - select.pc_energy_cost
   mode: single
 - id: '1672690462412'
   alias: Renew SSL certificate
@@ -189,3 +199,11 @@
     target:
       entity_id: switch.christian_pc_wol
   mode: single
+- id: '1673233928666'
+  alias: Turn off charging - Christian
+  description: ''
+  use_blueprint:
+    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
+    input:
+      switch: switch.local_smart_plug_3
+      phone_battery: sensor.m2010j19cg_battery_level
