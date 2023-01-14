@@ -1,15 +1,15 @@
 -== Watchman Report ==- 
 
--== Congratulations, all 16 services from your config are available!
+-== Congratulations, all 23 services from your config are available!
 
--== Missing 2 entity(ies) from 63 found in your config:
+-== Missing 2 entity(ies) from 74 found in your config:
 +--------------------------------+---------+--------------------------------------------------------------+
 | Entity ID                      | State   | Location                                                     |
 +--------------------------------+---------+--------------------------------------------------------------+
-| scene.feed ('Feed')            | unknown | .storage/lovelace:585                                        |
-| scene.mopping ('Mopping')      | unknown | .storage/lovelace:654                                        |
+| scene.feed ('Feed')            | unknown | .storage/lovelace:586                                        |
+| scene.mopping ('Mopping')      | unknown | .storage/lovelace:656                                        |
 +--------------------------------+---------+--------------------------------------------------------------+
 
--== Report created on 01 Jan 2023 15:03:59
--== Parsed 21 files in 10.71s., ignored 0 files 
--== Generated in: 0.15s. Validated in: 0.00s.
+-== Report created on 12 Jan 2023 00:32:47
+-== Parsed 28 files in 0.86s., ignored 0 files 
+-== Generated in: 0.00s. Validated in: 0.00s.

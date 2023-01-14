@@ -101,6 +101,17 @@ switch:
       data:
         addon: core_rpc_shutdown
         input: CHRISTIAN-PC
+  - platform: circadian_lighting
+    name: House lights flux
+    initial_transition: 3
+    sleep_entity: input_boolean.sleep_time
+    sleep_state: "on"
+    sleep_colortemp: 2001
+    sleep_brightness: 1
+    lights_ct:
+      - light.local_smart_light_1
+      - light.local_smart_light_2
+      - light.ews_410
 
 # Template
 template:
@@ -153,3 +164,14 @@ utility_meter:
       days: 20
       hours: 0
       minutes: 0
+
+# Cicardian light
+circadian_lighting:
+  min_colortemp: 2004
+  max_colortemp: 6535
+
+logger:
+  default: warning
+  logs:
+    custom_components.localtuya: debug
+    custom_components.localtuya.pytuya: debug

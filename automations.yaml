@@ -207,3 +207,124 @@
     input:
       switch: switch.local_smart_plug_3
       phone_battery: sensor.m2010j19cg_battery_level
+- id: '1673391186244'
+  alias: Turn off charging - Christian-TB
+  description: ''
+  use_blueprint:
+    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
+    input:
+      switch: switch.local_smart_plug_3
+      phone_battery: sensor.christian_tab_battery_level
+- id: '1673477422415'
+  alias: Turn on office light
+  description: Automatically turn on office light
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  - platform: state
+    entity_id:
+    - device_tracker.christian_pc
+    from: not_home
+    to: home
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      after: sunset
+    - condition: state
+      entity_id: device_tracker.christian_pc
+      state: home
+  action:
+  - service: light.turn_on
+    data: {}
+    target:
+      device_id: b7759a1d8c5860001f4243f62650f458
+  mode: single
+- id: '1673488875924'
+  alias: Sleep time
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  - platform: sun
+    event: sunrise
+    offset: 0
+  condition: []
+  action:
+  - if:
+    - condition: time
+      after: '23:00:00'
+    then:
+    - service: input_boolean.turn_on
+      data: {}
+      target:
+        entity_id: input_boolean.sleep_time
+    else:
+    - service: input_boolean.turn_off
+      data: {}
+      target:
+        entity_id: input_boolean.sleep_time
+  mode: single
+- id: '1673492717992'
+  alias: Determine best humidity
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  condition: []
+  action:
+  - if:
+    - condition: template
+      value_template: "{{ states('sensor.temperature_sensor_humidity') | float >\n
+        \  state_attr('weather.home', 'humidity') | float }}"
+    then:
+    - service: input_select.select_option
+      data:
+        option: Outside
+      target:
+        entity_id: input_select.best_humidity
+    else:
+    - service: input_select.select_option
+      data:
+        option: Inside
+      target:
+        entity_id: input_select.best_humidity
+  mode: single
+- id: '1673493242815'
+  alias: Humidity Alert
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_select.best_humidity
+  condition:
+  - condition: time
+    after: 09:00:00
+    before: '19:00:00'
+  action:
+  - if:
+    - condition: state
+      entity_id: input_select.best_humidity
+      state: Inside
+    then:
+    - service: notify.notify
+      data:
+        message: Humidity outside is higher, close your windows!
+        title: Humidity Alert
+    else:
+    - service: notify.notify
+      data:
+        message: Humidity inside is higher, open your windows!
+        title: Humidity Alert
+  mode: single
+- id: '1673494217272'
+  alias: Advanced medication reminder
+  description: ''
+  use_blueprint:
+    path: Aohzan/medication_reminder_android.yaml
+    input:
+      reminder_time: '10:00:00'
+      notify_device: e9e4e423ec942a0441f3c3405799cbcb
+      notification_title: Medication Reminder
+      input_boolean: input_boolean.medication
