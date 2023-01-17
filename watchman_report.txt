@@ -2,14 +2,13 @@
 
 -== Congratulations, all 23 services from your config are available!
 
--== Missing 2 entity(ies) from 74 found in your config:
+-== Missing 1 entity(ies) from 71 found in your config:
 +--------------------------------+---------+--------------------------------------------------------------+
 | Entity ID                      | State   | Location                                                     |
 +--------------------------------+---------+--------------------------------------------------------------+
-| scene.feed ('Feed')            | unknown | .storage/lovelace:586                                        |
-| scene.mopping ('Mopping')      | unknown | .storage/lovelace:656                                        |
+| media_player.bedroom_tv        | unavail | .storage/lovelace:652                                        |
 +--------------------------------+---------+--------------------------------------------------------------+
 
--== Report created on 12 Jan 2023 00:32:47
--== Parsed 28 files in 0.86s., ignored 0 files 
+-== Report created on 15 Jan 2023 01:22:49
+-== Parsed 28 files in 0.64s., ignored 0 files 
 -== Generated in: 0.00s. Validated in: 0.00s.
