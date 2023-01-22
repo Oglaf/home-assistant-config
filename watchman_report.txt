@@ -1,14 +1,16 @@
 -== Watchman Report ==- 
 
--== Congratulations, all 23 services from your config are available!
+-== Congratulations, all 24 services from your config are available!
 
--== Missing 1 entity(ies) from 71 found in your config:
+-== Missing 2 entity(ies) from 70 found in your config:
 +--------------------------------+---------+--------------------------------------------------------------+
 | Entity ID                      | State   | Location                                                     |
 +--------------------------------+---------+--------------------------------------------------------------+
-| media_player.bedroom_tv        | unavail | .storage/lovelace:652                                        |
+| sensor.christian_tab_battery_l | missing | automations.yaml:217                                         |
+| evel                           |         |                                                              |
+| media_player.bedroom_tv        | unavail | .storage/lovelace:646                                        |
 +--------------------------------+---------+--------------------------------------------------------------+
 
--== Report created on 15 Jan 2023 01:22:49
--== Parsed 28 files in 0.64s., ignored 0 files 
+-== Report created on 19 Jan 2023 16:54:52
+-== Parsed 28 files in 1.97s., ignored 0 files 
 -== Generated in: 0.00s. Validated in: 0.00s.
