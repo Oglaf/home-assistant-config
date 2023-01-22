@@ -1,5 +1,5 @@
 - id: '1672201353243'
-  alias: Update notifications
+  alias: HA - Update notifications
   description: ''
   use_blueprint:
     path: mdegat01/update_notifications.yaml
@@ -29,7 +29,7 @@
       input: CHRISTIAN-PC
   mode: single
 - id: '1672353016030'
-  alias: Turn off bedroom light after 5m
+  alias: LIGHT - Turn off bedroom light after 5m
   description: ''
   trigger:
   - platform: state
@@ -40,7 +40,10 @@
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
+  condition:
+  - condition: state
+    entity_id: input_boolean.bedroom_light_automation
+    state: 'on'
   action:
   - service: light.turn_off
     data: {}
@@ -48,7 +51,7 @@
       entity_id: light.local_smart_light_1
   mode: single
 - id: '1672380948372'
-  alias: Daily maintenance
+  alias: HA - Daily maintenance
   description: ''
   trigger:
   - platform: time
@@ -61,7 +64,7 @@
     data: {}
   mode: single
 - id: '1672522611577'
-  alias: Tariff automation
+  alias: ENERGY - Tariff automation
   description: Tariff automation
   trigger:
   - platform: time
@@ -159,7 +162,7 @@
         - select.pc_energy_cost
   mode: single
 - id: '1672690462412'
-  alias: Renew SSL certificate
+  alias: HA - Renew SSL certificate
   description: ''
   trigger:
   - platform: time
@@ -181,7 +184,7 @@
       entity_id: input_datetime.ssl_auto_renewal
   mode: single
 - id: '1672712190023'
-  alias: Daily Christian-PC WoL
+  alias: PC - Daily Christian-PC WoL
   description: Bussiness day WoL
   trigger:
   - platform: time
@@ -198,9 +201,10 @@
   - service: switch.turn_on
     target:
       entity_id: switch.christian_pc_wol
+    data: {}
   mode: single
 - id: '1673233928666'
-  alias: Turn off charging - Christian
+  alias: PLUG - Turn off charging - Christian
   description: ''
   use_blueprint:
     path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
@@ -208,7 +212,7 @@
       switch: switch.local_smart_plug_3
       phone_battery: sensor.m2010j19cg_battery_level
 - id: '1673391186244'
-  alias: Turn off charging - Christian-TB
+  alias: PLUG - Turn off charging - Christian-TB
   description: ''
   use_blueprint:
     path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
@@ -216,7 +220,7 @@
       switch: switch.local_smart_plug_3
       phone_battery: sensor.christian_tab_battery_level
 - id: '1673477422415'
-  alias: Turn on office light
+  alias: LIGHT - Turn on office light
   description: Automatically turn on office light
   trigger:
   - platform: sun
@@ -237,9 +241,17 @@
     conditions:
     - condition: sun
       after: sunset
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: device_tracker.christian_pc
+        state: home
+      - condition: state
+        entity_id: device_tracker.cecilia_pc
+        state: home
     - condition: state
-      entity_id: device_tracker.christian_pc
-      state: home
+      entity_id: input_boolean.office_light_automation
+      state: 'on'
   action:
   - service: light.turn_on
     data: {}
@@ -247,7 +259,7 @@
       device_id: b7759a1d8c5860001f4243f62650f458
   mode: single
 - id: '1673488875924'
-  alias: Sleep time
+  alias: LIGHT - Sleep time
   description: ''
   trigger:
   - platform: time
@@ -272,11 +284,11 @@
         entity_id: input_boolean.sleep_time
   mode: single
 - id: '1673492717992'
-  alias: Determine best humidity
+  alias: WEATHER - Determine best humidity
   description: ''
   trigger:
   - platform: time_pattern
-    minutes: /30
+    hours: /2
   condition: []
   action:
   - if:
@@ -297,7 +309,7 @@
         entity_id: input_select.best_humidity
   mode: single
 - id: '1673493242815'
-  alias: Humidity Alert
+  alias: WEATHER - Humidity Alert
   description: ''
   trigger:
   - platform: state
@@ -333,3 +345,171 @@
       notify_device: e9e4e423ec942a0441f3c3405799cbcb
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
+- id: '1674136089586'
+  alias: MEDIA - Turn off Living Room TV after 15 minutes
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.living_room_tv
+    to: idle
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - service: media_player.turn_off
+    data: {}
+    target:
+      device_id: 3626418d97b4e6150a57d17b9f5c03e7
+  mode: single
+- id: '1674182650722'
+  alias: LIGHT - Turn off all lights when away
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.christian_silva
+    from: home
+    to: not_home
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  - platform: state
+    entity_id:
+    - person.cecilia_ueda
+    from: home
+    to: not_home
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: person.cecilia_ueda
+      state: not_home
+    - condition: state
+      entity_id: person.christian_silva
+      state: not_home
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      device_id:
+      - b7759a1d8c5860001f4243f62650f458
+      - 7fafda428f65ffa2447210626f18a1ef
+      - 93a0b1af02355fb7f993fe76e6f118f5
+  mode: single
+- id: '1674225267956'
+  alias: LIGHT - Turn on living room light
+  description: Automatically turn on living room light
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  - platform: state
+    entity_id:
+    - media_player.living_room_tv
+    to: playing
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      after: sunset
+    - condition: state
+      entity_id: media_player.living_room_tv
+      state: playing
+    - condition: state
+      entity_id: input_boolean.living_room_light_automation
+      state: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      transition: 3
+    target:
+      device_id: 93a0b1af02355fb7f993fe76e6f118f5
+  mode: single
+- id: '1674367256897'
+  alias: MEDIA - Theater mode paused
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.living_room_tv
+    to: paused
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.theater_mode
+      state: 'on'
+    - condition: sun
+      after: sunset
+      before: sunrise
+    - condition: state
+      entity_id: input_boolean.living_room_light_automation
+      state: 'off'
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.sp2_night
+    metadata: {}
+  mode: single
+- id: '1674367315493'
+  alias: MEDIA - Theater mode playing
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.living_room_tv
+    to: playing
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.theater_mode
+      state: 'on'
+    - condition: sun
+      after: sunset
+      before: sunrise
+    - condition: state
+      entity_id: input_boolean.living_room_light_automation
+      state: 'off'
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.sl2_theater
+    metadata: {}
+  mode: single
+- id: '1674368220338'
+  alias: MEDIA - Toggle theater mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.theater_mode
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_boolean.theater_mode
+      state: 'on'
+    then:
+    - service: input_boolean.turn_off
+      data: {}
+      target:
+        entity_id: input_boolean.living_room_light_automation
+    - service: automation.trigger
+      data: {}
+      target:
+        entity_id: automation.media_theater_mode_playing
+    else:
+    - service: input_boolean.turn_on
+      data: {}
+      target:
+        entity_id: input_boolean.living_room_light_automation
+  mode: single

@@ -2,10 +2,10 @@
   name: Theater
   entities:
     light.local_smart_light_2:
-      min_color_temp_kelvin: 2702
+      min_color_temp_kelvin: 2004
       max_color_temp_kelvin: 6535
       min_mireds: 153
-      max_mireds: 370
+      max_mireds: 499
       effect_list:
       - Night
       - Read
@@ -15,25 +15,24 @@
       - Rainbow
       - Shine
       - Beautiful
-      - Music
       supported_color_modes:
       - color_temp
       - hs
-      raw_state: true
       friendly_name: Local Smart Light 2
       supported_features: 23
+      raw_state: true
       color_mode: hs
-      brightness: 9
+      brightness: 2
       hs_color:
-      - 45
+      - 240
       - 100
       rgb_color:
-      - 255
-      - 191
       - 0
+      - 0
+      - 255
       xy_color:
-      - 0.527
-      - 0.447
+      - 0.136
+      - 0.04
       state: 'on'
   metadata: {}
   icon: mdi:theater

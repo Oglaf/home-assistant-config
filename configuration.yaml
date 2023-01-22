@@ -16,6 +16,10 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 device_tracker: !include device_tracker.yaml
 
+homeassistant:
+  allowlist_external_dirs:
+    - "/config/speedtest/"
+
 # PowerCalc
 powercalc:
 
@@ -69,6 +73,22 @@ sensor:
     fixed:
       states_power:
         playing: 58.65
+  - platform: command_line
+    name: "SpeedTest CLI Data"
+    unique_id: speedtest_cli_data
+    command: "/config/speedtest/speedtest --format=json --server-id=13518 --accept-license --accept-gdpr"
+    scan_interval: 3600
+    command_timeout: 60
+    # Summarize results to stay below string limit and convert to JSON
+    value_template: >-
+      {{ 
+      { 
+        "ping": value_json.ping.latency, 
+        "download": value_json.download.bandwidth, 
+        "upload": value_json.upload.bandwidth 
+      }
+      | to_json 
+      }}
 # Proximity
 proximity:
   home_christian:
@@ -102,15 +122,37 @@ switch:
         addon: core_rpc_shutdown
         input: CHRISTIAN-PC
   - platform: circadian_lighting
-    name: House lights flux
-    initial_transition: 3
+    name: Living room circadian lighting
+    initial_transition: 5
     sleep_entity: input_boolean.sleep_time
     sleep_state: "on"
     sleep_colortemp: 2001
     sleep_brightness: 1
+    disable_entity: input_boolean.living_room_light_automation
+    disable_state: "off"
+    lights_ct:
+      - light.local_smart_light_2
+  - platform: circadian_lighting
+    name: Bedroom circadian lighting
+    initial_transition: 5
+    sleep_entity: input_boolean.sleep_time
+    sleep_state: "on"
+    sleep_colortemp: 2001
+    sleep_brightness: 1
+    disable_entity: input_boolean.bedroom_light_automation
+    disable_state: "off"
     lights_ct:
       - light.local_smart_light_1
-      - light.local_smart_light_2
+  - platform: circadian_lighting
+    name: Office circadian lighting
+    initial_transition: 5
+    sleep_entity: input_boolean.sleep_time
+    sleep_state: "on"
+    sleep_colortemp: 2001
+    sleep_brightness: 1
+    disable_entity: input_boolean.office_light_automation
+    disable_state: "off"
+    lights_ct:
       - light.ews_410
 
 # Template
@@ -129,7 +171,6 @@ template:
               states('sensor.living_room_tv_energy')]
               | map('float') | sum | round (2)
           }}
-  - sensor:
       - name: "Tariff price"
         unit_of_measurement: BRL/kWh
         state: >
@@ -140,6 +181,35 @@ template:
           {% elif is_state('select.monthly_energy', 'offpeak') %}
               {{ 0.61755 }}
           {% endif %}
+      - name: "pc_energy_cost_total"
+        unit_of_measurement: BRL
+        state: >
+          {{ 
+            (
+              (states.sensor.pc_energy_cost_offpeak.state | float(0) * 0.61755 ) + 
+              (states.sensor.pc_energy_cost_peak.state  | float(0) * 1.2839) + 
+              (states.sensor.pc_energy_cost_shoulder.state | float(0) * 0.86071)
+            ) | round(2) 
+          }}
+      - name: "SpeedTest CLI Ping"
+        unique_id: speedtest_cli_ping
+        icon: mdi:speedometer
+        unit_of_measurement: ms
+        state_class: measurement
+        state: "{{ (states('sensor.speedtest_cli_data') | from_json).ping | round(2) }}"
+      - name: "SpeedTest CLI Download"
+        unique_id: speedtest_cli_download
+        icon: mdi:speedometer
+        unit_of_measurement: MB/s
+        state_class: measurement
+        state: "{{ ((states('sensor.speedtest_cli_data') | from_json).download / 125000) | round(2) }}"
+      - name: "SpeedTest CLI Upload"
+        unique_id: speedtest_cli_upload
+        icon: mdi:speedometer
+        unit_of_measurement: MB/s
+        state_class: measurement
+        state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload / 125000) | round(2) }}"
+
 # Utility Meter
 utility_meter:
   monthly_energy:
