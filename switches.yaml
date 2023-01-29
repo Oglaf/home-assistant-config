@@ -1,0 +1,45 @@
+# WOL
+- platform: wake_on_lan
+  mac: A8:A1:59:45:CB:22
+  name: christian_pc_wol
+  broadcast_address: 192.168.1.255
+  turn_off:
+    service: button.press
+    data:
+      addon: core_rpc_shutdown
+      input: CHRISTIAN-PC
+
+# Circadian lightning
+- platform: circadian_lighting
+  name: Living room circadian lighting
+  initial_transition: 5
+  sleep_entity: input_boolean.sleep_time
+  sleep_state: "on"
+  sleep_colortemp: 2001
+  sleep_brightness: 1
+  disable_entity: input_boolean.living_room_light_automation
+  disable_state: "off"
+  lights_ct:
+    - light.local_smart_light_2
+- platform: circadian_lighting
+  name: Bedroom circadian lighting
+  initial_transition: 5
+  sleep_entity: input_boolean.sleep_time
+  sleep_state: "on"
+  sleep_colortemp: 2001
+  sleep_brightness: 1
+  disable_entity: input_boolean.bedroom_light_automation
+  disable_state: "off"
+  lights_ct:
+    - light.local_smart_light_1
+- platform: circadian_lighting
+  name: Office circadian lighting
+  initial_transition: 5
+  sleep_entity: input_boolean.sleep_time
+  sleep_state: "on"
+  sleep_colortemp: 2001
+  sleep_brightness: 1
+  disable_entity: input_boolean.office_light_automation
+  disable_state: "off"
+  lights_ct:
+    - light.ews_410

@@ -1,0 +1,66 @@
+# Open hardware monitor
+- platform: openhardwaremonitor
+  host: 192.168.1.198
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: memory_use
+    - type: memory_use_percent
+
+# Speedtest
+- platform: command_line
+  name: "SpeedTest CLI Data"
+  unique_id: speedtest_cli_data
+  command: "/config/speedtest/speedtest --format=json --server-id=13518 --accept-license --accept-gdpr"
+  scan_interval: 3600
+  command_timeout: 60
+  value_template: >-
+    {{ 
+    { 
+      "ping": value_json.ping.latency, 
+      "download": value_json.download.bandwidth, 
+      "upload": value_json.upload.bandwidth 
+    }
+    | to_json 
+    }}
+
+# Powercalc
+- platform: powercalc
+  entity_id: light.ews_410
+  linear:
+    attribute: brightness
+    min_power: 0.3
+    max_power: 10
+- platform: powercalc
+  entity_id: light.local_smart_light_1
+  linear:
+    attribute: brightness
+    min_power: 0.3
+    max_power: 10
+- platform: powercalc
+  entity_id: light.local_smart_light_2
+  linear:
+    attribute: brightness
+    min_power: 0.3
+    max_power: 10
+- platform: powercalc
+  entity_id: media_player.living_room_tv
+  fixed:
+    states_power:
+      playing: 58.65
+- platform: powercalc
+  entity_id: binary_sensor.christian_srv
+  name: Server
+  fixed:
+    #HDD - 6.5W
+    #SSD - 0.6W
+    #2xRAM - 4W
+    #CPU Cooler - 5W (~2500RPM)
+    power: >-
+      {{ 
+        (
+          (states('sensor.christian_srv_intel_core_i7_3770k_powers_cpu_package') | float(0)) +
+          (states('sensor.christian_srv_nvidia_nvidia_geforce_gtx_1060_6gb_powers_gpu_power') | float(0)) +
+          6.5 + 0.6 + 4 + 5
+        ) | round(2) 
+      }}

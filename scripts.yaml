@@ -3,8 +3,8 @@ turn_on_off_christian_pc:
   sequence:
   - if:
     - condition: state
-      entity_id: device_tracker.christian_pc
-      state: home
+      entity_id: binary_sensor.christian_pc
+      state: 'on'
     then:
     - service: hassio.addon_stdin
       data:

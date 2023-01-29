@@ -1,0 +1,25 @@
+residents:
+  name: Residents
+  entities:
+    - person.cecilia_ueda
+    - sensor.cecilia_redminote8_home
+    - person.christian_silva
+    - sensor.christian_m2010j19cg_home
+
+christian_home:
+  name: christian_home
+  entities:
+    - person.christian_silva
+    - sensor.christian_m2010j19cg_home
+
+cecilia_home:
+  name: cecilia_home
+  entities:
+    - person.cecilia_ueda
+    - sensor.cecilia_redminote8_home
+
+computers:
+  name: computers
+  entities:
+    - binary_sensor.cecilia_pc
+    - binary_sensor.christian_pc
