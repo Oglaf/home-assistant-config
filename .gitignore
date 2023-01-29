@@ -28,3 +28,5 @@ home-assistant.db
 home-assistant_v2.db
 home-assistant_v2.db-*
 zigbee.*
+.HA_VERSION
+watchman_report.txt
