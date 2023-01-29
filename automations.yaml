@@ -40,6 +40,7 @@
       hours: 0
       minutes: 5
       seconds: 0
+    from: 'off'
   condition:
   - condition: state
     entity_id: input_boolean.bedroom_light_automation
@@ -228,14 +229,12 @@
     offset: 0
   - platform: state
     entity_id:
-    - device_tracker.christian_pc
-    from: not_home
-    to: home
+    - binary_sensor.christian_pc
+    to: 'on'
   - platform: state
     entity_id:
-    - device_tracker.cecilia_pc
-    from: not_home
-    to: home
+    - binary_sensor.cecilia_pc
+    to: 'on'
   condition:
   - condition: and
     conditions:
@@ -244,11 +243,11 @@
     - condition: or
       conditions:
       - condition: state
-        entity_id: device_tracker.christian_pc
-        state: home
+        entity_id: binary_sensor.christian_pc
+        state: 'on'
       - condition: state
-        entity_id: device_tracker.cecilia_pc
-        state: home
+        entity_id: binary_sensor.cecilia_pc
+        state: 'on'
     - condition: state
       entity_id: input_boolean.office_light_automation
       state: 'on'
@@ -370,39 +369,25 @@
   trigger:
   - platform: state
     entity_id:
-    - person.christian_silva
-    from: home
+    - group.residents
     to: not_home
     for:
       hours: 0
-      minutes: 10
+      minutes: 5
       seconds: 0
-  - platform: state
-    entity_id:
-    - person.cecilia_ueda
-    from: home
-    to: not_home
-    for:
-      hours: 0
-      minutes: 10
-      seconds: 0
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: person.cecilia_ueda
-      state: not_home
-    - condition: state
-      entity_id: person.christian_silva
-      state: not_home
+  condition: []
   action:
   - service: light.turn_off
     data: {}
     target:
-      device_id:
-      - b7759a1d8c5860001f4243f62650f458
-      - 7fafda428f65ffa2447210626f18a1ef
-      - 93a0b1af02355fb7f993fe76e6f118f5
+      area_id:
+      - bedroom
+      - living_room
+      - office
+  - service: switch.turn_off
+    data: {}
+    target:
+      area_id: bedroom
   mode: single
 - id: '1674225267956'
   alias: LIGHT - Turn on living room light
@@ -441,6 +426,10 @@
     entity_id:
     - media_player.living_room_tv
     to: paused
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
   condition:
   - condition: and
     conditions:
@@ -480,10 +469,10 @@
       entity_id: input_boolean.living_room_light_automation
       state: 'off'
   action:
-  - service: scene.turn_on
+  - service: light.turn_off
+    data: {}
     target:
-      entity_id: scene.sl2_theater
-    metadata: {}
+      area_id: living_room
   mode: single
 - id: '1674368220338'
   alias: MEDIA - Toggle theater mode
@@ -512,4 +501,105 @@
       data: {}
       target:
         entity_id: input_boolean.living_room_light_automation
+  mode: single
+- id: '1674779503847'
+  alias: LIGHT - Turn off Office
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - group.computers
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id: office
+  mode: single
+- id: '1674922819369'
+  alias: SWITCH - Toggle Living room light
+  description: ''
+  use_blueprint:
+    path: seamus65/ZHA - Sonoff SNZB-01.yaml
+    input:
+      remote: 2556d86d2992daf2a7e6133da291cf76
+      single_press:
+      - service: light.toggle
+        data:
+          transition: 5
+        target:
+          area_id: living_room
+      hold:
+      - service: input_boolean.toggle
+        data: {}
+        target:
+          entity_id: input_boolean.theater_mode
+- id: '1674924848329'
+  alias: SWITCH - Toggle Office light
+  description: ''
+  use_blueprint:
+    path: seamus65/ZHA - Sonoff SNZB-01.yaml
+    input:
+      remote: c3ff1090e8e05332475b3006b1c4de70
+      single_press:
+      - service: light.toggle
+        data:
+          transition: 5
+        target:
+          area_id: office
+      double_press:
+      - service: script.turn_on_off_christian_pc
+        data: {}
+- id: '1674945126938'
+  alias: LIGHT - Turn on bedroom light
+  description: ''
+  use_blueprint:
+    path: Marcos_Felipe/turn-light-on-and-off-based-on-detected-motion-with-sun-condition.yaml
+    input:
+      motion_entity: binary_sensor.ewelink_ms01_iaszone
+      no_motion_wait: 30
+      sunset_offset: 0
+      sunrise_offset: 0
+      light_target:
+        area_id: bedroom
+- id: '1674973427986'
+  alias: LIGHT - Bedroom motion sensor
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.ewelink_ms01_iaszone
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      after: sunset
+    - condition: sun
+      before: sunrise
+      enabled: false
+    - condition: time
+      before: 01:00:00
+      weekday: []
+  - condition: state
+    entity_id: input_boolean.bedroom_light_automation
+    state: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.local_smart_light_1
+  - wait_for_trigger:
+      platform: state
+      entity_id: binary_sensor.ewelink_ms01_iaszone
+      from: 'on'
+      to: 'off'
+  - delay: 30
+  - service: light.turn_off
+    entity_id: light.local_smart_light_1
   mode: single
