@@ -10,24 +10,24 @@
         "attributes": {
           "editable": true,
           "id": "christian_silva",
-          "latitude": -25.4712857,
-          "longitude": -49.2995025,
-          "gps_accuracy": 20,
+          "latitude": -25.4712777,
+          "longitude": -49.2994993,
+          "gps_accuracy": 24,
           "source": "device_tracker.m2010j19cg",
           "user_id": "2eb48afb57034b2eb5b96583279df927",
           "entity_picture": "/api/image/serve/5e1b756c0dc6f69624d57c65a490b2cc/512x512",
           "friendly_name": "Christian Silva"
         },
         "last_changed": "2023-02-10T02:30:21.297043+00:00",
-        "last_updated": "2023-02-10T02:35:31.661661+00:00",
+        "last_updated": "2023-02-10T02:36:53.898618+00:00",
         "context": {
-          "id": "01GRWJV2YDAYVTC8M6T5M3YSB8",
+          "id": "01GRWJXK8AXE09ATCEXQTCH198",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -53,7 +53,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -76,7 +76,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -98,7 +98,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -120,7 +120,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -144,7 +144,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -168,7 +168,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -197,7 +197,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -221,7 +221,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -245,7 +245,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -265,7 +265,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -285,7 +285,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -305,7 +305,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -325,7 +325,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -345,7 +345,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -365,7 +365,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -386,7 +386,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -424,7 +424,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -462,99 +462,99 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.ffxiv",
         "state": "on",
         "attributes": {
-          "round_trip_time_avg": 199.757,
-          "round_trip_time_max": 225.251,
+          "round_trip_time_avg": 244.08,
+          "round_trip_time_max": 265.221,
           "round_trip_time_mdev": "",
-          "round_trip_time_min": 189.934,
+          "round_trip_time_min": 223.171,
           "device_class": "connectivity",
           "friendly_name": "FFXIV"
         },
         "last_changed": "2023-02-10T02:30:23.630286+00:00",
-        "last_updated": "2023-02-10T02:35:27.446776+00:00",
+        "last_updated": "2023-02-10T02:50:27.646996+00:00",
         "context": {
-          "id": "01GRWJTYTPQ7EXQP7E1C2PGSRF",
+          "id": "01GRWKPDXY340V0PGX2GD1WFG9",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.google",
         "state": "on",
         "attributes": {
-          "round_trip_time_avg": 12.015,
-          "round_trip_time_max": 15.895,
+          "round_trip_time_avg": 11.483,
+          "round_trip_time_max": 11.97,
           "round_trip_time_mdev": "",
-          "round_trip_time_min": 10.548,
+          "round_trip_time_min": 11.255,
           "device_class": "connectivity",
           "friendly_name": "Google"
         },
         "last_changed": "2023-02-10T02:30:23.630378+00:00",
-        "last_updated": "2023-02-10T02:35:26.696056+00:00",
+        "last_updated": "2023-02-10T02:50:26.717625+00:00",
         "context": {
-          "id": "01GRWJTY38BACVWV7FTT7C9XES",
+          "id": "01GRWKPD0XWF76ZBXJQJ8D7YJ6",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.cloudfare",
         "state": "on",
         "attributes": {
-          "round_trip_time_avg": 3.218,
-          "round_trip_time_max": 3.569,
+          "round_trip_time_avg": 4.52,
+          "round_trip_time_max": 8.018,
           "round_trip_time_mdev": "",
-          "round_trip_time_min": 2.883,
+          "round_trip_time_min": 2.861,
           "device_class": "connectivity",
           "friendly_name": "Cloudfare"
         },
         "last_changed": "2023-02-10T02:30:23.630454+00:00",
-        "last_updated": "2023-02-10T02:35:26.661518+00:00",
+        "last_updated": "2023-02-10T02:50:26.688578+00:00",
         "context": {
-          "id": "01GRWJTY256BE1XZF4C4DMSK6J",
+          "id": "01GRWKPD00S6NQSCNP93JK8P8Z",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.christian_pc",
         "state": "on",
         "attributes": {
-          "round_trip_time_avg": 0.978,
-          "round_trip_time_max": 1.165,
+          "round_trip_time_avg": 1.087,
+          "round_trip_time_max": 1.478,
           "round_trip_time_mdev": "",
-          "round_trip_time_min": 0.604,
+          "round_trip_time_min": 0.593,
           "device_class": "connectivity",
           "friendly_name": "christian_pc"
         },
         "last_changed": "2023-02-10T02:30:23.630528+00:00",
-        "last_updated": "2023-02-10T02:35:27.653977+00:00",
+        "last_updated": "2023-02-10T02:50:27.675815+00:00",
         "context": {
-          "id": "01GRWJTZ15VF64DJPGRX114DD8",
+          "id": "01GRWKPDYVQK2K5SFJ7QM8F75K",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -573,30 +573,30 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.christian_srv",
         "state": "on",
         "attributes": {
-          "round_trip_time_avg": 0.937,
-          "round_trip_time_max": 1.432,
+          "round_trip_time_avg": 1.087,
+          "round_trip_time_max": 1.552,
           "round_trip_time_mdev": "",
-          "round_trip_time_min": 0.347,
+          "round_trip_time_min": 0.353,
           "device_class": "connectivity",
           "friendly_name": "christian_srv"
         },
         "last_changed": "2023-02-10T02:30:23.630668+00:00",
-        "last_updated": "2023-02-10T02:35:27.648522+00:00",
+        "last_updated": "2023-02-10T02:50:27.654272+00:00",
         "context": {
-          "id": "01GRWJTZ10X5D9QM6V8KYPFAM1",
+          "id": "01GRWKPDY67XAQT00GFY79F4JM",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -634,7 +634,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -654,7 +654,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -674,7 +674,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -694,7 +694,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -713,12 +713,12 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_energy",
-        "state": "0.14",
+        "state": "0.15",
         "attributes": {
           "state_class": "total",
           "source": "sensor.local_smart_plug_power",
@@ -727,21 +727,21 @@
           "icon": "mdi:chart-histogram",
           "friendly_name": "Local Smart Plug Energy"
         },
-        "last_changed": "2023-02-10T02:30:24.099568+00:00",
-        "last_updated": "2023-02-10T02:30:24.099568+00:00",
+        "last_changed": "2023-02-10T02:47:24.520317+00:00",
+        "last_updated": "2023-02-10T02:47:24.520317+00:00",
         "context": {
-          "id": "01GRWJHPK3QQQ9N1E8557K1NVP",
+          "id": "01GRWKGV38YTHA7HJRB8TFD8T5",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_2_energy",
-        "state": "3.89",
+        "state": "3.92",
         "attributes": {
           "state_class": "total",
           "source": "sensor.local_smart_plug_2_power",
@@ -750,16 +750,16 @@
           "icon": "mdi:chart-histogram",
           "friendly_name": "Local Smart Plug 2 Energy"
         },
-        "last_changed": "2023-02-10T02:33:15.324361+00:00",
-        "last_updated": "2023-02-10T02:33:15.324361+00:00",
+        "last_changed": "2023-02-10T02:47:40.454363+00:00",
+        "last_updated": "2023-02-10T02:47:40.454363+00:00",
         "context": {
-          "id": "01GRWJPXSWQ4X0VGVGRM5MNW33",
+          "id": "01GRWKHAN62TC2GRNMQ51P3E3D",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -782,91 +782,91 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_countdown",
-        "state": "87.83",
+        "state": "72.83",
         "attributes": {
-          "raw_state": 87.83,
+          "raw_state": 72.83,
           "unit_of_measurement": "min",
           "device_class": "duration",
           "friendly_name": "Local Smart Plug Countdown"
         },
-        "last_changed": "2023-02-10T02:35:24.410806+00:00",
-        "last_updated": "2023-02-10T02:35:24.410806+00:00",
+        "last_changed": "2023-02-10T02:50:24.434940+00:00",
+        "last_updated": "2023-02-10T02:50:24.434940+00:00",
         "context": {
-          "id": "01GRWJTVVTBN0M87VXY74PCGH5",
+          "id": "01GRWKPASJ6R0C8BNM1WAPB03Q",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_current",
-        "state": "0.58",
+        "state": "0.02",
         "attributes": {
-          "raw_state": 0.58,
+          "raw_state": 0.02,
           "unit_of_measurement": "A",
           "device_class": "current",
           "friendly_name": "Local Smart Plug Current"
         },
-        "last_changed": "2023-02-10T02:35:24.507760+00:00",
-        "last_updated": "2023-02-10T02:35:24.507760+00:00",
+        "last_changed": "2023-02-10T02:50:24.536672+00:00",
+        "last_updated": "2023-02-10T02:50:24.536672+00:00",
         "context": {
-          "id": "01GRWJTVYVR1T0WGJXJV8B7VS8",
+          "id": "01GRWKPAWRBNXYGM3VXX19Y8NC",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_power",
-        "state": "66.6",
+        "state": "66.9",
         "attributes": {
-          "raw_state": 66.6,
+          "raw_state": 66.9,
           "unit_of_measurement": "W",
           "device_class": "power",
           "friendly_name": "Local Smart Plug"
         },
-        "last_changed": "2023-02-10T02:35:24.507922+00:00",
-        "last_updated": "2023-02-10T02:35:24.507922+00:00",
+        "last_changed": "2023-02-10T02:50:24.537783+00:00",
+        "last_updated": "2023-02-10T02:50:24.537783+00:00",
         "context": {
-          "id": "01GRWJTVYVVDTHF4BAJ073ZQ09",
+          "id": "01GRWKPAWS3MGKB4YFEQ1M8ZHY",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_voltage",
-        "state": "125.8",
+        "state": "126.6",
         "attributes": {
-          "raw_state": 125.8,
+          "raw_state": 126.6,
           "unit_of_measurement": "V",
           "device_class": "voltage",
           "friendly_name": "Local Smart Plug Voltage"
         },
-        "last_changed": "2023-02-10T02:33:54.454324+00:00",
-        "last_updated": "2023-02-10T02:33:54.454324+00:00",
+        "last_changed": "2023-02-10T02:49:54.436377+00:00",
+        "last_updated": "2023-02-10T02:49:54.436377+00:00",
         "context": {
-          "id": "01GRWJR40PCD5EAX8D9R633N8W",
+          "id": "01GRWKNDG4SM3CXSFS9HP406C0",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -887,7 +887,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -908,7 +908,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -929,91 +929,91 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_2_current",
-        "state": "1.01",
+        "state": "1.03",
         "attributes": {
-          "raw_state": 1.01,
+          "raw_state": 1.03,
           "unit_of_measurement": "A",
           "device_class": "current",
           "friendly_name": "Local Smart Plug 2 Current"
         },
-        "last_changed": "2023-02-10T02:35:03.342593+00:00",
-        "last_updated": "2023-02-10T02:35:03.342593+00:00",
+        "last_changed": "2023-02-10T02:50:01.677126+00:00",
+        "last_updated": "2023-02-10T02:50:01.677126+00:00",
         "context": {
-          "id": "01GRWJT79EZYVP9K457PJW06M9",
+          "id": "01GRWKNMJDNYS33NR7N9EVTNAS",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_2_power",
-        "state": "127.3",
+        "state": "126.1",
         "attributes": {
-          "raw_state": 127.3,
+          "raw_state": 126.1,
           "unit_of_measurement": "W",
           "device_class": "power",
           "friendly_name": "Local Smart Plug 2 Power"
         },
-        "last_changed": "2023-02-10T02:35:03.342796+00:00",
-        "last_updated": "2023-02-10T02:35:03.342796+00:00",
+        "last_changed": "2023-02-10T02:50:01.677314+00:00",
+        "last_updated": "2023-02-10T02:50:01.677314+00:00",
         "context": {
-          "id": "01GRWJT79EC61QGMEEZT8G1DKZ",
+          "id": "01GRWKNMJDXM2VYAJ21QW8XB2W",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_2_voltage",
-        "state": "126.2",
+        "state": "126.9",
         "attributes": {
-          "raw_state": 126.2,
+          "raw_state": 126.9,
           "unit_of_measurement": "V",
           "device_class": "voltage",
           "friendly_name": "Local Smart Plug 2 Voltage"
         },
-        "last_changed": "2023-02-10T02:33:49.331733+00:00",
-        "last_updated": "2023-02-10T02:33:49.331733+00:00",
+        "last_changed": "2023-02-10T02:50:01.677450+00:00",
+        "last_updated": "2023-02-10T02:50:01.677450+00:00",
         "context": {
-          "id": "01GRWJQZ0K1NQWJ9Y59Y30ZCJM",
+          "id": "01GRWKNMJDM0E1A8V363PCGQ9P",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.local_smart_plug_3_countdown",
-        "state": "90.5",
+        "state": "75.5",
         "attributes": {
-          "raw_state": 90.5,
+          "raw_state": 75.5,
           "unit_of_measurement": "min",
           "device_class": "duration",
           "friendly_name": "Local Smart Plug 3 Countdown"
         },
-        "last_changed": "2023-02-10T02:35:12.715146+00:00",
-        "last_updated": "2023-02-10T02:35:12.715146+00:00",
+        "last_changed": "2023-02-10T02:50:12.900490+00:00",
+        "last_updated": "2023-02-10T02:50:12.900490+00:00",
         "context": {
-          "id": "01GRWJTGEB5HFRXJS5ZHTP3NY6",
+          "id": "01GRWKNZH4X1Z9FANM5Q2GGK0R",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1034,7 +1034,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1055,7 +1055,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1076,7 +1076,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1101,7 +1101,7 @@
         "native_value": 79,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1123,7 +1123,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1145,34 +1145,33 @@
         "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.m2010j19cg_battery_power",
-        "state": "0.67",
+        "state": "1.56",
         "attributes": {
-          "state_class": "measurement",
-          "current": 0.16098,
-          "voltage": 4.188,
+          "current": 0.372619,
+          "voltage": 4.185,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-plus",
           "friendly_name": "M2010J19CG Battery Power"
         },
-        "last_changed": "2023-02-10T02:30:24.107994+00:00",
-        "last_updated": "2023-02-10T02:30:24.107994+00:00",
+        "last_changed": "2023-02-10T02:40:44.125963+00:00",
+        "last_updated": "2023-02-10T02:40:44.125963+00:00",
         "context": {
-          "id": "01GRWJHPKBT879XMZFK2Z8E39H",
+          "id": "01GRWK4M2XFNFZ2ZXQ1BSN4603",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 0.67,
+        "native_value": 1.56,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1195,7 +1194,7 @@
         "native_value": "ZAITSU_2G",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1218,7 +1217,7 @@
         "native_value": "wifi",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1238,7 +1237,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1246,49 +1245,49 @@
         "state": "home",
         "attributes": {
           "source_type": "gps",
-          "latitude": -25.4712857,
-          "longitude": -49.2995025,
-          "gps_accuracy": 20,
+          "latitude": -25.4712777,
+          "longitude": -49.2994993,
+          "gps_accuracy": 24,
           "altitude": 940,
           "course": 0,
           "speed": 0,
           "vertical_accuracy": 1,
           "friendly_name": "M2010J19CG"
         },
-        "last_changed": "2023-02-10T02:30:24.108466+00:00",
-        "last_updated": "2023-02-10T02:30:24.108466+00:00",
+        "last_changed": "2023-02-10T02:36:53.898199+00:00",
+        "last_updated": "2023-02-10T02:36:53.898199+00:00",
         "context": {
-          "id": "01GRWJHPKCXZ24B7ZY7CQRADHZ",
+          "id": "01GRWJXK8ASE624WBEBW8MYMBT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.cecilia_sp_battery_level",
-        "state": "99",
+        "state": "100",
         "attributes": {
           "unit_of_measurement": "%",
           "device_class": "battery",
-          "icon": "mdi:battery-charging-90",
+          "icon": "mdi:battery-charging",
           "friendly_name": "cecilia-sp Battery Level"
         },
-        "last_changed": "2023-02-10T02:35:13.342693+00:00",
-        "last_updated": "2023-02-10T02:35:13.342693+00:00",
+        "last_changed": "2023-02-10T02:43:41.096204+00:00",
+        "last_updated": "2023-02-10T02:43:41.096204+00:00",
         "context": {
-          "id": "01GRWJTH1YT74NS9H16FNAYK7J",
+          "id": "01GRWKA0X898DA97JM5H237TVQ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 99,
+        "native_value": 100,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1310,7 +1309,7 @@
         "native_value": "charging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1333,7 +1332,7 @@
         "native_value": "ZAITSU",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1353,7 +1352,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1370,16 +1369,16 @@
           "vertical_accuracy": 7,
           "friendly_name": "cecilia-sp"
         },
-        "last_changed": "2023-02-10T02:30:24.108987+00:00",
-        "last_updated": "2023-02-10T02:30:24.108987+00:00",
+        "last_changed": "2023-02-10T02:43:31.711292+00:00",
+        "last_updated": "2023-02-10T02:43:31.711292+00:00",
         "context": {
-          "id": "01GRWJHPKC60510YTF9QB066YQ",
+          "id": "01GRWK9QQZNWEC6QSDSWSHX9CJ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1404,7 +1403,7 @@
         "native_value": 71,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1426,7 +1425,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1446,7 +1445,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1465,7 +1464,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1503,7 +1502,7 @@
         "last_reset": "2023-02-05T06:09:35.138013+00:00",
         "status": "paused"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1541,12 +1540,12 @@
         "last_reset": "2023-02-05T06:09:35.138065+00:00",
         "status": "paused"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.monthly_energy_offpeak",
-        "state": "3.97",
+        "state": "4.01",
         "attributes": {
           "state_class": "total_increasing",
           "source": "sensor.total_consumption",
@@ -1561,10 +1560,10 @@
           "icon": "mdi:counter",
           "friendly_name": "monthly_energy offpeak"
         },
-        "last_changed": "2023-02-10T02:30:24.112647+00:00",
-        "last_updated": "2023-02-10T02:30:24.112647+00:00",
+        "last_changed": "2023-02-10T02:47:40.456063+00:00",
+        "last_updated": "2023-02-10T02:47:40.456063+00:00",
         "context": {
-          "id": "01GRWJHPKG7051WQ2VW63WBBEC",
+          "id": "01GRWKHAN8Z70FX0KMSD43YGGP",
           "parent_id": null,
           "user_id": null
         }
@@ -1572,14 +1571,14 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "3.97"
+          "decimal_str": "4.01"
         },
         "native_unit_of_measurement": "kWh",
         "last_period": "0",
         "last_reset": "2023-02-05T06:09:35.138093+00:00",
         "status": "collecting"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1617,7 +1616,7 @@
         "last_reset": "2023-02-05T06:09:35.138367+00:00",
         "status": "paused"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1655,12 +1654,12 @@
         "last_reset": "2023-02-05T06:09:35.138396+00:00",
         "status": "paused"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.pc_energy_cost_offpeak",
-        "state": "2.41",
+        "state": "2.44",
         "attributes": {
           "state_class": "total_increasing",
           "source": "sensor.local_smart_plug_2_energy",
@@ -1675,10 +1674,10 @@
           "icon": "mdi:counter",
           "friendly_name": "pc_energy_cost offpeak"
         },
-        "last_changed": "2023-02-10T02:30:24.115004+00:00",
-        "last_updated": "2023-02-10T02:30:24.115004+00:00",
+        "last_changed": "2023-02-10T02:47:40.454641+00:00",
+        "last_updated": "2023-02-10T02:47:40.454641+00:00",
         "context": {
-          "id": "01GRWJHPKKA75BP065BGZDDQXT",
+          "id": "01GRWKHAN6SNWXXM6352C4242G",
           "parent_id": null,
           "user_id": null
         }
@@ -1686,19 +1685,19 @@
       "extra_data": {
         "native_value": {
           "__type": "<class 'decimal.Decimal'>",
-          "decimal_str": "2.41"
+          "decimal_str": "2.44"
         },
         "native_unit_of_measurement": "kWh",
         "last_period": "0",
         "last_reset": "2023-02-05T06:09:35.138420+00:00",
         "status": "collecting"
       },
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.ews_410_energy",
-        "state": "0.0303",
+        "state": "0.0304",
         "attributes": {
           "state_class": "total",
           "source_entity": "light.ews_410",
@@ -1709,16 +1708,16 @@
           "icon": "mdi:lightning-bolt",
           "friendly_name": "ews_410 energy"
         },
-        "last_changed": "2023-02-10T02:35:25.662023+00:00",
-        "last_updated": "2023-02-10T02:35:25.662023+00:00",
+        "last_changed": "2023-02-10T02:45:25.620920+00:00",
+        "last_updated": "2023-02-10T02:45:25.620920+00:00",
         "context": {
-          "id": "01GRWJTX2Y77ANW4DESAHRPNCD",
+          "id": "01GRWKD6ZMF57HDP9C7ZSJNP2H",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1743,7 +1742,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1768,7 +1767,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1793,7 +1792,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1815,7 +1814,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1837,7 +1836,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1859,7 +1858,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1881,7 +1880,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1903,7 +1902,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1925,7 +1924,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1947,7 +1946,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1969,7 +1968,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -1991,7 +1990,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2013,7 +2012,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2035,7 +2034,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2057,7 +2056,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2079,7 +2078,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2101,7 +2100,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2123,7 +2122,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2145,7 +2144,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2167,7 +2166,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2189,7 +2188,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2211,7 +2210,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2233,7 +2232,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2255,7 +2254,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2277,7 +2276,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2299,7 +2298,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2321,7 +2320,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2343,7 +2342,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2354,21 +2353,21 @@
             30.128,
             92.157
           ],
-          "brightness": 3.8870668904860324,
+          "brightness": 2.5477813208493423,
           "colortemp": 2004,
           "icon": "mdi:theme-light-dark",
           "friendly_name": "Living room circadian lighting"
         },
         "last_changed": "2023-02-10T02:30:24.357815+00:00",
-        "last_updated": "2023-02-10T02:35:24.367756+00:00",
+        "last_updated": "2023-02-10T02:50:24.389670+00:00",
         "context": {
-          "id": "01GRWJTVTFWFTZP0XVSKQB5304",
+          "id": "01GRWKPAR5VEB24KN8MRBWTCGH",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2379,21 +2378,21 @@
             30.128,
             92.157
           ],
-          "brightness": 3.8870668904860324,
+          "brightness": 2.5477813208493423,
           "colortemp": 2004,
           "icon": "mdi:theme-light-dark",
           "friendly_name": "Bedroom circadian lighting"
         },
         "last_changed": "2023-02-10T02:30:24.357955+00:00",
-        "last_updated": "2023-02-10T02:35:24.367912+00:00",
+        "last_updated": "2023-02-10T02:50:24.389868+00:00",
         "context": {
-          "id": "01GRWJTVTFP3MV0RVH6N3CAEBP",
+          "id": "01GRWKPAR52ED9BH36YCDS35E6",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2404,21 +2403,21 @@
             30.128,
             92.157
           ],
-          "brightness": 3.8870668904860324,
+          "brightness": 2.5477813208493423,
           "colortemp": 2004,
           "icon": "mdi:theme-light-dark",
           "friendly_name": "Office circadian lighting"
         },
         "last_changed": "2023-02-10T02:30:24.358097+00:00",
-        "last_updated": "2023-02-10T02:35:24.368047+00:00",
+        "last_updated": "2023-02-10T02:50:24.389990+00:00",
         "context": {
-          "id": "01GRWJTVTGYX88K5NZJFDE1K73",
+          "id": "01GRWKPAR5HFZQTKEZYKFXQ3R5",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2436,7 +2435,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2454,7 +2453,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2472,7 +2471,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2490,7 +2489,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2508,7 +2507,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2518,16 +2517,16 @@
           "device_class": "motion",
           "friendly_name": "Zigbee Motion Sensor Iaszone"
         },
-        "last_changed": "2023-02-10T02:30:31.650044+00:00",
-        "last_updated": "2023-02-10T02:30:31.650044+00:00",
+        "last_changed": "2023-02-10T02:38:46.301033+00:00",
+        "last_updated": "2023-02-10T02:38:46.301033+00:00",
         "context": {
-          "id": "01GRWJHXZ2782E9KWR8J9M83WP",
+          "id": "01GRWK110XST22N441QJ44ZH5J",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2546,7 +2545,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2565,7 +2564,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2584,7 +2583,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2603,7 +2602,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2625,49 +2624,49 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.zigbee_temperature_sensor_temperature",
-        "state": "26.0",
+        "state": "25.9",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Zigbee Temperature Sensor Temperature"
         },
-        "last_changed": "2023-02-10T02:30:31.656103+00:00",
-        "last_updated": "2023-02-10T02:30:31.656103+00:00",
+        "last_changed": "2023-02-10T02:48:01.106542+00:00",
+        "last_updated": "2023-02-10T02:48:01.106542+00:00",
         "context": {
-          "id": "01GRWJHXZ84SCQ2QVE5861KMS1",
+          "id": "01GRWKHYTJPRFXPDA3PPWM0W1E",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.zigbee_temperature_sensor_humidity",
-        "state": "68.5",
+        "state": "69.2",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "%",
           "device_class": "humidity",
           "friendly_name": "Zigbee Temperature Sensor Humidity"
         },
-        "last_changed": "2023-02-10T02:30:31.656707+00:00",
-        "last_updated": "2023-02-10T02:30:31.656707+00:00",
+        "last_changed": "2023-02-10T02:45:23.713568+00:00",
+        "last_updated": "2023-02-10T02:45:23.713568+00:00",
         "context": {
-          "id": "01GRWJHXZ8MEMEGAPA6D85B4TR",
+          "id": "01GRWKD541VQYJDV4DPBKDETB5",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2689,7 +2688,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2711,7 +2710,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {
@@ -2733,7 +2732,7 @@
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+      "last_seen": "2023-02-10T02:50:31.662541+00:00"
     },
     {
       "state": {

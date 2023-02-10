@@ -35,3 +35,4 @@ zigbee.*
 .HA_VERSION
 watchman_report.txt
 zone*
+.storage/core.restore_state
