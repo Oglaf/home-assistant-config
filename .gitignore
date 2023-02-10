@@ -36,4 +36,3 @@ zigbee.*
 watchman_report.txt
 zone*
 .storage/core.restore_state
-.storage/core.restore_state
