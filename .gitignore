@@ -1,7 +1,6 @@
 .ssh/
 id_rsa*
 
-
 *.crt
 *.csr
 *.key
@@ -16,9 +15,14 @@ lib
 www
 tts
 
-.storage
+.vscode
 .cloud
 .google.token 
+image
+frontend.*
+http*
+auth*
+hacs*
 secrets.yaml
 ip_bans.yaml
 device_tracker.yaml
@@ -30,3 +34,4 @@ home-assistant_v2.db-*
 zigbee.*
 .HA_VERSION
 watchman_report.txt
+zone*

@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_network",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Network",
+          "path": "network",
+          "icon": "mdi:server-network",
+          "type": "custom:masonry-layout",
+          "layout": {
+            "max_cols": 3
+          },
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:uptime-card",
+              "entity": "binary_sensor.tp_link_tl_wdr4300_v1_dd_wrt_wan_status",
+              "icon": "mdi:wan",
+              "title_template": "WAN uptime",
+              "hours_to_show": 720,
+              "status_adaptive_color": true,
+              "color": {
+                "title": "#C9C9C9"
+              },
+              "color_thresholds": [
+                {
+                  "value": 90,
+                  "color": "#C66445"
+                },
+                {
+                  "value": 99.96,
+                  "color": "#C6B145"
+                },
+                {
+                  "value": 100,
+                  "color": "#45C669"
+                }
+              ],
+              "tooltip": {
+                "hour24": true
+              },
+              "bar": {
+                "amount": 30
+              },
+              "show": {
+                "footer": true
+              }
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "name": "Traffic",
+              "icon": "mdi:server",
+              "line_color": "red",
+              "entities": [
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_received",
+                  "name": "Received"
+                },
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_sent",
+                  "name": "Sent"
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "name": "Speedtest",
+              "icon": "mdi:speedometer",
+              "line_color": "red",
+              "points_per_hour": 1,
+              "entities": [
+                {
+                  "entity": "sensor.speedtest_cli_download",
+                  "name": "Download"
+                },
+                {
+                  "entity": "sensor.speedtest_cli_upload",
+                  "name": "Upload"
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "custom:mini-graph-card",
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.cloudfare",
+                      "attribute": "round_trip_time_avg"
+                    }
+                  ],
+                  "name": "Cloudflare",
+                  "line_color": "blue",
+                  "hours_to_show": 0.5,
+                  "decimals": 0,
+                  "aggregate_func": "avg",
+                  "group_by": "interval",
+                  "points_per_hour": 10,
+                  "unit": "ms",
+                  "show": {
+                    "graph": "bar"
+                  }
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.google",
+                      "attribute": "round_trip_time_avg"
+                    }
+                  ],
+                  "name": "Google",
+                  "line_color": "orange",
+                  "hours_to_show": 0.5,
+                  "decimals": 0,
+                  "aggregate_func": "avg",
+                  "group_by": "interval",
+                  "points_per_hour": 10,
+                  "unit": "ms",
+                  "show": {
+                    "graph": "bar"
+                  }
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.ffxiv",
+                      "attribute": "round_trip_time_avg"
+                    }
+                  ],
+                  "name": "FFXIV",
+                  "line_color": "red",
+                  "hours_to_show": 0.5,
+                  "decimals": 0,
+                  "aggregate_func": "avg",
+                  "group_by": "interval",
+                  "points_per_hour": 10,
+                  "unit": "ms",
+                  "show": {
+                    "graph": "bar"
+                  }
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Server <ha-icon icon=\"mdi:server\"></ha-icon>"
+                },
+                {
+                  "square": false,
+                  "columns": 2,
+                  "type": "grid",
+                  "cards": [
+                    {
+                      "type": "custom:stack-in-card",
+                      "cards": [
+                        {
+                          "type": "custom:apexcharts-card",
+                          "chart_type": "radialBar",
+                          "series": [
+                            {
+                              "entity": "sensor.disk_free",
+                              "color": "rgb(33, 150, 243)",
+                              "max": 240,
+                              "show": {
+                                "legend_value": false
+                              }
+                            }
+                          ],
+                          "apex_config": {
+                            "plotOptions": {
+                              "radialBar": {
+                                "offsetY": 0,
+                                "startAngle": -108,
+                                "endAngle": 108,
+                                "hollow": {
+                                  "size": "70%"
+                                },
+                                "dataLabels": {
+                                  "name": {
+                                    "show": false
+                                  },
+                                  "value": {
+                                    "show": false
+                                  }
+                                },
+                                "track": {
+                                  "strokeWidth": "80%",
+                                  "margin": 0
+                                }
+                              }
+                            },
+                            "legend": {
+                              "show": false
+                            },
+                            "chart": {
+                              "height": 240
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-entity-card",
+                          "entity": "sensor.disk_use",
+                          "primary_info": "state",
+                          "secondary_info": "name",
+                          "name": "OS Disk",
+                          "icon_color": "blue",
+                          "layout": "vertical",
+                          "card_mod": {
+                            "style": "ha-card {\n  margin-top: -90px;\n  width: 140px;\n  margin-left: auto;\n  margin-right: auto;\n}\n"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:stack-in-card",
+                      "cards": [
+                        {
+                          "type": "custom:apexcharts-card",
+                          "chart_type": "radialBar",
+                          "series": [
+                            {
+                              "entity": "sensor.sonarr_disk_free_percent",
+                              "color": "rgb(255, 87, 34)",
+                              "max": 90,
+                              "show": {
+                                "legend_value": false
+                              }
+                            }
+                          ],
+                          "apex_config": {
+                            "plotOptions": {
+                              "radialBar": {
+                                "offsetY": 0,
+                                "startAngle": -108,
+                                "endAngle": 108,
+                                "hollow": {
+                                  "size": "70%"
+                                },
+                                "dataLabels": {
+                                  "name": {
+                                    "show": false
+                                  },
+                                  "value": {
+                                    "show": false
+                                  }
+                                },
+                                "track": {
+                                  "strokeWidth": "80%",
+                                  "margin": 0
+                                }
+                              }
+                            },
+                            "legend": {
+                              "show": false
+                            },
+                            "chart": {
+                              "height": 240
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-entity-card",
+                          "entity": "sensor.sonarr_disk_used_space",
+                          "primary_info": "state",
+                          "secondary_info": "name",
+                          "name": "Storage Disk",
+                          "icon": "mdi:harddisk",
+                          "icon_color": "red",
+                          "layout": "vertical",
+                          "card_mod": {
+                            "style": "ha-card {\n  margin-top: -90px;\n  width: 140px;\n  margin-left: auto;\n  margin-right: auto;\n}\n"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "sensor.processor_use",
+                      "name": "CPU",
+                      "fill_container": false,
+                      "layout": "vertical"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "person.christian_silva"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

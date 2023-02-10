@@ -1,0 +1,3252 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {
+        "entity_id": "person.christian_silva",
+        "state": "home",
+        "attributes": {
+          "editable": true,
+          "id": "christian_silva",
+          "latitude": -25.4712857,
+          "longitude": -49.2995025,
+          "gps_accuracy": 20,
+          "source": "device_tracker.m2010j19cg",
+          "user_id": "2eb48afb57034b2eb5b96583279df927",
+          "entity_picture": "/api/image/serve/5e1b756c0dc6f69624d57c65a490b2cc/512x512",
+          "friendly_name": "Christian Silva"
+        },
+        "last_changed": "2023-02-10T02:30:21.297043+00:00",
+        "last_updated": "2023-02-10T02:35:31.661661+00:00",
+        "context": {
+          "id": "01GRWJV2YDAYVTC8M6T5M3YSB8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "person.cecilia_ueda",
+        "state": "home",
+        "attributes": {
+          "editable": true,
+          "id": "cecilia_ueda",
+          "latitude": -25.4712799,
+          "longitude": -49.2995008,
+          "gps_accuracy": 22,
+          "source": "device_tracker.cecilia_sp",
+          "user_id": "a44c24bdbf7c4cb795dd5cd77adf7392",
+          "entity_picture": "/api/image/serve/78c5fbcec903d0cfca26e67dec03012f/512x512",
+          "friendly_name": "Cecilia Ueda"
+        },
+        "last_changed": "2023-02-10T02:30:21.297124+00:00",
+        "last_updated": "2023-02-10T02:35:31.661868+00:00",
+        "context": {
+          "id": "01GRWJV2YDJQB2F4BYR87KJ5WG",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.theater",
+        "state": "unknown",
+        "attributes": {
+          "entity_id": [
+            "light.local_smart_light_2"
+          ],
+          "id": "1672713409716",
+          "icon": "mdi:theater",
+          "friendly_name": "Theater"
+        },
+        "last_changed": "2023-02-10T02:30:22.013730+00:00",
+        "last_updated": "2023-02-10T02:30:22.013730+00:00",
+        "context": {
+          "id": "01GRWJHMHXT9NWN90SG1KC3CKX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.sp2_night",
+        "state": "unknown",
+        "attributes": {
+          "entity_id": [
+            "light.local_smart_light_2"
+          ],
+          "id": "1672803908011",
+          "friendly_name": "SP2_Night"
+        },
+        "last_changed": "2023-02-10T02:30:22.013808+00:00",
+        "last_updated": "2023-02-10T02:30:22.013808+00:00",
+        "context": {
+          "id": "01GRWJHMHX3QEVKR85YAXGS9P0",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.sp2_read",
+        "state": "unknown",
+        "attributes": {
+          "entity_id": [
+            "light.local_smart_light_2"
+          ],
+          "id": "1672803996317",
+          "friendly_name": "SP2_Read"
+        },
+        "last_changed": "2023-02-10T02:30:22.013874+00:00",
+        "last_updated": "2023-02-10T02:30:22.013874+00:00",
+        "context": {
+          "id": "01GRWJHMHXEB9GDY8T92N408X4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "select.monthly_energy",
+        "state": "offpeak",
+        "attributes": {
+          "options": [
+            "peak",
+            "shoulder",
+            "offpeak"
+          ],
+          "icon": "mdi:clock-outline",
+          "friendly_name": "monthly_energy"
+        },
+        "last_changed": "2023-02-10T02:30:22.042849+00:00",
+        "last_updated": "2023-02-10T02:30:22.042849+00:00",
+        "context": {
+          "id": "01GRWJHMJTEMR1XJG0X6HYBRYM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "select.pc_energy_cost",
+        "state": "offpeak",
+        "attributes": {
+          "options": [
+            "peak",
+            "shoulder",
+            "offpeak"
+          ],
+          "icon": "mdi:clock-outline",
+          "friendly_name": "pc_energy_cost"
+        },
+        "last_changed": "2023-02-10T02:30:22.042919+00:00",
+        "last_updated": "2023-02-10T02:30:22.042919+00:00",
+        "context": {
+          "id": "01GRWJHMJTNGEBXGDTER640GVN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_datetime.ssl_auto_renewal",
+        "state": "2023-02-05 00:00:00",
+        "attributes": {
+          "has_date": true,
+          "has_time": true,
+          "editable": true,
+          "year": 2023,
+          "month": 2,
+          "day": 5,
+          "hour": 0,
+          "minute": 0,
+          "second": 0,
+          "timestamp": 1675566000.0,
+          "icon": "mdi:certificate-outline",
+          "friendly_name": "SSL Auto-renewal"
+        },
+        "last_changed": "2023-02-10T02:30:22.353929+00:00",
+        "last_updated": "2023-02-10T02:30:22.353929+00:00",
+        "context": {
+          "id": "01GRWJHMWHPBM2017Q4AY7B487",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_select.best_humidity",
+        "state": "Inside",
+        "attributes": {
+          "options": [
+            "Outside",
+            "Inside"
+          ],
+          "editable": true,
+          "icon": "mdi:water",
+          "friendly_name": "best_humidity"
+        },
+        "last_changed": "2023-02-10T02:30:22.354225+00:00",
+        "last_updated": "2023-02-10T02:30:22.354225+00:00",
+        "context": {
+          "id": "01GRWJHMWJ0FHCF8NTPJPQ4Q6C",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.pet_feeder_portion_size",
+        "state": "1.0",
+        "attributes": {
+          "initial": null,
+          "editable": true,
+          "min": 1.0,
+          "max": 12.0,
+          "step": 1.0,
+          "mode": "box",
+          "friendly_name": "pet_feeder_portion_size"
+        },
+        "last_changed": "2023-02-10T02:30:22.452834+00:00",
+        "last_updated": "2023-02-10T02:30:22.452834+00:00",
+        "context": {
+          "id": "01GRWJHMZMYRCQS50BJKVQ5X24",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.sleep_time",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:sleep",
+          "friendly_name": "sleep_time"
+        },
+        "last_changed": "2023-02-10T02:30:22.452919+00:00",
+        "last_updated": "2023-02-10T02:30:22.452919+00:00",
+        "context": {
+          "id": "01GRWJHMZMTKG1D3P500V260PY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.medication",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:pill",
+          "friendly_name": "medication"
+        },
+        "last_changed": "2023-02-10T02:30:22.452984+00:00",
+        "last_updated": "2023-02-10T02:30:22.452984+00:00",
+        "context": {
+          "id": "01GRWJHMZMQM10QCDW6FWZBK7B",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.office_light_automation",
+        "state": "on",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:robot",
+          "friendly_name": "Office light automation"
+        },
+        "last_changed": "2023-02-10T02:30:22.453046+00:00",
+        "last_updated": "2023-02-10T02:30:22.453046+00:00",
+        "context": {
+          "id": "01GRWJHMZNF3VNSM8DACF9DTBA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.living_room_light_automation",
+        "state": "on",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:robot",
+          "friendly_name": "Living room light automation"
+        },
+        "last_changed": "2023-02-10T02:30:22.453106+00:00",
+        "last_updated": "2023-02-10T02:30:22.453106+00:00",
+        "context": {
+          "id": "01GRWJHMZNBAF9MA9EES3MSM71",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.bedroom_light_automation",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:robot",
+          "friendly_name": "Bedroom light automation"
+        },
+        "last_changed": "2023-02-10T02:30:22.453166+00:00",
+        "last_updated": "2023-02-10T02:30:22.453166+00:00",
+        "context": {
+          "id": "01GRWJHMZNXRXWPQH9ZM3BR21G",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_boolean.theater_mode",
+        "state": "off",
+        "attributes": {
+          "editable": true,
+          "icon": "mdi:theater",
+          "friendly_name": "Theater mode"
+        },
+        "last_changed": "2023-02-10T02:30:22.453226+00:00",
+        "last_updated": "2023-02-10T02:30:22.453226+00:00",
+        "context": {
+          "id": "01GRWJHMZNRQJ9FCKBV41KN5V2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.turn_on_off_christian_pc",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2023-02-06T11:25:36.759094+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Turn on/off Christian-PC"
+        },
+        "last_changed": "2023-02-10T02:30:22.483130+00:00",
+        "last_updated": "2023-02-10T02:30:22.483130+00:00",
+        "context": {
+          "id": "01GRWJHN0KHQCP15EMRXCQE8A9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "light.local_smart_light_1",
+        "state": "off",
+        "attributes": {
+          "min_color_temp_kelvin": 2004,
+          "max_color_temp_kelvin": 6535,
+          "min_mireds": 153,
+          "max_mireds": 499,
+          "effect_list": [
+            "Night",
+            "Read",
+            "Meeting",
+            "Leasure",
+            "Soft",
+            "Rainbow",
+            "Shine",
+            "Beautiful"
+          ],
+          "supported_color_modes": [
+            "color_temp",
+            "hs"
+          ],
+          "raw_state": false,
+          "friendly_name": "Local Smart Light 1",
+          "supported_features": 23
+        },
+        "last_changed": "2023-02-10T02:30:24.290471+00:00",
+        "last_updated": "2023-02-10T02:30:24.290471+00:00",
+        "context": {
+          "id": "01GRWJHPS2ND84MRTQZDQ9WQCT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "light.local_smart_light_2",
+        "state": "off",
+        "attributes": {
+          "min_color_temp_kelvin": 2004,
+          "max_color_temp_kelvin": 6535,
+          "min_mireds": 153,
+          "max_mireds": 499,
+          "effect_list": [
+            "Night",
+            "Read",
+            "Meeting",
+            "Leasure",
+            "Soft",
+            "Rainbow",
+            "Shine",
+            "Beautiful"
+          ],
+          "supported_color_modes": [
+            "color_temp",
+            "hs"
+          ],
+          "raw_state": false,
+          "friendly_name": "Local Smart Light 2",
+          "supported_features": 23
+        },
+        "last_changed": "2023-02-10T02:30:24.289384+00:00",
+        "last_updated": "2023-02-10T02:30:24.289384+00:00",
+        "context": {
+          "id": "01GRWJHPS1HTHYPNV07N0YM4W3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.ffxiv",
+        "state": "on",
+        "attributes": {
+          "round_trip_time_avg": 199.757,
+          "round_trip_time_max": 225.251,
+          "round_trip_time_mdev": "",
+          "round_trip_time_min": 189.934,
+          "device_class": "connectivity",
+          "friendly_name": "FFXIV"
+        },
+        "last_changed": "2023-02-10T02:30:23.630286+00:00",
+        "last_updated": "2023-02-10T02:35:27.446776+00:00",
+        "context": {
+          "id": "01GRWJTYTPQ7EXQP7E1C2PGSRF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.google",
+        "state": "on",
+        "attributes": {
+          "round_trip_time_avg": 12.015,
+          "round_trip_time_max": 15.895,
+          "round_trip_time_mdev": "",
+          "round_trip_time_min": 10.548,
+          "device_class": "connectivity",
+          "friendly_name": "Google"
+        },
+        "last_changed": "2023-02-10T02:30:23.630378+00:00",
+        "last_updated": "2023-02-10T02:35:26.696056+00:00",
+        "context": {
+          "id": "01GRWJTY38BACVWV7FTT7C9XES",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.cloudfare",
+        "state": "on",
+        "attributes": {
+          "round_trip_time_avg": 3.218,
+          "round_trip_time_max": 3.569,
+          "round_trip_time_mdev": "",
+          "round_trip_time_min": 2.883,
+          "device_class": "connectivity",
+          "friendly_name": "Cloudfare"
+        },
+        "last_changed": "2023-02-10T02:30:23.630454+00:00",
+        "last_updated": "2023-02-10T02:35:26.661518+00:00",
+        "context": {
+          "id": "01GRWJTY256BE1XZF4C4DMSK6J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.christian_pc",
+        "state": "on",
+        "attributes": {
+          "round_trip_time_avg": 0.978,
+          "round_trip_time_max": 1.165,
+          "round_trip_time_mdev": "",
+          "round_trip_time_min": 0.604,
+          "device_class": "connectivity",
+          "friendly_name": "christian_pc"
+        },
+        "last_changed": "2023-02-10T02:30:23.630528+00:00",
+        "last_updated": "2023-02-10T02:35:27.653977+00:00",
+        "context": {
+          "id": "01GRWJTZ15VF64DJPGRX114DD8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.cecilia_pc",
+        "state": "off",
+        "attributes": {
+          "device_class": "connectivity",
+          "friendly_name": "cecilia_pc"
+        },
+        "last_changed": "2023-02-10T02:30:23.630598+00:00",
+        "last_updated": "2023-02-10T02:30:23.630598+00:00",
+        "context": {
+          "id": "01GRWJHP4EF2FT06PRYQF42FNS",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.christian_srv",
+        "state": "on",
+        "attributes": {
+          "round_trip_time_avg": 0.937,
+          "round_trip_time_max": 1.432,
+          "round_trip_time_mdev": "",
+          "round_trip_time_min": 0.347,
+          "device_class": "connectivity",
+          "friendly_name": "christian_srv"
+        },
+        "last_changed": "2023-02-10T02:30:23.630668+00:00",
+        "last_updated": "2023-02-10T02:35:27.648522+00:00",
+        "context": {
+          "id": "01GRWJTZ10X5D9QM6V8KYPFAM1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "vacuum.local_cleaner_robot",
+        "state": "docked",
+        "attributes": {
+          "fan_speed_list": [
+            "low",
+            "normal",
+            "high"
+          ],
+          "battery_level": 100,
+          "battery_icon": "mdi:battery-charging-100",
+          "fan_speed": "high",
+          "cleaning_mode_list": [
+            "smart",
+            "wall_follow",
+            "spiral",
+            "single"
+          ],
+          "cleaning_mode": "standby",
+          "clean_time": 3,
+          "clean_area": 1,
+          "clean_record": "00300100835",
+          "fault": 0,
+          "friendly_name": "Local Cleaner Robot",
+          "supported_features": 13052
+        },
+        "last_changed": "2023-02-10T02:30:23.857643+00:00",
+        "last_updated": "2023-02-10T02:30:23.857643+00:00",
+        "context": {
+          "id": "01GRWJHPBHTZP93QJ6XS1FJ5J4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_smart_plug",
+        "state": "on",
+        "attributes": {
+          "raw_state": true,
+          "device_class": "outlet",
+          "friendly_name": "Local Smart Plug Switch"
+        },
+        "last_changed": "2023-02-10T02:30:24.289532+00:00",
+        "last_updated": "2023-02-10T02:30:24.289532+00:00",
+        "context": {
+          "id": "01GRWJHPS1THWWV9D4CBQ0QQ6H",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_smart_plug_2",
+        "state": "on",
+        "attributes": {
+          "raw_state": true,
+          "device_class": "outlet",
+          "friendly_name": "Local Smart Plug 2 Switch"
+        },
+        "last_changed": "2023-02-10T02:30:24.281703+00:00",
+        "last_updated": "2023-02-10T02:30:24.281703+00:00",
+        "context": {
+          "id": "01GRWJHPRS8MV88RAYHWPVR2B8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_smart_plug_3",
+        "state": "on",
+        "attributes": {
+          "raw_state": true,
+          "device_class": "outlet",
+          "friendly_name": "Local Smart Plug 3"
+        },
+        "last_changed": "2023-02-10T02:30:24.244261+00:00",
+        "last_updated": "2023-02-10T02:30:24.244261+00:00",
+        "context": {
+          "id": "01GRWJHPQM05W5T20GPDBWF7GM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_cleaner_robot_muted",
+        "state": "on",
+        "attributes": {
+          "raw_state": true,
+          "friendly_name": "Local Cleaner Robot Muted"
+        },
+        "last_changed": "2023-02-10T02:30:23.857798+00:00",
+        "last_updated": "2023-02-10T02:30:23.857798+00:00",
+        "context": {
+          "id": "01GRWJHPBHV2389Q1ECSD02SX4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_energy",
+        "state": "0.14",
+        "attributes": {
+          "state_class": "total",
+          "source": "sensor.local_smart_plug_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:chart-histogram",
+          "friendly_name": "Local Smart Plug Energy"
+        },
+        "last_changed": "2023-02-10T02:30:24.099568+00:00",
+        "last_updated": "2023-02-10T02:30:24.099568+00:00",
+        "context": {
+          "id": "01GRWJHPK3QQQ9N1E8557K1NVP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_2_energy",
+        "state": "3.89",
+        "attributes": {
+          "state_class": "total",
+          "source": "sensor.local_smart_plug_2_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:chart-histogram",
+          "friendly_name": "Local Smart Plug 2 Energy"
+        },
+        "last_changed": "2023-02-10T02:33:15.324361+00:00",
+        "last_updated": "2023-02-10T02:33:15.324361+00:00",
+        "context": {
+          "id": "01GRWJPXSWQ4X0VGVGRM5MNW33",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_3_energy",
+        "state": "1.24",
+        "attributes": {
+          "state_class": "total",
+          "source": "sensor.local_smart_plug_3_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:chart-histogram",
+          "friendly_name": "Local Smart Plug 3 Energy"
+        },
+        "last_changed": "2023-02-10T02:30:24.099844+00:00",
+        "last_updated": "2023-02-10T02:30:24.099844+00:00",
+        "context": {
+          "id": "01GRWJHPK3SVKGZRMH98GNPWTN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_countdown",
+        "state": "87.83",
+        "attributes": {
+          "raw_state": 87.83,
+          "unit_of_measurement": "min",
+          "device_class": "duration",
+          "friendly_name": "Local Smart Plug Countdown"
+        },
+        "last_changed": "2023-02-10T02:35:24.410806+00:00",
+        "last_updated": "2023-02-10T02:35:24.410806+00:00",
+        "context": {
+          "id": "01GRWJTVVTBN0M87VXY74PCGH5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_current",
+        "state": "0.58",
+        "attributes": {
+          "raw_state": 0.58,
+          "unit_of_measurement": "A",
+          "device_class": "current",
+          "friendly_name": "Local Smart Plug Current"
+        },
+        "last_changed": "2023-02-10T02:35:24.507760+00:00",
+        "last_updated": "2023-02-10T02:35:24.507760+00:00",
+        "context": {
+          "id": "01GRWJTVYVR1T0WGJXJV8B7VS8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_power",
+        "state": "66.6",
+        "attributes": {
+          "raw_state": 66.6,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "friendly_name": "Local Smart Plug"
+        },
+        "last_changed": "2023-02-10T02:35:24.507922+00:00",
+        "last_updated": "2023-02-10T02:35:24.507922+00:00",
+        "context": {
+          "id": "01GRWJTVYVVDTHF4BAJ073ZQ09",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_voltage",
+        "state": "125.8",
+        "attributes": {
+          "raw_state": 125.8,
+          "unit_of_measurement": "V",
+          "device_class": "voltage",
+          "friendly_name": "Local Smart Plug Voltage"
+        },
+        "last_changed": "2023-02-10T02:33:54.454324+00:00",
+        "last_updated": "2023-02-10T02:33:54.454324+00:00",
+        "context": {
+          "id": "01GRWJR40PCD5EAX8D9R633N8W",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_1_timer",
+        "state": "0",
+        "attributes": {
+          "raw_state": 0,
+          "unit_of_measurement": "s",
+          "device_class": "duration",
+          "friendly_name": "Local Smart Plug 1 Timer"
+        },
+        "last_changed": "2023-02-10T02:30:24.290538+00:00",
+        "last_updated": "2023-02-10T02:30:24.290538+00:00",
+        "context": {
+          "id": "01GRWJHPS2JCX841PAYC1C949Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_tuya_smart_light_2_countdown",
+        "state": "0",
+        "attributes": {
+          "raw_state": 0,
+          "unit_of_measurement": "s",
+          "device_class": "duration",
+          "friendly_name": "Local Tuya Smart Light 2 Countdown"
+        },
+        "last_changed": "2023-02-10T02:30:24.289463+00:00",
+        "last_updated": "2023-02-10T02:30:24.289463+00:00",
+        "context": {
+          "id": "01GRWJHPS1P24TY7K4A61KHMSP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_countdown_2",
+        "state": "0.0",
+        "attributes": {
+          "raw_state": 0.0,
+          "unit_of_measurement": "min",
+          "device_class": "duration",
+          "friendly_name": "Local Smart Plug Countdown 2"
+        },
+        "last_changed": "2023-02-10T02:30:24.281789+00:00",
+        "last_updated": "2023-02-10T02:30:24.281789+00:00",
+        "context": {
+          "id": "01GRWJHPRSPSTPM383EGJBJDEB",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_2_current",
+        "state": "1.01",
+        "attributes": {
+          "raw_state": 1.01,
+          "unit_of_measurement": "A",
+          "device_class": "current",
+          "friendly_name": "Local Smart Plug 2 Current"
+        },
+        "last_changed": "2023-02-10T02:35:03.342593+00:00",
+        "last_updated": "2023-02-10T02:35:03.342593+00:00",
+        "context": {
+          "id": "01GRWJT79EZYVP9K457PJW06M9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_2_power",
+        "state": "127.3",
+        "attributes": {
+          "raw_state": 127.3,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "friendly_name": "Local Smart Plug 2 Power"
+        },
+        "last_changed": "2023-02-10T02:35:03.342796+00:00",
+        "last_updated": "2023-02-10T02:35:03.342796+00:00",
+        "context": {
+          "id": "01GRWJT79EC61QGMEEZT8G1DKZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_2_voltage",
+        "state": "126.2",
+        "attributes": {
+          "raw_state": 126.2,
+          "unit_of_measurement": "V",
+          "device_class": "voltage",
+          "friendly_name": "Local Smart Plug 2 Voltage"
+        },
+        "last_changed": "2023-02-10T02:33:49.331733+00:00",
+        "last_updated": "2023-02-10T02:33:49.331733+00:00",
+        "context": {
+          "id": "01GRWJQZ0K1NQWJ9Y59Y30ZCJM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_3_countdown",
+        "state": "90.5",
+        "attributes": {
+          "raw_state": 90.5,
+          "unit_of_measurement": "min",
+          "device_class": "duration",
+          "friendly_name": "Local Smart Plug 3 Countdown"
+        },
+        "last_changed": "2023-02-10T02:35:12.715146+00:00",
+        "last_updated": "2023-02-10T02:35:12.715146+00:00",
+        "context": {
+          "id": "01GRWJTGEB5HFRXJS5ZHTP3NY6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_3_current",
+        "state": "0.74",
+        "attributes": {
+          "raw_state": 0.74,
+          "unit_of_measurement": "A",
+          "device_class": "current",
+          "friendly_name": "Local Smart Plug 3 Current"
+        },
+        "last_changed": "2023-02-10T02:30:24.245303+00:00",
+        "last_updated": "2023-02-10T02:30:24.245303+00:00",
+        "context": {
+          "id": "01GRWJHPQNNKD8W7JR2Z2Z5AYF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_3_power",
+        "state": "84.5",
+        "attributes": {
+          "raw_state": 84.5,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "friendly_name": "Local Smart Plug 3 Power"
+        },
+        "last_changed": "2023-02-10T02:30:24.245384+00:00",
+        "last_updated": "2023-02-10T02:30:24.245384+00:00",
+        "context": {
+          "id": "01GRWJHPQNAFYZ2C19Y0SHFWZA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_3_voltage",
+        "state": "125.9",
+        "attributes": {
+          "raw_state": 125.9,
+          "unit_of_measurement": "V",
+          "device_class": "voltage",
+          "friendly_name": "Local Smart Plug 3 Voltage"
+        },
+        "last_changed": "2023-02-10T02:30:24.245454+00:00",
+        "last_updated": "2023-02-10T02:30:24.245454+00:00",
+        "context": {
+          "id": "01GRWJHPQN0V6WGR8S0P3DXM7M",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_battery_level",
+        "state": "79",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-70",
+          "friendly_name": "M2010J19CG Battery Level"
+        },
+        "last_changed": "2023-02-10T02:30:24.107626+00:00",
+        "last_updated": "2023-02-10T02:30:24.107626+00:00",
+        "context": {
+          "id": "01GRWJHPKBWWE2T6AA6F54P9PJ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 79,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "M2010J19CG Battery State"
+        },
+        "last_changed": "2023-02-10T02:30:24.107759+00:00",
+        "last_updated": "2023-02-10T02:30:24.107759+00:00",
+        "context": {
+          "id": "01GRWJHPKBX6D1THZEJY1ZV3WC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "M2010J19CG Charger Type"
+        },
+        "last_changed": "2023-02-10T02:30:24.107865+00:00",
+        "last_updated": "2023-02-10T02:30:24.107865+00:00",
+        "context": {
+          "id": "01GRWJHPKBX2H6DJ90ACQX1V8R",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_battery_power",
+        "state": "0.67",
+        "attributes": {
+          "state_class": "measurement",
+          "current": 0.16098,
+          "voltage": 4.188,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-plus",
+          "friendly_name": "M2010J19CG Battery Power"
+        },
+        "last_changed": "2023-02-10T02:30:24.107994+00:00",
+        "last_updated": "2023-02-10T02:30:24.107994+00:00",
+        "context": {
+          "id": "01GRWJHPKBT879XMZFK2Z8E39H",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 0.67,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_wifi_connection",
+        "state": "ZAITSU_2G",
+        "attributes": {
+          "is_hidden": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "M2010J19CG WiFi Connection"
+        },
+        "last_changed": "2023-02-10T02:30:24.108094+00:00",
+        "last_updated": "2023-02-10T02:30:24.108094+00:00",
+        "context": {
+          "id": "01GRWJHPKCB3HPDSR4YV3A30CR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "ZAITSU_2G",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.m2010j19cg_network_type",
+        "state": "wifi",
+        "attributes": {
+          "metered": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "M2010J19CG Network Type"
+        },
+        "last_changed": "2023-02-10T02:30:24.108191+00:00",
+        "last_updated": "2023-02-10T02:30:24.108191+00:00",
+        "context": {
+          "id": "01GRWJHPKCW24ZT1MHKP07RG1V",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "wifi",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.m2010j19cg_is_charging",
+        "state": "off",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug-off",
+          "friendly_name": "M2010J19CG Is Charging"
+        },
+        "last_changed": "2023-02-10T02:30:24.108273+00:00",
+        "last_updated": "2023-02-10T02:30:24.108273+00:00",
+        "context": {
+          "id": "01GRWJHPKCR26B2NPYW6B14MKE",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.m2010j19cg",
+        "state": "home",
+        "attributes": {
+          "source_type": "gps",
+          "latitude": -25.4712857,
+          "longitude": -49.2995025,
+          "gps_accuracy": 20,
+          "altitude": 940,
+          "course": 0,
+          "speed": 0,
+          "vertical_accuracy": 1,
+          "friendly_name": "M2010J19CG"
+        },
+        "last_changed": "2023-02-10T02:30:24.108466+00:00",
+        "last_updated": "2023-02-10T02:30:24.108466+00:00",
+        "context": {
+          "id": "01GRWJHPKCXZ24B7ZY7CQRADHZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.cecilia_sp_battery_level",
+        "state": "99",
+        "attributes": {
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-charging-90",
+          "friendly_name": "cecilia-sp Battery Level"
+        },
+        "last_changed": "2023-02-10T02:35:13.342693+00:00",
+        "last_updated": "2023-02-10T02:35:13.342693+00:00",
+        "context": {
+          "id": "01GRWJTH1YT74NS9H16FNAYK7J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 99,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.cecilia_sp_battery_state",
+        "state": "charging",
+        "attributes": {
+          "icon": "mdi:battery-plus",
+          "friendly_name": "cecilia-sp Battery State"
+        },
+        "last_changed": "2023-02-10T02:30:24.108664+00:00",
+        "last_updated": "2023-02-10T02:30:24.108664+00:00",
+        "context": {
+          "id": "01GRWJHPKCQFJ065RGVNRJYN9W",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "charging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.cecilia_sp_wifi_connection",
+        "state": "ZAITSU",
+        "attributes": {
+          "is_hidden": false,
+          "icon": "mdi:wifi",
+          "friendly_name": "cecilia-sp WiFi Connection"
+        },
+        "last_changed": "2023-02-10T02:30:24.108760+00:00",
+        "last_updated": "2023-02-10T02:30:24.108760+00:00",
+        "context": {
+          "id": "01GRWJHPKC58G8AA8XB40HPVAT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "ZAITSU",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.cecilia_sp_is_charging",
+        "state": "on",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug",
+          "friendly_name": "cecilia-sp Is Charging"
+        },
+        "last_changed": "2023-02-10T02:30:24.108834+00:00",
+        "last_updated": "2023-02-10T02:30:24.108834+00:00",
+        "context": {
+          "id": "01GRWJHPKC5ZZRB8SAHHRRFBY5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.cecilia_sp",
+        "state": "home",
+        "attributes": {
+          "source_type": "gps",
+          "latitude": -25.4712799,
+          "longitude": -49.2995008,
+          "gps_accuracy": 22,
+          "altitude": 940,
+          "course": 0,
+          "speed": 0,
+          "vertical_accuracy": 7,
+          "friendly_name": "cecilia-sp"
+        },
+        "last_changed": "2023-02-10T02:30:24.108987+00:00",
+        "last_updated": "2023-02-10T02:30:24.108987+00:00",
+        "context": {
+          "id": "01GRWJHPKC60510YTF9QB066YQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.christian_tb_battery_level",
+        "state": "71",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-70",
+          "friendly_name": "christian-tb Battery Level"
+        },
+        "last_changed": "2023-02-10T02:30:24.109088+00:00",
+        "last_updated": "2023-02-10T02:30:24.109088+00:00",
+        "context": {
+          "id": "01GRWJHPKD0DQ29Z1454446XF5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 71,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.christian_tb_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "christian-tb Battery State"
+        },
+        "last_changed": "2023-02-10T02:30:24.109186+00:00",
+        "last_updated": "2023-02-10T02:30:24.109186+00:00",
+        "context": {
+          "id": "01GRWJHPKDP98WS8ZPR0AVBFSV",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.christian_tb_is_charging",
+        "state": "off",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug-off",
+          "friendly_name": "christian-tb Is Charging"
+        },
+        "last_changed": "2023-02-10T02:30:24.109259+00:00",
+        "last_updated": "2023-02-10T02:30:24.109259+00:00",
+        "context": {
+          "id": "01GRWJHPKDT4N8R0SDXJCZKCGY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.christian_tb",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "christian-tb"
+        },
+        "last_changed": "2023-02-10T02:30:24.109336+00:00",
+        "last_updated": "2023-02-10T02:30:24.109336+00:00",
+        "context": {
+          "id": "01GRWJHPKDWF3TQQFQPENVSNRW",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.monthly_energy_peak",
+        "state": "0.48",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.total_consumption",
+          "status": "paused",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "peak",
+          "last_reset": "2023-02-05T06:09:35.138013+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "monthly_energy peak"
+        },
+        "last_changed": "2023-02-10T02:30:24.111047+00:00",
+        "last_updated": "2023-02-10T02:30:24.111047+00:00",
+        "context": {
+          "id": "01GRWJHPKFMHJFMRY44CC08TYR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "0.48"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138013+00:00",
+        "status": "paused"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.monthly_energy_shoulder",
+        "state": "0.57",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.total_consumption",
+          "status": "paused",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "shoulder",
+          "last_reset": "2023-02-05T06:09:35.138065+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "monthly_energy shoulder"
+        },
+        "last_changed": "2023-02-10T02:30:24.111851+00:00",
+        "last_updated": "2023-02-10T02:30:24.111851+00:00",
+        "context": {
+          "id": "01GRWJHPKFYP4F227JNSR7XBC2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "0.57"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138065+00:00",
+        "status": "paused"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.monthly_energy_offpeak",
+        "state": "3.97",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.total_consumption",
+          "status": "collecting",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "offpeak",
+          "last_reset": "2023-02-05T06:09:35.138093+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "monthly_energy offpeak"
+        },
+        "last_changed": "2023-02-10T02:30:24.112647+00:00",
+        "last_updated": "2023-02-10T02:30:24.112647+00:00",
+        "context": {
+          "id": "01GRWJHPKG7051WQ2VW63WBBEC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "3.97"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138093+00:00",
+        "status": "collecting"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pc_energy_cost_peak",
+        "state": "0.32",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.local_smart_plug_2_energy",
+          "status": "paused",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "peak",
+          "last_reset": "2023-02-05T06:09:35.138367+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "pc_energy_cost peak"
+        },
+        "last_changed": "2023-02-10T02:30:24.113431+00:00",
+        "last_updated": "2023-02-10T02:30:24.113431+00:00",
+        "context": {
+          "id": "01GRWJHPKHC210MTM84V94B9B2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "0.32"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138367+00:00",
+        "status": "paused"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pc_energy_cost_shoulder",
+        "state": "0.42",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.local_smart_plug_2_energy",
+          "status": "paused",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "shoulder",
+          "last_reset": "2023-02-05T06:09:35.138396+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "pc_energy_cost shoulder"
+        },
+        "last_changed": "2023-02-10T02:30:24.114221+00:00",
+        "last_updated": "2023-02-10T02:30:24.114221+00:00",
+        "context": {
+          "id": "01GRWJHPKJTWREV42HR4KQBG71",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "0.42"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138396+00:00",
+        "status": "paused"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.pc_energy_cost_offpeak",
+        "state": "2.41",
+        "attributes": {
+          "state_class": "total_increasing",
+          "source": "sensor.local_smart_plug_2_energy",
+          "status": "collecting",
+          "last_period": "0",
+          "meter_period": "monthly",
+          "cron pattern": "0 0 21 * *",
+          "tariff": "offpeak",
+          "last_reset": "2023-02-05T06:09:35.138420+00:00",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:counter",
+          "friendly_name": "pc_energy_cost offpeak"
+        },
+        "last_changed": "2023-02-10T02:30:24.115004+00:00",
+        "last_updated": "2023-02-10T02:30:24.115004+00:00",
+        "context": {
+          "id": "01GRWJHPKKA75BP065BGZDDQXT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": {
+          "__type": "<class 'decimal.Decimal'>",
+          "decimal_str": "2.41"
+        },
+        "native_unit_of_measurement": "kWh",
+        "last_period": "0",
+        "last_reset": "2023-02-05T06:09:35.138420+00:00",
+        "status": "collecting"
+      },
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ews_410_energy",
+        "state": "0.0303",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "light.ews_410",
+          "source_domain": "light",
+          "source": "sensor.ews_410_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "ews_410 energy"
+        },
+        "last_changed": "2023-02-10T02:35:25.662023+00:00",
+        "last_updated": "2023-02-10T02:35:25.662023+00:00",
+        "context": {
+          "id": "01GRWJTX2Y77ANW4DESAHRPNCD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_light_1_energy",
+        "state": "0.0087",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "light.local_smart_light_1",
+          "source_domain": "light",
+          "source": "sensor.local_smart_light_1_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "Local Smart Light 1 energy"
+        },
+        "last_changed": "2023-02-10T02:30:24.263754+00:00",
+        "last_updated": "2023-02-10T02:30:24.263754+00:00",
+        "context": {
+          "id": "01GRWJHPR7P9QMGH4HXP5XMZJF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_light_2_energy",
+        "state": "0.0578",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "light.local_smart_light_2",
+          "source_domain": "light",
+          "source": "sensor.local_smart_light_2_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "Local Smart Light 2 energy"
+        },
+        "last_changed": "2023-02-10T02:30:24.263994+00:00",
+        "last_updated": "2023-02-10T02:30:24.263994+00:00",
+        "context": {
+          "id": "01GRWJHPR7BJQ7XC0807K0H2C3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.living_room_tv_energy",
+        "state": "0.1741",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "media_player.living_room_tv",
+          "source_domain": "media_player",
+          "source": "sensor.living_room_tv_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "living_room_tv energy"
+        },
+        "last_changed": "2023-02-10T02:30:24.264230+00:00",
+        "last_updated": "2023-02-10T02:30:24.264230+00:00",
+        "context": {
+          "id": "01GRWJHPR8DNH8045SRSXF7VZ6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.alexa_ifft_turn_off_pc",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1672349680012",
+          "friendly_name": "Alexa-IFFT - Turn off PC"
+        },
+        "last_changed": "2023-02-10T02:30:24.272339+00:00",
+        "last_updated": "2023-02-10T02:30:24.272339+00:00",
+        "context": {
+          "id": "01GRWJHPRGRGH0H2ZK74Q7SDHQ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_off_bedroom_light_after_5m",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T23:31:29.818587+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1672353016030",
+          "friendly_name": "LIGHT - Turn off bedroom light after 5m"
+        },
+        "last_changed": "2023-02-10T02:30:24.272486+00:00",
+        "last_updated": "2023-02-10T02:30:24.272486+00:00",
+        "context": {
+          "id": "01GRWJHPRGGF45HP525T7W4JYE",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.energy_tariff_automation",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-10T01:00:00.076927+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1672522611577",
+          "friendly_name": "ENERGY - Tariff automation"
+        },
+        "last_changed": "2023-02-10T02:30:24.272617+00:00",
+        "last_updated": "2023-02-10T02:30:24.272617+00:00",
+        "context": {
+          "id": "01GRWJHPRGT6C73YN5T494NRDT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.pc_daily_christian_pc_wol",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T11:25:00.446735+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1672712190023",
+          "friendly_name": "PC - Daily Christian-PC WoL"
+        },
+        "last_changed": "2023-02-10T02:30:24.272744+00:00",
+        "last_updated": "2023-02-10T02:30:24.272744+00:00",
+        "context": {
+          "id": "01GRWJHPRG9WGE1ZKZ8NTP3R2Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.plug_turn_off_charging_christian",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T12:08:56.975498+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1673233928666",
+          "friendly_name": "PLUG - Turn off charging - Christian"
+        },
+        "last_changed": "2023-02-10T02:30:24.272867+00:00",
+        "last_updated": "2023-02-10T02:30:24.272867+00:00",
+        "context": {
+          "id": "01GRWJHPRG5M6MA3C7E7FC3XF6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.plug_turn_off_charging_christian_tb",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1673391186244",
+          "friendly_name": "PLUG - Turn off charging - Christian-TB"
+        },
+        "last_changed": "2023-02-10T02:30:24.272986+00:00",
+        "last_updated": "2023-02-10T02:30:24.272986+00:00",
+        "context": {
+          "id": "01GRWJHPRG8QM9VE16SE3A95XN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_on_office_light",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-10T00:55:20.061031+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1673477422415",
+          "friendly_name": "LIGHT - Turn on office light"
+        },
+        "last_changed": "2023-02-10T02:30:24.273111+00:00",
+        "last_updated": "2023-02-10T02:30:24.273111+00:00",
+        "context": {
+          "id": "01GRWJHPRH5R0N26VAV9HQ1HHS",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.weather_determine_best_humidity",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-10T01:00:00.238397+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1673492717992",
+          "friendly_name": "WEATHER - Determine best humidity"
+        },
+        "last_changed": "2023-02-10T02:30:24.273233+00:00",
+        "last_updated": "2023-02-10T02:30:24.273233+00:00",
+        "context": {
+          "id": "01GRWJHPRH873D8GMAX259GKC3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.weather_humidity_alert",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T15:00:00.365111+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1673493242815",
+          "friendly_name": "WEATHER - Humidity Alert"
+        },
+        "last_changed": "2023-02-10T02:30:24.273354+00:00",
+        "last_updated": "2023-02-10T02:30:24.273354+00:00",
+        "context": {
+          "id": "01GRWJHPRH8QCKKRYAQ3G03FXD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.advanced_medication_reminder",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T13:00:00.067595+00:00",
+          "mode": "restart",
+          "current": 0,
+          "id": "1673494217272",
+          "friendly_name": "Advanced medication reminder"
+        },
+        "last_changed": "2023-02-10T02:30:24.273474+00:00",
+        "last_updated": "2023-02-10T02:30:24.273474+00:00",
+        "context": {
+          "id": "01GRWJHPRH5N3EFWGYN6HHZ3VM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.media_turn_off_living_room_tv_after_15_minutes",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-07T23:34:26.556775+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1674136089586",
+          "friendly_name": "MEDIA - Turn off Living Room TV after 15 minutes"
+        },
+        "last_changed": "2023-02-10T02:30:24.273602+00:00",
+        "last_updated": "2023-02-10T02:30:24.273602+00:00",
+        "context": {
+          "id": "01GRWJHPRHJ4PQN9NNKRD4D55X",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_off_all_lights_when_away",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1674182650722",
+          "friendly_name": "LIGHT - Turn off all lights when away"
+        },
+        "last_changed": "2023-02-10T02:30:24.273718+00:00",
+        "last_updated": "2023-02-10T02:30:24.273718+00:00",
+        "context": {
+          "id": "01GRWJHPRHHRAAPKQAKZW5VSBR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_on_living_room_light",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-10T00:48:05.133687+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1674225267956",
+          "friendly_name": "LIGHT - Turn on living room light"
+        },
+        "last_changed": "2023-02-10T02:30:24.273862+00:00",
+        "last_updated": "2023-02-10T02:30:24.273862+00:00",
+        "context": {
+          "id": "01GRWJHPRHRG2S2033ZP7RH4H7",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.media_theater_mode_paused",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1674367256897",
+          "friendly_name": "MEDIA - Theater mode paused"
+        },
+        "last_changed": "2023-02-10T02:30:24.273982+00:00",
+        "last_updated": "2023-02-10T02:30:24.273982+00:00",
+        "context": {
+          "id": "01GRWJHPRH8WEWKR2SKMAFQ2W7",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.media_theater_mode_playing",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1674367315493",
+          "friendly_name": "MEDIA - Theater mode playing"
+        },
+        "last_changed": "2023-02-10T02:30:24.274098+00:00",
+        "last_updated": "2023-02-10T02:30:24.274098+00:00",
+        "context": {
+          "id": "01GRWJHPRJJ9G2Z5D27EMM84T5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.media_toggle_theater_mode",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1674368220338",
+          "friendly_name": "MEDIA - Toggle theater mode"
+        },
+        "last_changed": "2023-02-10T02:30:24.274215+00:00",
+        "last_updated": "2023-02-10T02:30:24.274215+00:00",
+        "context": {
+          "id": "01GRWJHPRJT8GW2AVYCY1VVQ67",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_off_office",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T20:09:23.583634+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1674779503847",
+          "friendly_name": "LIGHT - Turn off Office"
+        },
+        "last_changed": "2023-02-10T02:30:24.274330+00:00",
+        "last_updated": "2023-02-10T02:30:24.274330+00:00",
+        "context": {
+          "id": "01GRWJHPRJW45FS9FXTZ9PGJ3V",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.switch_toggle_living_room_light",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-10T01:17:32.251224+00:00",
+          "mode": "restart",
+          "current": 0,
+          "id": "1674922819369",
+          "friendly_name": "SWITCH - Toggle Living room light"
+        },
+        "last_changed": "2023-02-10T02:30:24.274453+00:00",
+        "last_updated": "2023-02-10T02:30:24.274453+00:00",
+        "context": {
+          "id": "01GRWJHPRJHVNM7B5MN3S2FRPM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.switch_toggle_office_light",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T23:12:47.124237+00:00",
+          "mode": "restart",
+          "current": 0,
+          "id": "1674924848329",
+          "friendly_name": "SWITCH - Toggle Office light"
+        },
+        "last_changed": "2023-02-10T02:30:24.274568+00:00",
+        "last_updated": "2023-02-10T02:30:24.274568+00:00",
+        "context": {
+          "id": "01GRWJHPRJWQRTA92EKR1MS09Y",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_bedroom_motion_sensor",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T23:52:36.889124+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1674973427986",
+          "friendly_name": "LIGHT - Bedroom motion sensor"
+        },
+        "last_changed": "2023-02-10T02:30:24.274683+00:00",
+        "last_updated": "2023-02-10T02:30:24.274683+00:00",
+        "context": {
+          "id": "01GRWJHPRJH080H9TRMEFDM8PT",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_on_bedroom_on_motion",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T23:52:36.889962+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1675735214471",
+          "friendly_name": "LIGHT - Turn on bedroom on motion"
+        },
+        "last_changed": "2023-02-10T02:30:24.274801+00:00",
+        "last_updated": "2023-02-10T02:30:24.274801+00:00",
+        "context": {
+          "id": "01GRWJHPRJM01QVQ0CSCGA3WT3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.alexa_ifttt_start_sleep_time",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1675818897968",
+          "friendly_name": "Alexa-IFTTT - Start sleep time"
+        },
+        "last_changed": "2023-02-10T02:30:24.274916+00:00",
+        "last_updated": "2023-02-10T02:30:24.274916+00:00",
+        "context": {
+          "id": "01GRWJHPRJN9DSRYSPP04M5G9S",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.automation_22",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T04:00:00.365975+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1675902074913",
+          "friendly_name": "automation 22"
+        },
+        "last_changed": "2023-02-10T02:30:24.275031+00:00",
+        "last_updated": "2023-02-10T02:30:24.275031+00:00",
+        "context": {
+          "id": "01GRWJHPRKVB6FYJFKFDBEJ2E1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_on_sleep_time",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T04:00:00.423363+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1675913952899",
+          "friendly_name": "LIGHT - Turn on sleep time"
+        },
+        "last_changed": "2023-02-10T02:30:24.275149+00:00",
+        "last_updated": "2023-02-10T02:30:24.275149+00:00",
+        "context": {
+          "id": "01GRWJHPRK3W4VBEYCFER9KHJ6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_off_sleep_time",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-09T08:59:01.289947+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1675914003290",
+          "friendly_name": "LIGHT - Turn off sleep time"
+        },
+        "last_changed": "2023-02-10T02:30:24.275404+00:00",
+        "last_updated": "2023-02-10T02:30:24.275404+00:00",
+        "context": {
+          "id": "01GRWJHPRKBPT6D9DBHXNVPW6G",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.circadian_lighting_living_room_circadian_lighting",
+        "state": "on",
+        "attributes": {
+          "hs_color": [
+            30.128,
+            92.157
+          ],
+          "brightness": 3.8870668904860324,
+          "colortemp": 2004,
+          "icon": "mdi:theme-light-dark",
+          "friendly_name": "Living room circadian lighting"
+        },
+        "last_changed": "2023-02-10T02:30:24.357815+00:00",
+        "last_updated": "2023-02-10T02:35:24.367756+00:00",
+        "context": {
+          "id": "01GRWJTVTFWFTZP0XVSKQB5304",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.circadian_lighting_bedroom_circadian_lighting",
+        "state": "on",
+        "attributes": {
+          "hs_color": [
+            30.128,
+            92.157
+          ],
+          "brightness": 3.8870668904860324,
+          "colortemp": 2004,
+          "icon": "mdi:theme-light-dark",
+          "friendly_name": "Bedroom circadian lighting"
+        },
+        "last_changed": "2023-02-10T02:30:24.357955+00:00",
+        "last_updated": "2023-02-10T02:35:24.367912+00:00",
+        "context": {
+          "id": "01GRWJTVTFP3MV0RVH6N3CAEBP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.circadian_lighting_office_circadian_lighting",
+        "state": "on",
+        "attributes": {
+          "hs_color": [
+            30.128,
+            92.157
+          ],
+          "brightness": 3.8870668904860324,
+          "colortemp": 2004,
+          "icon": "mdi:theme-light-dark",
+          "friendly_name": "Office circadian lighting"
+        },
+        "last_changed": "2023-02-10T02:30:24.358097+00:00",
+        "last_updated": "2023-02-10T02:35:24.368047+00:00",
+        "context": {
+          "id": "01GRWJTVTGYX88K5NZJFDE1K73",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.feed",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Feed"
+        },
+        "last_changed": "2023-02-10T02:30:29.052026+00:00",
+        "last_updated": "2023-02-10T02:30:29.052026+00:00",
+        "context": {
+          "id": "01GRWJHVDWM72CEXFA2ACVD51R",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.charge_robot",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Charge robot"
+        },
+        "last_changed": "2023-02-10T02:30:29.052197+00:00",
+        "last_updated": "2023-02-10T02:30:29.052197+00:00",
+        "context": {
+          "id": "01GRWJHVDWDCTWQG2V980MHT33",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.auto_cleaning",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Auto cleaning"
+        },
+        "last_changed": "2023-02-10T02:30:29.052384+00:00",
+        "last_updated": "2023-02-10T02:30:29.052384+00:00",
+        "context": {
+          "id": "01GRWJHVDW7G4K2PTC9864SP7M",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.mopping",
+        "state": "2023-02-05T04:33:04.607606+00:00",
+        "attributes": {
+          "friendly_name": "Mopping"
+        },
+        "last_changed": "2023-02-10T02:30:29.052539+00:00",
+        "last_updated": "2023-02-10T02:30:29.052539+00:00",
+        "context": {
+          "id": "01GRWJHVDW2NKBYWKYNW4T0RH6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.room_cleaning",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Room cleaning"
+        },
+        "last_changed": "2023-02-10T02:30:29.052669+00:00",
+        "last_updated": "2023-02-10T02:30:29.052669+00:00",
+        "context": {
+          "id": "01GRWJHVDWBGW2DY7DYWFYM9WR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.zigbee_motion_sensor_iaszone",
+        "state": "off",
+        "attributes": {
+          "device_class": "motion",
+          "friendly_name": "Zigbee Motion Sensor Iaszone"
+        },
+        "last_changed": "2023-02-10T02:30:31.650044+00:00",
+        "last_updated": "2023-02-10T02:30:31.650044+00:00",
+        "context": {
+          "id": "01GRWJHXZ2782E9KWR8J9M83WP",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.zigbee_temperature_sensor_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "Zigbee Temperature Sensor Identify"
+        },
+        "last_changed": "2023-02-10T02:30:31.652838+00:00",
+        "last_updated": "2023-02-10T02:30:31.652838+00:00",
+        "context": {
+          "id": "01GRWJHXZ4SMW63N72XSBXVYDR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.zigbee_office_switch_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "Zigbee Office Switch Identify"
+        },
+        "last_changed": "2023-02-10T02:30:31.653495+00:00",
+        "last_updated": "2023-02-10T02:30:31.653495+00:00",
+        "context": {
+          "id": "01GRWJHXZ56MG6QGJYJJFAA10J",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.zigbee_motion_sensor_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "Zigbee Motion Sensor Identify"
+        },
+        "last_changed": "2023-02-10T02:30:31.654179+00:00",
+        "last_updated": "2023-02-10T02:30:31.654179+00:00",
+        "context": {
+          "id": "01GRWJHXZ6GJAGM0X560MHNZTD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.zigbee_living_room_switch_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "Zigbee Living Room Switch Identify"
+        },
+        "last_changed": "2023-02-10T02:30:31.654746+00:00",
+        "last_updated": "2023-02-10T02:30:31.654746+00:00",
+        "context": {
+          "id": "01GRWJHXZ6DQNQG6H92F12AA9R",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_temperature_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.0,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "Zigbee Temperature Sensor Battery"
+        },
+        "last_changed": "2023-02-10T02:30:31.655453+00:00",
+        "last_updated": "2023-02-10T02:30:31.655453+00:00",
+        "context": {
+          "id": "01GRWJHXZ76QJXGXAC1HQKEWG8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_temperature_sensor_temperature",
+        "state": "26.0",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°C",
+          "device_class": "temperature",
+          "friendly_name": "Zigbee Temperature Sensor Temperature"
+        },
+        "last_changed": "2023-02-10T02:30:31.656103+00:00",
+        "last_updated": "2023-02-10T02:30:31.656103+00:00",
+        "context": {
+          "id": "01GRWJHXZ84SCQ2QVE5861KMS1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_temperature_sensor_humidity",
+        "state": "68.5",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "Zigbee Temperature Sensor Humidity"
+        },
+        "last_changed": "2023-02-10T02:30:31.656707+00:00",
+        "last_updated": "2023-02-10T02:30:31.656707+00:00",
+        "context": {
+          "id": "01GRWJHXZ8MEMEGAPA6D85B4TR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_office_switch_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.2,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "Zigbee Office Switch Battery"
+        },
+        "last_changed": "2023-02-10T02:30:31.657366+00:00",
+        "last_updated": "2023-02-10T02:30:31.657366+00:00",
+        "context": {
+          "id": "01GRWJHXZ9CZ4TR2RK0PGCK03W",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_motion_sensor_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.0,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "Zigbee Motion Sensor Battery"
+        },
+        "last_changed": "2023-02-10T02:30:31.657974+00:00",
+        "last_updated": "2023-02-10T02:30:31.657974+00:00",
+        "context": {
+          "id": "01GRWJHXZ9YQXXJ4Z9DZB4YQTF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.zigbee_living_room_switch_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.1,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "Zigbee Living Room Switch Battery"
+        },
+        "last_changed": "2023-02-10T02:30:31.658490+00:00",
+        "last_updated": "2023-02-10T02:30:31.658490+00:00",
+        "context": {
+          "id": "01GRWJHXZA328PB8N11D2DJ1M6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-10T02:35:31.671417+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_sleep_time",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-08T08:58:19.409506+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1673488875924",
+          "friendly_name": "LIGHT - Sleep time"
+        },
+        "last_changed": "2023-02-08T16:49:57.095963+00:00",
+        "last_updated": "2023-02-08T16:49:57.095963+00:00",
+        "context": {
+          "id": "01GRRYY4V75VT9ZC0YMAWK4GHJ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-08T23:05:06.975731+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.malfunction",
+        "state": "unavailable",
+        "attributes": {
+          "friendly_name": "Malfunction"
+        },
+        "last_changed": "2023-02-08T16:50:01.379451+00:00",
+        "last_updated": "2023-02-08T16:50:01.379451+00:00",
+        "context": {
+          "id": "01GRRYY9130RZYRSNYZE83G9ZX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-08T22:05:04.985504+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "scene.work_done",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Work done"
+        },
+        "last_changed": "2023-02-08T16:50:01.379591+00:00",
+        "last_updated": "2023-02-08T16:50:01.379591+00:00",
+        "context": {
+          "id": "01GRRYY913PZV04X3P5FHDT92F",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-08T22:05:04.985722+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_smart_plug_switch",
+        "state": "off",
+        "attributes": {
+          "raw_state": false,
+          "device_class": "outlet",
+          "friendly_name": "Local Smart Plug Switch"
+        },
+        "last_changed": "2023-02-07T03:19:36.558972+00:00",
+        "last_updated": "2023-02-07T03:19:36.558972+00:00",
+        "context": {
+          "id": "01GRMY5MVEG97373CXY1A2HHTN",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:39:30.850315+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.local_smart_plug_2_switch",
+        "state": "on",
+        "attributes": {
+          "raw_state": true,
+          "device_class": "outlet",
+          "friendly_name": "Local Smart Plug 2 Switch"
+        },
+        "last_changed": "2023-02-07T03:19:36.555936+00:00",
+        "last_updated": "2023-02-07T03:19:36.555936+00:00",
+        "context": {
+          "id": "01GRMY5MVB5Y5DNGQBG9Y03GZY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:41:01.816314+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_switch_energy",
+        "state": "unknown",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "switch.local_smart_plug_switch",
+          "source_domain": "switch",
+          "source": "sensor.local_smart_plug",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "Local Smart Plug Switch energy"
+        },
+        "last_changed": "2023-02-07T03:12:50.263085+00:00",
+        "last_updated": "2023-02-07T03:12:50.635949+00:00",
+        "context": {
+          "id": "01GRMXS8EB9VZ1DF41F5XW39H6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:19:20.237257+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug_2_switch_energy",
+        "state": "unknown",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "switch.local_smart_plug_2_switch",
+          "source_domain": "switch",
+          "source": "sensor.local_smart_plug_2_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "Local Smart Plug 2 Switch energy"
+        },
+        "last_changed": "2023-02-07T03:12:50.263284+00:00",
+        "last_updated": "2023-02-07T03:12:50.635663+00:00",
+        "context": {
+          "id": "01GRMXS8EBKFAJGWN352Z2C51D",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:19:20.237257+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.local_smart_plug",
+        "state": "0.0",
+        "attributes": {
+          "raw_state": 0.0,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "friendly_name": "Local Smart Plug"
+        },
+        "last_changed": "2023-02-07T03:19:36.559410+00:00",
+        "last_updated": "2023-02-07T03:19:36.559410+00:00",
+        "context": {
+          "id": "01GRMY5MVF3H72FVY35XAHPCEE",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:39:01.030840+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.server_energy",
+        "state": "0.6954",
+        "attributes": {
+          "state_class": "total",
+          "source_entity": "binary_sensor.christian_srv",
+          "source_domain": "binary_sensor",
+          "source": "sensor.server_power",
+          "unit_of_measurement": "kWh",
+          "device_class": "energy",
+          "icon": "mdi:lightning-bolt",
+          "friendly_name": "Server energy"
+        },
+        "last_changed": "2023-02-07T03:11:01.596212+00:00",
+        "last_updated": "2023-02-07T03:11:01.596212+00:00",
+        "context": {
+          "id": "01GRMXNXYWPR9RCY8HSQN5CBNC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:12:33.958714+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.ha_renew_ssl_certificate",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "single",
+          "current": 0,
+          "id": "1672690462412",
+          "friendly_name": "HA - Renew SSL certificate"
+        },
+        "last_changed": "2023-02-07T03:12:50.557452+00:00",
+        "last_updated": "2023-02-07T03:12:50.557452+00:00",
+        "context": {
+          "id": "01GRMXS8BXSQY50DWN57XZ2M10",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T03:15:46.040730+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.ha_update_notifications",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-07T02:16:22.056925+00:00",
+          "mode": "parallel",
+          "current": 0,
+          "max": 100,
+          "id": "1672201353243",
+          "friendly_name": "HA - Update notifications"
+        },
+        "last_changed": "2023-02-07T02:15:58.261989+00:00",
+        "last_updated": "2023-02-07T02:16:22.075430+00:00",
+        "context": {
+          "id": "01GRMTHV97NECQE7J2PV0M3ZF4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T02:29:13.653891+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.light_turn_on_bedroom_light",
+        "state": "on",
+        "attributes": {
+          "last_triggered": null,
+          "mode": "restart",
+          "current": 0,
+          "id": "1674945126938",
+          "friendly_name": "LIGHT - Turn on bedroom light"
+        },
+        "last_changed": "2023-02-06T18:57:49.703415+00:00",
+        "last_updated": "2023-02-06T18:57:49.703415+00:00",
+        "context": {
+          "id": "01GRM1EVM7YCTV45WBREGNREVZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-07T02:09:14.072976+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "person.cecilia",
+        "state": "home",
+        "attributes": {
+          "editable": true,
+          "id": "cecilia",
+          "latitude": -25.4712834,
+          "longitude": -49.2994646,
+          "gps_accuracy": 16,
+          "source": "device_tracker.cecilia_sp",
+          "user_id": "a44c24bdbf7c4cb795dd5cd77adf7392",
+          "friendly_name": "cecilia"
+        },
+        "last_changed": "2023-02-06T00:11:06.102638+00:00",
+        "last_updated": "2023-02-06T00:11:06.102638+00:00",
+        "context": {
+          "id": "01GRJ0ZRFPF4T0P488FY3H9DVK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-06T00:11:31.311553+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "person.brghost",
+        "state": "unknown",
+        "attributes": {
+          "editable": true,
+          "id": "brghost",
+          "user_id": "2eb48afb57034b2eb5b96583279df927",
+          "friendly_name": "brghost"
+        },
+        "last_changed": "2023-02-05T20:02:30.722843+00:00",
+        "last_updated": "2023-02-05T20:02:53.903016+00:00",
+        "context": {
+          "id": "01GRHJS9AF7JV6Q9FZ3MYQG4PR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T20:44:46.878831+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.ha_daily_maintenance",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2023-02-05T08:00:00.213691+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1672380948372",
+          "friendly_name": "HA - Daily maintenance"
+        },
+        "last_changed": "2023-02-05T06:30:23.425502+00:00",
+        "last_updated": "2023-02-05T08:00:00.216196+00:00",
+        "context": {
+          "id": "01GRG9DM6NK5410YBXPKA8YZ32",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T14:19:45.848109+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ewelink_th01_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.2,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "eWeLink TH01 Battery"
+        },
+        "last_changed": "2023-02-05T04:26:18.263199+00:00",
+        "last_updated": "2023-02-05T04:26:18.263199+00:00",
+        "context": {
+          "id": "01GRFX6ARQFBT39TCRS04SBPZD",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:26:35.027571+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ewelink_th01_humidity",
+        "state": "69.2",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "humidity",
+          "friendly_name": "eWeLink TH01 Humidity"
+        },
+        "last_changed": "2023-02-05T04:26:20.223062+00:00",
+        "last_updated": "2023-02-05T04:26:20.223062+00:00",
+        "context": {
+          "id": "01GRFX6CNZYYCVDQNPWCJEYG86",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:26:35.028018+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.ewelink_th01_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "eWeLink TH01 Identify"
+        },
+        "last_changed": "2023-02-05T04:26:18.262530+00:00",
+        "last_updated": "2023-02-05T04:26:18.262530+00:00",
+        "context": {
+          "id": "01GRFX6ARPB8XAFDF3C5AMX5D3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:26:35.028396+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ewelink_th01_temperature",
+        "state": "26.5",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°C",
+          "device_class": "temperature",
+          "friendly_name": "eWeLink TH01 Temperature"
+        },
+        "last_changed": "2023-02-05T04:26:20.210031+00:00",
+        "last_updated": "2023-02-05T04:26:20.210031+00:00",
+        "context": {
+          "id": "01GRFX6CNJNQQ72Q6X0AH38SQ4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:26:35.028780+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ewelink_ms01_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.0,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "eWeLink MS01 Battery"
+        },
+        "last_changed": "2023-02-05T04:28:51.777594+00:00",
+        "last_updated": "2023-02-05T04:28:51.777594+00:00",
+        "context": {
+          "id": "01GRFXB0P1JYEGJ4V93VXN9NB4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:29:16.177640+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.ewelink_ms01_iaszone",
+        "state": "off",
+        "attributes": {
+          "device_class": "motion",
+          "friendly_name": "eWeLink MS01 Iaszone"
+        },
+        "last_changed": "2023-02-05T04:28:51.776433+00:00",
+        "last_updated": "2023-02-05T04:28:51.776433+00:00",
+        "context": {
+          "id": "01GRFXB0P0YY1WKTD2XEDMR2K7",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:29:16.178137+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.ewelink_ms01_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "eWeLink MS01 Identify"
+        },
+        "last_changed": "2023-02-05T04:28:51.776974+00:00",
+        "last_updated": "2023-02-05T04:28:51.776974+00:00",
+        "context": {
+          "id": "01GRFXB0P0WX9E3FY9KS266Y19",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:29:16.178509+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.ewelink_wb01_battery",
+        "state": "100",
+        "attributes": {
+          "state_class": "measurement",
+          "battery_voltage": 3.1,
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "friendly_name": "eWeLink WB01 Battery"
+        },
+        "last_changed": "2023-02-05T04:30:32.493793+00:00",
+        "last_updated": "2023-02-05T04:30:32.493793+00:00",
+        "context": {
+          "id": "01GRFXE31DYP80CJYN17Q1HTG6",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:31:01.465088+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "button.ewelink_wb01_identify",
+        "state": "unknown",
+        "attributes": {
+          "device_class": "update",
+          "friendly_name": "eWeLink WB01 Identify"
+        },
+        "last_changed": "2023-02-05T04:30:32.493089+00:00",
+        "last_updated": "2023-02-05T04:30:32.493089+00:00",
+        "context": {
+          "id": "01GRFXE31D4EWPRJNYBNSRGVAA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-05T04:31:01.465532+00:00"
+    }
+  ]
+}

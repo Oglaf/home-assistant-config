@@ -44,11 +44,13 @@ proximity:
     tolerance: 50
     unit_of_measurement: km
 
-# Cloudflare Tunnel
 http:
+  # ssl_certificate: /etc/letsencrypt/live/zaitsu.casa/fullchain.pem
+  # ssl_key: /etc/letsencrypt/live/zaitsu.casa/privkey.pem
   use_x_forwarded_for: true
   trusted_proxies:
-    - 172.30.33.0/24
+    - 192.168.1.0/24
+    - 172.21.0.0/24
 
 # Utility Meter
 utility_meter:
@@ -64,7 +66,7 @@ utility_meter:
       hours: 0
       minutes: 0
   pc_energy_cost:
-    source: sensor.local_smart_plug_2_consumption
+    source: sensor.local_smart_plug_2_energy
     cycle: monthly
     tariffs:
       - peak

@@ -1,0 +1,851 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {
+        "entry_id": "58463191ae3de9e2862f7d7e35f29cb4",
+        "version": 1,
+        "domain": "sun",
+        "title": "Sun",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "4d0fdc33d55180b5611f620153385748",
+        "version": 1,
+        "domain": "cast",
+        "title": "Google Cast",
+        "data": {
+          "ignore_cec": [],
+          "known_hosts": [],
+          "uuid": [],
+          "user_id": "f6868febc05b4413bebe0c9afa7485e6"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "zeroconf",
+        "unique_id": "cast",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "0c19b5e99ef143bb964ab2a275d6adfd",
+        "version": 1,
+        "domain": "tuya",
+        "title": "chrisfleishmann@yahoo.com.br",
+        "data": {
+          "endpoint": "https://openapi.tuyaus.com",
+          "auth_type": 0,
+          "access_id": "5ryc8n84srwxpspfcek8",
+          "access_secret": "0bbfda9eb5494384bec261231a3d385d",
+          "username": "chrisfleishmann@yahoo.com.br",
+          "password": "parks-02",
+          "country_code": "55",
+          "tuya_app_type": "smartlife"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "dhcp",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "1996c49051d125919648536f778d0dec",
+        "version": 1,
+        "domain": "upnp",
+        "title": "TP-Link TL-WDR4300 v1:DD-WRT",
+        "data": {
+          "udn": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D",
+          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+          "original_udn": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D",
+          "location": "http://192.168.1.1:1780/InternetGatewayDevice.xml",
+          "mac_address": null,
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ssdp",
+        "unique_id": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "version": 3,
+        "domain": "zha",
+        "title": "Sonoff Zigbee 3.0 USB Dongle Plus - Sonoff Zigbee 3.0 USB Dongle Plus",
+        "data": {
+          "device": {
+            "path": "/dev/ttyUSB0",
+            "flow_control": null,
+            "baudrate": 115200
+          },
+          "radio_type": "znp"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "usb",
+        "unique_id": "10C4:EA60_0001_Silicon Labs_Sonoff Zigbee 3.0 USB Dongle Plus - Sonoff Zigbee 3.0 USB Dongle Plus",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "4bd0e0fcf3d4b3a82e89082f51ca1c80",
+        "version": 2,
+        "domain": "localtuya",
+        "title": "localTuya",
+        "data": {
+          "region": "us",
+          "client_id": "",
+          "client_secret": "",
+          "user_id": "",
+          "username": "parks-02",
+          "no_cloud": true,
+          "devices": {
+            "eb06b9ad96cc645217ruup": {
+              "friendly_name": "Local Smart Plug",
+              "host": "192.168.1.201",
+              "local_key": "5cd62b469b6d961e",
+              "protocol_version": "3.3",
+              "scan_interval": 30,
+              "reset_dpids": "18,19,20",
+              "entities": [
+                {
+                  "friendly_name": "Local Smart Plug Switch",
+                  "restore_on_reconnect": false,
+                  "is_passive_entity": false,
+                  "id": 1,
+                  "platform": "switch"
+                },
+                {
+                  "friendly_name": "Local Smart Plug Countdown",
+                  "unit_of_measurement": "min",
+                  "device_class": "duration",
+                  "scaling": 0.0166666666666667,
+                  "id": 9,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug Current",
+                  "unit_of_measurement": "A",
+                  "device_class": "current",
+                  "scaling": 0.001,
+                  "id": 18,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug",
+                  "unit_of_measurement": "W",
+                  "device_class": "power",
+                  "scaling": 0.1,
+                  "id": 19,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug Voltage",
+                  "unit_of_measurement": "V",
+                  "device_class": "voltage",
+                  "scaling": 0.1,
+                  "id": 20,
+                  "platform": "sensor"
+                }
+              ],
+              "device_id": "eb06b9ad96cc645217ruup",
+              "dps_strings": [
+                "1 (value: False)",
+                "9 (value: 0)",
+                "17 (value: 6)",
+                "18 (value: 0)",
+                "19 (value: 0)",
+                "20 (value: 1270)",
+                "21 (value: 1)",
+                "22 (value: 564)",
+                "23 (value: 29000)",
+                "24 (value: 15795)",
+                "25 (value: 2640)",
+                "26 (value: 0)",
+                "38 (value: memory)",
+                "41 (value: )",
+                "42 (value: )",
+                "46 (value: True)"
+              ],
+              "product_key": "keym9qkuywghyrvs"
+            },
+            "eb3dcc68131b35ae344alc": {
+              "friendly_name": "Local Smart Light 1",
+              "host": "192.168.1.203",
+              "local_key": "d9bb19e75b0aa051",
+              "protocol_version": "3.3",
+              "entities": [
+                {
+                  "friendly_name": "Local Smart Light 1",
+                  "brightness": 22,
+                  "color_temp": 23,
+                  "brightness_lower": 10,
+                  "brightness_upper": 1000,
+                  "color_mode": 21,
+                  "color": 24,
+                  "color_temp_min_kelvin": 2001,
+                  "color_temp_max_kelvin": 6534,
+                  "color_temp_reverse": false,
+                  "scene": 25,
+                  "music_mode": false,
+                  "id": 20,
+                  "platform": "light"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 1 Timer",
+                  "unit_of_measurement": "s",
+                  "device_class": "duration",
+                  "id": 26,
+                  "platform": "sensor"
+                }
+              ],
+              "device_id": "eb3dcc68131b35ae344alc",
+              "dps_strings": [
+                "20 (value: False)",
+                "21 (value: white)",
+                "22 (value: 1000)",
+                "23 (value: 659)",
+                "24 (value: 016303e803e8)",
+                "25 (value: 000e0d0000000000000000c80000)",
+                "26 (value: 0)",
+                "34 (value: True)"
+              ],
+              "product_key": "keytg5kq8gvkv9dh"
+            },
+            "ebd1b02d382049733dnq0u": {
+              "friendly_name": "Local Smart Light 2",
+              "host": "192.168.1.204",
+              "local_key": "c383f271346743c0",
+              "protocol_version": "3.3",
+              "entities": [
+                {
+                  "friendly_name": "Local Smart Light 2",
+                  "brightness": 22,
+                  "color_temp": 23,
+                  "brightness_lower": 10,
+                  "brightness_upper": 1000,
+                  "color_mode": 21,
+                  "color": 24,
+                  "color_temp_min_kelvin": 2001,
+                  "color_temp_max_kelvin": 6534,
+                  "color_temp_reverse": false,
+                  "scene": 25,
+                  "music_mode": false,
+                  "id": 20,
+                  "platform": "light"
+                },
+                {
+                  "friendly_name": "Local Tuya Smart Light 2 Countdown",
+                  "unit_of_measurement": "s",
+                  "device_class": "duration",
+                  "id": 26,
+                  "platform": "sensor"
+                }
+              ],
+              "device_id": "ebd1b02d382049733dnq0u",
+              "dps_strings": [
+                "20 (value: False)",
+                "21 (value: white)",
+                "22 (value: 635)",
+                "23 (value: 553)",
+                "24 (value: 001e011e03e8)",
+                "25 (value: 000e0d0000000000000000c80000)",
+                "26 (value: 0)",
+                "34 (value: False)"
+              ],
+              "product_key": "keytg5kq8gvkv9dh"
+            },
+            "eb597c0e524d178a80caat": {
+              "friendly_name": "Local Smart Plug 2",
+              "host": "192.168.1.207",
+              "local_key": "bdf5b78fccf86c7b",
+              "protocol_version": "3.3",
+              "reset_dpids": "18,19,20",
+              "entities": [
+                {
+                  "friendly_name": "Local Smart Plug 2 Switch",
+                  "restore_on_reconnect": false,
+                  "is_passive_entity": false,
+                  "id": 1,
+                  "platform": "switch"
+                },
+                {
+                  "friendly_name": "Local Smart Plug Countdown 2",
+                  "unit_of_measurement": "min",
+                  "device_class": "duration",
+                  "scaling": 0.0166666666666667,
+                  "id": 9,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 2 Current",
+                  "unit_of_measurement": "A",
+                  "device_class": "current",
+                  "scaling": 0.001,
+                  "id": 18,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 2 Power",
+                  "unit_of_measurement": "W",
+                  "device_class": "power",
+                  "scaling": 0.1,
+                  "id": 19,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 2 Voltage",
+                  "unit_of_measurement": "V",
+                  "device_class": "voltage",
+                  "scaling": 0.1,
+                  "id": 20,
+                  "platform": "sensor"
+                }
+              ],
+              "device_id": "eb597c0e524d178a80caat",
+              "dps_strings": [
+                "1 (value: True)",
+                "9 (value: 0)",
+                "18 (value: 978)",
+                "19 (value: 1201)",
+                "20 (value: 1282)",
+                "21 (value: 1)",
+                "22 (value: 617)",
+                "23 (value: 31090)",
+                "24 (value: 17649)",
+                "25 (value: 1180)",
+                "26 (value: 0)"
+              ],
+              "product_key": "keydnqmh87c8ajv4"
+            },
+            "eb099f68fc98defbd6vqcs": {
+              "friendly_name": "Local Smart Plug 3",
+              "host": "192.168.1.206",
+              "local_key": "dfd4cb0ca6a36d8a",
+              "protocol_version": "3.3",
+              "reset_dpids": "18,19,20",
+              "entities": [
+                {
+                  "friendly_name": "Local Smart Plug 3",
+                  "restore_on_reconnect": false,
+                  "is_passive_entity": false,
+                  "id": 1,
+                  "platform": "switch"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 3 Countdown",
+                  "unit_of_measurement": "min",
+                  "device_class": "duration",
+                  "scaling": 0.0166666666666667,
+                  "id": 9,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 3 Current",
+                  "unit_of_measurement": "A",
+                  "device_class": "current",
+                  "scaling": 0.001,
+                  "id": 18,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 3 Power",
+                  "unit_of_measurement": "W",
+                  "device_class": "power",
+                  "scaling": 0.1,
+                  "id": 19,
+                  "platform": "sensor"
+                },
+                {
+                  "friendly_name": "Local Smart Plug 3 Voltage",
+                  "unit_of_measurement": "V",
+                  "device_class": "voltage",
+                  "scaling": 0.1,
+                  "id": 20,
+                  "platform": "sensor"
+                }
+              ],
+              "device_id": "eb099f68fc98defbd6vqcs",
+              "dps_strings": [
+                "1 (value: False)",
+                "9 (value: 0)",
+                "18 (value: 0)",
+                "19 (value: 0)",
+                "20 (value: 1279)",
+                "21 (value: 1)",
+                "22 (value: 625)",
+                "23 (value: 31468)",
+                "24 (value: 18126)",
+                "25 (value: 1148)",
+                "26 (value: 0)"
+              ],
+              "product_key": "keydnqmh87c8ajv4"
+            },
+            "eb1f0804f3145f2189grsj": {
+              "friendly_name": "Local Cleaner Robot",
+              "host": "192.168.1.202",
+              "local_key": "707bbed1ba120c27",
+              "protocol_version": "3.3",
+              "enable_debug": false,
+              "entities": [
+                {
+                  "friendly_name": "Local Cleaner Robot",
+                  "idle_status_value": "standby,sleep",
+                  "powergo_dp": 25,
+                  "docked_status_value": "charging,chargecompleted",
+                  "returning_status_value": "docking",
+                  "battery_dp": 14,
+                  "mode_dp": 27,
+                  "modes": "smart,wall_follow,spiral,single",
+                  "return_mode": "chargego",
+                  "fan_speed_dp": 30,
+                  "fan_speeds": "low,normal,high",
+                  "clean_time_dp": 33,
+                  "clean_area_dp": 32,
+                  "clean_record_dp": 34,
+                  "locate_dp": 102,
+                  "fault_dp": 11,
+                  "paused_state": "paused",
+                  "stop_status": "standby",
+                  "id": 28,
+                  "platform": "vacuum"
+                },
+                {
+                  "friendly_name": "Local Cleaner Robot Muted",
+                  "restore_on_reconnect": false,
+                  "is_passive_entity": false,
+                  "id": 31,
+                  "platform": "switch"
+                }
+              ],
+              "device_id": "eb1f0804f3145f2189grsj",
+              "dps_strings": [
+                "1 (value: True)",
+                "11 (value: 0)",
+                "14 (value: 100)",
+                "25 (value: False)",
+                "26 (value: foward)",
+                "27 (value: standby)",
+                "28 (value: chargecompleted)",
+                "30 (value: high)",
+                "31 (value: True)",
+                "32 (value: 41)",
+                "33 (value: 59)",
+                "34 (value: 05904100832)",
+                "102 (value: 1647,1,0,8,4,113,  0,  2,  3,  3,0,0, 362, 113, 0, 0,2,  0,    3)"
+              ],
+              "product_key": "wexaeucvbdawkkpo"
+            }
+          },
+          "updated_at": "1675996223480"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8efaf28d64eec101ad2910052fc9ba9e",
+        "version": 1,
+        "domain": "hacs",
+        "title": "",
+        "data": {
+          "token": "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"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "03ffb353327df73730eb839d6ee41355",
+        "version": 1,
+        "domain": "accuweather",
+        "title": "Home",
+        "data": {
+          "api_key": "RU1Lon86PPlJiskjjgCLIafdL8Hz9It1",
+          "latitude": -25.470703788816262,
+          "longitude": -49.299446940422065,
+          "name": "Home"
+        },
+        "options": {
+          "forecast": true
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "2732375",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "01931a2dd501ec75bfa13b6fbb2abe12",
+        "version": 1,
+        "domain": "system_bridge",
+        "title": "192.168.1.198",
+        "data": {
+          "host": "192.168.1.198",
+          "port": "9170",
+          "api_key": "68e5104b-4abd-4ced-b74d-c40c825586ab"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "zeroconf",
+        "unique_id": "System",
+        "disabled_by": "user"
+      },
+      {
+        "entry_id": "097c22264af0fc5ae0181feb9f959548",
+        "version": 1,
+        "domain": "system_bridge",
+        "title": "System Bridge",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "f8:32:e4:9b:2a:6e",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8f6cf46a91c89cfe659ab88d26a78795",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "M2010J19CG",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.1.1-full (3124)",
+          "device_name": "M2010J19CG",
+          "manufacturer": "Xiaomi",
+          "model": "M2010J19CG",
+          "os_name": "Android",
+          "os_version": "31",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "c55kx9lVRZmw1nHR_SNCD6:APA91bGVjhEMFZnYEExarvc8PcJLMACuoo2uCQfUzJpaqrS9dfrarGlD9tVGR9O-yTEARuwsWYYhA6SlcQ8K_CjdrUR98_J9OWd08gyeJ3rQVLC-tewn4jXMX1S-86wZHKlv_Z2rSORQ"
+          },
+          "device_id": "e70440364044d0d1",
+          "webhook_id": "174091a438aa5c84d528c3a033a862dfb21518e183b6f9071febe80a3156b153",
+          "user_id": "2eb48afb57034b2eb5b96583279df927"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-e70440364044d0d1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "4811a877bf6a050f55ff3644af9ed70a",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "cecilia-sp",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.1.1-full (3124)",
+          "device_name": "cecilia-sp",
+          "manufacturer": "Xiaomi",
+          "model": "Redmi Note 8",
+          "os_name": "Android",
+          "os_version": "29",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "cde7ailuT5yuwp5YyU3ulL:APA91bG9FVYf0_RNI6M7ML14cwDym8FbBeqSJ6Deqss_7inMR9Pu9kf9kO90ViYfi14jdgeptBxvcFfQPCUf5l7nWbsi9f0HPZjW0OUezwQz8SLQXPceurwriEusUFrzf-OAfGNJe85n"
+          },
+          "device_id": "863b1b4f91d8ca45",
+          "webhook_id": "f2d291c25cc342e6434c693da1e9dee1322dad14a3f47b39aa17516faef7243f",
+          "user_id": "a44c24bdbf7c4cb795dd5cd77adf7392"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-863b1b4f91d8ca45",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "f09c6703e990fb436c9fbef9655ecc3b",
+        "version": 2,
+        "domain": "sonarr",
+        "title": "192.168.1.198",
+        "data": {
+          "url": "http://192.168.1.198:8989",
+          "api_key": "ba2bbe4a23c4461d847de4e80856a1cb",
+          "verify_ssl": false
+        },
+        "options": {
+          "upcoming_days": 1,
+          "wanted_max_items": 50
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "1eedc3377dc01c273288c36ce53f8176",
+        "version": 1,
+        "domain": "watchman",
+        "title": "Watchman",
+        "data": {},
+        "options": {
+          "service_data": "{}",
+          "included_folders": [
+            "/config"
+          ],
+          "report_header": "-== Watchman Report ==-",
+          "report_path": "/config/watchman_report.txt",
+          "chunk_size": 3500,
+          "columns_width": [
+            30,
+            7,
+            60
+          ],
+          "startup_delay": 0,
+          "friendly_names": true,
+          "check_lovelace": true,
+          "ignored_items": [],
+          "ignored_states": [],
+          "ignored_files": []
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "ef91a73b4083ef5b4ffe1b63b5e0513a",
+        "version": 1,
+        "domain": "integration",
+        "title": "Local Smart Plug Energy",
+        "data": {},
+        "options": {
+          "name": "Local Smart Plug Energy",
+          "source": "sensor.local_smart_plug_power",
+          "method": "left",
+          "round": 2.0,
+          "unit_prefix": "k",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d2f4e987be24b5379de2b735308424ed",
+        "version": 1,
+        "domain": "integration",
+        "title": "Local Smart Plug 2 Energy",
+        "data": {},
+        "options": {
+          "name": "Local Smart Plug 2 Energy",
+          "source": "sensor.local_smart_plug_2_power",
+          "method": "left",
+          "round": 2.0,
+          "unit_prefix": "k",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8c7d5d835a794bb13f1d0c630152f398",
+        "version": 1,
+        "domain": "integration",
+        "title": "Local Smart Plug 3 Energy",
+        "data": {},
+        "options": {
+          "name": "Local Smart Plug 3 Energy",
+          "source": "sensor.local_smart_plug_3_power",
+          "method": "left",
+          "round": 2.0,
+          "unit_prefix": "k",
+          "unit_time": "h"
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "c9477154229429f8d1fd5328c5d425e3",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "christian-tb",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.1.1-full (3124)",
+          "device_name": "christian-tb",
+          "manufacturer": "samsung",
+          "model": "SM-T500",
+          "os_name": "Android",
+          "os_version": "31",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "dp4o8mW-SaKpe271psYgBs:APA91bEGnZ_NKXKMtx_Ct9XlijjePiPXgUg8RrAmHcjH-iPKzcuwit7rs-6RVcM9x8DStlGjK3gtoDBdY0X8E7Qdo_FOAkobYLlP8zxQmA3014ltdh23sJ8rEKOK6SrSHQniHyHlZgVh"
+          },
+          "device_id": "599dd739d6f22260",
+          "webhook_id": "18727fb5f1358cd87bc69dc7af2314a71cd147f3703e08bdaaa7dcf991c603b8",
+          "user_id": "2eb48afb57034b2eb5b96583279df927"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-599dd739d6f22260",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "a5fc79dd69d8ed3b50c5514ec3331fc5",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Office Light",
+        "data": {
+          "device_id": "eb68e355da1be4ae69ok5o",
+          "host": "192.168.1.205",
+          "local_key": "6434389541e96704",
+          "protocol_version": 3.5,
+          "poll_only": false,
+          "type": "rgbcw_lightbulb"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "eb68e355da1be4ae69ok5o",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "65ed36996a691a009f0a23b2bc03f536",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Bedroom Light",
+        "data": {
+          "device_id": "eb3dcc68131b35ae344alc",
+          "host": "Auto",
+          "local_key": "d9bb19e75b0aa051",
+          "protocol_version": 3.3,
+          "poll_only": false,
+          "type": "rgbcw_lightbulb"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "eb3dcc68131b35ae344alc",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d6f1d08f219ca7ee174c0a806275db3a",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Computer Socket",
+        "data": {
+          "device_id": "eb597c0e524d178a80caat",
+          "host": "Auto",
+          "local_key": "bdf5b78fccf86c7b",
+          "protocol_version": 3.3,
+          "poll_only": false,
+          "type": "smartplugv2"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "eb597c0e524d178a80caat",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "6db6c61f82e6703a67364bc2230527e8",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Electric blanket Socket",
+        "data": {
+          "device_id": "eb06b9ad96cc645217ruup",
+          "host": "Auto",
+          "local_key": "5cd62b469b6d961e",
+          "protocol_version": 3.3,
+          "poll_only": false,
+          "type": "smartplugv2_energy"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "eb06b9ad96cc645217ruup",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "ef53671d95cbcdc2194bd0a5ed71f06a",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Fan Socket",
+        "data": {
+          "device_id": "eb099f68fc98defbd6vqcs",
+          "host": "Auto",
+          "local_key": "dfd4cb0ca6a36d8a",
+          "protocol_version": 3.3,
+          "poll_only": false,
+          "type": "smartplugv2"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "eb099f68fc98defbd6vqcs",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "2af4af653fb2d5b821b9d0ac0b22dfac",
+        "version": 11,
+        "domain": "tuya_local",
+        "title": "Local Living room Light",
+        "data": {
+          "device_id": "ebd1b02d382049733dnq0u",
+          "host": "Auto",
+          "local_key": "c383f271346743c0",
+          "protocol_version": 3.3,
+          "poll_only": false,
+          "type": "rgbcw_lightbulb"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "ebd1b02d382049733dnq0u",
+        "disabled_by": null
+      }
+    ]
+  }
+}

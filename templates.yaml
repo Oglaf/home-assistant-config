@@ -4,14 +4,13 @@
       unit_of_measurement: "kWh"
       state: >
         {{
-          [ states('sensor.local_smart_plug_1_consumption'),
-            states('sensor.local_smart_plug_2_consumption'),
-            states('sensor.local_smart_plug_3_consumption'),
+          [ states('sensor.local_smart_plug_energy'),
+            states('sensor.local_smart_plug_2_energy'),
+            states('sensor.local_smart_plug_3_energy'),
             states('sensor.local_smart_light_1_energy'),
             states('sensor.local_smart_light_2_energy'),
             states('sensor.ews_410_energy'),
-            states('sensor.living_room_tv_energy'),
-            states('sensor.server_energy')]
+            states('sensor.living_room_tv_energy')]
             | map('float') | sum | round (2)
         }}
     - name: "Tariff price"
@@ -76,3 +75,22 @@
       unit_of_measurement: MB/s
       state_class: measurement
       state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload / 125000) | round(2) }}"
+    
+    # Sonarr sensor
+    - name: "sonarr.disk_free_percent"
+      unit_of_measurement: '%'
+      state_class: measurement
+      state: >
+        {{
+          ((1000 - states('sensor.sonarr_disk_space') | float(0)) * 100 / 1000
+          ) | round(1)
+        }}
+    - name: "sonarr.disk_used_space"
+      unit_of_measurement: 'GiB'
+      state_class: measurement
+      device_class: data_size
+      state: >
+        {{
+          ((1000 - states('sensor.sonarr_disk_space') | float(0))
+          ) | round(1)
+        }}

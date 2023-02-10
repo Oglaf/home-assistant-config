@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_mobile",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "quick-access",
+          "path": "quick-access",
+          "type": "custom:grid-layout",
+          "layout": {},
+          "icon": "mdi:cellphone",
+          "badges": [],
+          "cards": [
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Bedroom",
+                  "area": "bedroom",
+                  "hide_unavailable": true,
+                  "shadow": false,
+                  "entities": [
+                    "input_boolean.bedroom_light_automation"
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.local_smart_light_1",
+                  "use_light_color": true,
+                  "show_brightness_control": true,
+                  "show_color_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "fill_container": true,
+                  "name": " ",
+                  "layout": "horizontal",
+                  "card_mod": {
+                    "style": "ha-card > mushroom-card > .actions { margin-left: -55% }\n"
+                  }
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_smart_plug_3",
+                      "name": "Fan",
+                      "icon": "mdi:fan",
+                      "icon_color": "green",
+                      "fill_container": true,
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "secondary_info": "none",
+                      "layout": "vertical",
+                      "primary_info": "none"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_smart_plug",
+                      "icon": "mdi:air-filter",
+                      "icon_color": "deep-orange",
+                      "name": " ",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "layout": "vertical",
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Living room",
+                  "area": "living_room",
+                  "hide_unavailable": true,
+                  "shadow": false,
+                  "entities": [
+                    "input_boolean.living_room_light_automation",
+                    "input_boolean.theater_mode"
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.local_smart_light_2",
+                  "fill_container": true,
+                  "use_light_color": true,
+                  "show_brightness_control": true,
+                  "show_color_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "layout": "horizontal",
+                  "name": " ",
+                  "card_mod": {
+                    "style": "ha-card > mushroom-card > .actions { margin-left: -55% }\n"
+                  }
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Office",
+                  "area": "office",
+                  "hide_unavailable": true,
+                  "shadow": false,
+                  "entities": [
+                    "sensor.zigbee_temperature_sensor_temperature",
+                    "sensor.zigbee_temperature_sensor_humidity",
+                    "input_boolean.office_light_automation"
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.ews_410",
+                  "name": " ",
+                  "fill_container": true,
+                  "layout": "horizontal",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "card_mod": {
+                    "style": "ha-card > mushroom-card > .actions { margin-left: -55% }\n"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "custom:minimalistic-area-card",
+              "title": "Kitchen",
+              "area": "kitchen",
+              "hide_unavailable": false,
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "/config/areas/area/kitchen"
+              },
+              "entities": [
+                "sensor.temperature_sensor_temperature",
+                "sensor.temperature_sensor_humidity"
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Home"
+    }
+  }
+}

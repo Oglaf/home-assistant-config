@@ -1,20 +1,3 @@
-- id: '1672201353243'
-  alias: HA - Update notifications
-  description: ''
-  use_blueprint:
-    path: mdegat01/update_notifications.yaml
-    input:
-      reminder_hours: '24'
-      update_entities:
-      - update.home_assistant_core_update
-      - update.adguard_home_update
-      - update.home_assistant_operating_system_update
-      - update.home_assistant_supervisor_update
-      - update.cloudflared_update
-      mobile_app_device: e9e4e423ec942a0441f3c3405799cbcb
-      mobile_app_device_2: 2ef1666371710eae548562d960d36089
-      run_config_check: true
-      only_after: 00:00:00
 - id: '1672349680012'
   alias: Alexa-IFFT - Turn off PC
   description: ''
@@ -50,19 +33,6 @@
     data: {}
     target:
       entity_id: light.local_smart_light_1
-  mode: single
-- id: '1672380948372'
-  alias: HA - Daily maintenance
-  description: ''
-  trigger:
-  - platform: time
-    at: 05:00:00
-  condition: []
-  action:
-  - service: hassio.backup_full
-    data: {}
-  - service: homeassistant.restart
-    data: {}
   mode: single
 - id: '1672522611577'
   alias: ENERGY - Tariff automation
@@ -162,28 +132,6 @@
         - select.monthly_energy
         - select.pc_energy_cost
   mode: single
-- id: '1672690462412'
-  alias: HA - Renew SSL certificate
-  description: ''
-  trigger:
-  - platform: time
-    at: input_datetime.ssl_auto_renewal
-  condition: []
-  action:
-  - service: notify.mobile_app_m2010j19cg
-    data:
-      message: SSL certificate auto renew has started
-  - service: hassio.addon_start
-    data:
-      addon: core_letsencrypt
-    enabled: true
-  - service: input_datetime.set_datetime
-    data:
-      datetime: "{% set change_days = '89' | int %} {{ strptime(states('input_datetime.ssl_auto_renewal'),
-        '%Y-%m-%d %H:%M:%S')\n   + timedelta(days=change_days) }}"
-    target:
-      entity_id: input_datetime.ssl_auto_renewal
-  mode: single
 - id: '1672712190023'
   alias: PC - Daily Christian-PC WoL
   description: Bussiness day WoL
@@ -255,32 +203,7 @@
   - service: light.turn_on
     data: {}
     target:
-      device_id: b7759a1d8c5860001f4243f62650f458
-  mode: single
-- id: '1673488875924'
-  alias: LIGHT - Sleep time
-  description: ''
-  trigger:
-  - platform: time
-    at: '23:00:00'
-  - platform: sun
-    event: sunrise
-    offset: 0
-  condition: []
-  action:
-  - if:
-    - condition: time
-      after: '23:00:00'
-    then:
-    - service: input_boolean.turn_on
-      data: {}
-      target:
-        entity_id: input_boolean.sleep_time
-    else:
-    - service: input_boolean.turn_off
-      data: {}
-      target:
-        entity_id: input_boolean.sleep_time
+      area_id: office
   mode: single
 - id: '1673492717992'
   alias: WEATHER - Determine best humidity
@@ -443,10 +366,11 @@
       entity_id: input_boolean.living_room_light_automation
       state: 'off'
   action:
-  - service: scene.turn_on
+  - service: light.turn_on
+    data:
+      transition: 10
     target:
-      entity_id: scene.sp2_night
-    metadata: {}
+      area_id: living_room
   mode: single
 - id: '1674367315493'
   alias: MEDIA - Theater mode playing
@@ -528,7 +452,7 @@
   use_blueprint:
     path: seamus65/ZHA - Sonoff SNZB-01.yaml
     input:
-      remote: 2556d86d2992daf2a7e6133da291cf76
+      remote: dce92ffa17e37194c258023c978b2cb9
       single_press:
       - service: light.toggle
         data:
@@ -546,7 +470,7 @@
   use_blueprint:
     path: seamus65/ZHA - Sonoff SNZB-01.yaml
     input:
-      remote: c3ff1090e8e05332475b3006b1c4de70
+      remote: 5edfb7a20cc6bb8f565bac615b96acb1
       single_press:
       - service: light.toggle
         data:
@@ -556,50 +480,128 @@
       double_press:
       - service: script.turn_on_off_christian_pc
         data: {}
-- id: '1674945126938'
-  alias: LIGHT - Turn on bedroom light
-  description: ''
-  use_blueprint:
-    path: Marcos_Felipe/turn-light-on-and-off-based-on-detected-motion-with-sun-condition.yaml
-    input:
-      motion_entity: binary_sensor.ewelink_ms01_iaszone
-      no_motion_wait: 30
-      sunset_offset: 0
-      sunrise_offset: 0
-      light_target:
-        area_id: bedroom
 - id: '1674973427986'
   alias: LIGHT - Bedroom motion sensor
   description: ''
   trigger:
   - platform: state
     entity_id:
-    - binary_sensor.ewelink_ms01_iaszone
+    - binary_sensor.zigbee_motion_sensor_iaszone
     from: 'off'
     to: 'on'
   condition:
   - condition: and
     conditions:
-    - condition: sun
-      after: sunset
+    - condition: state
+      entity_id: input_boolean.bedroom_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.sleep_time
+      state: 'off'
     - condition: sun
       before: sunrise
-      enabled: false
-    - condition: time
-      before: 01:00:00
-      weekday: []
-  - condition: state
-    entity_id: input_boolean.bedroom_light_automation
-    state: 'on'
+      after: sunset
   action:
   - service: light.turn_on
     entity_id: light.local_smart_light_1
   - wait_for_trigger:
-      platform: state
-      entity_id: binary_sensor.ewelink_ms01_iaszone
+    - platform: state
+      entity_id:
+      - binary_sensor.zigbee_motion_sensor_iaszone
       from: 'on'
       to: 'off'
   - delay: 30
   - service: light.turn_off
     entity_id: light.local_smart_light_1
+  mode: single
+- id: '1675735214471'
+  alias: LIGHT - Turn on bedroom on motion
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.zigbee_motion_sensor_iaszone
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.bedroom_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.sleep_time
+      state: 'off'
+    - condition: sun
+      after: sunset
+      before: sunrise
+  action:
+  - service: light.turn_on
+    data:
+      transition: 5
+    target:
+      area_id: bedroom
+  - wait_for_trigger:
+    - platform: state
+      entity_id:
+      - binary_sensor.zigbee_motion_sensor_iaszone
+      to: 'off'
+    continue_on_timeout: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: light.turn_off
+    data:
+      transition: 5
+    target:
+      area_id: bedroom
+  mode: single
+- id: '1675818897968'
+  alias: Alexa-IFTTT - Start sleep time
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: alexa-ifttt-sleep-time-LP34aHLRNGZJnZOhSJiG4FAz
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.sleep_time
+  mode: single
+- id: '1675902074913'
+  description: ''
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition: []
+  action: []
+  mode: single
+- id: '1675913952899'
+  alias: LIGHT - Turn on sleep time
+  description: ''
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.sleep_time
+  mode: single
+- id: '1675914003290'
+  alias: LIGHT - Turn off sleep time
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: 0
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.sleep_time
   mode: single

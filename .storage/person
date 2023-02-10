@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "name": "Christian Silva",
+        "user_id": "2eb48afb57034b2eb5b96583279df927",
+        "device_trackers": [
+          "device_tracker.m2010j19cg",
+          "device_tracker.christian_tab",
+          "device_tracker.christian_tb"
+        ],
+        "id": "christian_silva",
+        "picture": "/api/image/serve/5e1b756c0dc6f69624d57c65a490b2cc/512x512"
+      },
+      {
+        "name": "Cecilia Ueda",
+        "device_trackers": [
+          "device_tracker.cecilia_sp"
+        ],
+        "user_id": "a44c24bdbf7c4cb795dd5cd77adf7392",
+        "picture": "/api/image/serve/78c5fbcec903d0cfca26e67dec03012f/512x512",
+        "id": "cecilia_ueda"
+      }
+    ]
+  }
+}

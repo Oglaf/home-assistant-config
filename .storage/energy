@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "energy",
+  "data": {
+    "energy_sources": [
+      {
+        "type": "grid",
+        "flow_from": [
+          {
+            "stat_energy_from": "sensor.monthly_energy_offpeak",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.monthly_energy_peak",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.monthly_energy_shoulder",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          }
+        ],
+        "flow_to": [],
+        "cost_adjustment_day": 0.0
+      }
+    ],
+    "device_consumption": [
+      {
+        "stat_consumption": "sensor.local_smart_light_1_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_smart_light_2_energy"
+      },
+      {
+        "stat_consumption": "sensor.ews_410_energy"
+      },
+      {
+        "stat_consumption": "sensor.living_room_tv_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_smart_plug_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_smart_plug_2_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_smart_plug_3_energy"
+      }
+    ]
+  }
+}

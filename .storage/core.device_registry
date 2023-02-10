@@ -1,0 +1,1156 @@
+{
+  "version": 1,
+  "minor_version": 3,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "area_id": null,
+        "config_entries": [
+          "4d0fdc33d55180b5611f620153385748"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "bb4c71b6b959485d5bd4d2d2d19bed0c",
+        "identifiers": [
+          [
+            "cast",
+            "9de5ba0fac0063333eadca73e092bdc4"
+          ]
+        ],
+        "manufacturer": "Google Inc.",
+        "model": "Chromecast",
+        "name_by_user": null,
+        "name": "Bedroom TV",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "4d0fdc33d55180b5611f620153385748"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "42799997132a1d2b9b42e307d252d09c",
+        "identifiers": [
+          [
+            "cast",
+            "d56a05d6ff82804e8f6171a6e393c5f6"
+          ]
+        ],
+        "manufacturer": "Google Inc.",
+        "model": "Chromecast",
+        "name_by_user": null,
+        "name": "Living Room TV",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "aca17034df44cb030441a6db36a59899",
+        "identifiers": [
+          [
+            "tuya",
+            "eb597c0e524d178a80caat"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
+        "name_by_user": null,
+        "name": "Computer socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "882e32d72142add3e15c9f17731cb599",
+        "identifiers": [
+          [
+            "tuya",
+            "eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
+        "name_by_user": null,
+        "name": "Fan socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "2215f2534f319a1ff007fd06fd496c19",
+        "identifiers": [
+          [
+            "tuya",
+            "eb68e355da1be4ae69ok5o"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
+        "name_by_user": null,
+        "name": "Office light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "2384acff88f8bf9c6790b393849dea24",
+        "identifiers": [
+          [
+            "tuya",
+            "ebd1b02d382049733dnq0u"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Lâmpada WiFi (97jzv6zysedaddxc)",
+        "name_by_user": null,
+        "name": "Living room light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "166598c698c6b39b59858b8cf15f670c",
+        "identifiers": [
+          [
+            "tuya",
+            "eb3dcc68131b35ae344alc"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Lâmpada WiFi (97jzv6zysedaddxc)",
+        "name_by_user": null,
+        "name": "Bedroom light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "6f02dfc079778def85f0d75f9156dfdf",
+        "identifiers": [
+          [
+            "tuya",
+            "eb629cf13d51f2d0d5gv7t"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": " (5xierbs16mkdnkpk)",
+        "name_by_user": null,
+        "name": "Pet feeder",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "7a45d50733409d6dc839a72a7b0f87c2",
+        "identifiers": [
+          [
+            "tuya",
+            "eb06b9ad96cc645217ruup"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Plug (xtnehyamtpkge0se)",
+        "name_by_user": null,
+        "name": "Electric blanket socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "ab9093baef10369b08cf8bdd6d72a77a",
+        "identifiers": [
+          [
+            "tuya",
+            "ebf3e7c38a62e56ab4a8jf"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "WiFi Temperature & Humidity Sensor (q29ebws5adwye1l8)",
+        "name_by_user": null,
+        "name": "Temperature Sensor",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "1996c49051d125919648536f778d0dec"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "upnp",
+            "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "0acccc4f0e80747eb587cf5e4bb632b3",
+        "identifiers": [
+          [
+            "upnp_serial_number",
+            "0000001"
+          ],
+          [
+            "upnp",
+            "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+          ],
+          [
+            "upnp_host",
+            "192.168.1.1"
+          ]
+        ],
+        "manufacturer": "DD-WRT",
+        "model": "TP-Link TL-WDR4300 v1",
+        "name_by_user": null,
+        "name": "TP-Link TL-WDR4300 v1:DD-WRT",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:2a:2e:8f:b8"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "724191e2fcaac58833c1970dd7c83d84",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:2a:2e:8f:b8"
+          ]
+        ],
+        "manufacturer": "ZHA",
+        "model": "ZNP = Texas Instruments Z-Stack ZNP protocol: CC253x, CC26x2, CC13x2",
+        "name_by_user": null,
+        "name": "Zigbee Coordinator",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:29:19:53:39"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "4e1515dfbe56570a38feafbc155b1ab7",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:29:19:53:39"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "TH01",
+        "name_by_user": "Zigbee Temperature Sensor",
+        "name": "eWeLink TH01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:25:10:d4:93"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "5edfb7a20cc6bb8f565bac615b96acb1",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:25:10:d4:93"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "WB01",
+        "name_by_user": "Zigbee Office Switch",
+        "name": "eWeLink WB01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "MS01",
+        "name_by_user": "Zigbee Motion Sensor",
+        "name": "eWeLink MS01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:25:10:d4:8d"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "dce92ffa17e37194c258023c978b2cb9",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:25:10:d4:8d"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "WB01",
+        "name_by_user": "Zigbee Living Room Switch",
+        "name": "eWeLink WB01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "8efaf28d64eec101ad2910052fc9ba9e"
+        ],
+        "configuration_url": "homeassistant://hacs",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "289a26bee1750d57336674352182418a",
+        "identifiers": [
+          [
+            "hacs",
+            "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+          ]
+        ],
+        "manufacturer": "hacs.xyz",
+        "model": "",
+        "name_by_user": null,
+        "name": "HACS",
+        "sw_version": "1.30.1",
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "7fafda428f65ffa2447210626f18a1ef",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_eb3dcc68131b35ae344alc"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (eb3dcc68131b35ae344alc)",
+        "name_by_user": null,
+        "name": "Local Smart Light 1",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "93a0b1af02355fb7f993fe76e6f118f5",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_ebd1b02d382049733dnq0u"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (ebd1b02d382049733dnq0u)",
+        "name_by_user": null,
+        "name": "Local Smart Light 2",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "1e3a9f1657dbdfd586f6d4dfe47943e7",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_eb597c0e524d178a80caat"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (eb597c0e524d178a80caat)",
+        "name_by_user": null,
+        "name": "Local Smart Plug 2",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "c7e1208eb6e8f70a7a55774fd35e94f9",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (eb099f68fc98defbd6vqcs)",
+        "name_by_user": null,
+        "name": "Local Smart Plug 3",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "2bcf58c88b02b86b3b6285a63e977a68",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_eb06b9ad96cc645217ruup"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (eb06b9ad96cc645217ruup)",
+        "name_by_user": null,
+        "name": "Local Smart Plug",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "03ffb353327df73730eb839d6ee41355"
+        ],
+        "configuration_url": "http://accuweather.com/en/_/_/2732375/weather-forecast/2732375/",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "cdc3e75002c6a49a594b1e65b5044ea6",
+        "identifiers": [
+          [
+            "accuweather",
+            "2732375"
+          ]
+        ],
+        "manufacturer": "AccuWeather, Inc.",
+        "model": null,
+        "name_by_user": null,
+        "name": "Home",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "8f6cf46a91c89cfe659ab88d26a78795"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "1e9d072d164c76e46396ceee3e90b3c5",
+        "identifiers": [
+          [
+            "mobile_app",
+            "e70440364044d0d1"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "M2010J19CG",
+        "name_by_user": null,
+        "name": "M2010J19CG",
+        "sw_version": "31",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "4811a877bf6a050f55ff3644af9ed70a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "a9c3214ad93155cc417a2f7cba1b3391",
+        "identifiers": [
+          [
+            "mobile_app",
+            "863b1b4f91d8ca45"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "Redmi Note 8",
+        "name_by_user": null,
+        "name": "cecilia-sp",
+        "sw_version": "29",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "f09c6703e990fb436c9fbef9655ecc3b"
+        ],
+        "configuration_url": "http://192.168.1.198:8989",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "d02b714f8b6b69e4ba0041729461bf40",
+        "identifiers": [
+          [
+            "sonarr",
+            "f09c6703e990fb436c9fbef9655ecc3b"
+          ]
+        ],
+        "manufacturer": "Sonarr",
+        "model": null,
+        "name_by_user": null,
+        "name": "Sonarr",
+        "sw_version": "3.0.9.1549",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "1eedc3377dc01c273288c36ce53f8176"
+        ],
+        "configuration_url": "https://github.com/dummylabs/thewatchman",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b24fea79366d94f50ed5840373d4b20b",
+        "identifiers": [
+          [
+            "watchman",
+            "watchman_unique_id"
+          ]
+        ],
+        "manufacturer": "dummylabs",
+        "model": "Watchman",
+        "name_by_user": null,
+        "name": "Watchman",
+        "sw_version": "0.6.1",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "d49b6aa1a669fae3e04f28f3c42df9c7",
+        "identifiers": [
+          [
+            "tuya",
+            "eb1f0804f3145f2189grsj"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "KaBuM!Robô aspirador de pó (wexaeucvbdawkkpo)",
+        "name_by_user": null,
+        "name": "Cleaner Robot",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "c9477154229429f8d1fd5328c5d425e3"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "21f2ffa90ae51ed966a22ac338fb3579",
+        "identifiers": [
+          [
+            "mobile_app",
+            "599dd739d6f22260"
+          ]
+        ],
+        "manufacturer": "samsung",
+        "model": "SM-T500",
+        "name_by_user": null,
+        "name": "christian-tb",
+        "sw_version": "31",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a5fc79dd69d8ed3b50c5514ec3331fc5"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "fd49166a2e04a7f529f23a3b1d1a4535",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb68e355da1be4ae69ok5o"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Office Light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "4bd0e0fcf3d4b3a82e89082f51ca1c80"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "2afb6d07a21489f0e55a5f02486c8f8b",
+        "identifiers": [
+          [
+            "localtuya",
+            "local_eb1f0804f3145f2189grsj"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Tuya generic (eb1f0804f3145f2189grsj)",
+        "name_by_user": null,
+        "name": "Local Cleaner Robot",
+        "sw_version": "3.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "65ed36996a691a009f0a23b2bc03f536"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "9170e60c22ae2de09dfbe9aba7589734",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb3dcc68131b35ae344alc"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Bedroom Light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "d6f1d08f219ca7ee174c0a806275db3a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "5deb7101d58f6ab0490a9e0db3ab4138",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb597c0e524d178a80caat"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Computer Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "6db6c61f82e6703a67364bc2230527e8"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "b84c667f71cea1fa6af8d1d7c12e43a7",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb06b9ad96cc645217ruup"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Electric blanket Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "ef53671d95cbcdc2194bd0a5ed71f06a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "208f96a94932b423396ca080292e6d7d",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Fan Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "2af4af653fb2d5b821b9d0ac0b22dfac"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "d80eea00c8d086f2cad19dec417e673e",
+        "identifiers": [
+          [
+            "tuya_local",
+            "ebd1b02d382049733dnq0u"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Living room Light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "a5337062f0830904e2e5d37300550456",
+        "identifiers": [
+          [
+            "tuya",
+            "eba8ad303d30bd1163sbju"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Socket (grpvptbrpkissnd8)",
+        "name_by_user": null,
+        "name": "Washing Machine Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "a4f7cd1b7d6abb03aae77067cdd0079d",
+        "identifiers": [
+          [
+            "tuya",
+            "eb860d52d52d7d56172s3b"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Socket (grpvptbrpkissnd8)",
+        "name_by_user": null,
+        "name": "Oven socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "7b97ec1cfc1717e942864847298d79c0",
+        "identifiers": [
+          [
+            "tuya",
+            "tysuxr5MeUeh7bHLxNw"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Feed",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "26dea9e08c78ecf7f0a40371be0f8406",
+        "identifiers": [
+          [
+            "tuya",
+            "tysQ2xVCvrwGiCr8gdd"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Charge robot",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "4ddb0e3e8bd95a2c6212708f7043b332",
+        "identifiers": [
+          [
+            "tuya",
+            "tysrqrv48KDmC3zAOkS"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Auto cleaning",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "70ca6bdd10ac44f65089a379a8c5ca38",
+        "identifiers": [
+          [
+            "tuya",
+            "tysAl03UKMEZcZxoS4m"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Mopping",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "49e9772adfb10e817f704728c90b32e3",
+        "identifiers": [
+          [
+            "tuya",
+            "tysCxzAXTCDCVns5Si1"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Room cleaning",
+        "sw_version": null,
+        "via_device_id": null
+      }
+    ],
+    "deleted_devices": [
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "met"
+          ]
+        ],
+        "id": "086e0263aeb5d76e5349b51999128edf",
+        "orphaned_timestamp": 1675565787.2575073
+      },
+      {
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "tysmykIZfKZmao7vUAm"
+          ]
+        ],
+        "id": "2dc9764c4fd040ca81c581c89b74709e",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "tysta8Orl5TE21Uliba"
+          ]
+        ],
+        "id": "fb3193dfd9644c1693cc7a39ecb0b94f",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb1f0804f3145f2189grsj"
+          ]
+        ],
+        "id": "e39cab4b6fb42715a1de7c9457a37cc6",
+        "orphaned_timestamp": 1675906733.6372344
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb860d52d52d7d56172s3b"
+          ]
+        ],
+        "id": "857925fd7d78a9200c5195630166f8ab",
+        "orphaned_timestamp": 1675964032.681361
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya_local",
+            "eba8ad303d30bd1163sbju"
+          ]
+        ],
+        "id": "f282346accac977074e2b30a97f58aa7",
+        "orphaned_timestamp": 1675964038.9271677
+      }
+    ]
+  }
+}

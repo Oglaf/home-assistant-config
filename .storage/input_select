@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "best_humidity",
+        "name": "best_humidity",
+        "icon": "mdi:water",
+        "options": [
+          "Outside",
+          "Inside"
+        ]
+      }
+    ]
+  }
+}

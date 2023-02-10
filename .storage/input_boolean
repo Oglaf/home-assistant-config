@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_boolean",
+  "data": {
+    "items": [
+      {
+        "name": "sleep_time",
+        "icon": "mdi:sleep",
+        "id": "sleep_time"
+      },
+      {
+        "name": "medication",
+        "icon": "mdi:pill",
+        "id": "medication"
+      },
+      {
+        "name": "Office light automation",
+        "icon": "mdi:robot",
+        "id": "office_light_automation"
+      },
+      {
+        "name": "Living room light automation",
+        "icon": "mdi:robot",
+        "id": "living_room_light_automation"
+      },
+      {
+        "name": "Bedroom light automation",
+        "icon": "mdi:robot",
+        "id": "bedroom_light_automation"
+      },
+      {
+        "name": "Theater mode",
+        "icon": "mdi:theater",
+        "id": "theater_mode"
+      }
+    ]
+  }
+}

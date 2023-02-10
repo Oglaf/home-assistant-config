@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "min": 1.0,
+        "max": 12.0,
+        "mode": "box",
+        "name": "pet_feeder_portion_size",
+        "step": 1.0,
+        "id": "pet_feeder_portion_size"
+      }
+    ]
+  }
+}

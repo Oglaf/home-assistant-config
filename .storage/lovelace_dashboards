@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:docker",
+        "title": "Docker",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-docker",
+        "id": "dashboard_docker"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:shield-check",
+        "title": "AdGuard Home",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "adguard-home",
+        "id": "adguard_home"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:server-network",
+        "title": "Network",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-network",
+        "id": "dashboard_network"
+      },
+      {
+        "show_in_sidebar": false,
+        "icon": "mdi:cellphone",
+        "title": "Mobile",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-mobile",
+        "id": "dashboard_mobile"
+      },
+      {
+        "show_in_sidebar": false,
+        "title": "Showcase",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-showcase",
+        "id": "dashboard_showcase"
+      }
+    ]
+  }
+}
