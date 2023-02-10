@@ -1,38 +1,46 @@
-.ssh/
-id_rsa*
-
+# File extensions
 *.crt
 *.csr
-*.key
 *.db-journal
-*.pid
+*.fault
+*.key
 *.log
 *.log.*
-*.fault
+*.pid
+*.py
 
-deps
-lib
-www
-tts
-
-.vscode
-.cloud
-.google.token 
-image
-frontend.*
-http*
-auth*
-hacs*
-secrets.yaml
-ip_bans.yaml
-device_tracker.yaml
-known_devices.yaml
-home-assistant.log
+# Logs
 home-assistant.db
+home-assistant.log
 home-assistant_v2.db
 home-assistant_v2.db-*
-zigbee.*
-.HA_VERSION
 watchman_report.txt
-zone*
+
+# Hidden folders
+.HA_VERSION
+.cloud
+.google.token 
+.ssh/
 .storage/core.restore_state
+.vscode
+
+# Folders
+auth*
+custom_components
+deps
+frontend.*
+hacs*
+http*
+id_rsa*
+image
+lib
+tts
+www
+zigbee.*
+zone*
+
+# Sensitive files
+device_tracker.yaml
+known_devices.yaml
+secrets.yaml
+ip_bans.yaml
