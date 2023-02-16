@@ -17,19 +17,19 @@
 
 # Powercalc
 - platform: powercalc
-  entity_id: light.ews_410
+  entity_id: light.local_office_light
   linear:
     attribute: brightness
     min_power: 0.3
     max_power: 10
 - platform: powercalc
-  entity_id: light.local_smart_light_1
+  entity_id: light.local_bedroom_light
   linear:
     attribute: brightness
     min_power: 0.3
     max_power: 10
 - platform: powercalc
-  entity_id: light.local_smart_light_2
+  entity_id: light.local_living_room_light
   linear:
     attribute: brightness
     min_power: 0.3

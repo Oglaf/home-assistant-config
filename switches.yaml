@@ -3,11 +3,11 @@
   mac: A8:A1:59:45:CB:22
   name: christian_pc_wol
   broadcast_address: 192.168.1.255
-  turn_off:
-    service: button.press
-    data:
-      addon: core_rpc_shutdown
-      input: CHRISTIAN-PC
+  # turn_off:
+  #   service: button.press
+  #   data:
+  #     addon: core_rpc_shutdown
+  #     input: CHRISTIAN-PC
 
 # Circadian lightning
 - platform: circadian_lighting
@@ -20,7 +20,8 @@
   disable_entity: input_boolean.living_room_light_automation
   disable_state: "off"
   lights_ct:
-    - light.local_smart_light_2
+    - light.local_living_room_light
+    
 - platform: circadian_lighting
   name: Bedroom circadian lighting
   initial_transition: 5
@@ -31,7 +32,8 @@
   disable_entity: input_boolean.bedroom_light_automation
   disable_state: "off"
   lights_ct:
-    - light.local_smart_light_1
+    - light.local_bedroom_light
+
 - platform: circadian_lighting
   name: Office circadian lighting
   initial_transition: 5
@@ -42,4 +44,4 @@
   disable_entity: input_boolean.office_light_automation
   disable_state: "off"
   lights_ct:
-    - light.ews_410
+    - light.local_office_light

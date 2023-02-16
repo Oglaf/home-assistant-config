@@ -26,12 +26,13 @@
                   "hide_unavailable": true,
                   "shadow": false,
                   "entities": [
-                    "input_boolean.bedroom_light_automation"
+                    "input_boolean.bedroom_light_automation",
+                    "binary_sensor.zigbee_motion_sensor_iaszone"
                   ]
                 },
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.local_smart_light_1",
+                  "entity": "light.local_bedroom_light",
                   "use_light_color": true,
                   "show_brightness_control": true,
                   "show_color_control": true,
@@ -49,7 +50,7 @@
                   "cards": [
                     {
                       "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_smart_plug_3",
+                      "entity": "switch.local_fan_socket",
                       "name": "Fan",
                       "icon": "mdi:fan",
                       "icon_color": "green",
@@ -63,7 +64,7 @@
                     },
                     {
                       "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_smart_plug",
+                      "entity": "switch.local_electric_blanket_socket",
                       "icon": "mdi:air-filter",
                       "icon_color": "deep-orange",
                       "name": " ",
@@ -96,7 +97,7 @@
                 },
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.local_smart_light_2",
+                  "entity": "light.local_living_room_light",
                   "fill_container": true,
                   "use_light_color": true,
                   "show_brightness_control": true,
@@ -130,7 +131,7 @@
                 },
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.ews_410",
+                  "entity": "light.local_office_light",
                   "name": " ",
                   "fill_container": true,
                   "layout": "horizontal",

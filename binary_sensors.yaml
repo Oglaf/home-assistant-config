@@ -1,5 +1,5 @@
 - platform: ping
-  host: 204.2.229.94
+  host: 204.2.229.10
   name: "FFXIV"
   count: 4
   scan_interval: 30

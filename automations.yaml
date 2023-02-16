@@ -17,7 +17,7 @@
   trigger:
   - platform: state
     entity_id:
-    - light.local_smart_light_1
+    - light.local_bedroom_light
     to: 'on'
     for:
       hours: 0
@@ -32,7 +32,7 @@
   - service: light.turn_off
     data: {}
     target:
-      entity_id: light.local_smart_light_1
+      entity_id: light.local_bedroom_light
   mode: single
 - id: '1672522611577'
   alias: ENERGY - Tariff automation
@@ -158,16 +158,8 @@
   use_blueprint:
     path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
     input:
-      switch: switch.local_smart_plug_3
+      switch: switch.local_fan_socket
       phone_battery: sensor.m2010j19cg_battery_level
-- id: '1673391186244'
-  alias: PLUG - Turn off charging - Christian-TB
-  description: ''
-  use_blueprint:
-    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
-    input:
-      switch: switch.local_smart_plug_3
-      phone_battery: sensor.christian_tab_battery_level
 - id: '1673477422415'
   alias: LIGHT - Turn on office light
   description: Automatically turn on office light
@@ -201,7 +193,8 @@
       state: 'on'
   action:
   - service: light.turn_on
-    data: {}
+    data:
+      transition: 5
     target:
       area_id: office
   mode: single
@@ -264,7 +257,7 @@
     path: Aohzan/medication_reminder_android.yaml
     input:
       reminder_time: '10:00:00'
-      notify_device: e9e4e423ec942a0441f3c3405799cbcb
+      notify_device: 1e9d072d164c76e46396ceee3e90b3c5
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
 - id: '1674136089586'
@@ -284,7 +277,7 @@
   - service: media_player.turn_off
     data: {}
     target:
-      device_id: 3626418d97b4e6150a57d17b9f5c03e7
+      device_id: 42799997132a1d2b9b42e307d252d09c
   mode: single
 - id: '1674182650722'
   alias: LIGHT - Turn off all lights when away
@@ -337,9 +330,9 @@
   action:
   - service: light.turn_on
     data:
-      transition: 3
+      transition: 10
     target:
-      device_id: 93a0b1af02355fb7f993fe76e6f118f5
+      area_id: living_room
   mode: single
 - id: '1674367256897'
   alias: MEDIA - Theater mode paused
@@ -442,7 +435,8 @@
   condition: []
   action:
   - service: light.turn_off
-    data: {}
+    data:
+      transition: 5
     target:
       area_id: office
   mode: single
@@ -456,7 +450,7 @@
       single_press:
       - service: light.toggle
         data:
-          transition: 5
+          transition: 10
         target:
           area_id: living_room
       hold:
@@ -474,7 +468,7 @@
       single_press:
       - service: light.toggle
         data:
-          transition: 5
+          transition: 30
         target:
           area_id: office
       double_press:
@@ -503,39 +497,6 @@
       after: sunset
   action:
   - service: light.turn_on
-    entity_id: light.local_smart_light_1
-  - wait_for_trigger:
-    - platform: state
-      entity_id:
-      - binary_sensor.zigbee_motion_sensor_iaszone
-      from: 'on'
-      to: 'off'
-  - delay: 30
-  - service: light.turn_off
-    entity_id: light.local_smart_light_1
-  mode: single
-- id: '1675735214471'
-  alias: LIGHT - Turn on bedroom on motion
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - binary_sensor.zigbee_motion_sensor_iaszone
-    to: 'on'
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: input_boolean.bedroom_light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.sleep_time
-      state: 'off'
-    - condition: sun
-      after: sunset
-      before: sunrise
-  action:
-  - service: light.turn_on
     data:
       transition: 5
     target:
@@ -544,16 +505,12 @@
     - platform: state
       entity_id:
       - binary_sensor.zigbee_motion_sensor_iaszone
+      from: 'on'
       to: 'off'
-    continue_on_timeout: true
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 30
-      milliseconds: 0
+  - delay: 30
   - service: light.turn_off
     data:
-      transition: 5
+      transition: 10
     target:
       area_id: bedroom
   mode: single
@@ -569,14 +526,6 @@
     data: {}
     target:
       entity_id: input_boolean.sleep_time
-  mode: single
-- id: '1675902074913'
-  description: ''
-  trigger:
-  - platform: time
-    at: 01:00:00
-  condition: []
-  action: []
   mode: single
 - id: '1675913952899'
   alias: LIGHT - Turn on sleep time

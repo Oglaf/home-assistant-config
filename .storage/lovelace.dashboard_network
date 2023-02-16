@@ -11,9 +11,7 @@
           "path": "network",
           "icon": "mdi:server-network",
           "type": "custom:masonry-layout",
-          "layout": {
-            "max_cols": 3
-          },
+          "layout": {},
           "badges": [],
           "cards": [
             {
@@ -51,39 +49,6 @@
               }
             },
             {
-              "type": "custom:mini-graph-card",
-              "name": "Traffic",
-              "icon": "mdi:server",
-              "line_color": "red",
-              "entities": [
-                {
-                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_received",
-                  "name": "Received"
-                },
-                {
-                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_sent",
-                  "name": "Sent"
-                }
-              ]
-            },
-            {
-              "type": "custom:mini-graph-card",
-              "name": "Speedtest",
-              "icon": "mdi:speedometer",
-              "line_color": "red",
-              "points_per_hour": 1,
-              "entities": [
-                {
-                  "entity": "sensor.speedtest_cli_download",
-                  "name": "Download"
-                },
-                {
-                  "entity": "sensor.speedtest_cli_upload",
-                  "name": "Upload"
-                }
-              ]
-            },
-            {
               "type": "horizontal-stack",
               "cards": [
                 {
@@ -95,7 +60,7 @@
                     }
                   ],
                   "name": "Cloudflare",
-                  "line_color": "blue",
+                  "line_color": "lightblue",
                   "hours_to_show": 0.5,
                   "decimals": 0,
                   "aggregate_func": "avg",
@@ -147,6 +112,61 @@
                   }
                 }
               ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "name": "Traffic",
+              "icon": "mdi:server-network",
+              "line_color": "red",
+              "entities": [
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_received",
+                  "name": "Received"
+                },
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_sent",
+                  "name": "Sent"
+                }
+              ]
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "graph_span": "24h",
+              "update_interval": "30min",
+              "hours_12": false,
+              "header": {
+                "show": true,
+                "title": "Speedtest",
+                "show_states": true,
+                "colorize_states": true
+              },
+              "series": [
+                {
+                  "entity": "sensor.speedtest_cli_download",
+                  "name": "Download",
+                  "color": "red",
+                  "show": {
+                    "legend_value": false
+                  }
+                },
+                {
+                  "entity": "sensor.speedtest_cli_upload",
+                  "name": "Upload",
+                  "show": {
+                    "legend_value": false
+                  }
+                }
+              ]
+            },
+            {
+              "type": "custom:gap-card",
+              "height": 100,
+              "size": 100
+            },
+            {
+              "type": "custom:mushroom-entity-card",
+              "entity": "sensor.hacs",
+              "name": "HACS"
             },
             {
               "square": false,
@@ -211,7 +231,7 @@
                         },
                         {
                           "type": "custom:mushroom-entity-card",
-                          "entity": "sensor.disk_use",
+                          "entity": "sensor.disk_use_config",
                           "primary_info": "state",
                           "secondary_info": "name",
                           "name": "OS Disk",
@@ -291,15 +311,17 @@
                   "type": "horizontal-stack",
                   "cards": [
                     {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "sensor.processor_use",
-                      "name": "CPU",
-                      "fill_container": false,
-                      "layout": "vertical"
-                    },
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "person.christian_silva"
+                      "type": "custom:bar-card",
+                      "entities": [
+                        {
+                          "entity": "sensor.processor_use",
+                          "name": "CPU"
+                        },
+                        {
+                          "entity": "sensor.memory_use_percent",
+                          "name": "RAM"
+                        }
+                      ]
                     }
                   ]
                 }

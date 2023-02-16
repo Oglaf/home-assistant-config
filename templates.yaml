@@ -4,14 +4,16 @@
       unit_of_measurement: "kWh"
       state: >
         {{
-          [ states('sensor.local_smart_plug_energy'),
-            states('sensor.local_smart_plug_2_energy'),
-            states('sensor.local_smart_plug_3_energy'),
-            states('sensor.local_smart_light_1_energy'),
-            states('sensor.local_smart_light_2_energy'),
-            states('sensor.ews_410_energy'),
-            states('sensor.living_room_tv_energy')]
-            | map('float') | sum | round (2)
+          [ states('sensor.local_bedroom_light_energy')                 | float(0),
+            states('sensor.local_living_room_light_energy')             | float(0),
+            states('sensor.local_office_light_energy')                  | float(0),
+            states('sensor.local_computer_socket_energy_helper')        | float(0),
+            states('sensor.local_electric_blanket_socket_energy_helper')| float(0),
+            states('sensor.local_fan_socket_energy_helper')             | float(0),
+            states('sensor.local_washing_machine_socket_energy_helper') | float(0),
+            states('sensor.local_oven_socket_energy_helper')            | float(0),
+            states('sensor.living_room_tv_energy')                      | float(0)]
+            | map('float') | sum | round (4)
         }}
     - name: "Tariff price"
       unit_of_measurement: BRL/kWh
@@ -28,9 +30,9 @@
       state: >
         {{ 
           (
-            (states.sensor.pc_energy_cost_offpeak.state | float(0) * 0.61755 ) + 
-            (states.sensor.pc_energy_cost_peak.state  | float(0) * 1.2839) + 
-            (states.sensor.pc_energy_cost_shoulder.state | float(0) * 0.86071)
+          (states('sensor.pc_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
+          (states('sensor.pc_energy_cost_peak')  		| float(0)) * 1.28390 + 
+          (states('sensor.pc_energy_cost_shoulder') | float(0)) * 0.86071
           ) | round(2) 
         }}
 

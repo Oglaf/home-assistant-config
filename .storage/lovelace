@@ -526,15 +526,6 @@
               ]
             },
             {
-              "type": "custom:vacuum-card",
-              "entity": "vacuum.local_cleaner_robot",
-              "image": "default",
-              "compact_view": false,
-              "show_name": true,
-              "show_status": true,
-              "show_toolbar": true
-            },
-            {
               "square": false,
               "columns": 1,
               "type": "grid",
@@ -548,17 +539,17 @@
                   "cards": [
                     {
                       "type": "light",
-                      "entity": "light.local_smart_light_1",
+                      "entity": "light.local_bedroom_light",
                       "name": "Bedroom"
                     },
                     {
                       "type": "light",
-                      "entity": "light.local_smart_light_2",
+                      "entity": "light.local_living_room_light",
                       "name": "Living Room"
                     },
                     {
                       "type": "light",
-                      "entity": "light.ews_410",
+                      "entity": "light.local_office_light",
                       "name": "Office"
                     }
                   ]
@@ -568,41 +559,41 @@
                   "show_header_toggle": false,
                   "entities": [
                     {
-                      "entity": "switch.local_smart_plug",
+                      "entity": "switch.local_electric_blanket_socket",
                       "type": "custom:multiple-entity-row",
                       "name": "Bed heater",
                       "toggle": true,
                       "state_color": true,
                       "entities": [
                         {
-                          "entity": "sensor.local_smart_plug_countdown",
+                          "entity": "number.local_electric_blanket_socket_timer",
                           "name": "Countdown"
                         },
                         {
-                          "entity": "sensor.local_smart_plug_power",
+                          "entity": "sensor.local_electric_blanket_socket_power",
                           "name": "Power"
                         }
                       ]
                     },
                     {
-                      "entity": "switch.local_smart_plug_3",
+                      "entity": "switch.local_fan_socket",
                       "type": "custom:multiple-entity-row",
                       "name": "Bedroom Fan",
                       "toggle": true,
                       "state_color": true,
                       "entities": [
                         {
-                          "entity": "sensor.local_smart_plug_3_countdown",
+                          "entity": "number.local_fan_socket_timer",
                           "name": "Countdown"
                         },
                         {
-                          "entity": "sensor.local_smart_plug_3_power",
+                          "entity": "sensor.local_fan_socket_power",
                           "name": "Power"
                         }
                       ]
                     },
                     {
-                      "entity": "switch.local_smart_plug_2",
+                      "entity": "switch.local_computer_socket",
                       "type": "custom:multiple-entity-row",
                       "name": "Office computer",
                       "toggle": true,
@@ -613,7 +604,7 @@
                           "name": "Cost"
                         },
                         {
-                          "entity": "sensor.local_smart_plug_2_power",
+                          "entity": "sensor.local_computer_socket_power",
                           "name": "Power"
                         }
                       ]
@@ -677,6 +668,29 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "custom:vacuum-card",
+              "entity": "vacuum.local_cleaner_robot",
+              "image": "default",
+              "compact_view": false,
+              "show_name": false,
+              "show_status": true,
+              "show_toolbar": true,
+              "stats": {
+                "default": [
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_area",
+                    "unit": "minutes",
+                    "subtitle": "Cleaning time"
+                  },
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_time",
+                    "unit": "m²",
+                    "subtitle": "Cleaning area"
+                  }
+                ]
+              }
             },
             {
               "square": false,
@@ -753,7 +767,7 @@
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
                   "type": "custom:light-entity-card",
-                  "entity": "light.local_smart_light_2",
+                  "entity": "light.local_living_room_light",
                   "effects_list": true
                 },
                 {
@@ -811,7 +825,7 @@
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
                   "type": "custom:light-entity-card",
-                  "entity": "light.local_smart_light_1",
+                  "entity": "light.local_bedroom_light",
                   "effects_list": true
                 },
                 {
@@ -853,7 +867,7 @@
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
                   "type": "custom:light-entity-card",
-                  "entity": "light.ews_410",
+                  "entity": "light.local_office_light",
                   "effects_list": true
                 },
                 {

@@ -6,24 +6,6 @@
     "items": [
       {
         "show_in_sidebar": true,
-        "icon": "mdi:docker",
-        "title": "Docker",
-        "require_admin": true,
-        "mode": "storage",
-        "url_path": "dashboard-docker",
-        "id": "dashboard_docker"
-      },
-      {
-        "show_in_sidebar": true,
-        "icon": "mdi:shield-check",
-        "title": "AdGuard Home",
-        "require_admin": true,
-        "mode": "storage",
-        "url_path": "adguard-home",
-        "id": "adguard_home"
-      },
-      {
-        "show_in_sidebar": true,
         "icon": "mdi:server-network",
         "title": "Network",
         "require_admin": true,
@@ -47,6 +29,15 @@
         "mode": "storage",
         "url_path": "dashboard-showcase",
         "id": "dashboard_showcase"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:monitor-dashboard",
+        "title": "Dashboard",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-homeserver",
+        "id": "dashboard_homeserver"
       }
     ]
   }

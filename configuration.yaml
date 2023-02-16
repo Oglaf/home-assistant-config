@@ -66,7 +66,7 @@ utility_meter:
       hours: 0
       minutes: 0
   pc_energy_cost:
-    source: sensor.local_smart_plug_2_energy
+    source: sensor.local_computer_socket_energy_helper
     cycle: monthly
     tariffs:
       - peak

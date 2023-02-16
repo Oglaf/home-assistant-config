@@ -1,20 +1,19 @@
 {
   "version": 1,
   "minor_version": 1,
-  "key": "lovelace.adguard_home",
+  "key": "lovelace.dashboard_homeserver",
   "data": {
     "config": {
       "views": [
         {
           "theme": "Backend-selected",
           "title": "Home",
-          "icon": "mdi:shield-check",
           "type": "panel",
           "badges": [],
           "cards": [
             {
               "type": "iframe",
-              "url": "http://192.168.1.198",
+              "url": "http://192.168.1.198:32768/",
               "aspect_ratio": "100%"
             }
           ]
