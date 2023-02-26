@@ -12,6 +12,15 @@
           "Outside",
           "Inside"
         ]
+      },
+      {
+        "name": "Washing machine status",
+        "icon": "mdi:washing-machine",
+        "options": [
+          "Off",
+          "Running"
+        ],
+        "id": "washing_machine_status"
       }
     ]
   }

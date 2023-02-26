@@ -28,71 +28,36 @@
         ],
         "flow_to": [],
         "cost_adjustment_day": 0.0
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.living_room_tv_energy",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_bedroom_light_energy",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_fan_socket_energy_helper",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_living_room_light_energy",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_office_light_energy",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_computer_socket_energy_helper",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_oven_socket_energy_helper",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_electric_blanket_socket_energy_helper",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
-      },
-      {
-        "type": "gas",
-        "stat_energy_from": "sensor.local_washing_machine_socket_energy_helper",
-        "stat_cost": null,
-        "entity_energy_price": "sensor.tariff_price",
-        "number_energy_price": null
       }
     ],
-    "device_consumption": []
+    "device_consumption": [
+      {
+        "stat_consumption": "sensor.living_room_tv_powercalc_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_bedroom_light_powercalc_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_living_room_light_powercalc_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_office_light_powercalc_energy"
+      },
+      {
+        "stat_consumption": "sensor.local_computer_socket_energy_helper"
+      },
+      {
+        "stat_consumption": "sensor.local_electric_blanket_socket_energy_helper"
+      },
+      {
+        "stat_consumption": "sensor.local_oven_socket_energy_helper"
+      },
+      {
+        "stat_consumption": "sensor.local_fan_socket_energy_helper"
+      },
+      {
+        "stat_consumption": "sensor.local_washing_machine_socket_energy_helper"
+      }
+    ]
   }
 }

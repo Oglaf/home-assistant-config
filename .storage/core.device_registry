@@ -238,16 +238,16 @@
         "id": "0acccc4f0e80747eb587cf5e4bb632b3",
         "identifiers": [
           [
-            "upnp_serial_number",
-            "0000001"
-          ],
-          [
             "upnp",
             "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
           ],
           [
             "upnp_host",
             "192.168.1.1"
+          ],
+          [
+            "upnp_serial_number",
+            "0000001"
           ]
         ],
         "manufacturer": "DD-WRT",
@@ -477,7 +477,7 @@
       {
         "area_id": null,
         "config_entries": [
-          "4811a877bf6a050f55ff3644af9ed70a"
+          "c2e6c91fe4f0c37d92183a1e054238c5"
         ],
         "configuration_url": null,
         "connections": [],
@@ -595,30 +595,6 @@
         "via_device_id": null
       },
       {
-        "area_id": "office",
-        "config_entries": [
-          "a5fc79dd69d8ed3b50c5514ec3331fc5"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": "user",
-        "entry_type": null,
-        "hw_version": null,
-        "id": "fd49166a2e04a7f529f23a3b1d1a4535",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb68e355da1be4ae69ok5o"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Office Light",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": "bedroom",
         "config_entries": [
           "65ed36996a691a009f0a23b2bc03f536"
@@ -643,30 +619,6 @@
         "via_device_id": null
       },
       {
-        "area_id": "office",
-        "config_entries": [
-          "d6f1d08f219ca7ee174c0a806275db3a"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "5deb7101d58f6ab0490a9e0db3ab4138",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb597c0e524d178a80caat"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Computer Socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": "bedroom",
         "config_entries": [
           "6db6c61f82e6703a67364bc2230527e8"
@@ -687,30 +639,6 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Electric blanket Socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": "bedroom",
-        "config_entries": [
-          "ef53671d95cbcdc2194bd0a5ed71f06a"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "208f96a94932b423396ca080292e6d7d",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb099f68fc98defbd6vqcs"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Fan Socket",
         "sw_version": null,
         "via_device_id": null
       },
@@ -811,54 +739,6 @@
         "via_device_id": null
       },
       {
-        "area_id": "kitchen",
-        "config_entries": [
-          "7a65a2a44e38053748587514b59a5812"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "d9fcac43de9d3859e3b86997d8cd9d0d",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb416792d0e54fe70foxzx"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Washing Machine Socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "a2cd41c597fd08cc5e129c3057b1dafe",
-        "identifiers": [
-          [
-            "tuya",
-            "eb6b526d3c43f50bcbs8nv"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
-        "name_by_user": null,
-        "name": "EWS 410",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": null,
         "config_entries": [
           "8e993d4daaf8bb27fa3d0231eb8f7eca"
@@ -879,6 +759,174 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Cleaner Robot",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "24bd2ff872679e34fe3a824266f5ccd5",
+        "identifiers": [
+          [
+            "tuya",
+            "eb09c96452dd09b967nbjr"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
+        "name_by_user": null,
+        "name": "Office light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "13f6ca6edf2a333d7adaee1f3a7b388c"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "652cc01e99bf73414b83f1c055690f55",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb09c96452dd09b967nbjr"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Office Light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "9bcbef8f0cd1b00c9756779072cf8d5c"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "208f96a94932b423396ca080292e6d7d",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Fan Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "1d54b71446b557b8055f35bae2813e9f"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "fd6f23761bea7a7a1bbc40d32839c192",
+        "identifiers": [
+          [
+            "tuya_local",
+            "b597c0e524d178a80caat"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Computer Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "de08fb6596e4bba42483b8c1d9208f30"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "d9fcac43de9d3859e3b86997d8cd9d0d",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb416792d0e54fe70foxzx"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Washing machine Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "31f19a1a05b3462a159495d5ed0243fb",
+        "identifiers": [
+          [
+            "jellyfin",
+            "ad0cd71295653e98a58d80f7199da5608f44d2ef"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Android TV",
+        "name_by_user": null,
+        "name": "Living Room TV",
+        "sw_version": "0.15.3",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "568093bd4c657309db355d4377664cc9",
+        "identifiers": [
+          [
+            "jellyfin",
+            "fe209cb61fcd4d2bb44c09591b98e226"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": null,
+        "name_by_user": null,
+        "name": "CHRISTIAN-SRV",
         "sw_version": null,
         "via_device_id": null
       },
@@ -1154,6 +1202,56 @@
         ],
         "id": "2215f2534f319a1ff007fd06fd496c19",
         "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "eb6b526d3c43f50bcbs8nv"
+          ]
+        ],
+        "id": "a2cd41c597fd08cc5e129c3057b1dafe",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb68e355da1be4ae69ok5o"
+          ]
+        ],
+        "id": "fd49166a2e04a7f529f23a3b1d1a4535",
+        "orphaned_timestamp": 1676724991.6195219
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "mqtt",
+            "39294020"
+          ]
+        ],
+        "id": "af9e8e6b9e5ca0dd3b4f6bea83cfd5f3",
+        "orphaned_timestamp": 1676922687.2650244
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb597c0e524d178a80caat"
+          ]
+        ],
+        "id": "5deb7101d58f6ab0490a9e0db3ab4138",
+        "orphaned_timestamp": 1676868554.3588321
       }
     ]
   }
