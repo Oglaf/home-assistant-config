@@ -20,7 +20,7 @@
         "id": "fe51ff54f44d4fca9e63c0d9749468d5"
       },
       {
-        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=30496791843",
+        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=30496791845",
         "type": "module",
         "id": "39fda8f56a604b809beba8518a6e4dfe"
       },
@@ -83,6 +83,11 @@
         "url": "/hacsfiles/stack-in-card/stack-in-card.js?hacstag=248954055020",
         "type": "module",
         "id": "551d9f19d64d43febc25f766b11eec65"
+      },
+      {
+        "url": "/hacsfiles/bignumber-card/bignumber-card.js?hacstag=187245418006",
+        "type": "module",
+        "id": "09858d7dcd8140789290df32022c57e9"
       }
     ]
   }

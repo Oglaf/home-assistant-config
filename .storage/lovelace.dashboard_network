@@ -15,6 +15,73 @@
           "badges": [],
           "cards": [
             {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "custom:mini-graph-card",
+                  "icon": "mdi:cloud-download",
+                  "hours_to_show": 12,
+                  "points_per_hour": 1,
+                  "state": "last",
+                  "line_color": "red",
+                  "line_width": 8,
+                  "font_size": 73,
+                  "entities": [
+                    {
+                      "entity": "sensor.speedtest_cli_download",
+                      "name": "Download"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "icon": "mdi:cloud-upload",
+                  "hours_to_show": 12,
+                  "points_per_hour": 1,
+                  "state": "last",
+                  "line_width": 8,
+                  "font_size": 73,
+                  "entities": [
+                    {
+                      "entity": "sensor.speedtest_cli_upload",
+                      "name": "Upload"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "hours_to_show": 12,
+                  "points_per_hour": 1,
+                  "state": "last",
+                  "line_color": "orange",
+                  "line_width": 8,
+                  "font_size": 73,
+                  "entities": [
+                    {
+                      "entity": "sensor.speedtest_cli_ping",
+                      "name": "Download"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:mini-graph-card",
+              "name": "Traffic",
+              "icon": "mdi:server-network",
+              "line_color": "red",
+              "entities": [
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_received",
+                  "name": "Received"
+                },
+                {
+                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_sent",
+                  "name": "Sent"
+                }
+              ]
+            },
+            {
               "type": "custom:uptime-card",
               "entity": "binary_sensor.tp_link_tl_wdr4300_v1_dd_wrt_wan_status",
               "icon": "mdi:wan",
@@ -114,59 +181,24 @@
               ]
             },
             {
-              "type": "custom:mini-graph-card",
-              "name": "Traffic",
-              "icon": "mdi:server-network",
-              "line_color": "red",
+              "show_name": true,
+              "show_icon": true,
+              "show_state": true,
+              "type": "glance",
               "entities": [
                 {
-                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_received",
-                  "name": "Received"
+                  "entity": "sensor.last_boot"
                 },
                 {
-                  "entity": "sensor.tp_link_tl_wdr4300_v1_dd_wrt_kib_s_sent",
-                  "name": "Sent"
-                }
-              ]
-            },
-            {
-              "type": "custom:apexcharts-card",
-              "graph_span": "24h",
-              "update_interval": "30min",
-              "hours_12": false,
-              "header": {
-                "show": true,
-                "title": "Speedtest",
-                "show_states": true,
-                "colorize_states": true
-              },
-              "series": [
-                {
-                  "entity": "sensor.speedtest_cli_download",
-                  "name": "Download",
-                  "color": "red",
-                  "show": {
-                    "legend_value": false
-                  }
+                  "entity": "sensor.hacs",
+                  "name": "HACS"
                 },
                 {
-                  "entity": "sensor.speedtest_cli_upload",
-                  "name": "Upload",
-                  "show": {
-                    "legend_value": false
-                  }
+                  "entity": "sensor.watchman_missing_entities",
+                  "name": "Missing entities"
                 }
-              ]
-            },
-            {
-              "type": "custom:gap-card",
-              "height": 100,
-              "size": 100
-            },
-            {
-              "type": "custom:mushroom-entity-card",
-              "entity": "sensor.hacs",
-              "name": "HACS"
+              ],
+              "state_color": true
             },
             {
               "square": false,
@@ -312,6 +344,12 @@
                   "cards": [
                     {
                       "type": "custom:bar-card",
+                      "positions": {
+                        "icon": "off",
+                        "indicator": "inside",
+                        "name": "outside"
+                      },
+                      "width": "70%",
                       "entities": [
                         {
                           "entity": "sensor.processor_use",
@@ -321,11 +359,46 @@
                           "entity": "sensor.memory_use_percent",
                           "name": "RAM"
                         }
-                      ]
+                      ],
+                      "color": "orange",
+                      "style": "bar-card-value {\n  margin-right: auto;\n  #font-size: 13px;\n  font-weight: bold;\n  #text-shadow: 1px 1px #0005;\n}"
                     }
                   ]
+                },
+                {
+                  "type": "custom:mushroom-entity-card",
+                  "entity": "sensor.processor_temperature",
+                  "layout": "vertical",
+                  "icon_color": "red"
                 }
               ]
+            },
+            {
+              "type": "custom:button-card",
+              "entity": "binary_sensor.christian_pc",
+              "icon": "mdi:power",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.turn_on_off_christian_pc"
+              },
+              "show_state": false,
+              "state": [
+                {
+                  "value": "off",
+                  "color": "var(--disabled-text-color)"
+                },
+                {
+                  "value": "on",
+                  "color": "rgb(189, 255, 5)"
+                }
+              ],
+              "styles": {
+                "card": [
+                  {
+                    "height": "200px"
+                  }
+                ]
+              }
             }
           ]
         }

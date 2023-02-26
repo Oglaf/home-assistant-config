@@ -23,21 +23,40 @@
         "id": "dashboard_mobile"
       },
       {
-        "show_in_sidebar": false,
-        "title": "Showcase",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-showcase",
-        "id": "dashboard_showcase"
-      },
-      {
         "show_in_sidebar": true,
         "icon": "mdi:monitor-dashboard",
-        "title": "Dashboard",
+        "title": "Home server",
         "require_admin": true,
         "mode": "storage",
         "url_path": "dashboard-homeserver",
         "id": "dashboard_homeserver"
+      },
+      {
+        "show_in_sidebar": false,
+        "icon": "mdi:tablet-dashboard",
+        "title": "Tablet",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-tablet",
+        "id": "dashboard_tablet"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:home",
+        "title": "Home",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-home",
+        "id": "dashboard_home"
+      },
+      {
+        "show_in_sidebar": false,
+        "icon": "mdi:desktop-tower-monitor",
+        "title": "Desktop",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-desktop",
+        "id": "dashboard_desktop"
       }
     ]
   }

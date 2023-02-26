@@ -1,0 +1,816 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_desktop",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Home",
+          "type": "custom:grid-layout",
+          "layout": {
+            "grid-template-columns": "33% 33% 33%",
+            "grid-template-rows": "295px 110px 295px",
+            "grid-template-areas": "\"header main footer\"\n\"header main footer\"\n\"header vacuum footer\"\n"
+          },
+          "badges": [],
+          "cards": [
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Family <ha-icon icon=\"mdi:account-group\"></ha-icon>"
+                },
+                {
+                  "square": false,
+                  "columns": 2,
+                  "type": "grid",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "person.christian_silva",
+                      "size": "60%",
+                      "color": "auto",
+                      "background_color": "var(--primary-background-color)",
+                      "variable": "spin",
+                      "spin": false,
+                      "show_name": false,
+                      "show_state": true,
+                      "show_label": false,
+                      "show_icon": true,
+                      "show_last_changed": false,
+                      "show_entity_picture": true,
+                      "tap_action": {
+                        "action": "more-info",
+                        "haptic": "light"
+                      },
+                      "aspect_ratio": "2/1",
+                      "margin-right": "20px",
+                      "label": "&nbsp;",
+                      "off_icon_color": "gray",
+                      "off_name_color": "gray",
+                      "off_state_color": "gray",
+                      "styles": {
+                        "card": [
+                          {
+                            "--card-background-color": "[[background_color]]"
+                          }
+                        ],
+                        "icon": [
+                          {
+                            "grid-column": 1
+                          },
+                          {
+                            "grid-row": "1 / 4"
+                          }
+                        ],
+                        "label": [
+                          {
+                            "color": "gray"
+                          },
+                          {
+                            "font-size": "11px"
+                          },
+                          {
+                            "padding": "0px 10px"
+                          },
+                          {
+                            "justify-self": "start"
+                          }
+                        ],
+                        "state": [
+                          {
+                            "font-size": "12px"
+                          },
+                          {
+                            "padding": "0px 10px"
+                          },
+                          {
+                            "justify-self": "start"
+                          },
+                          {
+                            "text-transform": "capitalize"
+                          },
+                          {
+                            "font-weight": "bold"
+                          },
+                          {
+                            "padding-left": "10px"
+                          },
+                          {
+                            "color": "var(--primary-text-color)"
+                          }
+                        ],
+                        "grid": [
+                          {
+                            "grid-template-areas": "\"i s\" \"i battery\" \"i home\" \"i wifi\""
+                          },
+                          {
+                            "grid-template-columns": "50% 50%"
+                          },
+                          {
+                            "grid-template-rows": "25% 25% 25% 25%"
+                          }
+                        ],
+                        "img_cell": [
+                          {
+                            "align-self": "start"
+                          },
+                          {
+                            "text-align": "start"
+                          }
+                        ],
+                        "name": [
+                          {
+                            "justify-self": "start"
+                          },
+                          {
+                            "padding-left": "10px"
+                          },
+                          {
+                            "font-weight": "bold"
+                          },
+                          {
+                            "font-size": "13px"
+                          }
+                        ],
+                        "entity_picture": [
+                          {
+                            "height": "60px"
+                          },
+                          {
+                            "width": "60px"
+                          },
+                          {
+                            "border-radius": "100%"
+                          }
+                        ],
+                        "custom_fields": {
+                          "battery": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            }
+                          ],
+                          "home": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            },
+                            {
+                              "decimals": 2
+                            }
+                          ],
+                          "wifi": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            }
+                          ]
+                        }
+                      },
+                      "custom_fields": {
+                        "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
+                        "battery": "[[[ if (states['sensor.m2010j19cg_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} ]]]\n",
+                        "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['proximity.home_christian'].state} Kms</span></span>`\n]]]\n",
+                        "wifi": "[[[\n  if (states['sensor.m2010j19cg_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.m2010j19cg_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
+                      },
+                      "state": [
+                        {
+                          "value": "not_home",
+                          "styles": {
+                            "card": [
+                              {
+                                "opacity": 0.6
+                              }
+                            ],
+                            "entity_picture": [
+                              {
+                                "border": "2px solid var(--severity-1)"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "value": "home",
+                          "styles": {
+                            "entity_picture": [
+                              {
+                                "border": "2px solid var(--severity-5)"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "person.cecilia_ueda",
+                      "size": "60%",
+                      "color": "auto",
+                      "background_color": "var(--primary-background-color)",
+                      "variable": "spin",
+                      "spin": false,
+                      "show_name": false,
+                      "show_state": true,
+                      "show_label": false,
+                      "show_icon": true,
+                      "show_last_changed": false,
+                      "show_entity_picture": true,
+                      "tap_action": {
+                        "action": "more-info",
+                        "haptic": "light"
+                      },
+                      "aspect_ratio": "2/1",
+                      "margin-right": "20px",
+                      "label": "&nbsp;",
+                      "off_icon_color": "gray",
+                      "off_name_color": "gray",
+                      "off_state_color": "gray",
+                      "styles": {
+                        "card": [
+                          {
+                            "--card-background-color": "[[background_color]]"
+                          }
+                        ],
+                        "icon": [
+                          {
+                            "grid-column": 1
+                          },
+                          {
+                            "grid-row": "1 / 4"
+                          }
+                        ],
+                        "label": [
+                          {
+                            "color": "gray"
+                          },
+                          {
+                            "font-size": "11px"
+                          },
+                          {
+                            "padding": "0px 10px"
+                          },
+                          {
+                            "justify-self": "start"
+                          }
+                        ],
+                        "state": [
+                          {
+                            "font-size": "12px"
+                          },
+                          {
+                            "padding": "0px 10px"
+                          },
+                          {
+                            "justify-self": "start"
+                          },
+                          {
+                            "text-transform": "capitalize"
+                          },
+                          {
+                            "font-weight": "bold"
+                          },
+                          {
+                            "padding-left": "10px"
+                          },
+                          {
+                            "color": "var(--primary-text-color)"
+                          }
+                        ],
+                        "grid": [
+                          {
+                            "grid-template-areas": "\"i s\" \"i battery\" \"i home\" \"i wifi\""
+                          },
+                          {
+                            "grid-template-columns": "50% 50%"
+                          },
+                          {
+                            "grid-template-rows": "25% 25% 25% 25%"
+                          }
+                        ],
+                        "img_cell": [
+                          {
+                            "align-self": "start"
+                          },
+                          {
+                            "text-align": "start"
+                          }
+                        ],
+                        "name": [
+                          {
+                            "justify-self": "start"
+                          },
+                          {
+                            "padding-left": "10px"
+                          },
+                          {
+                            "font-weight": "bold"
+                          },
+                          {
+                            "font-size": "13px"
+                          }
+                        ],
+                        "entity_picture": [
+                          {
+                            "height": "60px"
+                          },
+                          {
+                            "width": "60px"
+                          },
+                          {
+                            "border-radius": "100%"
+                          }
+                        ],
+                        "custom_fields": {
+                          "battery": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            }
+                          ],
+                          "home": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            }
+                          ],
+                          "wifi": [
+                            {
+                              "align-self": "start"
+                            },
+                            {
+                              "justify-self": "start"
+                            },
+                            {
+                              "font-size": "12px"
+                            },
+                            {
+                              "color": "var(--secondary-text-color)"
+                            }
+                          ]
+                        }
+                      },
+                      "custom_fields": {
+                        "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
+                        "battery": "[[[ if (states['sensor.cecilia_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.cecilia_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.cecilia_sp_battery_level'].state}%</span>`\n} ]]]\n",
+                        "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['proximity.home_cecilia'].state} Kms</span></span>`\n]]]\n",
+                        "wifi": "[[[\n  if (states['sensor.cecilia_sp_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.cecilia_sp_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
+                      },
+                      "state": [
+                        {
+                          "value": "not_home",
+                          "styles": {
+                            "card": [
+                              {
+                                "opacity": 0.6
+                              }
+                            ],
+                            "entity_picture": [
+                              {
+                                "border": "2px solid var(--severity-1)"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "value": "home",
+                          "styles": {
+                            "entity_picture": [
+                              {
+                                "border": "2px solid var(--severity-5)"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "markdown",
+                  "content": "# Weather <ha-icon icon=\"mdi:cloud\"></ha-icon>"
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": true,
+                  "type": "weather-forecast",
+                  "entity": "weather.home",
+                  "secondary_info_attribute": "humidity",
+                  "name": "Curitiba"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "sensor.next_sunrise",
+                      "name": "Sunrise",
+                      "icon": "mdi:weather-sunset-up",
+                      "icon_color": "amber"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "sensor.next_sunset",
+                      "name": "Sunset",
+                      "icon": "mdi:weather-sunset-down",
+                      "icon_color": "indigo"
+                    }
+                  ]
+                },
+                {
+                  "square": false,
+                  "columns": 1,
+                  "type": "grid",
+                  "cards": [
+                    {
+                      "type": "markdown",
+                      "content": "# Media <ha-icon icon=\"mdi:play-box\"></ha-icon>"
+                    },
+                    {
+                      "type": "custom:mushroom-media-player-card",
+                      "entity": "media_player.living_room_tv",
+                      "use_media_info": true,
+                      "media_controls": [
+                        "on_off",
+                        "play_pause_stop"
+                      ],
+                      "layout": "horizontal",
+                      "collapsible_controls": true
+                    },
+                    {
+                      "type": "custom:mushroom-media-player-card",
+                      "entity": "media_player.bedroom_tv",
+                      "layout": "horizontal",
+                      "fill_container": false,
+                      "media_controls": [
+                        "on_off",
+                        "play_pause_stop"
+                      ],
+                      "collapsible_controls": true
+                    }
+                  ]
+                }
+              ],
+              "view_layout": {
+                "grid-area": "header"
+              }
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Smart devices <ha-icon icon=\"mdi:home-assistant\"></ha-icon>"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "light",
+                      "entity": "light.local_bedroom_light",
+                      "name": "Bedroom"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.local_living_room_light",
+                      "name": "Living Room"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.local_office_light",
+                      "name": "Office Light"
+                    }
+                  ]
+                },
+                {
+                  "type": "entities",
+                  "show_header_toggle": false,
+                  "entities": [
+                    {
+                      "entity": "switch.local_electric_blanket_socket",
+                      "type": "custom:multiple-entity-row",
+                      "name": "Eletric blanket",
+                      "icon": "mdi:air-filter",
+                      "toggle": true,
+                      "state_color": true,
+                      "entities": [
+                        {
+                          "entity": "number.local_electric_blanket_socket_timer",
+                          "name": "Countdown",
+                          "format": "precision = 2"
+                        },
+                        {
+                          "entity": "sensor.local_electric_blanket_socket_power",
+                          "name": "Power"
+                        }
+                      ]
+                    },
+                    {
+                      "entity": "switch.local_fan_socket",
+                      "type": "custom:multiple-entity-row",
+                      "name": "Bedroom Fan",
+                      "icon": "mdi:fan",
+                      "toggle": true,
+                      "state_color": true,
+                      "entities": [
+                        {
+                          "entity": "number.local_fan_socket_timer",
+                          "name": "Countdown",
+                          "format": "precision = 2"
+                        },
+                        {
+                          "entity": "sensor.local_fan_socket_power",
+                          "name": "Power"
+                        }
+                      ]
+                    },
+                    {
+                      "entity": "switch.local_computer_socket",
+                      "type": "custom:multiple-entity-row",
+                      "name": "Computer",
+                      "icon": "mdi:desktop-tower-monitor",
+                      "toggle": true,
+                      "state_color": true,
+                      "entities": [
+                        {
+                          "entity": "sensor.local_computer_socket_power",
+                          "name": "Power"
+                        }
+                      ]
+                    },
+                    {
+                      "entity": "switch.local_oven_socket",
+                      "type": "custom:multiple-entity-row",
+                      "name": "Oven",
+                      "icon": "mdi:microwave",
+                      "toggle": true,
+                      "state_color": true,
+                      "entities": [
+                        {
+                          "entity": "sensor.local_oven_socket_power",
+                          "name": "Power"
+                        }
+                      ]
+                    },
+                    {
+                      "entity": "switch.local_washing_machine_socket",
+                      "type": "custom:multiple-entity-row",
+                      "name": "Washing machine",
+                      "icon": "mdi:washing-machine",
+                      "toggle": true,
+                      "state_color": true,
+                      "entities": [
+                        {
+                          "entity": "sensor.local_washing_machine_socket_power",
+                          "name": "Power"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:button-card",
+                  "entity": "input_select.washing_machine_status",
+                  "show_name": false,
+                  "show_state": false,
+                  "tap_action": "none",
+                  "layout": "icon_label",
+                  "size": "60px",
+                  "show_label": true,
+                  "label": "[[[\n  var decimalTime = states['sensor.washer_running_time'].state;\n  var hour = Math.floor(Math.abs(decimalTime));\n  var min = Math.floor((Math.abs(decimalTime) * 60) % 60);\n  return (hour < 10 ? \"0\" : \"\") + hour + \":\" + (min < 10 ? \"0\" : \"\") + min;\n]]]\n",
+                  "state": [
+                    {
+                      "value": "Off",
+                      "icon": "mdi:washing-machine-off",
+                      "color": "var(--disabled-text-color)"
+                    },
+                    {
+                      "value": "Running",
+                      "icon": "mdi:washing-machine",
+                      "color": "orange"
+                    }
+                  ],
+                  "styles": {
+                    "card": [
+                      {
+                        "font-size": "20px"
+                      },
+                      {
+                        "font-weight": "bold"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "grid",
+                  "square": false,
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "square": false,
+                      "columns": 1,
+                      "type": "grid",
+                      "cards": [
+                        {
+                          "show_name": true,
+                          "show_icon": true,
+                          "type": "button",
+                          "entity": "scene.feed",
+                          "icon": "mdi:cat",
+                          "hold_action": {
+                            "action": "none"
+                          },
+                          "show_state": false,
+                          "icon_height": "105px"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:logbook-card",
+                      "entity": "binary_sensor.pet_feeder_feeding",
+                      "hidden_state": [
+                        "off",
+                        "unavailable"
+                      ],
+                      "state_map": [
+                        {
+                          "label": "Fed",
+                          "icon": "mdi:food-drumstick",
+                          "value": "on"
+                        }
+                      ],
+                      "show": {
+                        "state": true,
+                        "duration": false,
+                        "start_date": true,
+                        "end_date": false,
+                        "icon": true,
+                        "separator": true
+                      },
+                      "history": 1,
+                      "title": "",
+                      "date_format": "MMMM DD, HH:mm",
+                      "max_items": 2,
+                      "separator_style": {
+                        "style": "dashed"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:vacuum-card",
+              "entity": "vacuum.local_cleaner_robot",
+              "image": "default",
+              "compact_view": false,
+              "show_name": false,
+              "show_status": true,
+              "show_toolbar": true,
+              "stats": {
+                "default": [
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_area",
+                    "unit": "minutes",
+                    "subtitle": "Cleaning time"
+                  },
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_time",
+                    "unit": "m²",
+                    "subtitle": "Cleaning area"
+                  }
+                ]
+              },
+              "view_layout": {
+                "grid-area": "vacuum"
+              }
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Temperature <ha-icon icon=\"mdi:thermometer\"></ha-icon>"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.zigbee_temperature_sensor_temperature"
+                      ],
+                      "name": "Office",
+                      "line_color": "#e74c3c",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "group_by": "hour"
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.zigbee_temperature_sensor_humidity"
+                      ],
+                      "name": "Office",
+                      "line_color": "blue",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "group_by": "hour"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.temperature_sensor_temperature"
+                      ],
+                      "name": "Kitchen",
+                      "line_color": "#e74c3c",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "group_by": "hour"
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.temperature_sensor_humidity"
+                      ],
+                      "name": "Kitchen",
+                      "line_color": "blue",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "group_by": "hour"
+                    }
+                  ]
+                }
+              ],
+              "view_layout": {
+                "grid-area": "main"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

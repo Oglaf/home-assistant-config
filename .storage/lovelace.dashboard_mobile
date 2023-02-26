@@ -26,8 +26,7 @@
                   "hide_unavailable": true,
                   "shadow": false,
                   "entities": [
-                    "input_boolean.bedroom_light_automation",
-                    "binary_sensor.zigbee_motion_sensor_iaszone"
+                    "input_boolean.bedroom_light_automation"
                   ]
                 },
                 {
@@ -109,6 +108,41 @@
                   "card_mod": {
                     "style": "ha-card > mushroom-card > .actions { margin-left: -55% }\n"
                   }
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-vacuum-card",
+                      "entity": "vacuum.local_cleaner_robot",
+                      "icon_animation": true,
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "commands": [
+                        "start_pause",
+                        "return_home"
+                      ],
+                      "fill_container": false,
+                      "layout": "horizontal"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "scene.feed",
+                      "icon": "mdi:cat",
+                      "layout": "horizontal",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_color": "blue-grey",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "scene.turn_on",
+                        "data": {},
+                        "target": {
+                          "entity_id": "scene.feed"
+                        }
+                      }
+                    }
+                  ]
                 }
               ]
             },
