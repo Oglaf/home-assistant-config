@@ -14,6 +14,7 @@ home-assistant.db
 home-assistant.log
 home-assistant_v2.db
 home-assistant_v2.db-*
+home-assistant_v2.db.*
 watchman_report.txt
 
 # Hidden folders
@@ -46,3 +47,4 @@ known_devices.yaml
 secrets.yaml
 ip_bans.yaml
 .storage/core.config
+.vscode/settings.json

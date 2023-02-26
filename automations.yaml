@@ -6,10 +6,8 @@
     webhook_id: alexa-ifft-turn-off-pc-Qo0cs6z0nqSKDQ_2vVKqnLw0
   condition: []
   action:
-  - service: hassio.addon_stdin
-    data:
-      addon: core_rpc_shutdown
-      input: CHRISTIAN-PC
+  - service: shell_command.christian_pc_shutdown
+    data: {}
   mode: single
 - id: '1672353016030'
   alias: LIGHT - Turn off bedroom light after 5m
@@ -69,6 +67,14 @@
           entity_id:
           - select.monthly_energy
           - select.pc_energy_cost
+          - select.bedroom_light_energy_cost
+          - select.electric_blanket_energy_cost
+          - select.living_room_light_energy_cost
+          - select.living_room_tv_energy_cost
+          - select.fan_energy_cost
+          - select.oven_energy_cost
+          - select.washer_energy_cost
+          - select.local_office_light_energy_cost
     - conditions:
       - condition: time
         after: '17:00:00'
@@ -87,6 +93,14 @@
           entity_id:
           - select.monthly_energy
           - select.pc_energy_cost
+          - select.bedroom_light_energy_cost
+          - select.electric_blanket_energy_cost
+          - select.living_room_light_energy_cost
+          - select.living_room_tv_energy_cost
+          - select.fan_energy_cost
+          - select.oven_energy_cost
+          - select.washer_energy_cost
+          - select.local_office_light_energy_cost
     - conditions:
       - condition: time
         after: '18:00:00'
@@ -105,6 +119,14 @@
           entity_id:
           - select.monthly_energy
           - select.pc_energy_cost
+          - select.bedroom_light_energy_cost
+          - select.electric_blanket_energy_cost
+          - select.living_room_light_energy_cost
+          - select.living_room_tv_energy_cost
+          - select.fan_energy_cost
+          - select.oven_energy_cost
+          - select.washer_energy_cost
+          - select.local_office_light_energy_cost
     - conditions:
       - condition: time
         after: '21:00:00'
@@ -123,6 +145,14 @@
           entity_id:
           - select.monthly_energy
           - select.pc_energy_cost
+          - select.bedroom_light_energy_cost
+          - select.electric_blanket_energy_cost
+          - select.living_room_light_energy_cost
+          - select.living_room_tv_energy_cost
+          - select.fan_energy_cost
+          - select.oven_energy_cost
+          - select.washer_energy_cost
+          - select.local_office_light_energy_cost
     default:
     - service: select.select_option
       data:
@@ -131,6 +161,14 @@
         entity_id:
         - select.monthly_energy
         - select.pc_energy_cost
+        - select.bedroom_light_energy_cost
+        - select.electric_blanket_energy_cost
+        - select.living_room_light_energy_cost
+        - select.living_room_tv_energy_cost
+        - select.fan_energy_cost
+        - select.oven_energy_cost
+        - select.washer_energy_cost
+        - select.local_office_light_energy_cost
   mode: single
 - id: '1672712190023'
   alias: PC - Daily Christian-PC WoL
@@ -204,7 +242,13 @@
   trigger:
   - platform: time_pattern
     hours: /2
-  condition: []
+  condition:
+  - condition: time
+    after: 09:00:00
+    before: '19:00:00'
+  - condition: state
+    entity_id: group.residents
+    state: home
   action:
   - if:
     - condition: template
@@ -234,6 +278,14 @@
   - condition: time
     after: 09:00:00
     before: '19:00:00'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: group.christian_home
+      state: home
+    - condition: state
+      entity_id: group.cecilia_home
+      state: home
   action:
   - if:
     - condition: state
@@ -495,6 +547,9 @@
     - condition: sun
       before: sunrise
       after: sunset
+    - condition: state
+      entity_id: light.local_bedroom_light
+      state: 'off'
   action:
   - service: light.turn_on
     data:
@@ -554,3 +609,75 @@
     target:
       entity_id: input_boolean.sleep_time
   mode: single
+- id: '1676734805757'
+  alias: WASHER - Status Running
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.local_washing_machine_socket_power
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    above: 1
+  condition:
+  - condition: state
+    entity_id: input_select.washing_machine_status
+    state: 'Off'
+  action:
+  - service: input_select.select_option
+    data:
+      option: Running
+    target:
+      entity_id: input_select.washing_machine_status
+  mode: single
+- id: '1676744130645'
+  alias: WASHER - Turn off
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.local_washing_machine_socket_power
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    below: 1
+  condition:
+  - condition: state
+    entity_id: input_select.washing_machine_status
+    state: Running
+  action:
+  - service: input_select.select_option
+    data:
+      option: 'Off'
+    target:
+      entity_id: input_select.washing_machine_status
+  - service: notify.notify
+    data:
+      message: Wash completed.
+  mode: single
+- id: '1676955163494'
+  alias: VACUUM - Ask to clean while away
+  description: ''
+  use_blueprint:
+    path: vorion/actionable-notifications-for-android.yaml
+    input:
+      trigger_entity: group.christian_home
+      notify_device: 1e9d072d164c76e46396ceee3e90b3c5
+      notification_message: Would you like to clean the house while away?
+      action_1_title: 'Yes'
+      first_action:
+      - service: vacuum.start
+        data: {}
+        target:
+          entity_id: vacuum.local_cleaner_robot
+      - service: vacuum.set_fan_speed
+        data:
+          fan_speed: high
+        target:
+          entity_id: vacuum.local_cleaner_robot
+      action_2_title: 'No'
+      third_action: []
+      second_action:
+      - stop: User request
+      notification_title: Home assistant

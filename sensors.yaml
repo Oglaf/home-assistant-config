@@ -3,6 +3,7 @@
   name: "SpeedTest CLI Data"
   unique_id: speedtest_cli_data
   command: "/config/speedtest/speedtest --format=json --server-id=13518 --accept-license --accept-gdpr"
+  #command: "/config/speedtest/speedtest --format=json --server-id=21939 --accept-license --accept-gdpr"
   scan_interval: 3600
   command_timeout: 60
   value_template: >-
@@ -15,30 +16,15 @@
     | to_json 
     }}
 
+- platform: history_stats
+  name: Washer running time
+  entity_id: input_select.washing_machine_status
+  state: "Running"
+  type: time
+  start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  end: "{{ now() }}"
+
 # Powercalc
-- platform: powercalc
-  entity_id: light.local_office_light
-  linear:
-    attribute: brightness
-    min_power: 0.3
-    max_power: 10
-- platform: powercalc
-  entity_id: light.local_bedroom_light
-  linear:
-    attribute: brightness
-    min_power: 0.3
-    max_power: 10
-- platform: powercalc
-  entity_id: light.local_living_room_light
-  linear:
-    attribute: brightness
-    min_power: 0.3
-    max_power: 10
-- platform: powercalc
-  entity_id: media_player.living_room_tv
-  fixed:
-    states_power:
-      playing: 58.65
 # - platform: powercalc
 #   entity_id: binary_sensor.christian_srv
 #   name: Server
@@ -55,6 +41,7 @@
 #           6.5 + 0.6 + 4 + 5
 #         ) | round(2) 
 #       }}
+
 - platform: systemmonitor
   resources:
     - type: disk_use_percent

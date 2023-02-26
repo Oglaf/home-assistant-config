@@ -3,11 +3,6 @@
   mac: A8:A1:59:45:CB:22
   name: christian_pc_wol
   broadcast_address: 192.168.1.255
-  # turn_off:
-  #   service: button.press
-  #   data:
-  #     addon: core_rpc_shutdown
-  #     input: CHRISTIAN-PC
 
 # Circadian lightning
 - platform: circadian_lighting

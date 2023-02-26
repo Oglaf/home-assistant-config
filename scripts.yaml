@@ -6,10 +6,8 @@ turn_on_off_christian_pc:
       entity_id: binary_sensor.christian_pc
       state: 'on'
     then:
-    - service: hassio.addon_stdin
-      data:
-        addon: core_rpc_shutdown
-        input: CHRISTIAN-PC
+    - service: shell_command.christian_pc_shutdown
+      data: {}
     else:
     - service: switch.turn_on
       data: {}

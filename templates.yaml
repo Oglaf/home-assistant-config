@@ -4,15 +4,15 @@
       unit_of_measurement: "kWh"
       state: >
         {{
-          [ states('sensor.local_bedroom_light_energy')                 | float(0),
-            states('sensor.local_living_room_light_energy')             | float(0),
-            states('sensor.local_office_light_energy')                  | float(0),
+          [ states('sensor.local_bedroom_light_powercalc_energy')       | float(0),
+            states('sensor.local_living_room_light_powercalc_energy')   | float(0),
+            states('sensor.local_office_light_powercalc_energy')        | float(0),
             states('sensor.local_computer_socket_energy_helper')        | float(0),
             states('sensor.local_electric_blanket_socket_energy_helper')| float(0),
             states('sensor.local_fan_socket_energy_helper')             | float(0),
             states('sensor.local_washing_machine_socket_energy_helper') | float(0),
             states('sensor.local_oven_socket_energy_helper')            | float(0),
-            states('sensor.living_room_tv_energy')                      | float(0)]
+            states('sensor.living_room_tv_powercalc_energy')            | float(0)]
             | map('float') | sum | round (4)
         }}
     - name: "Tariff price"
@@ -96,3 +96,24 @@
           ((1000 - states('sensor.sonarr_disk_space') | float(0))
           ) | round(1)
         }}
+
+    # Sun
+    - name: "next_sunrise"
+      state: >-
+        {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%H:%M') }}
+    - name: "next_sunset"
+      state: >-
+        {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%H:%M') }}
+
+-  binary_sensor:
+    # Media
+    - name: "living_room_tv_status"
+      state: >-
+        {%
+          if (states('sensor.jellyfin_watching') | int > 0)
+          or (states('media_player.living_room_tv') == 'playing')
+        %}
+          on
+        {% else %}
+          off
+        {% endif %}
