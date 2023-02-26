@@ -53,31 +53,6 @@ http:
     - 192.168.1.0/24
     - 172.21.0.0/24
 
-# # Utility Meter
-# utility_meter:
-#   monthly_energy:
-#     source: sensor.total_consumption
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - shoulder
-#       - offpeak
-#     offset:
-#       days: 20
-#       hours: 0
-#       minutes: 0
-#   pc_energy_cost:
-#     source: sensor.local_computer_socket_energy_helper
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - shoulder
-#       - offpeak
-#     offset:
-#       days: 20
-#       hours: 0
-#       minutes: 0
-
 # Cicardian light
 circadian_lighting:
   min_colortemp: 2004
