@@ -7,7 +7,7 @@
       {
         "show_in_sidebar": true,
         "icon": "mdi:server-network",
-        "title": "Network",
+        "title": "Server",
         "require_admin": true,
         "mode": "storage",
         "url_path": "dashboard-network",
@@ -24,8 +24,8 @@
       },
       {
         "show_in_sidebar": true,
-        "icon": "mdi:monitor-dashboard",
-        "title": "Home server",
+        "icon": "mdi:docker",
+        "title": "Docker",
         "require_admin": true,
         "mode": "storage",
         "url_path": "dashboard-homeserver",

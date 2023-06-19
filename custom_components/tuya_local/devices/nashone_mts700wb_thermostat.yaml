@@ -83,15 +83,6 @@ secondary_entities:
       - id: 39
         type: boolean
         name: button
-  - entity: switch
-    deprecated: button
-    category: config
-    name: Factory reset
-    icon: "mdi:cog-refresh"
-    dps:
-      - id: 39
-        type: boolean
-        name: switch
   - entity: select
     name: Timer
     category: config
@@ -108,11 +99,10 @@ secondary_entities:
   - entity: sensor
     category: diagnostic
     name: Timer
+    class: duration
     icon: "mdi:timer"
     dps:
       - id: 42
         type: integer
-        unit: min
+        unit: s
         name: sensor
-        mapping:
-          - scale: 60

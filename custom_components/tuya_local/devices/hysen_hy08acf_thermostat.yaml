@@ -1,6 +1,9 @@
 name: Hysen HY08ACF thermostat
+products:
+  - id: xhx9h0duu9b9bobs
 primary_entity:
   entity: climate
+  translation_key: thermostat
   dps:
     - id: 1
       type: boolean
@@ -39,23 +42,26 @@ primary_entity:
       name: preset_mode
       mapping:
         - dps_val: Program
-          value: Program
+          value: program
         - dps_val: TempProg
-          value: Temporary Override
+          value: temp_override
+          hidden: true
         - dps_val: Manual
-          value: Manual
+          value: manual
+        - dps_val: Holiday
+          value: away
     - id: 5
       type: string
       name: fan_mode
       mapping:
         - dps_val: low
-          value: Low
+          value: low
         - dps_val: med
-          value: Medium
+          value: medium
         - dps_val: high
-          value: High
+          value: high
         - dps_val: auto
-          value: Auto
+          value: auto
           constraint: operation
           conditions:
             - dps_val: ventilate
@@ -72,35 +78,33 @@ primary_entity:
     - id: 118
       name: operation
       type: string
-#      hidden: true
+      hidden: true
     - id: 119
       name: hvac_action
       type: string
       mapping:
-        - dps_val: "0"
-          constraint: hvac_mode
+        - constraint: hvac_mode
           conditions:
             - dps_val: false
               value: "off"
             - dps_val: true
-              value: idle
-        - dps_val: "1"
-          constraint: hvac_mode
-          conditions:
-            - dps_val: false
-              value: "off"
-            - dps_val: true
-              value: heating
-        - dps_val: "2"
-          constraint: hvac_mode
-          conditions:
-            - dps_val: false
-              value: "off"
-            - dps_val: true
-              value: cooling
+              mapping:
+                - dps_val: "0"
+                  value: idle
+                - dps_val: "1"
+                  value: heating
+                - dps_val: "2"
+                  value: cooling
+                # another variant uses long names
+                - dps_val: heatvalve
+                  value: heating
+                - dps_val: coolvalve
+                  value: cooling
+                - value: idle
     - id: 121
       name: program
       type: integer
+      optional: true
 secondary_entities:
   - entity: lock
     name: Child lock
@@ -152,6 +156,7 @@ secondary_entities:
       - id: 102
         type: integer
         name: value
+        unit: C
         range:
           min: -90
           max: 90
@@ -160,22 +165,26 @@ secondary_entities:
   - entity: number
     name: Maximum temperature
     category: config
+    class: temperature
     icon: "mdi:temperature-chevron-up"
     dps:
       - id: 103
         type: integer
         name: value
+        unit: C
         range:
           min: 16
           max: 50
   - entity: number
-    name: Maximum temperature
+    name: Minimum temperature
     category: config
+    class: temperature
     icon: "mdi:temperature-chevron-down"
     dps:
       - id: 104
         type: integer
         name: value
+        unit: C
         range:
           min: 5
           max: 15

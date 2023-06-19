@@ -9,13 +9,12 @@ primary_entity:
         - dps_val: false
           value: "off"
         - dps_val: true
-          mapping:
-            - constraint: mode
-              conditions:
-                - dps_val: auto
-                  value: auto
-                - dps_val: manual
-                  value: heat
+          constraint: mode
+          conditions:
+            - dps_val: auto
+              value: auto
+            - dps_val: manual
+              value: heat
     - id: 2
       name: mode
       type: string
@@ -93,6 +92,7 @@ secondary_entities:
   - entity: number
     name: Maximum temperature
     category: config
+    class: temperature
     icon: "mdi:thermometer-chevron-up"
     dps:
       - id: 19
@@ -128,6 +128,7 @@ secondary_entities:
   - entity: number
     name: Minimum temperature
     category: config
+    class: temperature
     icon: "mdi:thermometer-chevron-down"
     dps:
       - id: 26

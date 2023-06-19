@@ -6,11 +6,6 @@ primary_entity:
     - id: 101
       type: boolean
       name: switch
-    - id: 105
-      type: integer
-      name: current_power_w
-      mapping:
-        - scale: 10
 secondary_entities:
   - entity: light
     name: Night light
@@ -25,7 +20,7 @@ secondary_entities:
           - dps_val: white
             value: white
           - dps_val: colour
-            value: rgbw
+            value: hs
           - dps_val: scene
             value: Scene
           - dps_val: scene_1
@@ -87,6 +82,7 @@ secondary_entities:
       - id: 102
         type: integer
         name: value
+        optional: true
         unit: min
         range:
           min: 0

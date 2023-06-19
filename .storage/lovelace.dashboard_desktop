@@ -199,9 +199,9 @@
                       },
                       "custom_fields": {
                         "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
-                        "battery": "[[[ if (states['sensor.m2010j19cg_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} ]]]\n",
+                        "battery": "[[[ if (states['sensor.christian_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} ]]]\n",
                         "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['proximity.home_christian'].state} Kms</span></span>`\n]]]\n",
-                        "wifi": "[[[\n  if (states['sensor.m2010j19cg_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.m2010j19cg_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
+                        "wifi": "[[[\n  if (states['sensor.christian_sp_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.christian_sp_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
                       },
                       "state": [
                         {
@@ -514,12 +514,12 @@
                   "cards": [
                     {
                       "type": "light",
-                      "entity": "light.local_bedroom_light",
+                      "entity": "light.bedroom_light",
                       "name": "Bedroom"
                     },
                     {
                       "type": "light",
-                      "entity": "light.local_living_room_light",
+                      "entity": "light.living_room_light",
                       "name": "Living Room"
                     },
                     {
@@ -553,7 +553,7 @@
                       ]
                     },
                     {
-                      "entity": "switch.local_fan_socket",
+                      "entity": "switch.local_charger_socket",
                       "type": "custom:multiple-entity-row",
                       "name": "Bedroom Fan",
                       "icon": "mdi:fan",
@@ -561,12 +561,12 @@
                       "state_color": true,
                       "entities": [
                         {
-                          "entity": "number.local_fan_socket_timer",
+                          "entity": "number.local_charger_socket_timer",
                           "name": "Countdown",
                           "format": "precision = 2"
                         },
                         {
-                          "entity": "sensor.local_fan_socket_power",
+                          "entity": "sensor.local_charger_socket_power",
                           "name": "Power"
                         }
                       ]
@@ -586,7 +586,7 @@
                       ]
                     },
                     {
-                      "entity": "switch.local_oven_socket",
+                      "entity": "switch.local_heater_socket",
                       "type": "custom:multiple-entity-row",
                       "name": "Oven",
                       "icon": "mdi:microwave",
@@ -594,7 +594,7 @@
                       "state_color": true,
                       "entities": [
                         {
-                          "entity": "sensor.local_oven_socket_power",
+                          "entity": "sensor.local_heater_socket_power",
                           "name": "Power"
                         }
                       ]
@@ -747,7 +747,7 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_temperature"
+                        "sensor.office_temperature_sensor_temperature"
                       ],
                       "name": "Office",
                       "line_color": "#e74c3c",
@@ -760,7 +760,7 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_humidity"
+                        "sensor.office_temperature_sensor_humidity"
                       ],
                       "name": "Office",
                       "line_color": "blue",
@@ -778,7 +778,7 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.temperature_sensor_temperature"
+                        "sensor.kitchen_temperature_sensor_temperature"
                       ],
                       "name": "Kitchen",
                       "line_color": "#e74c3c",
@@ -791,7 +791,7 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.temperature_sensor_humidity"
+                        "sensor.kitchen_temperature_sensor_humidity"
                       ],
                       "name": "Kitchen",
                       "line_color": "blue",

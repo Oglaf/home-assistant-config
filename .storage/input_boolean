@@ -33,6 +33,11 @@
         "name": "Theater mode",
         "icon": "mdi:theater",
         "id": "theater_mode"
+      },
+      {
+        "id": "heater_automation",
+        "icon": "mdi:robot",
+        "name": "Heater automation"
       }
     ]
   }

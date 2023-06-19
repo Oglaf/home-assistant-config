@@ -1,0 +1,32 @@
+- sensor:
+      name: "SpeedTest CLI Data"
+      unique_id: speedtest_cli_data
+      command: '/config/speedtest/speedtest --format=json --server-id=21939 --accept-license --accept-gdpr'
+      scan_interval: 3600
+      command_timeout: 60
+      value_template: >-
+        {{ 
+          { 
+            "ping": value_json.ping.latency, 
+            "download": value_json.download.bandwidth, 
+            "upload": value_json.upload.bandwidth 
+          }
+          | to_json 
+        }}
+
+- sensor:
+      name: 'GPU Data'
+      command: "ssh -o UserKnownHostsFile=/config/.ssh/known_hosts christian@192.168.1.198 -i /config/.ssh/id_rsa 'nvidia-smi --query-gpu=power.draw,temperature.gpu,utilization.gpu,utilization.memory --format=csv,noheader,nounits'"
+      scan_interval: 30
+      command_timeout: 10
+      value_template: >-
+        {% set lines = value.split('\n') %}
+        {% set values = lines[0].split(',') %}
+        {{
+          {
+            "gpu_power_draw": values[0]         | trim,
+            "gpu_temperature": values[1]        | trim,
+            "gpu_utilization": values[2]        | trim,
+            "gpu_memory_utilization": values[3] | trim,
+          } | to_json
+        }}

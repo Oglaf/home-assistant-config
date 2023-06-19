@@ -10,10 +10,45 @@
           "title": "Network",
           "path": "network",
           "icon": "mdi:server-network",
-          "type": "custom:masonry-layout",
+          "type": "custom:vertical-layout",
           "layout": {},
           "badges": [],
           "cards": [
+            {
+              "type": "markdown",
+              "content": "# Router <ha-icon icon=\"mdi:router-network\"></ha-icon>"
+            },
+            {
+              "type": "custom:uptime-card",
+              "entity": "binary_sensor.tp_link_tl_wdr4300_v1_dd_wrt_wan_status",
+              "icon": "mdi:wan",
+              "title_template": "WAN uptime",
+              "hours_to_show": 720,
+              "status_adaptive_color": true,
+              "color_thresholds": [
+                {
+                  "value": 90,
+                  "color": "#C66445"
+                },
+                {
+                  "value": 99.96,
+                  "color": "#C6B145"
+                },
+                {
+                  "value": 100,
+                  "color": "#45C669"
+                }
+              ],
+              "tooltip": {
+                "hour24": true
+              },
+              "bar": {
+                "amount": 30
+              },
+              "show": {
+                "footer": true
+              }
+            },
             {
               "type": "horizontal-stack",
               "cards": [
@@ -82,47 +117,13 @@
               ]
             },
             {
-              "type": "custom:uptime-card",
-              "entity": "binary_sensor.tp_link_tl_wdr4300_v1_dd_wrt_wan_status",
-              "icon": "mdi:wan",
-              "title_template": "WAN uptime",
-              "hours_to_show": 720,
-              "status_adaptive_color": true,
-              "color": {
-                "title": "#C9C9C9"
-              },
-              "color_thresholds": [
-                {
-                  "value": 90,
-                  "color": "#C66445"
-                },
-                {
-                  "value": 99.96,
-                  "color": "#C6B145"
-                },
-                {
-                  "value": 100,
-                  "color": "#45C669"
-                }
-              ],
-              "tooltip": {
-                "hour24": true
-              },
-              "bar": {
-                "amount": 30
-              },
-              "show": {
-                "footer": true
-              }
-            },
-            {
               "type": "horizontal-stack",
               "cards": [
                 {
                   "type": "custom:mini-graph-card",
                   "entities": [
                     {
-                      "entity": "binary_sensor.cloudfare",
+                      "entity": "binary_sensor.cloudflare",
                       "attribute": "round_trip_time_avg"
                     }
                   ],
@@ -181,24 +182,7 @@
               ]
             },
             {
-              "show_name": true,
-              "show_icon": true,
-              "show_state": true,
-              "type": "glance",
-              "entities": [
-                {
-                  "entity": "sensor.last_boot"
-                },
-                {
-                  "entity": "sensor.hacs",
-                  "name": "HACS"
-                },
-                {
-                  "entity": "sensor.watchman_missing_entities",
-                  "name": "Missing entities"
-                }
-              ],
-              "state_color": true
+              "type": "custom:layout-break"
             },
             {
               "square": false,
@@ -207,7 +191,7 @@
               "cards": [
                 {
                   "type": "markdown",
-                  "content": "# Server <ha-icon icon=\"mdi:server\"></ha-icon>"
+                  "content": "# Storage <ha-icon icon=\"mdi:harddisk\"></ha-icon>"
                 },
                 {
                   "square": false,
@@ -220,11 +204,27 @@
                         {
                           "type": "custom:apexcharts-card",
                           "chart_type": "radialBar",
+                          "experimental": {
+                            "color_threshold": true
+                          },
                           "series": [
                             {
-                              "entity": "sensor.disk_free",
-                              "color": "rgb(33, 150, 243)",
-                              "max": 240,
+                              "entity": "sensor.disk_use_percent_config",
+                              "color_threshold": [
+                                {
+                                  "value": 0,
+                                  "color": "rgb(33, 150, 243)"
+                                },
+                                {
+                                  "value": 40,
+                                  "color": "rgba(255,166,0,255)"
+                                },
+                                {
+                                  "value": 80,
+                                  "color": "rgb(255, 87, 34)"
+                                }
+                              ],
+                              "max": 100,
                               "show": {
                                 "legend_value": false
                               }
@@ -263,11 +263,11 @@
                         },
                         {
                           "type": "custom:mushroom-entity-card",
-                          "entity": "sensor.disk_use_config",
+                          "entity": "sensor.disk_use_percent_config",
                           "primary_info": "state",
                           "secondary_info": "name",
                           "name": "OS Disk",
-                          "icon_color": "blue",
+                          "icon_color": "grey",
                           "layout": "vertical",
                           "card_mod": {
                             "style": "ha-card {\n  margin-top: -90px;\n  width: 140px;\n  margin-left: auto;\n  margin-right: auto;\n}\n"
@@ -281,11 +281,27 @@
                         {
                           "type": "custom:apexcharts-card",
                           "chart_type": "radialBar",
+                          "experimental": {
+                            "color_threshold": true
+                          },
                           "series": [
                             {
-                              "entity": "sensor.sonarr_disk_free_percent",
-                              "color": "rgb(255, 87, 34)",
-                              "max": 90,
+                              "entity": "sensor.disk_use_percent_mnt_filestorage",
+                              "color_threshold": [
+                                {
+                                  "value": 0,
+                                  "color": "rgb(33, 150, 243)"
+                                },
+                                {
+                                  "value": 40,
+                                  "color": "rgba(255,166,0,255)"
+                                },
+                                {
+                                  "value": 80,
+                                  "color": "rgb(255, 87, 34)"
+                                }
+                              ],
+                              "max": 100,
                               "show": {
                                 "legend_value": false
                               }
@@ -324,12 +340,12 @@
                         },
                         {
                           "type": "custom:mushroom-entity-card",
-                          "entity": "sensor.sonarr_disk_used_space",
+                          "entity": "sensor.disk_use_percent_mnt_filestorage",
                           "primary_info": "state",
                           "secondary_info": "name",
                           "name": "Storage Disk",
                           "icon": "mdi:harddisk",
-                          "icon_color": "red",
+                          "icon_color": "grey",
                           "layout": "vertical",
                           "card_mod": {
                             "style": "ha-card {\n  margin-top: -90px;\n  width: 140px;\n  margin-left: auto;\n  margin-right: auto;\n}\n"
@@ -338,67 +354,643 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:bar-card",
-                      "positions": {
-                        "icon": "off",
-                        "indicator": "inside",
-                        "name": "outside"
-                      },
-                      "width": "70%",
-                      "entities": [
-                        {
-                          "entity": "sensor.processor_use",
-                          "name": "CPU"
-                        },
-                        {
-                          "entity": "sensor.memory_use_percent",
-                          "name": "RAM"
-                        }
-                      ],
-                      "color": "orange",
-                      "style": "bar-card-value {\n  margin-right: auto;\n  #font-size: 13px;\n  font-weight: bold;\n  #text-shadow: 1px 1px #0005;\n}"
-                    }
-                  ]
-                },
-                {
-                  "type": "custom:mushroom-entity-card",
-                  "entity": "sensor.processor_temperature",
-                  "layout": "vertical",
-                  "icon_color": "red"
                 }
               ]
             },
             {
-              "type": "custom:button-card",
-              "entity": "binary_sensor.christian_pc",
-              "icon": "mdi:power",
-              "tap_action": {
-                "action": "call-service",
-                "service": "script.turn_on_off_christian_pc"
-              },
-              "show_state": false,
-              "state": [
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
                 {
-                  "value": "off",
-                  "color": "var(--disabled-text-color)"
+                  "type": "markdown",
+                  "content": "# Server <ha-icon icon=\"mdi:server\"></ha-icon>"
                 },
                 {
-                  "value": "on",
-                  "color": "rgb(189, 255, 5)"
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "square": false,
+                      "columns": 3,
+                      "cards": [
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "chart_type": "radialBar",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "series": [
+                                {
+                                  "entity": "sensor.processor_temperature",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 40,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.processor_temperature",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "Temp",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        },
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "chart_type": "radialBar",
+                              "series": [
+                                {
+                                  "entity": "sensor.processor_use",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 30,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.processor_use",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "Load",
+                              "icon": "mdi:cpu-64-bit",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        },
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "chart_type": "radialBar",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "series": [
+                                {
+                                  "entity": "sensor.memory_use_percent",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 30,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.memory_use_percent",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "RAM",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "hold_action": {
+                                "action": "more-info"
+                              },
+                              "double_tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
-              ],
-              "styles": {
-                "card": [
-                  {
-                    "height": "200px"
-                  }
-                ]
-              }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# GPU <ha-icon icon=\"mdi:expansion-card\"></ha-icon>"
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "square": false,
+                      "columns": 3,
+                      "cards": [
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "chart_type": "radialBar",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "series": [
+                                {
+                                  "entity": "sensor.gpu_temperature",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 40,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.gpu_temperature",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "Temp",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        },
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "chart_type": "radialBar",
+                              "series": [
+                                {
+                                  "entity": "sensor.gpu_utilization",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 30,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.gpu_utilization",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "Load",
+                              "icon": "mdi:expansion-card",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        },
+                        {
+                          "type": "custom:stack-in-card",
+                          "cards": [
+                            {
+                              "type": "custom:apexcharts-card",
+                              "chart_type": "radialBar",
+                              "experimental": {
+                                "color_threshold": true
+                              },
+                              "series": [
+                                {
+                                  "entity": "sensor.gpu_memory_utilization",
+                                  "color_threshold": [
+                                    {
+                                      "value": 0,
+                                      "color": "rgb(33, 150, 243)"
+                                    },
+                                    {
+                                      "value": 30,
+                                      "color": "rgba(255,166,0,255)"
+                                    },
+                                    {
+                                      "value": 70,
+                                      "color": "rgb(255, 87, 34)"
+                                    }
+                                  ],
+                                  "max": 100,
+                                  "show": {
+                                    "legend_value": false
+                                  }
+                                }
+                              ],
+                              "apex_config": {
+                                "plotOptions": {
+                                  "radialBar": {
+                                    "offsetY": 0,
+                                    "startAngle": -108,
+                                    "endAngle": 108,
+                                    "hollow": {
+                                      "size": "65%"
+                                    },
+                                    "dataLabels": {
+                                      "name": {
+                                        "show": false
+                                      },
+                                      "value": {
+                                        "show": false
+                                      }
+                                    },
+                                    "track": {
+                                      "strokeWidth": "80%",
+                                      "margin": 0
+                                    }
+                                  }
+                                },
+                                "legend": {
+                                  "show": false
+                                },
+                                "chart": {
+                                  "height": "170px"
+                                }
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-entity-card",
+                              "entity": "sensor.gpu_memory_utilization",
+                              "primary_info": "name",
+                              "secondary_info": "state",
+                              "name": "VRAM",
+                              "icon": "mdi:memory",
+                              "icon_color": "grey",
+                              "layout": "vertical",
+                              "tap_action": {
+                                "action": "more-info"
+                              },
+                              "hold_action": {
+                                "action": "more-info"
+                              },
+                              "double_tap_action": {
+                                "action": "more-info"
+                              },
+                              "card_mod": {
+                                "style": "ha-card {\n  top: -63px;\n  --ha-card-border-width: 0;\n}\n"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card {\n  height: 158px;\n}\n"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Home Assistant <ha-icon icon=\"mdi:home-assistant\"></ha-icon>"
+                },
+                {
+                  "type": "glance",
+                  "show_name": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "entities": [
+                    {
+                      "entity": "sensor.last_boot"
+                    },
+                    {
+                      "entity": "sensor.hacs",
+                      "name": "HACS"
+                    },
+                    {
+                      "entity": "sensor.watchman_missing_entities",
+                      "name": "Missing entities"
+                    }
+                  ],
+                  "state_color": true
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# Wake on Lan <ha-icon icon=\"mdi:lan-connect\"></ha-icon>"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity_id": "binary_sensor.christian_pc",
+                  "primary": "CHRISTIAN-PC",
+                  "icon": "mdi:power",
+                  "icon_color": "{{ is_state(\"binary_sensor.christian_pc\", \"on\") | iif(\"#20F700\", \"grey\") }}",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.turn_on_off_christian_pc"
+                  },
+                  "secondary": "",
+                  "badge_icon": "",
+                  "layout": "vertical",
+                  "fill_container": false
+                }
+              ]
             }
           ]
         }

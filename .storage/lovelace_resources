@@ -10,37 +10,37 @@
         "id": "bf45a820ea73463db877409772a8493a"
       },
       {
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375253",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375271",
         "type": "module",
         "id": "e0c16174a16d4a8f825286803f30f4ed"
       },
       {
-        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325342",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325350",
         "type": "module",
         "id": "fe51ff54f44d4fca9e63c0d9749468d5"
       },
       {
-        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=30496791845",
+        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=30496791849",
         "type": "module",
         "id": "39fda8f56a604b809beba8518a6e4dfe"
       },
       {
-        "url": "/hacsfiles/vacuum-card/vacuum-card.js?hacstag=261291295263",
+        "url": "/hacsfiles/vacuum-card/vacuum-card.js?hacstag=261291295271",
         "type": "module",
         "id": "cf31f35aa1b34d118ad3f238f2b72b6b"
       },
       {
-        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524320",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524322",
         "type": "module",
         "id": "357f2b9c10274e61ae93637021fcdbd0"
       },
       {
-        "url": "/hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js?hacstag=178921037441",
+        "url": "/hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js?hacstag=178921037450",
         "type": "module",
         "id": "e8c85ae38f9649a081968934f10b81ee"
       },
       {
-        "url": "/hacsfiles/decluttering-card/decluttering-card.js?hacstag=188686483063",
+        "url": "/hacsfiles/decluttering-card/decluttering-card.js?hacstag=188686483100",
         "type": "module",
         "id": "6955bdf394cc42699f9d3b3a67ed752e"
       },
@@ -55,12 +55,12 @@
         "id": "0aba0aa77aa746328ea35bedb6d0ea1a"
       },
       {
-        "url": "/hacsfiles/light-entity-card/light-entity-card.js?hacstag=168744428500",
+        "url": "/hacsfiles/light-entity-card/light-entity-card.js?hacstag=168744428610",
         "type": "module",
         "id": "1ae406ba33ca4dae9c9c8fc8ff5783ee"
       },
       {
-        "url": "/hacsfiles/homeassistant-minimalistic-area-card/minimalistic-area-card.js?hacstag=489457357118",
+        "url": "/hacsfiles/homeassistant-minimalistic-area-card/minimalistic-area-card.js?hacstag=4894573571116",
         "type": "module",
         "id": "7e8e379bffb749efb5afda20c6aa7b01"
       },
@@ -70,12 +70,12 @@
         "id": "9e77d0de4bd3459fbf8582e314727abb"
       },
       {
-        "url": "/hacsfiles/logbook-card/logbook-card.js?hacstag=216008446193",
+        "url": "/hacsfiles/logbook-card/logbook-card.js?hacstag=2160084461111",
         "type": "module",
         "id": "cc03f1352fcc4fbf965bfbc8901140a1"
       },
       {
-        "url": "/hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152202",
+        "url": "/hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152204",
         "type": "module",
         "id": "d1a71ffa79724c62b6e6f7dea312ddae"
       },
@@ -88,6 +88,16 @@
         "url": "/hacsfiles/bignumber-card/bignumber-card.js?hacstag=187245418006",
         "type": "module",
         "id": "09858d7dcd8140789290df32022c57e9"
+      },
+      {
+        "url": "/hacsfiles/ha-energy-overview-card/energy-overview-card.js?hacstag=594389396242",
+        "type": "module",
+        "id": "d8baa673a5d04c398a2f8753443df084"
+      },
+      {
+        "id": "bc285ccfc60045a4ac27c0e034296fec",
+        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682211",
+        "type": "module"
       }
     ]
   }

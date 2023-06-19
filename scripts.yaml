@@ -14,3 +14,17 @@ turn_on_off_christian_pc:
       target:
         entity_id: switch.christian_pc_wol
   mode: single
+
+clean_room:
+  alias: Clean room
+  sequence:
+  - service: vacuum.start
+    data: {}
+    target:
+      entity_id: vacuum.local_cleaner_robot
+  - service: vacuum.send_command
+    data:
+      command: single_room
+    target:
+      entity_id: vacuum.local_cleaner_robot
+  mode: single

@@ -3,6 +3,14 @@
   "minor_version": 2,
   "key": "repairs.issue_registry",
   "data": {
-    "issues": []
+    "issues": [
+      {
+        "created": "2023-06-08T13:26:37.516763+00:00",
+        "dismissed_version": "2023.6.0",
+        "domain": "command_line",
+        "is_persistent": false,
+        "issue_id": "deprecated_yaml_sensor"
+      }
+    ]
   }
 }

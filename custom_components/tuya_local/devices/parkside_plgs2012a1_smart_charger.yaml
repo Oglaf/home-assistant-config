@@ -16,6 +16,7 @@ secondary_entities:
     name: Charge current
     icon: "mdi:current-dc"
     category: config
+    class: current
     dps:
       - id: 3
         type: integer
@@ -25,11 +26,13 @@ secondary_entities:
           max: 30000
         mapping:
           - step: 100
-        unit: mA
+            scale: 1000
+        unit: A
   - entity: number
     name: Charge voltage
     icon: "mdi:battery-charging"
     category: config
+    class: voltage
     dps:
       - id: 4
         type: integer
@@ -120,9 +123,12 @@ secondary_entities:
       - id: 101
         type: integer
         name: sensor
-        unit: mA
+        unit: A
+        mapping:
+          - scale: 1000
   - entity: sensor
     name: Time remaining
+    class: duration
     icon: "mdi:battery-clock"
     dps:
       - id: 102

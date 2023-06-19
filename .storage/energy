@@ -8,19 +8,61 @@
         "type": "grid",
         "flow_from": [
           {
-            "stat_energy_from": "sensor.monthly_energy_offpeak",
+            "stat_energy_from": "sensor.kitchen_light_group_powercalc_energy",
             "stat_cost": null,
             "entity_energy_price": "sensor.tariff_price",
             "number_energy_price": null
           },
           {
-            "stat_energy_from": "sensor.monthly_energy_peak",
+            "stat_energy_from": "sensor.bedroom_light_powercalc_energy",
             "stat_cost": null,
             "entity_energy_price": "sensor.tariff_price",
             "number_energy_price": null
           },
           {
-            "stat_energy_from": "sensor.monthly_energy_shoulder",
+            "stat_energy_from": "sensor.living_room_light_powercalc_energy",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_office_light_powercalc_energy",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_computer_socket_energy_helper",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_charger_socket_energy_helper",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_heater_socket_energy_helper",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_washing_machine_socket_energy_helper",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.living_room_plug_summation_delivered",
+            "stat_cost": null,
+            "entity_energy_price": "sensor.tariff_price",
+            "number_energy_price": null
+          },
+          {
+            "stat_energy_from": "sensor.local_electric_blanket_socket_energy_helper",
             "stat_cost": null,
             "entity_energy_price": "sensor.tariff_price",
             "number_energy_price": null
@@ -32,31 +74,13 @@
     ],
     "device_consumption": [
       {
-        "stat_consumption": "sensor.living_room_tv_powercalc_energy"
+        "stat_consumption": "sensor.monthly_energy_offpeak"
       },
       {
-        "stat_consumption": "sensor.local_bedroom_light_powercalc_energy"
+        "stat_consumption": "sensor.monthly_energy_shoulder"
       },
       {
-        "stat_consumption": "sensor.local_living_room_light_powercalc_energy"
-      },
-      {
-        "stat_consumption": "sensor.local_office_light_powercalc_energy"
-      },
-      {
-        "stat_consumption": "sensor.local_computer_socket_energy_helper"
-      },
-      {
-        "stat_consumption": "sensor.local_electric_blanket_socket_energy_helper"
-      },
-      {
-        "stat_consumption": "sensor.local_oven_socket_energy_helper"
-      },
-      {
-        "stat_consumption": "sensor.local_fan_socket_energy_helper"
-      },
-      {
-        "stat_consumption": "sensor.local_washing_machine_socket_energy_helper"
+        "stat_consumption": "sensor.monthly_energy_peak"
       }
     ]
   }

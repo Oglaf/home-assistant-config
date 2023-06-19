@@ -15,7 +15,7 @@
           "layout": {
             "max_cols": 3
           },
-          "type": "custom:masonry-layout",
+          "type": "custom:vertical-layout",
           "badges": [],
           "cards": [
             {
@@ -201,9 +201,9 @@
                       },
                       "custom_fields": {
                         "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
-                        "battery": "[[[ if (states['sensor.m2010j19cg_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} ]]]\n",
+                        "battery": "[[[ if (states['sensor.christian_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} ]]]\n",
                         "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['proximity.home_christian'].state} Kms</span></span>`\n]]]\n",
-                        "wifi": "[[[\n  if (states['sensor.m2010j19cg_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.m2010j19cg_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
+                        "wifi": "[[[\n  if (states['sensor.christian_sp_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.christian_sp_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
                       },
                       "state": [
                         {
@@ -480,6 +480,42 @@
               "cards": [
                 {
                   "type": "markdown",
+                  "content": "# Media <ha-icon icon=\"mdi:play-box\"></ha-icon>"
+                },
+                {
+                  "type": "custom:mushroom-media-player-card",
+                  "entity": "media_player.living_room_tv",
+                  "use_media_info": true,
+                  "media_controls": [
+                    "on_off",
+                    "play_pause_stop"
+                  ],
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:mushroom-media-player-card",
+                  "entity": "media_player.bedroom_tv",
+                  "layout": "horizontal",
+                  "fill_container": false,
+                  "media_controls": [
+                    "on_off",
+                    "play_pause_stop"
+                  ],
+                  "collapsible_controls": true
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
                   "content": "# Temperature <ha-icon icon=\"mdi:thermometer\"></ha-icon>"
                 },
                 {
@@ -488,28 +524,39 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_temperature"
+                        {
+                          "entity": "sensor.office_temperature_sensor_temperature",
+                          "show_state": true,
+                          "aggregate_func": "avg"
+                        }
                       ],
                       "name": "Office",
                       "line_color": "#e74c3c",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
-                      "group_by": "hour"
+                      "hours_to_show": 24,
+                      "aggregate_func": "avg",
+                      "group_by": "hour",
+                      "state": "last"
                     },
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_humidity"
+                        {
+                          "entity": "sensor.office_temperature_sensor_humidity",
+                          "show_state": true,
+                          "aggregate_func": "avg"
+                        }
                       ],
                       "name": "Office",
                       "line_color": "blue",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
-                      "group_by": "hour"
+                      "hours_to_show": 24,
+                      "group_by": "hour",
+                      "hour24": true
                     }
                   ]
                 },
@@ -519,32 +566,73 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.temperature_sensor_temperature"
+                        "sensor.kitchen_temperature_sensor_temperature"
                       ],
                       "name": "Kitchen",
                       "line_color": "#e74c3c",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
-                      "group_by": "hour"
+                      "hours_to_show": 24,
+                      "aggregate_func": "last",
+                      "state": true
                     },
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.temperature_sensor_humidity"
+                        "sensor.kitchen_temperature_sensor_humidity"
                       ],
                       "name": "Kitchen",
                       "line_color": "blue",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
-                      "group_by": "hour"
+                      "hours_to_show": 24,
+                      "aggregate_func": "last",
+                      "state": true
                     }
                   ]
                 }
               ]
+            },
+            {
+              "type": "custom:vacuum-card",
+              "entity": "vacuum.local_cleaner_robot",
+              "image": "default",
+              "compact_view": false,
+              "show_name": false,
+              "show_status": true,
+              "show_toolbar": true,
+              "stats": {
+                "default": [
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_time",
+                    "unit": "minutes",
+                    "subtitle": "Cleaning time"
+                  },
+                  {
+                    "entity_id": "sensor.local_cleaner_robot_clean_area",
+                    "unit": "m²",
+                    "subtitle": "Cleaning area"
+                  }
+                ]
+              },
+              "shortcuts": [
+                {
+                  "name": "Clean room",
+                  "entity": "vacuum.local_cleaner_robot",
+                  "icon": "mdi:texture-box",
+                  "action": "call-service",
+                  "service": "vacuum.send_command",
+                  "service_data": {
+                    "command": "smart",
+                    "entity_id": "vacuum.local_cleaner_robot"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
             },
             {
               "square": false,
@@ -556,142 +644,164 @@
                   "content": "# Smart devices <ha-icon icon=\"mdi:home-assistant\"></ha-icon>"
                 },
                 {
-                  "type": "horizontal-stack",
+                  "type": "custom:mushroom-chips-card",
+                  "chips": [
+                    {
+                      "type": "template",
+                      "entity": "switch.local_computer_socket",
+                      "icon": "mdi:desktop-tower-monitor",
+                      "icon_color": "{% if is_state('switch.local_computer_socket', 'on') %}\n  orange\n{% else %}\n  var(--primary-text-color)\n{% endif %}",
+                      "content": "{{ states('sensor.local_computer_socket_power') ~ 'W' }}",
+                      "picture": "",
+                      "double_tap_action": {
+                        "action": "more-info"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      },
+                      "hold_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "template",
+                      "double_tap_action": {
+                        "action": "more-info"
+                      },
+                      "entity": "switch.local_electric_blanket_socket",
+                      "icon": "mdi:air-filter",
+                      "content": "{{ states('sensor.local_electric_blanket_socket_power') ~ 'W' }}",
+                      "icon_color": "{% if is_state('switch.local_electric_blanket_socket', 'on') %}\n  orange\n{% else %}\n  var(--primary-text-color)\n{% endif %}"
+                    },
+                    {
+                      "type": "template",
+                      "entity": "switch.local_charger_socket",
+                      "icon": "mdi:battery-charging-50",
+                      "picture": "",
+                      "icon_color": "{% if is_state('switch.local_charger_socket', 'on') %}\n  orange\n{% else %}\n  var(--primary-text-color)\n{% endif %}\n",
+                      "content": "{{ states('sensor.local_charger_socket_power') ~ 'W' }}"
+                    },
+                    {
+                      "type": "template",
+                      "icon": "mdi:television-classic",
+                      "content": "{{ states('sensor.living_room_plug_power') ~ 'W' }}",
+                      "entity": "remote.living_room_tv",
+                      "icon_color": "{% if is_state('remote.living_room_tv', 'on') %}\n  orange\n{% else %}\n  var(--primary-text-color)\n{% endif %}"
+                    },
+                    {
+                      "type": "template",
+                      "icon_color": "{% if is_state('switch.local_heater_socket', 'on') %}\n  orange\n{% else %}\n  var(--primary-text-color)\n{% endif %}",
+                      "content": "{{ states('sensor.local_heater_socket_power') ~ 'W' }}",
+                      "icon": "mdi:radiator",
+                      "entity": "switch.local_heater_socket"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.bedroom_light",
+                  "name": "Bedroom",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_temp_control": true,
+                  "primary_info": "name",
+                  "secondary_info": "none",
+                  "icon_type": "icon",
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.living_room_light",
+                  "name": "Living Room",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_temp_control": true,
+                  "primary_info": "name",
+                  "secondary_info": "none",
+                  "icon_type": "icon",
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.local_office_light",
+                  "name": "Office",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_temp_control": true,
+                  "primary_info": "name",
+                  "secondary_info": "none",
+                  "icon_type": "icon",
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.kitchen_light_group",
+                  "name": "Kitchen",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_temp_control": true,
+                  "primary_info": "name",
+                  "secondary_info": "none",
+                  "icon_type": "icon",
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:stack-in-card",
                   "cards": [
                     {
-                      "type": "light",
-                      "entity": "light.local_bedroom_light",
-                      "name": "Bedroom"
-                    },
-                    {
-                      "type": "light",
-                      "entity": "light.local_living_room_light",
-                      "name": "Living Room"
-                    },
-                    {
-                      "type": "light",
-                      "entity": "light.local_office_light",
-                      "name": "Office Light"
-                    }
-                  ]
-                },
-                {
-                  "type": "entities",
-                  "show_header_toggle": false,
-                  "entities": [
-                    {
-                      "entity": "switch.local_electric_blanket_socket",
-                      "type": "custom:multiple-entity-row",
-                      "name": "Eletric blanket",
-                      "icon": "mdi:air-filter",
-                      "toggle": true,
-                      "state_color": true,
-                      "entities": [
-                        {
-                          "entity": "number.local_electric_blanket_socket_timer",
-                          "name": "Countdown",
-                          "format": "precision = 2"
-                        },
-                        {
-                          "entity": "sensor.local_electric_blanket_socket_power",
-                          "name": "Power"
-                        }
-                      ]
-                    },
-                    {
-                      "entity": "switch.local_fan_socket",
-                      "type": "custom:multiple-entity-row",
-                      "name": "Bedroom Fan",
-                      "icon": "mdi:fan",
-                      "toggle": true,
-                      "state_color": true,
-                      "entities": [
-                        {
-                          "entity": "number.local_fan_socket_timer",
-                          "name": "Countdown",
-                          "format": "precision = 2"
-                        },
-                        {
-                          "entity": "sensor.local_fan_socket_power",
-                          "name": "Power"
-                        }
-                      ]
-                    },
-                    {
-                      "entity": "switch.local_computer_socket",
-                      "type": "custom:multiple-entity-row",
-                      "name": "Computer",
-                      "icon": "mdi:desktop-tower-monitor",
-                      "toggle": true,
-                      "state_color": true,
-                      "entities": [
-                        {
-                          "entity": "sensor.local_computer_socket_power",
-                          "name": "Power"
-                        }
-                      ]
-                    },
-                    {
-                      "entity": "switch.local_oven_socket",
-                      "type": "custom:multiple-entity-row",
-                      "name": "Oven",
-                      "icon": "mdi:microwave",
-                      "toggle": true,
-                      "state_color": true,
-                      "entities": [
-                        {
-                          "entity": "sensor.local_oven_socket_power",
-                          "name": "Power"
-                        }
-                      ]
-                    },
-                    {
-                      "entity": "switch.local_washing_machine_socket",
-                      "type": "custom:multiple-entity-row",
-                      "name": "Washing machine",
-                      "icon": "mdi:washing-machine",
-                      "toggle": true,
-                      "state_color": true,
-                      "entities": [
-                        {
-                          "entity": "sensor.local_washing_machine_socket_power",
-                          "name": "Power"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "custom:button-card",
-                  "entity": "input_select.washing_machine_status",
-                  "show_name": false,
-                  "show_state": false,
-                  "tap_action": "none",
-                  "layout": "icon_label",
-                  "size": "60px",
-                  "show_label": true,
-                  "label": "[[[\n  var decimalTime = states['sensor.washer_running_time'].state;\n  var hour = Math.floor(Math.abs(decimalTime));\n  var min = Math.floor((Math.abs(decimalTime) * 60) % 60);\n  return (hour < 10 ? \"0\" : \"\") + hour + \":\" + (min < 10 ? \"0\" : \"\") + min;\n]]]\n",
-                  "state": [
-                    {
-                      "value": "Off",
-                      "icon": "mdi:washing-machine-off",
-                      "color": "var(--disabled-text-color)"
-                    },
-                    {
-                      "value": "Running",
-                      "icon": "mdi:washing-machine",
-                      "color": "orange"
-                    }
-                  ],
-                  "styles": {
-                    "card": [
-                      {
-                        "font-size": "20px"
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_heater_socket",
+                      "name": "Heater",
+                      "icon": "mdi:radiator",
+                      "icon_color": "red",
+                      "secondary_info": "none",
+                      "card_mod": {
+                        "style": "ha-card {\n  --ha-card-border-width: 0px;\n}\n"
                       },
-                      {
-                        "font-weight": "bold"
+                      "tap_action": {
+                        "action": "toggle"
                       }
-                    ]
+                    },
+                    {
+                      "type": "custom:mushroom-number-card",
+                      "entity": "input_number.thermostat_temperature",
+                      "display_mode": "buttons",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_type": "none",
+                      "card_mod": {
+                        "style": "ha-card {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 54px;\n  width: calc(70% - 54px);\n  --ha-card-border-width: 0px;\n  --control-height: 30px;\n  transition: all 0s;\n  font-size: calc(var(--control-height) / 2);\n}\n"
+                      }
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "input_boolean.heater_automation",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_color": "red",
+                      "icon": "mdi:thermostat-auto",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "card_mod": {
+                        "style": "ha-card {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  width: fit-content;\n  --ha-card-border-width: 0px;\n}\n"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "input_select.washing_machine_status",
+                  "primary": "Washing Machine",
+                  "secondary": "{{ 'Working time: '+(states('sensor.washer_running_time') | float(0) *60 *60) | timestamp_custom('%H:%M:%S', false)}}",
+                  "icon": "mdi:washing-machine",
+                  "icon_color": "{% if is_state(\"input_select.washing_machine_status\", \"Running\") -%}\n  amber\n{%- else -%}\n  grey\n{%- endif %}",
+                  "tap_action": {
+                    "action": "more-info"
                   }
                 },
                 {
@@ -751,62 +861,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "custom:vacuum-card",
-              "entity": "vacuum.local_cleaner_robot",
-              "image": "default",
-              "compact_view": false,
-              "show_name": false,
-              "show_status": true,
-              "show_toolbar": true,
-              "stats": {
-                "default": [
-                  {
-                    "entity_id": "sensor.local_cleaner_robot_clean_area",
-                    "unit": "minutes",
-                    "subtitle": "Cleaning time"
-                  },
-                  {
-                    "entity_id": "sensor.local_cleaner_robot_clean_time",
-                    "unit": "m²",
-                    "subtitle": "Cleaning area"
-                  }
-                ]
-              }
-            },
-            {
-              "square": false,
-              "columns": 1,
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "markdown",
-                  "content": "# Media <ha-icon icon=\"mdi:play-box\"></ha-icon>"
-                },
-                {
-                  "type": "custom:mushroom-media-player-card",
-                  "entity": "media_player.living_room_tv",
-                  "use_media_info": true,
-                  "media_controls": [
-                    "on_off",
-                    "play_pause_stop"
-                  ],
-                  "layout": "horizontal",
-                  "collapsible_controls": true
-                },
-                {
-                  "type": "custom:mushroom-media-player-card",
-                  "entity": "media_player.bedroom_tv",
-                  "layout": "horizontal",
-                  "fill_container": false,
-                  "media_controls": [
-                    "on_off",
-                    "play_pause_stop"
-                  ],
-                  "collapsible_controls": true
-                }
-              ]
             }
           ]
         },
@@ -816,9 +870,7 @@
           "path": "lights",
           "icon": "mdi:ceiling-light-multiple",
           "type": "custom:horizontal-layout",
-          "layout": {
-            "max_cols": 3
-          },
+          "layout": {},
           "badges": [],
           "cards": [
             {
@@ -850,7 +902,7 @@
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
                   "type": "custom:light-entity-card",
-                  "entity": "light.local_living_room_light",
+                  "entity": "light.living_room_light",
                   "effects_list": true
                 },
                 {
@@ -908,7 +960,7 @@
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
                   "type": "custom:light-entity-card",
-                  "entity": "light.local_bedroom_light",
+                  "entity": "light.bedroom_light",
                   "effects_list": true
                 },
                 {
@@ -938,7 +990,6 @@
                   "color_temp": true,
                   "white_value": false,
                   "color_picker": true,
-                  "smooth_color_wheel": false,
                   "speed": false,
                   "intensity": false,
                   "force_features": false,
@@ -949,6 +1000,7 @@
                   "temperature_icon": "thermometer",
                   "speed_icon": "speedometer",
                   "intensity_icon": "transit-connection-horizontal",
+                  "smooth_color_wheel": false,
                   "type": "custom:light-entity-card",
                   "entity": "light.local_office_light",
                   "effects_list": true
@@ -962,6 +1014,180 @@
                   }
                 }
               ]
+            },
+            {
+              "shorten_cards": false,
+              "consolidate_entities": true,
+              "child_card": false,
+              "hide_header": false,
+              "header": "",
+              "color_wheel": true,
+              "persist_features": false,
+              "brightness": true,
+              "color_temp": true,
+              "white_value": false,
+              "color_picker": true,
+              "speed": false,
+              "intensity": false,
+              "force_features": false,
+              "show_slider_percent": true,
+              "full_width_sliders": true,
+              "brightness_icon": "weather-sunny",
+              "white_icon": "file-word-box",
+              "temperature_icon": "thermometer",
+              "speed_icon": "speedometer",
+              "intensity_icon": "transit-connection-horizontal",
+              "type": "custom:light-entity-card",
+              "entity": "light.kitchen_light_group",
+              "effects_list": false
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Energy",
+          "path": "energy",
+          "icon": "mdi:lightning-bolt",
+          "type": "custom:vertical-layout",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:energy-overview-card",
+              "entities": [
+                {
+                  "power": "sensor.local_computer_socket_power",
+                  "current": "sensor.local_computer_socket_current",
+                  "voltage": "sensor.local_computer_socket_voltage",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:desktop-tower-monitor"
+                },
+                {
+                  "power": "sensor.local_charger_socket_power",
+                  "current": "sensor.local_charger_socket_current",
+                  "voltage": "sensor.local_charger_socket_voltage",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:battery-charging-medium"
+                },
+                {
+                  "power": "sensor.local_electric_blanket_socket_power",
+                  "current": "sensor.local_electric_blanket_socket_current",
+                  "voltage": "sensor.local_electric_blanket_socket_voltage",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:air-filter"
+                },
+                {
+                  "power": "sensor.local_heater_socket_power",
+                  "current": "sensor.local_heater_socket_current",
+                  "voltage": "sensor.local_heater_socket_voltage",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:radiator"
+                },
+                {
+                  "power": "sensor.local_washing_machine_socket_power",
+                  "current": "sensor.local_washing_machine_socket_current",
+                  "voltage": "sensor.local_washing_machine_socket_voltage",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:washing-machine"
+                },
+                {
+                  "power": "sensor.living_room_plug_power",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:television-classic",
+                  "voltage": "sensor.living_room_plug_voltage",
+                  "current": "sensor.living_room_plug_current"
+                },
+                {
+                  "power": "sensor.local_office_light_powercalc_power",
+                  "label_trailing": "OF",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:lightbulb"
+                },
+                {
+                  "power": "sensor.bedroom_light_powercalc_power",
+                  "label_trailing": "BR",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:lightbulb"
+                },
+                {
+                  "power": "sensor.living_room_light_powercalc_power",
+                  "label_trailing": "LR",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:lightbulb"
+                },
+                {
+                  "power": "sensor.kitchen_light_group_powercalc_power",
+                  "label_trailing": "KT",
+                  "icon_leading": "mdi:transmission-tower",
+                  "icon_trailing": "mdi:lightbulb-group"
+                }
+              ],
+              "animation": {
+                "power": 1000,
+                "min_duration": 1,
+                "max_duration": 10
+              },
+              "order_by": "",
+              "card_mod": {
+                "style": "ha-card {\n  color: orange;\n  line-height: 27px;\n}\n"
+              }
+            },
+            {
+              "type": "custom:battery-state-card",
+              "title": "Battery levels",
+              "entities": [
+                {
+                  "entity": "sensor.ewelink_ms01_battery",
+                  "name": "Bedroom Motion Sensor"
+                },
+                {
+                  "entity": "sensor.kitchen_temperature_sensor_battery",
+                  "name": "Kitchen temperature sensor"
+                },
+                {
+                  "entity": "sensor.zigbee_kitchen_switch_battery",
+                  "name": "Kitchen Switch"
+                },
+                {
+                  "entity": "sensor.zigbee_living_room_switch_battery",
+                  "name": "Living room Switch"
+                },
+                {
+                  "entity": "sensor.zigbee_office_switch_battery",
+                  "name": "Office Switch"
+                },
+                {
+                  "entity": "sensor.office_temperature_sensor_battery",
+                  "name": "Office temperature sensor"
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "type": "energy-sources-table"
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "type": "energy-date-selection"
+            },
+            {
+              "type": "energy-distribution",
+              "link_dashboard": true,
+              "view_layout": {
+                "position": "sidebar"
+              }
+            },
+            {
+              "type": "energy-usage-graph",
+              "view_layout": {
+                "position": "sidebar"
+              }
+            },
+            {
+              "type": "energy-devices-graph"
             }
           ]
         }

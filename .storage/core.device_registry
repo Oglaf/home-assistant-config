@@ -77,78 +77,6 @@
         "via_device_id": null
       },
       {
-        "area_id": null,
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "882e32d72142add3e15c9f17731cb599",
-        "identifiers": [
-          [
-            "tuya",
-            "eb099f68fc98defbd6vqcs"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
-        "name_by_user": null,
-        "name": "Fan socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "2384acff88f8bf9c6790b393849dea24",
-        "identifiers": [
-          [
-            "tuya",
-            "ebd1b02d382049733dnq0u"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "Smart Lâmpada WiFi (97jzv6zysedaddxc)",
-        "name_by_user": null,
-        "name": "Living room light",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "166598c698c6b39b59858b8cf15f670c",
-        "identifiers": [
-          [
-            "tuya",
-            "eb3dcc68131b35ae344alc"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "Smart Lâmpada WiFi (97jzv6zysedaddxc)",
-        "name_by_user": null,
-        "name": "Bedroom light",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": "living_room",
         "config_entries": [
           "0c19b5e99ef143bb964ab2a275d6adfd"
@@ -193,30 +121,6 @@
         "model": "Smart Plug (xtnehyamtpkge0se)",
         "name_by_user": null,
         "name": "Electric blanket socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": "kitchen",
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "ab9093baef10369b08cf8bdd6d72a77a",
-        "identifiers": [
-          [
-            "tuya",
-            "ebf3e7c38a62e56ab4a8jf"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "WiFi Temperature & Humidity Sensor (q29ebws5adwye1l8)",
-        "name_by_user": null,
-        "name": "Temperature Sensor",
         "sw_version": null,
         "via_device_id": null
       },
@@ -295,35 +199,6 @@
         "connections": [
           [
             "zigbee",
-            "00:12:4b:00:29:19:53:39"
-          ]
-        ],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "4e1515dfbe56570a38feafbc155b1ab7",
-        "identifiers": [
-          [
-            "zha",
-            "00:12:4b:00:29:19:53:39"
-          ]
-        ],
-        "manufacturer": "eWeLink",
-        "model": "TH01",
-        "name_by_user": "Zigbee Temperature Sensor",
-        "name": "eWeLink TH01",
-        "sw_version": null,
-        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
-      },
-      {
-        "area_id": "office",
-        "config_entries": [
-          "d428b0ca8eddebd891d5deb8b9cd537b"
-        ],
-        "configuration_url": null,
-        "connections": [
-          [
-            "zigbee",
             "00:12:4b:00:25:10:d4:93"
           ]
         ],
@@ -341,35 +216,6 @@
         "model": "WB01",
         "name_by_user": "Zigbee Office Switch",
         "name": "eWeLink WB01",
-        "sw_version": null,
-        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
-      },
-      {
-        "area_id": "bedroom",
-        "config_entries": [
-          "d428b0ca8eddebd891d5deb8b9cd537b"
-        ],
-        "configuration_url": null,
-        "connections": [
-          [
-            "zigbee",
-            "00:12:4b:00:25:13:d8:11"
-          ]
-        ],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "identifiers": [
-          [
-            "zha",
-            "00:12:4b:00:25:13:d8:11"
-          ]
-        ],
-        "manufacturer": "eWeLink",
-        "model": "MS01",
-        "name_by_user": "Zigbee Motion Sensor",
-        "name": "eWeLink MS01",
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -423,7 +269,7 @@
         "model": "",
         "name_by_user": null,
         "name": "HACS",
-        "sw_version": "1.30.1",
+        "sw_version": "1.32.1",
         "via_device_id": null
       },
       {
@@ -453,54 +299,6 @@
       {
         "area_id": null,
         "config_entries": [
-          "8f6cf46a91c89cfe659ab88d26a78795"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "1e9d072d164c76e46396ceee3e90b3c5",
-        "identifiers": [
-          [
-            "mobile_app",
-            "e70440364044d0d1"
-          ]
-        ],
-        "manufacturer": "Xiaomi",
-        "model": "M2010J19CG",
-        "name_by_user": null,
-        "name": "M2010J19CG",
-        "sw_version": "31",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "c2e6c91fe4f0c37d92183a1e054238c5"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "a9c3214ad93155cc417a2f7cba1b3391",
-        "identifiers": [
-          [
-            "mobile_app",
-            "863b1b4f91d8ca45"
-          ]
-        ],
-        "manufacturer": "Xiaomi",
-        "model": "Redmi Note 8",
-        "name_by_user": null,
-        "name": "cecilia-sp",
-        "sw_version": "29",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
           "f09c6703e990fb436c9fbef9655ecc3b"
         ],
         "configuration_url": "http://192.168.1.198:8989",
@@ -519,7 +317,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Sonarr",
-        "sw_version": "3.0.9.1549",
+        "sw_version": "3.0.10.1567",
         "via_device_id": null
       },
       {
@@ -577,7 +375,7 @@
         ],
         "configuration_url": null,
         "connections": [],
-        "disabled_by": null,
+        "disabled_by": "config_entry",
         "entry_type": null,
         "hw_version": null,
         "id": "21f2ffa90ae51ed966a22ac338fb3579",
@@ -592,30 +390,6 @@
         "name_by_user": null,
         "name": "christian-tb",
         "sw_version": "31",
-        "via_device_id": null
-      },
-      {
-        "area_id": "bedroom",
-        "config_entries": [
-          "65ed36996a691a009f0a23b2bc03f536"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "9170e60c22ae2de09dfbe9aba7589734",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb3dcc68131b35ae344alc"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Bedroom Light",
-        "sw_version": null,
         "via_device_id": null
       },
       {
@@ -639,30 +413,6 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Electric blanket Socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": "living_room",
-        "config_entries": [
-          "2af4af653fb2d5b821b9d0ac0b22dfac"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "d80eea00c8d086f2cad19dec417e673e",
-        "identifiers": [
-          [
-            "tuya_local",
-            "ebd1b02d382049733dnq0u"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Living room Light",
         "sw_version": null,
         "via_device_id": null
       },
@@ -691,7 +441,7 @@
         "via_device_id": null
       },
       {
-        "area_id": "kitchen",
+        "area_id": "office",
         "config_entries": [
           "997db7e634b0b049e4b51884c7e1b7f1"
         ],
@@ -710,7 +460,7 @@
         "manufacturer": "Tuya",
         "model": null,
         "name_by_user": null,
-        "name": "Local Oven Socket",
+        "name": "Local Heater Socket",
         "sw_version": null,
         "via_device_id": null
       },
@@ -739,57 +489,10 @@
         "via_device_id": null
       },
       {
-        "area_id": null,
-        "config_entries": [
-          "8e993d4daaf8bb27fa3d0231eb8f7eca"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "e39cab4b6fb42715a1de7c9457a37cc6",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb1f0804f3145f2189grsj"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Cleaner Robot",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "24bd2ff872679e34fe3a824266f5ccd5",
-        "identifiers": [
-          [
-            "tuya",
-            "eb09c96452dd09b967nbjr"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
-        "name_by_user": null,
-        "name": "Office light",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
         "area_id": "office",
         "config_entries": [
-          "13f6ca6edf2a333d7adaee1f3a7b388c"
+          "60b3d3ba328db6405e972c7acb490a5b",
+          "9126c3be103ebddd68d45488bf5a74ac"
         ],
         "configuration_url": null,
         "connections": [],
@@ -807,30 +510,6 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Office Light",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": "bedroom",
-        "config_entries": [
-          "9bcbef8f0cd1b00c9756779072cf8d5c"
-        ],
-        "configuration_url": null,
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "208f96a94932b423396ca080292e6d7d",
-        "identifiers": [
-          [
-            "tuya_local",
-            "eb099f68fc98defbd6vqcs"
-          ]
-        ],
-        "manufacturer": "Tuya",
-        "model": null,
-        "name_by_user": null,
-        "name": "Local Fan Socket",
         "sw_version": null,
         "via_device_id": null
       },
@@ -903,7 +582,7 @@
         "model": "Android TV",
         "name_by_user": null,
         "name": "Living Room TV",
-        "sw_version": "0.15.3",
+        "sw_version": "0.15.10",
         "via_device_id": "568093bd4c657309db355d4377664cc9"
       },
       {
@@ -927,6 +606,528 @@
         "model": null,
         "name_by_user": null,
         "name": "CHRISTIAN-SRV",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "d4d31b7996522d0f61c401a1d103cf08"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "e39cab4b6fb42715a1de7c9457a37cc6",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb1f0804f3145f2189grsj"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Cleaner Robot",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "a4:c1:38:7b:1f:21:83:72"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "027ef1e9569e2ed83b65c5645613b2f3",
+        "identifiers": [
+          [
+            "zha",
+            "a4:c1:38:7b:1f:21:83:72"
+          ]
+        ],
+        "manufacturer": "_TZ3000_idrffznf",
+        "model": "TS011F",
+        "name_by_user": "Zigbee Living Room Plug",
+        "name": "_TZ3000_idrffznf TS011F",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:29:18:e1:e0"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "32eb643cc51b1ff3098e619b102a920f",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:29:18:e1:e0"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "WB01",
+        "name_by_user": "Zigbee kitchen switch",
+        "name": "eWeLink WB01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b",
+          "5e5363093e09a070680645c5d69a9e54"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "a4:c1:38:11:03:af:ca:3d"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "8c89cf522eaceedec0b7a6b2c2150f80",
+        "identifiers": [
+          [
+            "zha",
+            "a4:c1:38:11:03:af:ca:3d"
+          ]
+        ],
+        "manufacturer": "_TZ3210_r5afgmkl",
+        "model": "TS0505B",
+        "name_by_user": "Bedroom Light",
+        "name": "_TZ3210_r5afgmkl TS0505B",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b",
+          "01db58f86014ff788c3f273dd9034a2d"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "a4:c1:38:01:1d:31:3a:ac"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "59045895c870106a4fac4fdc3a37703c",
+        "identifiers": [
+          [
+            "zha",
+            "a4:c1:38:01:1d:31:3a:ac"
+          ]
+        ],
+        "manufacturer": "_TZ3210_r5afgmkl",
+        "model": "TS0505B",
+        "name_by_user": "Living room Light",
+        "name": "_TZ3210_r5afgmkl TS0505B",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "46ad7c673d6309e6e6f834fc86dcf31d",
+        "identifiers": [
+          [
+            "tuya",
+            "eb00456f9c9afe2486k3dr"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Lâmpada Wi-Fi (97jzv6zysedaddxc)",
+        "name_by_user": null,
+        "name": "Kitchen Light 1",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "c244f36bf9be87600414b0241a4e6bd2",
+        "identifiers": [
+          [
+            "tuya",
+            "ebb2ca13ae951b8cb8xrrv"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Lâmpada Wi-Fi (97jzv6zysedaddxc)",
+        "name_by_user": null,
+        "name": "Kitchen Light 2",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "b6d956add9092fa48f1d339fce010db8"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "6a77ff231598e11b70d3e09ca379f4c5",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb00456f9c9afe2486k3dr"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Kitchen Light 1",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "517b70f2f82642f09484d46d758c65ed"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "6dc5848c79cfb5f1b6969ac217fb92f9",
+        "identifiers": [
+          [
+            "tuya_local",
+            "ebb2ca13ae951b8cb8xrrv"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Kitchen Light 2",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "58463191ae3de9e2862f7d7e35f29cb4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "41a6eaec6dc9f4dc9aff773de0f3544e",
+        "identifiers": [
+          [
+            "sun",
+            "58463191ae3de9e2862f7d7e35f29cb4"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "MS01",
+        "name_by_user": "Zigbee motion sensor",
+        "name": "eWeLink MS01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "56ccc967f4743fb4063a9b331a4f577f"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "mac",
+            "1c:53:f9:47:c5:19"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "be47f007e7bf0b6911b54fe459312703",
+        "identifiers": [
+          [
+            "androidtv_remote",
+            "1c:53:f9:47:c5:19"
+          ]
+        ],
+        "manufacturer": "Google",
+        "model": "Chromecast",
+        "name_by_user": null,
+        "name": "Living Room TV",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "1b462a316ce7d1757c3ea480f8972dd7"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "1eedc2584d71d1f56fdb4b1a90718804",
+        "identifiers": [
+          [
+            "mobile_app",
+            "6ec964fbde605fd4"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "23028RA60L",
+        "name_by_user": null,
+        "name": "CECILIA-SP",
+        "sw_version": "33",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "b5a6ff0399b1d6d47375f2218ca8b91a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "c64d919497fe1f5e4c511f1d631e5f77",
+        "identifiers": [
+          [
+            "mobile_app",
+            "81084dbff6010930"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "Redmi Note 8",
+        "name_by_user": null,
+        "name": "christian-sp",
+        "sw_version": "33",
+        "via_device_id": null
+      },
+      {
+        "area_id": "kitchen",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:2a:50:c9:91"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "393029ae7ffa2852c768096669c6a3e3",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:2a:50:c9:91"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "TH01",
+        "name_by_user": "Kitchen temperature sensor",
+        "name": "eWeLink TH01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "882e32d72142add3e15c9f17731cb599",
+        "identifiers": [
+          [
+            "tuya",
+            "eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
+        "name_by_user": null,
+        "name": "Fan socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "24bd2ff872679e34fe3a824266f5ccd5",
+        "identifiers": [
+          [
+            "tuya",
+            "eb09c96452dd09b967nbjr"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
+        "name_by_user": null,
+        "name": "Office light",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "c5ba3e6de7588757ddf422527f840040"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "208f96a94932b423396ca080292e6d7d",
+        "identifiers": [
+          [
+            "tuya_local",
+            "eb099f68fc98defbd6vqcs"
+          ]
+        ],
+        "manufacturer": "Tuya",
+        "model": null,
+        "name_by_user": null,
+        "name": "Local Charger Socket",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "office",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:29:19:53:39"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "4e1515dfbe56570a38feafbc155b1ab7",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:29:19:53:39"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "TH01",
+        "name_by_user": "Office Temperature Sensor",
+        "name": "eWeLink TH01",
+        "sw_version": null,
+        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "73c8376e636a68d0e28cef614b734bfe",
+        "identifiers": [
+          [
+            "tuya",
+            "tysdiV9lDlyirmamk9H"
+          ]
+        ],
+        "manufacturer": "tuya",
+        "model": "Tuya Scene",
+        "name_by_user": null,
+        "name": "Shutdown fan after 3 hours",
         "sw_version": null,
         "via_device_id": null
       },
@@ -1053,17 +1254,6 @@
     ],
     "deleted_devices": [
       {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "met"
-          ]
-        ],
-        "id": "086e0263aeb5d76e5349b51999128edf",
-        "orphaned_timestamp": 1675565787.2575073
-      },
-      {
         "config_entries": [
           "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
@@ -1092,78 +1282,6 @@
         "orphaned_timestamp": null
       },
       {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_eb3dcc68131b35ae344alc"
-          ]
-        ],
-        "id": "7fafda428f65ffa2447210626f18a1ef",
-        "orphaned_timestamp": 1676215551.0572557
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_ebd1b02d382049733dnq0u"
-          ]
-        ],
-        "id": "93a0b1af02355fb7f993fe76e6f118f5",
-        "orphaned_timestamp": 1676215551.0572557
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_eb597c0e524d178a80caat"
-          ]
-        ],
-        "id": "1e3a9f1657dbdfd586f6d4dfe47943e7",
-        "orphaned_timestamp": 1676215551.0572557
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_eb099f68fc98defbd6vqcs"
-          ]
-        ],
-        "id": "c7e1208eb6e8f70a7a55774fd35e94f9",
-        "orphaned_timestamp": 1676215551.0572557
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_eb06b9ad96cc645217ruup"
-          ]
-        ],
-        "id": "2bcf58c88b02b86b3b6285a63e977a68",
-        "orphaned_timestamp": 1676215551.0572557
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "localtuya",
-            "local_eb1f0804f3145f2189grsj"
-          ]
-        ],
-        "id": "2afb6d07a21489f0e55a5f02486c8f8b",
-        "orphaned_timestamp": 1676225316.4945922
-      },
-      {
         "config_entries": [
           "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
@@ -1176,18 +1294,6 @@
         ],
         "id": "a5337062f0830904e2e5d37300550456",
         "orphaned_timestamp": null
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "tuya_local",
-            "eba8ad303d30bd1163sbju"
-          ]
-        ],
-        "id": "f282346accac977074e2b30a97f58aa7",
-        "orphaned_timestamp": 1676342193.4800696
       },
       {
         "config_entries": [
@@ -1218,40 +1324,98 @@
         "orphaned_timestamp": null
       },
       {
-        "config_entries": [],
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "connections": [
+          [
+            "zigbee",
+            "00:15:8d:00:07:eb:ba:52"
+          ]
+        ],
+        "identifiers": [
+          [
+            "zha",
+            "00:15:8d:00:07:eb:ba:52"
+          ]
+        ],
+        "id": "e05a8ded0f47b9c7a876ae7598efa104",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
         "connections": [],
         "identifiers": [
           [
-            "tuya_local",
-            "eb68e355da1be4ae69ok5o"
+            "tuya",
+            "eb3dcc68131b35ae344alc"
           ]
         ],
-        "id": "fd49166a2e04a7f529f23a3b1d1a4535",
-        "orphaned_timestamp": 1676724991.6195219
+        "id": "166598c698c6b39b59858b8cf15f670c",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "tuya",
+            "ebd1b02d382049733dnq0u"
+          ]
+        ],
+        "id": "2384acff88f8bf9c6790b393849dea24",
+        "orphaned_timestamp": null
       },
       {
         "config_entries": [],
         "connections": [],
         "identifiers": [
           [
-            "mqtt",
-            "39294020"
+            "mobile_app",
+            "e70440364044d0d1"
           ]
         ],
-        "id": "af9e8e6b9e5ca0dd3b4f6bea83cfd5f3",
-        "orphaned_timestamp": 1676922687.2650244
+        "id": "1e9d072d164c76e46396ceee3e90b3c5",
+        "orphaned_timestamp": 1684984248.7160106
       },
       {
-        "config_entries": [],
+        "config_entries": [
+          "0c19b5e99ef143bb964ab2a275d6adfd"
+        ],
         "connections": [],
         "identifiers": [
           [
-            "tuya_local",
-            "eb597c0e524d178a80caat"
+            "tuya",
+            "ebf3e7c38a62e56ab4a8jf"
           ]
         ],
-        "id": "5deb7101d58f6ab0490a9e0db3ab4138",
-        "orphaned_timestamp": 1676868554.3588321
+        "id": "ab9093baef10369b08cf8bdd6d72a77a",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [],
+        "connections": [
+          [
+            "mac",
+            "f8:32:e4:9b:2a:6e"
+          ]
+        ],
+        "identifiers": [
+          [
+            "system_bridge",
+            "f8:32:e4:9b:2a:6e"
+          ],
+          [
+            "system_bridge",
+            "System"
+          ]
+        ],
+        "id": "6330d7bc4c63a866ab02652e52dd5acc",
+        "orphaned_timestamp": 1686317941.942848
       }
     ]
   }

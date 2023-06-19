@@ -39,7 +39,7 @@ pc_energy_cost:
 
 # Fan
 fan_energy_cost:
-  source: sensor.local_fan_socket_energy_helper
+  source: sensor.local_charger_socket_energy_helper
   cycle: monthly
   tariffs:
     - peak
@@ -51,8 +51,8 @@ fan_energy_cost:
     minutes: 0
 
 # Oven
-oven_energy_cost:
-  source: sensor.local_oven_socket_energy_helper
+heater_energy_cost:
+  source: sensor.local_heater_socket_energy_helper
   cycle: monthly
   tariffs:
     - peak
@@ -78,7 +78,7 @@ washer_energy_cost:
 
 # TV
 living_room_tv_energy_cost:
-  source: sensor.living_room_tv_powercalc_energy
+  source: sensor.living_room_plug_summation_delivered
   cycle: monthly
   tariffs:
     - peak
@@ -104,7 +104,7 @@ local_office_light_energy_cost:
 
 # Living Room Light
 living_room_light_energy_cost:
-  source: sensor.local_living_room_light_powercalc_energy
+  source: sensor.living_room_light_powercalc_energy
   cycle: monthly
   tariffs:
     - peak
@@ -117,7 +117,7 @@ living_room_light_energy_cost:
 
 # Bedroom Light
 bedroom_light_energy_cost:
-  source: sensor.local_bedroom_light_powercalc_energy
+  source: sensor.bedroom_light_powercalc_energy
   cycle: monthly
   tariffs:
     - peak

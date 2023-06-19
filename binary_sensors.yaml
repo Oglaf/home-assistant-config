@@ -1,26 +1,31 @@
 - platform: ping
-  host: 204.2.229.10
+  host: 204.2.29.82
   name: "FFXIV"
   count: 4
   scan_interval: 30
+
 - platform: ping
   host: 8.8.8.8
   name: "Google"
   count: 4
   scan_interval: 30
+
 - platform: ping
   host: 1.1.1.1
-  name: "Cloudfare"
+  name: "Cloudflare"
   count: 4
   scan_interval: 30
+
 - platform: ping
   host: 192.168.1.81
   name: "christian_pc"
   scan_interval: 30
+
 - platform: ping
   host: 192.168.1.80
   name: "cecilia_pc"
   scan_interval: 30
+
 - platform: ping
   host: 192.168.1.198
   name: "christian_srv"

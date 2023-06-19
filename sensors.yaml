@@ -1,21 +1,3 @@
-# Speedtest
-- platform: command_line
-  name: "SpeedTest CLI Data"
-  unique_id: speedtest_cli_data
-  command: "/config/speedtest/speedtest --format=json --server-id=13518 --accept-license --accept-gdpr"
-  #command: "/config/speedtest/speedtest --format=json --server-id=21939 --accept-license --accept-gdpr"
-  scan_interval: 3600
-  command_timeout: 60
-  value_template: >-
-    {{ 
-    { 
-      "ping": value_json.ping.latency, 
-      "download": value_json.download.bandwidth, 
-      "upload": value_json.upload.bandwidth 
-    }
-    | to_json 
-    }}
-
 - platform: history_stats
   name: Washer running time
   entity_id: input_select.washing_machine_status
@@ -49,6 +31,13 @@
     - type: disk_use
       arg: /config
     - type: disk_free
+      arg: /config
+    - type: disk_use_percent
+      arg: /mnt/fileStorage
+    - type: disk_use
+      arg: /mnt/fileStorage
+    - type: disk_free
+      arg: /mnt/fileStorage
     - type: memory_use_percent
     - type: memory_use
     - type: memory_free

@@ -7,8 +7,9 @@
       "views": [
         {
           "theme": "Backend-selected",
-          "title": "Home",
+          "title": "Docker",
           "type": "panel",
+          "icon": "mdi:docker",
           "badges": [],
           "cards": [
             {

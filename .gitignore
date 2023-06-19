@@ -48,3 +48,7 @@ secrets.yaml
 ip_bans.yaml
 .storage/core.config
 .vscode/settings.json
+.storage/androidtv_remote_cert.pem
+.storage/androidtv_remote_key.pem
+.storage/tmp4l1bjjpc
+.storage/tmpbylqqny_

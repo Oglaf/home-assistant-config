@@ -26,12 +26,13 @@
                   "hide_unavailable": true,
                   "shadow": false,
                   "entities": [
-                    "input_boolean.bedroom_light_automation"
+                    "input_boolean.bedroom_light_automation",
+                    "binary_sensor.ewelink_ms01_iaszone"
                   ]
                 },
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.local_bedroom_light",
+                  "entity": "light.bedroom_light",
                   "use_light_color": true,
                   "show_brightness_control": true,
                   "show_color_control": true,
@@ -49,9 +50,9 @@
                   "cards": [
                     {
                       "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_fan_socket",
+                      "entity": "switch.local_charger_socket",
                       "name": "Fan",
-                      "icon": "mdi:fan",
+                      "icon": "mdi:battery-charging-medium",
                       "icon_color": "green",
                       "fill_container": true,
                       "tap_action": {
@@ -96,7 +97,7 @@
                 },
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.local_living_room_light",
+                  "entity": "light.living_room_light",
                   "fill_container": true,
                   "use_light_color": true,
                   "show_brightness_control": true,
@@ -158,8 +159,8 @@
                   "hide_unavailable": true,
                   "shadow": false,
                   "entities": [
-                    "sensor.zigbee_temperature_sensor_temperature",
-                    "sensor.zigbee_temperature_sensor_humidity",
+                    "sensor.office_temperature_sensor_temperature",
+                    "sensor.office_temperature_sensor_humidity",
                     "input_boolean.office_light_automation"
                   ]
                 },
@@ -181,17 +182,84 @@
               ]
             },
             {
-              "type": "custom:minimalistic-area-card",
-              "title": "Kitchen",
-              "area": "kitchen",
-              "hide_unavailable": false,
-              "tap_action": {
-                "action": "navigate",
-                "navigation_path": "/config/areas/area/kitchen"
-              },
-              "entities": [
-                "sensor.temperature_sensor_temperature",
-                "sensor.temperature_sensor_humidity"
+              "type": "custom:stack-in-card",
+              "cards": [
+                {
+                  "type": "custom:mushroom-entity-card",
+                  "entity": "switch.local_heater_socket",
+                  "name": "Heater",
+                  "icon": "mdi:radiator",
+                  "icon_color": "red",
+                  "primary_info": "none",
+                  "secondary_info": "none",
+                  "card_mod": {
+                    "style": "ha-card {\n  --ha-card-border-width: 0px;\n}\n"
+                  },
+                  "tap_action": {
+                    "action": "toggle"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-number-card",
+                  "entity": "input_number.thermostat_temperature",
+                  "display_mode": "buttons",
+                  "primary_info": "none",
+                  "secondary_info": "none",
+                  "icon_type": "none",
+                  "card_mod": {
+                    "style": "ha-card {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 54px;\n  width: calc(80% - 54px);\n  --ha-card-border-width: 0px;\n  --control-height: 30px;\n  transition: all 0s;\n  font-size: calc(var(--control-height) / 2);\n}\n"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-entity-card",
+                  "entity": "input_boolean.heater_automation",
+                  "primary_info": "none",
+                  "secondary_info": "none",
+                  "icon_color": "red",
+                  "icon": "mdi:thermostat-auto",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "card_mod": {
+                    "style": "ha-card {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  width: fit-content;\n  --ha-card-border-width: 0px;\n}\n"
+                  }
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Kitchen",
+                  "area": "kitchen",
+                  "hide_unavailable": false,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "/config/areas/area/kitchen"
+                  },
+                  "entities": [
+                    "sensor.kitchen_temperature_sensor_temperature",
+                    "sensor.kitchen_temperature_sensor_humidity"
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.kitchen_light_group",
+                  "name": " ",
+                  "fill_container": true,
+                  "layout": "horizontal",
+                  "show_brightness_control": true,
+                  "use_light_color": true,
+                  "show_color_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "card_mod": {
+                    "style": "ha-card > mushroom-card > .actions { margin-left: -55% }\n"
+                  }
+                }
               ]
             }
           ]

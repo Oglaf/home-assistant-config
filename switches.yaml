@@ -4,30 +4,30 @@
   name: christian_pc_wol
   broadcast_address: 192.168.1.255
 
-# Circadian lightning
+# Circadian lighting
 - platform: circadian_lighting
   name: Living room circadian lighting
   initial_transition: 5
   sleep_entity: input_boolean.sleep_time
   sleep_state: "on"
   sleep_colortemp: 2001
-  sleep_brightness: 1
+  sleep_brightness: 2.5510204081632653
   disable_entity: input_boolean.living_room_light_automation
   disable_state: "off"
   lights_ct:
-    - light.local_living_room_light
-    
+    - light.living_room_light
+
 - platform: circadian_lighting
   name: Bedroom circadian lighting
   initial_transition: 5
   sleep_entity: input_boolean.sleep_time
   sleep_state: "on"
   sleep_colortemp: 2001
-  sleep_brightness: 1
+  sleep_brightness: 2.5510204081632653
   disable_entity: input_boolean.bedroom_light_automation
   disable_state: "off"
   lights_ct:
-    - light.local_bedroom_light
+    - light.bedroom_light
 
 - platform: circadian_lighting
   name: Office circadian lighting
@@ -35,7 +35,7 @@
   sleep_entity: input_boolean.sleep_time
   sleep_state: "on"
   sleep_colortemp: 2001
-  sleep_brightness: 1
+  sleep_brightness: 2.5510204081632653
   disable_entity: input_boolean.office_light_automation
   disable_state: "off"
   lights_ct:

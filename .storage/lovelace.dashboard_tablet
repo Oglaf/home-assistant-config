@@ -191,9 +191,9 @@
                       },
                       "custom_fields": {
                         "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
-                        "battery": "[[[ if (states['sensor.m2010j19cg_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.m2010j19cg_battery_level'].state}%</span>`\n} ]]]\n",
+                        "battery": "[[[ if (states['sensor.christian_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} ]]]\n",
                         "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['proximity.home_christian'].state} Kms</span></span>`\n]]]\n",
-                        "wifi": "[[[\n  if (states['sensor.m2010j19cg_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.m2010j19cg_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
+                        "wifi": "[[[\n  if (states['sensor.christian_sp_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.christian_sp_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
                       },
                       "state": [
                         {
@@ -467,27 +467,27 @@
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_temperature"
+                        "sensor.office_temperature_sensor_temperature"
                       ],
                       "name": "Office",
                       "line_color": "#e74c3c",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
+                      "state": true,
                       "group_by": "hour"
                     },
                     {
                       "type": "custom:mini-graph-card",
                       "entities": [
-                        "sensor.zigbee_temperature_sensor_humidity"
+                        "sensor.office_temperature_sensor_humidity"
                       ],
                       "name": "Office",
                       "line_color": "blue",
                       "line_width": 8,
                       "font_size": 75,
                       "points_per_hour": 1,
-                      "state": "last",
+                      "state": true,
                       "group_by": "hour"
                     }
                   ]
@@ -501,7 +501,53 @@
                   "primary_info": "none",
                   "secondary_info": "none",
                   "icon_type": "icon",
-                  "layout": "horizontal"
+                  "layout": "horizontal",
+                  "collapsible_controls": true
+                },
+                {
+                  "type": "custom:stack-in-card",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_heater_socket",
+                      "name": "Heater",
+                      "icon": "mdi:radiator",
+                      "icon_color": "red",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "card_mod": {
+                        "style": "ha-card {\n  --ha-card-border-width: 0px;\n}\n"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "custom:mushroom-number-card",
+                      "entity": "input_number.thermostat_temperature",
+                      "display_mode": "buttons",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_type": "none",
+                      "card_mod": {
+                        "style": "ha-card {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 54px;\n  width: calc(87% - 54px);\n  --ha-card-border-width: 0px;\n  --control-height: 30px;\n  transition: all 0s;\n  font-size: calc(var(--control-height) / 2);\n}\n"
+                      }
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "input_boolean.heater_automation",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_color": "red",
+                      "icon": "mdi:thermostat-auto",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "card_mod": {
+                        "style": "ha-card {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  width: fit-content;\n  --ha-card-border-width: 0px;\n}\n"
+                      }
+                    }
+                  ]
                 }
               ]
             },
@@ -512,39 +558,34 @@
               "title": "Kitchen",
               "cards": [
                 {
-                  "type": "vertical-stack",
+                  "type": "horizontal-stack",
                   "cards": [
                     {
-                      "type": "horizontal-stack",
-                      "cards": [
-                        {
-                          "type": "custom:mini-graph-card",
-                          "entities": [
-                            "sensor.temperature_sensor_temperature"
-                          ],
-                          "name": "Kitchen",
-                          "line_color": "#e74c3c",
-                          "line_width": 8,
-                          "font_size": 75,
-                          "points_per_hour": 1,
-                          "state": "last",
-                          "group_by": "hour",
-                          "label": ""
-                        },
-                        {
-                          "type": "custom:mini-graph-card",
-                          "entities": [
-                            "sensor.temperature_sensor_humidity"
-                          ],
-                          "name": "Kitchen",
-                          "line_color": "blue",
-                          "line_width": 8,
-                          "font_size": 75,
-                          "points_per_hour": 1,
-                          "state": "last",
-                          "group_by": "hour"
-                        }
-                      ]
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.kitchen_temperature_sensor_temperature"
+                      ],
+                      "name": "Kitchen",
+                      "line_color": "#e74c3c",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": true,
+                      "group_by": "hour",
+                      "label": ""
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        "sensor.kitchen_temperature_sensor_humidity"
+                      ],
+                      "name": "Kitchen",
+                      "line_color": "blue",
+                      "line_width": 8,
+                      "font_size": 75,
+                      "points_per_hour": 1,
+                      "state": true,
+                      "group_by": "hour"
                     }
                   ]
                 },
@@ -552,93 +593,29 @@
                   "type": "horizontal-stack",
                   "cards": [
                     {
-                      "type": "custom:button-card",
+                      "type": "custom:mushroom-light-card",
+                      "entity": "light.kitchen_light_group",
+                      "show_brightness_control": true,
+                      "use_light_color": true,
+                      "show_color_temp_control": true,
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon_type": "icon",
+                      "layout": "horizontal",
+                      "collapsible_controls": true
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
                       "entity": "input_select.washing_machine_status",
-                      "show_name": false,
-                      "show_state": false,
-                      "tap_action": "none",
-                      "layout": "icon_label",
-                      "size": "40px",
-                      "show_label": true,
-                      "label": "[[[\n  var decimalTime = states['sensor.washer_running_time'].state;\n  var hour = Math.floor(Math.abs(decimalTime));\n  var min = Math.floor((Math.abs(decimalTime) * 60) % 60);\n  return (hour < 10 ? \"0\" : \"\") + hour + \":\" + (min < 10 ? \"0\" : \"\") + min;\n]]]\n",
-                      "state": [
-                        {
-                          "value": "Off",
-                          "icon": "mdi:washing-machine-off",
-                          "color": "var(--disabled-text-color)"
-                        },
-                        {
-                          "value": "Running",
-                          "icon": "mdi:washing-machine",
-                          "color": "orange"
-                        }
-                      ],
-                      "styles": {
-                        "card": [
-                          {
-                            "font-size": "20px"
-                          },
-                          {
-                            "font-weight": "bold"
-                          }
-                        ]
+                      "primary": "Washer",
+                      "secondary": "{{ (states('sensor.washer_running_time') | float(0) *60 *60) | timestamp_custom('%H:%M:%S', false)}}",
+                      "icon": "mdi:washing-machine",
+                      "icon_color": "{% if is_state(\"input_select.washing_machine_status\", \"Running\") -%}\n  amber\n{%- else -%}\n  grey\n{%- endif %}",
+                      "tap_action": {
+                        "action": "more-info"
                       }
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "title": "Bedroom",
-              "cards": [
-                {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.local_bedroom_light",
-                  "layout": "horizontal",
-                  "secondary_info": "none",
-                  "name": "Bedroom",
-                  "primary_info": "none",
-                  "use_light_color": true,
-                  "show_brightness_control": true,
-                  "show_color_temp_control": true,
-                  "collapsible_controls": false
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_fan_socket",
-                      "name": "Fan",
-                      "layout": "vertical",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "icon": "mdi:fan",
-                      "icon_color": "green"
-                    },
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_electric_blanket_socket",
-                      "icon": "mdi:air-filter",
-                      "icon_color": "red",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "layout": "vertical"
-                    }
-                  ]
-                },
-                {
-                  "type": "custom:mushroom-media-player-card",
-                  "entity": "media_player.bedroom_tv",
-                  "use_media_info": true,
-                  "media_controls": [
-                    "on_off",
-                    "play_pause_stop"
-                  ],
-                  "collapsible_controls": false,
-                  "volume_controls": [],
-                  "layout": "horizontal"
                 }
               ]
             },
@@ -648,7 +625,7 @@
               "cards": [
                 {
                   "type": "custom:mushroom-light-card",
-                  "entity": "light.local_living_room_light",
+                  "entity": "light.living_room_light",
                   "layout": "horizontal",
                   "secondary_info": "none",
                   "name": "Bedroom",
@@ -656,7 +633,7 @@
                   "use_light_color": true,
                   "show_brightness_control": true,
                   "show_color_temp_control": true,
-                  "collapsible_controls": false
+                  "collapsible_controls": true
                 },
                 {
                   "type": "custom:mushroom-vacuum-card",
@@ -685,6 +662,49 @@
                   "collapsible_controls": false,
                   "volume_controls": [],
                   "layout": "horizontal"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Bedroom",
+              "cards": [
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.bedroom_light",
+                  "layout": "horizontal",
+                  "secondary_info": "none",
+                  "name": "Bedroom",
+                  "primary_info": "none",
+                  "use_light_color": true,
+                  "show_brightness_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "show_color_control": false
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_charger_socket",
+                      "name": "Charger",
+                      "layout": "vertical",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon": "mdi:battery-charging-medium",
+                      "icon_color": "green"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_electric_blanket_socket",
+                      "icon": "mdi:air-filter",
+                      "icon_color": "red",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "layout": "vertical"
+                    }
+                  ]
                 }
               ]
             }

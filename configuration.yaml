@@ -21,6 +21,7 @@ switch: !include switches.yaml
 template: !include templates.yaml
 group: !include groups.yaml
 utility_meter: !include utility_meters.yaml
+command_line: !include command_lines.yaml
 
 # Folder whitelist
 homeassistant:
@@ -35,7 +36,7 @@ proximity:
   home_christian:
     zone: home
     devices:
-      - device_tracker.m2010j19cg
+      - device_tracker.christian_sp
     tolerance: 50
     unit_of_measurement: km
   home_cecilia:
@@ -45,9 +46,8 @@ proximity:
     tolerance: 50
     unit_of_measurement: km
 
+# Cloud tunnel
 http:
-  # ssl_certificate: /etc/letsencrypt/live/zaitsu.casa/fullchain.pem
-  # ssl_key: /etc/letsencrypt/live/zaitsu.casa/privkey.pem
   use_x_forwarded_for: true
   trusted_proxies:
     - 192.168.1.0/24
@@ -58,5 +58,12 @@ circadian_lighting:
   min_colortemp: 2004
   max_colortemp: 6535
 
+# shell
 shell_command:
   christian_pc_shutdown: ssh -o UserKnownHostsFile=/config/.ssh/known_hosts homeassistant@192.168.1.81 -i /config/.ssh/id_rsa "shutdown -s -t 30 -f"
+
+# recorder
+recorder:
+  exclude:
+    entities:
+      - sensor.gpu_data

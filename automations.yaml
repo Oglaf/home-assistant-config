@@ -4,33 +4,13 @@
   trigger:
   - platform: webhook
     webhook_id: alexa-ifft-turn-off-pc-Qo0cs6z0nqSKDQ_2vVKqnLw0
+    allowed_methods:
+    - POST
+    local_only: false
   condition: []
   action:
   - service: shell_command.christian_pc_shutdown
     data: {}
-  mode: single
-- id: '1672353016030'
-  alias: LIGHT - Turn off bedroom light after 5m
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - light.local_bedroom_light
-    to: 'on'
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-    from: 'off'
-  condition:
-  - condition: state
-    entity_id: input_boolean.bedroom_light_automation
-    state: 'on'
-  action:
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.local_bedroom_light
   mode: single
 - id: '1672522611577'
   alias: ENERGY - Tariff automation
@@ -72,7 +52,7 @@
           - select.living_room_light_energy_cost
           - select.living_room_tv_energy_cost
           - select.fan_energy_cost
-          - select.oven_energy_cost
+          - select.heater_energy_cost
           - select.washer_energy_cost
           - select.local_office_light_energy_cost
     - conditions:
@@ -98,7 +78,7 @@
           - select.living_room_light_energy_cost
           - select.living_room_tv_energy_cost
           - select.fan_energy_cost
-          - select.oven_energy_cost
+          - select.heater_energy_cost
           - select.washer_energy_cost
           - select.local_office_light_energy_cost
     - conditions:
@@ -124,7 +104,7 @@
           - select.living_room_light_energy_cost
           - select.living_room_tv_energy_cost
           - select.fan_energy_cost
-          - select.oven_energy_cost
+          - select.heater_energy_cost
           - select.washer_energy_cost
           - select.local_office_light_energy_cost
     - conditions:
@@ -150,7 +130,7 @@
           - select.living_room_light_energy_cost
           - select.living_room_tv_energy_cost
           - select.fan_energy_cost
-          - select.oven_energy_cost
+          - select.heater_energy_cost
           - select.washer_energy_cost
           - select.local_office_light_energy_cost
     default:
@@ -166,7 +146,7 @@
         - select.living_room_light_energy_cost
         - select.living_room_tv_energy_cost
         - select.fan_energy_cost
-        - select.oven_energy_cost
+        - select.heater_energy_cost
         - select.washer_energy_cost
         - select.local_office_light_energy_cost
   mode: single
@@ -190,14 +170,6 @@
       entity_id: switch.christian_pc_wol
     data: {}
   mode: single
-- id: '1673233928666'
-  alias: PLUG - Turn off charging - Christian
-  description: ''
-  use_blueprint:
-    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
-    input:
-      switch: switch.local_fan_socket
-      phone_battery: sensor.m2010j19cg_battery_level
 - id: '1673477422415'
   alias: LIGHT - Turn on office light
   description: Automatically turn on office light
@@ -252,7 +224,7 @@
   action:
   - if:
     - condition: template
-      value_template: "{{ states('sensor.temperature_sensor_humidity') | float >\n
+      value_template: "{{ states('sensor.office_temperature_sensor_humidity') | float >\n
         \  state_attr('weather.home', 'humidity') | float }}"
     then:
     - service: input_select.select_option
@@ -309,7 +281,7 @@
     path: Aohzan/medication_reminder_android.yaml
     input:
       reminder_time: '10:00:00'
-      notify_device: 1e9d072d164c76e46396ceee3e90b3c5
+      notify_device: c64d919497fe1f5e4c511f1d631e5f77
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
 - id: '1674136089586'
@@ -326,10 +298,10 @@
       seconds: 0
   condition: []
   action:
-  - service: media_player.turn_off
+  - service: remote.turn_off
     data: {}
     target:
-      device_id: 42799997132a1d2b9b42e307d252d09c
+      device_id: be47f007e7bf0b6911b54fe459312703
   mode: single
 - id: '1674182650722'
   alias: LIGHT - Turn off all lights when away
@@ -352,10 +324,16 @@
       - bedroom
       - living_room
       - office
+      - kitchen
+      entity_id: light.kitchen_light_group
   - service: switch.turn_off
     data: {}
     target:
       area_id: bedroom
+  - service: remote.turn_off
+    data: {}
+    target:
+      area_id: living_room
   mode: single
 - id: '1674225267956'
   alias: LIGHT - Turn on living room light
@@ -364,25 +342,28 @@
   - platform: sun
     event: sunset
     offset: 0
-  - platform: state
-    entity_id:
-    - media_player.living_room_tv
-    to: playing
+  - platform: device
+    type: turned_on
+    device_id: be47f007e7bf0b6911b54fe459312703
+    entity_id: remote.living_room_tv
+    domain: remote
   condition:
   - condition: and
     conditions:
     - condition: sun
       after: sunset
     - condition: state
-      entity_id: media_player.living_room_tv
-      state: playing
-    - condition: state
       entity_id: input_boolean.living_room_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: light.living_room_light
+      state: 'off'
+    - condition: state
+      entity_id: remote.living_room_tv
       state: 'on'
   action:
   - service: light.turn_on
-    data:
-      transition: 10
+    data: {}
     target:
       area_id: living_room
   mode: single
@@ -492,24 +473,6 @@
     target:
       area_id: office
   mode: single
-- id: '1674922819369'
-  alias: SWITCH - Toggle Living room light
-  description: ''
-  use_blueprint:
-    path: seamus65/ZHA - Sonoff SNZB-01.yaml
-    input:
-      remote: dce92ffa17e37194c258023c978b2cb9
-      single_press:
-      - service: light.toggle
-        data:
-          transition: 10
-        target:
-          area_id: living_room
-      hold:
-      - service: input_boolean.toggle
-        data: {}
-        target:
-          entity_id: input_boolean.theater_mode
 - id: '1674924848329'
   alias: SWITCH - Toggle Office light
   description: ''
@@ -526,61 +489,29 @@
       double_press:
       - service: script.turn_on_off_christian_pc
         data: {}
-- id: '1674973427986'
-  alias: LIGHT - Bedroom motion sensor
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - binary_sensor.zigbee_motion_sensor_iaszone
-    from: 'off'
-    to: 'on'
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: input_boolean.bedroom_light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.sleep_time
-      state: 'off'
-    - condition: sun
-      before: sunrise
-      after: sunset
-    - condition: state
-      entity_id: light.local_bedroom_light
-      state: 'off'
-  action:
-  - service: light.turn_on
-    data:
-      transition: 5
-    target:
-      area_id: bedroom
-  - wait_for_trigger:
-    - platform: state
-      entity_id:
-      - binary_sensor.zigbee_motion_sensor_iaszone
-      from: 'on'
-      to: 'off'
-  - delay: 30
-  - service: light.turn_off
-    data:
-      transition: 10
-    target:
-      area_id: bedroom
-  mode: single
 - id: '1675818897968'
   alias: Alexa-IFTTT - Start sleep time
   description: ''
   trigger:
   - platform: webhook
     webhook_id: alexa-ifttt-sleep-time-LP34aHLRNGZJnZOhSJiG4FAz
+    allowed_methods:
+    - POST
+    local_only: false
   condition: []
   action:
   - service: input_boolean.turn_on
     data: {}
     target:
       entity_id: input_boolean.sleep_time
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id:
+      - bedroom
+      - kitchen
+      - living_room
+      - office
   mode: single
 - id: '1675913952899'
   alias: LIGHT - Turn on sleep time
@@ -655,29 +586,244 @@
   - service: notify.notify
     data:
       message: Wash completed.
+      title: Washing machine
   mode: single
-- id: '1676955163494'
-  alias: VACUUM - Ask to clean while away
+- id: '1679015185293'
+  alias: LIGHT - Turn on bedroom based on motion
   description: ''
   use_blueprint:
-    path: vorion/actionable-notifications-for-android.yaml
+    path: Blackshome/sensor-light.yaml
     input:
-      trigger_entity: group.christian_home
-      notify_device: 1e9d072d164c76e46396ceee3e90b3c5
-      notification_message: Would you like to clean the house while away?
-      action_1_title: 'Yes'
-      first_action:
-      - service: vacuum.start
+      motion_trigger:
+      - binary_sensor.ewelink_ms01_iaszone
+      time_delay: 2
+      light_brightness: 10
+      motion_bypass: input_boolean.sleep_time
+      include_bypass: bypass_enabled
+      include_sun: sun_enabled
+      include_zone: zone_enabled
+      zone: zone.home
+      light_switch:
+        device_id: 8c89cf522eaceedec0b7a6b2c2150f80
+- id: '1680553973480'
+  alias: SWITCH - Living room light
+  description: ''
+  use_blueprint:
+    path: seamus65/ZHA - Sonoff SNZB-01.yaml
+    input:
+      remote: dce92ffa17e37194c258023c978b2cb9
+      single_press:
+      - service: light.toggle
         data: {}
         target:
-          entity_id: vacuum.local_cleaner_robot
-      - service: vacuum.set_fan_speed
-        data:
-          fan_speed: high
+          area_id: living_room
+- id: '1680556356761'
+  alias: SWITCH - Kitchen light
+  description: ''
+  use_blueprint:
+    path: seamus65/ZHA - Sonoff SNZB-01.yaml
+    input:
+      remote: 32eb643cc51b1ff3098e619b102a920f
+      single_press:
+      - service: light.toggle
+        data: {}
         target:
-          entity_id: vacuum.local_cleaner_robot
-      action_2_title: 'No'
-      third_action: []
-      second_action:
-      - stop: User request
-      notification_title: Home assistant
+          entity_id: light.kitchen_light_group
+- id: '1683953508588'
+  alias: SWITCH - Turn off charging
+  description: ''
+  use_blueprint:
+    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
+    input:
+      switch: switch.local_charger_socket
+      phone_battery: sensor.cecilia_sp_battery_level
+      charged_percent: 99
+- id: '1684086727943'
+  alias: ZONE - Cecilia arrived home
+  description: ''
+  use_blueprint:
+    path: SirGoodenough/Person_Alert_Blueprint.yaml
+    input:
+      people2monitor:
+      - person.cecilia_ueda
+      zone2monitor:
+      - zone.home
+      hold_period:
+        hours: 0
+        minutes: 0
+        seconds: 30
+      leave_action: []
+      enter_action:
+      - service: notify.mobile_app_christian_sp
+        data:
+          title: Home assistant
+          message: Cecilia has arrived home
+- id: '1684087993536'
+  alias: VACUUM - Notify error
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - vacuum.local_cleaner_robot
+    to: error
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Home assistant
+      message: Vacuum cleaner stuck
+  mode: single
+- id: '1684184359544'
+  alias: SWITCH - Turn off blanket after 3 hours
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.local_electric_blanket_socket
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: number.set_value
+    data:
+      value: '180'
+    target:
+      entity_id: number.local_electric_blanket_socket_timer
+  mode: single
+- id: '1684185616423'
+  alias: VACUUM - Work is done
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - vacuum.local_cleaner_robot
+    attribute: status
+    to: workcompleted
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Vacuum cleaner
+      message: Job completed
+  mode: single
+- id: '1684208941685'
+  alias: SWITCH - Turn on Heater
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.office_temperature_sensor_temperature
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    below: input_number.thermostat_temperature
+  - platform: state
+    entity_id:
+    - input_number.thermostat_temperature
+  - platform: state
+    entity_id:
+    - input_boolean.heater_automation
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.heater_automation
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.office_temperature_sensor_temperature
+    below: input_number.thermostat_temperature
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.christian_pc
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.cecilia_pc
+      state: 'on'
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.local_heater_socket
+  mode: single
+- id: '1684209316498'
+  alias: SWITCH - Turn off heater
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.office_temperature_sensor_temperature
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    above: input_number.thermostat_temperature
+  - platform: state
+    entity_id:
+    - input_number.thermostat_temperature
+  condition:
+  - condition: state
+    entity_id: input_boolean.heater_automation
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.office_temperature_sensor_temperature
+    above: input_number.thermostat_temperature
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.local_heater_socket
+  mode: single
+- id: '1684209621936'
+  alias: HEATER - Turn on automation
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:55:00
+  - platform: time
+    at: 08:25:00
+  condition:
+  - condition: or
+    conditions:
+    - condition: time
+      after: 08:54:00
+      weekday:
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: time
+      after: 08:24:00
+      weekday:
+      - mon
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.heater_automation
+  mode: single
+- id: '1684209757433'
+  alias: HEATER - Turn off automation
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:30:00'
+  condition:
+  - condition: or
+    conditions:
+    - condition: time
+      after: '17:29:00'
+      weekday:
+      - tue
+      - wed
+      - thu
+      - fri
+      - mon
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.heater_automation
+  mode: single
