@@ -30,13 +30,16 @@ primary_entity:
         - dps_val: "Dehumidify"
           value: normal
         - dps_val: Laundry
-          value: boost
+          value: laundry
           icon: "mdi:tshirt-crew-outline"
           icon_priority: 2
         - dps_val: Fan
-          value: Purify
+          value: purify
           icon: "mdi:air-purifier"
           icon_priority: 2
+    - id: 6
+      name: current_humidity
+      type: integer
     - id: 19
       name: fault_code
       type: integer
@@ -109,13 +112,14 @@ secondary_entities:
   - entity: sensor
     class: humidity
     name: "Current humidity"
+    deprecated: humidifier
+    category: diagnostic
     dps:
       - id: 6
         type: integer
         name: sensor
         unit: "%"
         class: measurement
-        readonly: true
   - entity: switch
     name: Sleep
     category: config

@@ -30,11 +30,14 @@ primary_entity:
         - dps_val: auto
           value: auto
         - dps_val: laundry
-          value: boost
+          value: laundry
           icon: "mdi:t-shirt-crew"
           icon_priority: 3
         - dps_val: purify
-          value: Purify
+          value: purify
+    - id: 16
+      type: integer
+      name: current_humidity
     - id: 19
       type: bitfield
       name: error
@@ -45,6 +48,8 @@ primary_entity:
 secondary_entities:
   - entity: sensor
     name: Current humidity
+    deprecated: humidifier
+    category: diagnostic
     class: humidity
     dps:
       - id: 16
