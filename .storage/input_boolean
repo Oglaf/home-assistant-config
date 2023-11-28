@@ -15,29 +15,14 @@
         "id": "medication"
       },
       {
-        "name": "Office light automation",
-        "icon": "mdi:robot",
-        "id": "office_light_automation"
-      },
-      {
-        "name": "Living room light automation",
-        "icon": "mdi:robot",
-        "id": "living_room_light_automation"
-      },
-      {
-        "name": "Bedroom light automation",
-        "icon": "mdi:robot",
-        "id": "bedroom_light_automation"
-      },
-      {
         "name": "Theater mode",
         "icon": "mdi:theater",
         "id": "theater_mode"
       },
       {
         "id": "heater_automation",
-        "icon": "mdi:robot",
-        "name": "Heater automation"
+        "name": "Heater Automation",
+        "icon": "mdi:robot"
       }
     ]
   }

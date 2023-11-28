@@ -48,15 +48,6 @@
         "mode": "storage",
         "url_path": "dashboard-home",
         "id": "dashboard_home"
-      },
-      {
-        "show_in_sidebar": false,
-        "icon": "mdi:desktop-tower-monitor",
-        "title": "Desktop",
-        "require_admin": false,
-        "mode": "storage",
-        "url_path": "dashboard-desktop",
-        "id": "dashboard_desktop"
       }
     ]
   }

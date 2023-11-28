@@ -11,8 +11,8 @@
             states('sensor.local_computer_socket_energy_helper') | float(0),
             states('sensor.local_electric_blanket_socket_energy_helper') | float(0),
             states('sensor.local_charger_socket_energy_helper') | float(0),
-            states('sensor.local_washing_machine_socket_energy_helper') | float(0),
-            states('sensor.local_heater_socket_energy_helper') | float(0),
+            states('sensor.washing_machine_socket_energy_helper') | float(0),
+            states('sensor.heater_socket_energy_helper') | float(0),
             states('sensor.living_room_plug_summation_delivered') | float(0)
           ]
           | map('float') | sum | round(4)

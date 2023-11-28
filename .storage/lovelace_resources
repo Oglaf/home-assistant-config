@@ -10,27 +10,27 @@
         "id": "bf45a820ea73463db877409772a8493a"
       },
       {
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375271",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375322",
         "type": "module",
         "id": "e0c16174a16d4a8f825286803f30f4ed"
       },
       {
-        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325350",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325411",
         "type": "module",
         "id": "fe51ff54f44d4fca9e63c0d9749468d5"
       },
       {
-        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=30496791849",
+        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=304967918415",
         "type": "module",
         "id": "39fda8f56a604b809beba8518a6e4dfe"
       },
       {
-        "url": "/hacsfiles/vacuum-card/vacuum-card.js?hacstag=261291295271",
+        "url": "/hacsfiles/vacuum-card/vacuum-card.js?hacstag=261291295276",
         "type": "module",
         "id": "cf31f35aa1b34d118ad3f238f2b72b6b"
       },
       {
-        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524322",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524330",
         "type": "module",
         "id": "357f2b9c10274e61ae93637021fcdbd0"
       },
@@ -45,7 +45,7 @@
         "id": "6955bdf394cc42699f9d3b3a67ed752e"
       },
       {
-        "url": "/hacsfiles/uptime-card/uptime-card.js?hacstag=3505098670140",
+        "url": "/hacsfiles/uptime-card/uptime-card.js?hacstag=3505098670150",
         "type": "module",
         "id": "af4fa0a032c041fda0436e80db9e7537"
       },
@@ -70,7 +70,7 @@
         "id": "9e77d0de4bd3459fbf8582e314727abb"
       },
       {
-        "url": "/hacsfiles/logbook-card/logbook-card.js?hacstag=2160084461111",
+        "url": "/hacsfiles/logbook-card/logbook-card.js?hacstag=216008446210",
         "type": "module",
         "id": "cc03f1352fcc4fbf965bfbc8901140a1"
       },
@@ -96,7 +96,17 @@
       },
       {
         "id": "bc285ccfc60045a4ac27c0e034296fec",
-        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682211",
+        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682301",
+        "type": "module"
+      },
+      {
+        "id": "c494cba10b47478bb6dd675a3e660456",
+        "url": "/hacsfiles/simple-clock-card/simple-clock-card.js?hacstag=34193126617",
+        "type": "module"
+      },
+      {
+        "id": "a7d4270b2a0f453cb36dba913047493d",
+        "url": "/hacsfiles/lovelace-digital-clock/digital-clock.js?hacstag=373832981124",
         "type": "module"
       }
     ]

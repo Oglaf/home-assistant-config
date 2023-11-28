@@ -15,6 +15,23 @@ turn_on_off_christian_pc:
         entity_id: switch.christian_pc_wol
   mode: single
 
+turn_on_off_christian_nb:
+  alias: Turn on/off Christian-NB
+  sequence:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.christian_nb
+      state: 'on'
+    then:
+    - service: shell_command.christian_nb_shutdown
+      data: {}
+    else:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id: switch.christian_nb_wol
+  mode: single
+
 clean_room:
   alias: Clean room
   sequence:

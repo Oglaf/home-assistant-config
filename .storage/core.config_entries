@@ -58,26 +58,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "1996c49051d125919648536f778d0dec",
-        "version": 1,
-        "domain": "upnp",
-        "title": "TP-Link TL-WDR4300 v1:DD-WRT",
-        "data": {
-          "udn": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D",
-          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1",
-          "original_udn": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D",
-          "location": "http://192.168.1.1:1780/InternetGatewayDevice.xml",
-          "mac_address": "e8:94:f6:2d:09:f0",
-          "host": "192.168.1.1"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "ssdp",
-        "unique_id": "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
-        "disabled_by": null
-      },
-      {
         "entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
         "version": 3,
         "domain": "zha",
@@ -111,21 +91,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "8efaf28d64eec101ad2910052fc9ba9e",
-        "version": 1,
-        "domain": "hacs",
-        "title": "",
-        "data": {
-          "token": "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"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
         "entry_id": "03ffb353327df73730eb839d6ee41355",
         "version": 1,
         "domain": "accuweather",
@@ -152,7 +117,7 @@
         "title": "192.168.1.198",
         "data": {
           "url": "http://192.168.1.198:8989",
-          "api_key": "ba2bbe4a23c4461d847de4e80856a1cb",
+          "api_key": "eac7acbf0a50455781f4feb36655d68e",
           "verify_ssl": false
         },
         "options": {
@@ -198,39 +163,8 @@
         "disabled_by": null
       },
       {
-        "entry_id": "c9477154229429f8d1fd5328c5d425e3",
-        "version": 1,
-        "domain": "mobile_app",
-        "title": "christian-tb",
-        "data": {
-          "app_id": "io.homeassistant.companion.android",
-          "app_name": "Home Assistant",
-          "app_version": "2023.3.0-full (3260)",
-          "device_name": "christian-tb",
-          "manufacturer": "samsung",
-          "model": "SM-T500",
-          "os_name": "Android",
-          "os_version": "31",
-          "supports_encryption": false,
-          "app_data": {
-            "push_websocket_channel": true,
-            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
-            "push_token": "dp4o8mW-SaKpe271psYgBs:APA91bEGnZ_NKXKMtx_Ct9XlijjePiPXgUg8RrAmHcjH-iPKzcuwit7rs-6RVcM9x8DStlGjK3gtoDBdY0X8E7Qdo_FOAkobYLlP8zxQmA3014ltdh23sJ8rEKOK6SrSHQniHyHlZgVh"
-          },
-          "device_id": "599dd739d6f22260",
-          "webhook_id": "18727fb5f1358cd87bc69dc7af2314a71cd147f3703e08bdaaa7dcf991c603b8",
-          "user_id": "2eb48afb57034b2eb5b96583279df927"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "registration",
-        "unique_id": "io.homeassistant.companion.android-599dd739d6f22260",
-        "disabled_by": "user"
-      },
-      {
         "entry_id": "6db6c61f82e6703a67364bc2230527e8",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Electric blanket Socket",
         "data": {
@@ -255,7 +189,7 @@
       },
       {
         "entry_id": "997db7e634b0b049e4b51884c7e1b7f1",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Heater Socket",
         "data": {
@@ -276,7 +210,7 @@
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": "eb860d52d52d7d56172s3b",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "186d71f2ab79626cf44d5f16b701412f",
@@ -346,7 +280,7 @@
         "data": {},
         "options": {
           "name": "Local Heater Socket Energy Helper",
-          "source": "sensor.local_heater_socket_power",
+          "source": "sensor.heater_socket_power",
           "method": "left",
           "round": 4.0,
           "unit_prefix": "k",
@@ -360,7 +294,7 @@
       },
       {
         "entry_id": "1d54b71446b557b8055f35bae2813e9f",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Computer Socket",
         "data": {
@@ -380,7 +314,7 @@
       },
       {
         "entry_id": "de08fb6596e4bba42483b8c1d9208f30",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Washing machine Socket",
         "data": {
@@ -396,7 +330,7 @@
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": "eb416792d0e54fe70foxzx",
-        "disabled_by": null
+        "disabled_by": "user"
       },
       {
         "entry_id": "a50324a862e45f86d1a56d55f802e500",
@@ -418,7 +352,7 @@
       },
       {
         "entry_id": "d4d31b7996522d0f61c401a1d103cf08",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Cleaner Robot",
         "data": {
@@ -516,7 +450,7 @@
       },
       {
         "entry_id": "b6d956add9092fa48f1d339fce010db8",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Kitchen Light 1",
         "data": {
@@ -536,7 +470,7 @@
       },
       {
         "entry_id": "517b70f2f82642f09484d46d758c65ed",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Kitchen Light 2",
         "data": {
@@ -584,7 +518,7 @@
         "data": {
           "entity_id": "light.kitchen_light_group",
           "create_energy_sensor": true,
-          "create_utility_meters": true,
+          "create_utility_meters": false,
           "name": "Kitchen Light Group Powercalc",
           "manufacturer": "wiz",
           "model": "SHRGBW",
@@ -628,7 +562,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2023.6.0-full (10170)",
+          "app_version": "2023.10.2-full (11484)",
           "device_name": "CECILIA-SP",
           "manufacturer": "Xiaomi",
           "model": "23028RA60L",
@@ -659,7 +593,7 @@
         "data": {},
         "options": {
           "name": "Local Washing machine Socket Energy Helper",
-          "source": "sensor.local_washing_machine_socket_power",
+          "source": "sensor.washing_machine_socket_power",
           "method": "left",
           "round": 2.0,
           "unit_prefix": "k",
@@ -679,7 +613,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2023.6.0-full (10170)",
+          "app_version": "2023.10.2-full (11484)",
           "device_name": "christian-sp",
           "manufacturer": "Xiaomi",
           "model": "Redmi Note 8",
@@ -704,7 +638,7 @@
       },
       {
         "entry_id": "c5ba3e6de7588757ddf422527f840040",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Charger Socket",
         "data": {
@@ -724,7 +658,7 @@
       },
       {
         "entry_id": "9126c3be103ebddd68d45488bf5a74ac",
-        "version": 12,
+        "version": 13,
         "domain": "tuya_local",
         "title": "Local Office Light",
         "data": {
@@ -740,6 +674,277 @@
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": "eb09c96452dd09b967nbjr",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "f47a293e28f6ebe7bb96901428ef3da1",
+        "version": 1,
+        "domain": "hacs",
+        "title": "",
+        "data": {
+          "token": "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"
+        },
+        "options": {
+          "sidepanel_title": "HACS",
+          "sidepanel_icon": "hacs:hacs",
+          "release_limit": 5,
+          "country": "ALL",
+          "appdaemon": true,
+          "netdaemon": false,
+          "debug": false,
+          "experimental": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "fbfaadf57315caaad9fff3d473fb344d",
+        "version": 1,
+        "domain": "ifttt",
+        "title": "IFTTT Webhook",
+        "data": {
+          "webhook_id": "fcb1b9687347b2c291a2128c43edda27ba9b2a1ec622e2a9922594a148f9cb43",
+          "cloudhook": false
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "a4fd96b5129247ce644396ca573fd351",
+        "version": 1,
+        "domain": "upnp",
+        "title": "OpenWRT router",
+        "data": {
+          "udn": "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4",
+          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+          "original_udn": "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4",
+          "location": "http://192.168.1.1:5000/rootDesc.xml",
+          "mac_address": "c0:74:2b:ff:5b:17",
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ssdp",
+        "unique_id": "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "cda6ab9844be84a95758fc98b559eecf",
+        "version": 1,
+        "domain": "adaptive_lighting",
+        "title": "Bedroom",
+        "data": {
+          "name": "Bedroom"
+        },
+        "options": {
+          "lights": [
+            "light.bedroom_light"
+          ],
+          "interval": 90,
+          "transition": 45.0,
+          "initial_transition": 1.0,
+          "min_brightness": 1,
+          "max_brightness": 100,
+          "min_color_temp": 2004,
+          "max_color_temp": 6535,
+          "prefer_rgb_color": false,
+          "sleep_brightness": 1,
+          "sleep_rgb_or_color_temp": "color_temp",
+          "sleep_color_temp": 2000,
+          "sleep_rgb_color": [
+            255,
+            56,
+            0
+          ],
+          "sleep_transition": 1.0,
+          "transition_until_sleep": false,
+          "sunrise_time": "None",
+          "min_sunrise_time": "None",
+          "max_sunrise_time": "None",
+          "sunrise_offset": 0,
+          "sunset_time": "None",
+          "min_sunset_time": "None",
+          "max_sunset_time": "None",
+          "sunset_offset": 0,
+          "brightness_mode": "default",
+          "brightness_mode_time_dark": 900,
+          "brightness_mode_time_light": 3600,
+          "take_over_control": true,
+          "detect_non_ha_changes": false,
+          "autoreset_control_seconds": 0,
+          "only_once": false,
+          "adapt_only_on_bare_turn_on": false,
+          "separate_turn_on_commands": false,
+          "send_split_delay": 0,
+          "adapt_delay": 0.0,
+          "skip_redundant_commands": false,
+          "intercept": true,
+          "multi_light_intercept": true,
+          "include_config_in_attributes": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "Bedroom",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "70da5e0cd26e9207ff1c44582f71be30",
+        "version": 1,
+        "domain": "adaptive_lighting",
+        "title": "Office",
+        "data": {
+          "name": "Office"
+        },
+        "options": {
+          "lights": [
+            "light.local_office_light"
+          ],
+          "interval": 90,
+          "transition": 45.0,
+          "initial_transition": 1.0,
+          "min_brightness": 1,
+          "max_brightness": 100,
+          "min_color_temp": 2000,
+          "max_color_temp": 10000,
+          "prefer_rgb_color": false,
+          "sleep_brightness": 1,
+          "sleep_rgb_or_color_temp": "color_temp",
+          "sleep_color_temp": 1000,
+          "sleep_rgb_color": [
+            255,
+            56,
+            0
+          ],
+          "sleep_transition": 1.0,
+          "transition_until_sleep": false,
+          "sunrise_time": "None",
+          "min_sunrise_time": "None",
+          "max_sunrise_time": "None",
+          "sunrise_offset": 0,
+          "sunset_time": "None",
+          "min_sunset_time": "None",
+          "max_sunset_time": "None",
+          "sunset_offset": 0,
+          "brightness_mode": "default",
+          "brightness_mode_time_dark": 900,
+          "brightness_mode_time_light": 3600,
+          "take_over_control": true,
+          "detect_non_ha_changes": false,
+          "autoreset_control_seconds": 0,
+          "only_once": false,
+          "adapt_only_on_bare_turn_on": false,
+          "separate_turn_on_commands": false,
+          "send_split_delay": 0,
+          "adapt_delay": 0.0,
+          "skip_redundant_commands": false,
+          "intercept": true,
+          "multi_light_intercept": true,
+          "include_config_in_attributes": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "Office",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "009347e3a398a954cace187474261b56",
+        "version": 1,
+        "domain": "adaptive_lighting",
+        "title": "Living Room",
+        "data": {
+          "name": "Living Room"
+        },
+        "options": {
+          "lights": [
+            "light.living_room_light"
+          ],
+          "interval": 90,
+          "transition": 45.0,
+          "initial_transition": 1.0,
+          "min_brightness": 1,
+          "max_brightness": 100,
+          "min_color_temp": 2004,
+          "max_color_temp": 6535,
+          "prefer_rgb_color": false,
+          "sleep_brightness": 1,
+          "sleep_rgb_or_color_temp": "color_temp",
+          "sleep_color_temp": 1000,
+          "sleep_rgb_color": [
+            255,
+            56,
+            0
+          ],
+          "sleep_transition": 1.0,
+          "transition_until_sleep": false,
+          "sunrise_time": "None",
+          "min_sunrise_time": "None",
+          "max_sunrise_time": "None",
+          "sunrise_offset": 0,
+          "sunset_time": "None",
+          "min_sunset_time": "None",
+          "max_sunset_time": "None",
+          "sunset_offset": 0,
+          "brightness_mode": "default",
+          "brightness_mode_time_dark": 900,
+          "brightness_mode_time_light": 3600,
+          "take_over_control": true,
+          "detect_non_ha_changes": false,
+          "autoreset_control_seconds": 0,
+          "only_once": false,
+          "adapt_only_on_bare_turn_on": false,
+          "separate_turn_on_commands": false,
+          "send_split_delay": 0,
+          "adapt_delay": 0.0,
+          "skip_redundant_commands": false,
+          "intercept": true,
+          "multi_light_intercept": true,
+          "include_config_in_attributes": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "Living Room",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "687b35f7caf6a293296a362a57b9b182",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "christian-tb",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2023.10.2-full (11484)",
+          "device_name": "christian-tb",
+          "manufacturer": "samsung",
+          "model": "SM-T500",
+          "os_name": "Android",
+          "os_version": "31",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "dp4o8mW-SaKpe271psYgBs:APA91bEGnZ_NKXKMtx_Ct9XlijjePiPXgUg8RrAmHcjH-iPKzcuwit7rs-6RVcM9x8DStlGjK3gtoDBdY0X8E7Qdo_FOAkobYLlP8zxQmA3014ltdh23sJ8rEKOK6SrSHQniHyHlZgVh"
+          },
+          "device_id": "599dd739d6f22260",
+          "webhook_id": "385ed423502bfb956883526aadc819cf11d71a80a78e803972e2e31f0a6bbe91",
+          "user_id": "2eb48afb57034b2eb5b96583279df927"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-599dd739d6f22260",
         "disabled_by": null
       }
     ]

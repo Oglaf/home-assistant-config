@@ -14,13 +14,22 @@
         ]
       },
       {
+        "id": "washing_machine_status",
         "name": "Washing machine status",
         "icon": "mdi:washing-machine",
         "options": [
           "Off",
-          "Running"
-        ],
-        "id": "washing_machine_status"
+          "On"
+        ]
+      },
+      {
+        "id": "fan_mode",
+        "name": "Fan mode",
+        "icon": "mdi:fan",
+        "options": [
+          "Heat",
+          "Cool"
+        ]
       }
     ]
   }

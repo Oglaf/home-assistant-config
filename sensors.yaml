@@ -1,7 +1,7 @@
 - platform: history_stats
   name: Washer running time
   entity_id: input_select.washing_machine_status
-  state: "Running"
+  state: "On"
   type: time
   start: "{{ now().replace(hour=0, minute=0, second=0) }}"
   end: "{{ now() }}"

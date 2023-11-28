@@ -52,7 +52,7 @@ fan_energy_cost:
 
 # Oven
 heater_energy_cost:
-  source: sensor.local_heater_socket_energy_helper
+  source: sensor.heater_socket_energy_helper
   cycle: monthly
   tariffs:
     - peak
@@ -65,7 +65,7 @@ heater_energy_cost:
 
 # Washer
 washer_energy_cost:
-  source: sensor.local_washing_machine_socket_energy_helper
+  source: sensor.washing_machine_socket_energy_helper
   cycle: monthly
   tariffs:
     - peak

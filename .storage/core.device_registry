@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "minor_version": 3,
+  "minor_version": 4,
   "key": "core.device_registry",
   "data": {
     "devices": [
@@ -25,6 +25,7 @@
         "model": "Chromecast",
         "name_by_user": null,
         "name": "Bedroom TV",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -49,6 +50,7 @@
         "model": "Chromecast",
         "name_by_user": null,
         "name": "Living Room TV",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -73,6 +75,7 @@
         "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
         "name_by_user": null,
         "name": "Computer socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -97,6 +100,7 @@
         "model": " (5xierbs16mkdnkpk)",
         "name_by_user": null,
         "name": "Pet feeder",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -121,43 +125,7 @@
         "model": "Smart Plug (xtnehyamtpkge0se)",
         "name_by_user": null,
         "name": "Electric blanket socket",
-        "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "1996c49051d125919648536f778d0dec"
-        ],
-        "configuration_url": null,
-        "connections": [
-          [
-            "upnp",
-            "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D"
-          ]
-        ],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "0acccc4f0e80747eb587cf5e4bb632b3",
-        "identifiers": [
-          [
-            "upnp",
-            "uuid:42ADD47B-FDC6-D91E-C679-89989907B24D::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
-          ],
-          [
-            "upnp_host",
-            "192.168.1.1"
-          ],
-          [
-            "upnp_serial_number",
-            "0000001"
-          ]
-        ],
-        "manufacturer": "DD-WRT",
-        "model": "TP-Link TL-WDR4300 v1",
-        "name_by_user": null,
-        "name": "TP-Link TL-WDR4300 v1:DD-WRT",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -187,6 +155,7 @@
         "model": "ZNP = Texas Instruments Z-Stack ZNP protocol: CC253x, CC26x2, CC13x2",
         "name_by_user": null,
         "name": "Zigbee Coordinator",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -216,6 +185,7 @@
         "model": "WB01",
         "name_by_user": "Zigbee Office Switch",
         "name": "eWeLink WB01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -245,32 +215,9 @@
         "model": "WB01",
         "name_by_user": "Zigbee Living Room Switch",
         "name": "eWeLink WB01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "8efaf28d64eec101ad2910052fc9ba9e"
-        ],
-        "configuration_url": "homeassistant://hacs",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "289a26bee1750d57336674352182418a",
-        "identifiers": [
-          [
-            "hacs",
-            "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
-          ]
-        ],
-        "manufacturer": "hacs.xyz",
-        "model": "",
-        "name_by_user": null,
-        "name": "HACS",
-        "sw_version": "1.32.1",
-        "via_device_id": null
       },
       {
         "area_id": null,
@@ -293,6 +240,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Home",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -317,7 +265,8 @@
         "model": null,
         "name_by_user": null,
         "name": "Sonarr",
-        "sw_version": "3.0.10.1567",
+        "serial_number": null,
+        "sw_version": "4.0.0.733",
         "via_device_id": null
       },
       {
@@ -341,6 +290,7 @@
         "model": "Watchman",
         "name_by_user": null,
         "name": "Watchman",
+        "serial_number": null,
         "sw_version": "0.6.1",
         "via_device_id": null
       },
@@ -365,13 +315,14 @@
         "model": "KaBuM!Robô aspirador de pó (wexaeucvbdawkkpo)",
         "name_by_user": null,
         "name": "Cleaner Robot",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
         "area_id": null,
         "config_entries": [
-          "c9477154229429f8d1fd5328c5d425e3"
+          "687b35f7caf6a293296a362a57b9b182"
         ],
         "configuration_url": null,
         "connections": [],
@@ -389,13 +340,15 @@
         "model": "SM-T500",
         "name_by_user": null,
         "name": "christian-tb",
+        "serial_number": null,
         "sw_version": "31",
         "via_device_id": null
       },
       {
         "area_id": "bedroom",
         "config_entries": [
-          "6db6c61f82e6703a67364bc2230527e8"
+          "6db6c61f82e6703a67364bc2230527e8",
+          "a8d93d42c04b2da7dec4e99b0859a03d"
         ],
         "configuration_url": null,
         "connections": [],
@@ -413,13 +366,15 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Electric blanket Socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
-        "area_id": null,
+        "area_id": "office",
         "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
+          "0c19b5e99ef143bb964ab2a275d6adfd",
+          "8167790eccfbb9af2eae359bf0fd8d89"
         ],
         "configuration_url": null,
         "connections": [],
@@ -436,14 +391,16 @@
         "manufacturer": "Tuya",
         "model": "Smart Socket (grpvptbrpkissnd8)",
         "name_by_user": null,
-        "name": "Oven socket",
+        "name": "Heater socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
         "area_id": "office",
         "config_entries": [
-          "997db7e634b0b049e4b51884c7e1b7f1"
+          "997db7e634b0b049e4b51884c7e1b7f1",
+          "8167790eccfbb9af2eae359bf0fd8d89"
         ],
         "configuration_url": null,
         "connections": [],
@@ -461,13 +418,15 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Heater Socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
-        "area_id": null,
+        "area_id": "kitchen",
         "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd"
+          "0c19b5e99ef143bb964ab2a275d6adfd",
+          "9b03b773cd3e8ae8da28fbfdceaf5213"
         ],
         "configuration_url": null,
         "connections": [],
@@ -485,6 +444,7 @@
         "model": "Smart Socket (grpvptbrpkissnd8)",
         "name_by_user": null,
         "name": "Washing machine socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -510,12 +470,14 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Office Light",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
         "area_id": "office",
         "config_entries": [
+          "186d71f2ab79626cf44d5f16b701412f",
           "1d54b71446b557b8055f35bae2813e9f"
         ],
         "configuration_url": null,
@@ -534,12 +496,14 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Computer Socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
         "area_id": "kitchen",
         "config_entries": [
+          "9b03b773cd3e8ae8da28fbfdceaf5213",
           "de08fb6596e4bba42483b8c1d9208f30"
         ],
         "configuration_url": null,
@@ -558,6 +522,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Washing machine Socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -582,7 +547,8 @@
         "model": "Android TV",
         "name_by_user": null,
         "name": "Living Room TV",
-        "sw_version": "0.15.10",
+        "serial_number": null,
+        "sw_version": "0.15.12",
         "via_device_id": "568093bd4c657309db355d4377664cc9"
       },
       {
@@ -605,7 +571,8 @@
         "manufacturer": "Jellyfin",
         "model": null,
         "name_by_user": null,
-        "name": "CHRISTIAN-SRV",
+        "name": "877ee5168183",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -630,6 +597,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Cleaner Robot",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -659,6 +627,7 @@
         "model": "TS011F",
         "name_by_user": "Zigbee Living Room Plug",
         "name": "_TZ3000_idrffznf TS011F",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -688,6 +657,7 @@
         "model": "WB01",
         "name_by_user": "Zigbee kitchen switch",
         "name": "eWeLink WB01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -718,6 +688,7 @@
         "model": "TS0505B",
         "name_by_user": "Bedroom Light",
         "name": "_TZ3210_r5afgmkl TS0505B",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -748,6 +719,7 @@
         "model": "TS0505B",
         "name_by_user": "Living room Light",
         "name": "_TZ3210_r5afgmkl TS0505B",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -772,6 +744,7 @@
         "model": "Smart Lâmpada Wi-Fi (97jzv6zysedaddxc)",
         "name_by_user": null,
         "name": "Kitchen Light 1",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -796,6 +769,7 @@
         "model": "Smart Lâmpada Wi-Fi (97jzv6zysedaddxc)",
         "name_by_user": null,
         "name": "Kitchen Light 2",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -820,6 +794,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Kitchen Light 1",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -844,6 +819,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Kitchen Light 2",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -868,6 +844,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Sun",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -897,6 +874,7 @@
         "model": "MS01",
         "name_by_user": "Zigbee motion sensor",
         "name": "eWeLink MS01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -926,6 +904,7 @@
         "model": "Chromecast",
         "name_by_user": null,
         "name": "Living Room TV",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -950,6 +929,7 @@
         "model": "23028RA60L",
         "name_by_user": null,
         "name": "CECILIA-SP",
+        "serial_number": null,
         "sw_version": "33",
         "via_device_id": null
       },
@@ -974,6 +954,7 @@
         "model": "Redmi Note 8",
         "name_by_user": null,
         "name": "christian-sp",
+        "serial_number": null,
         "sw_version": "33",
         "via_device_id": null
       },
@@ -1003,6 +984,7 @@
         "model": "TH01",
         "name_by_user": "Kitchen temperature sensor",
         "name": "eWeLink TH01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
@@ -1026,7 +1008,8 @@
         "manufacturer": "Tuya",
         "model": "Smart Plug WiFi  (2vdttet77fzapqdf)",
         "name_by_user": null,
-        "name": "Fan socket",
+        "name": "Charger socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1051,12 +1034,14 @@
         "model": "EWS 410 (tgfkxkkbcwbz1pmo)",
         "name_by_user": null,
         "name": "Office light",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
       {
         "area_id": "bedroom",
         "config_entries": [
+          "fac9ebbfe939126d0442817f2a0d75a6",
           "c5ba3e6de7588757ddf422527f840040"
         ],
         "configuration_url": null,
@@ -1075,6 +1060,7 @@
         "model": null,
         "name_by_user": null,
         "name": "Local Charger Socket",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1104,8 +1090,201 @@
         "model": "TH01",
         "name_by_user": "Office Temperature Sensor",
         "name": "eWeLink TH01",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "f47a293e28f6ebe7bb96901428ef3da1"
+        ],
+        "configuration_url": "homeassistant://hacs",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "289a26bee1750d57336674352182418a",
+        "identifiers": [
+          [
+            "hacs",
+            "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+          ]
+        ],
+        "manufacturer": "hacs.xyz",
+        "model": "",
+        "name_by_user": null,
+        "name": "HACS",
+        "serial_number": null,
+        "sw_version": "1.33.0",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": "user",
+        "entry_type": null,
+        "hw_version": null,
+        "id": "f9184a4441d6a69696ede53c04667731",
+        "identifiers": [
+          [
+            "jellyfin",
+            "36a90141cf711fad02f3119209e2e5d235a70de4"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Android TV",
+        "name_by_user": null,
+        "name": "Living Room TV",
+        "serial_number": null,
+        "sw_version": "0.15.10",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "2f326ae9f02ea39e224d7b795a001a32",
+        "identifiers": [
+          [
+            "jellyfin",
+            "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEwOS4wLjAuMCBTYWZhcmkvNTM3LjM2fDE2NzU2OTM3MTYzMDI1"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Jellyfin Web",
+        "name_by_user": null,
+        "name": "Chrome",
+        "serial_number": null,
+        "sw_version": "10.8.10",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "b8d496a445f7760cd6bb58ec1f00641d",
+        "identifiers": [
+          [
+            "jellyfin",
+            "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NDsgcnY6MTA5LjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvMTE1LjB8MTY4ODU4MTQ5NjMyMg11"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Jellyfin Web",
+        "name_by_user": null,
+        "name": "Firefox",
+        "serial_number": null,
+        "sw_version": "10.8.10",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "b5a818ab948cf5124afffc050bb7014c",
+        "identifiers": [
+          [
+            "jellyfin",
+            "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NDsgcnY6MTA5LjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvMTE2LjB8MTY5MTUwNDc4MDU0Nw11"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Jellyfin Web",
+        "name_by_user": null,
+        "name": "Firefox",
+        "serial_number": null,
+        "sw_version": "10.8.10",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a50324a862e45f86d1a56d55f802e500"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "331d7efde7bd4d91e5f1adaf76da4d14",
+        "identifiers": [
+          [
+            "jellyfin",
+            "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzExNi4wLjAuMCBTYWZhcmkvNTM3LjM2IE9QUi8xMDIuMC4wLjB8MTY5NjYzNDA5ODEwMg11"
+          ]
+        ],
+        "manufacturer": "Jellyfin",
+        "model": "Jellyfin Web",
+        "name_by_user": null,
+        "name": "Opera",
+        "serial_number": null,
+        "sw_version": "10.8.11",
+        "via_device_id": "568093bd4c657309db355d4377664cc9"
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "a4fd96b5129247ce644396ca573fd351"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "upnp",
+            "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4"
+          ],
+          [
+            "mac",
+            "c0:74:2b:ff:5b:17"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "0acccc4f0e80747eb587cf5e4bb632b3",
+        "identifiers": [
+          [
+            "upnp_host",
+            "192.168.1.1"
+          ],
+          [
+            "upnp",
+            "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+          ],
+          [
+            "upnp_serial_number",
+            "00000000"
+          ]
+        ],
+        "manufacturer": "OpenWRT",
+        "model": "OpenWRT router",
+        "name_by_user": null,
+        "name": "OpenWRT router",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
       },
       {
         "area_id": null,
@@ -1128,6 +1307,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Shutdown fan after 3 hours",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1152,6 +1332,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Feed",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1176,6 +1357,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Charge robot",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1200,6 +1382,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Auto cleaning",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1224,6 +1407,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Mopping",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       },
@@ -1248,6 +1432,7 @@
         "model": "Tuya Scene",
         "name_by_user": null,
         "name": "Room cleaning",
+        "serial_number": null,
         "sw_version": null,
         "via_device_id": null
       }
@@ -1371,18 +1556,6 @@
         "orphaned_timestamp": null
       },
       {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "mobile_app",
-            "e70440364044d0d1"
-          ]
-        ],
-        "id": "1e9d072d164c76e46396ceee3e90b3c5",
-        "orphaned_timestamp": 1684984248.7160106
-      },
-      {
         "config_entries": [
           "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
@@ -1395,27 +1568,6 @@
         ],
         "id": "ab9093baef10369b08cf8bdd6d72a77a",
         "orphaned_timestamp": null
-      },
-      {
-        "config_entries": [],
-        "connections": [
-          [
-            "mac",
-            "f8:32:e4:9b:2a:6e"
-          ]
-        ],
-        "identifiers": [
-          [
-            "system_bridge",
-            "f8:32:e4:9b:2a:6e"
-          ],
-          [
-            "system_bridge",
-            "System"
-          ]
-        ],
-        "id": "6330d7bc4c63a866ab02652e52dd5acc",
-        "orphaned_timestamp": 1686317941.942848
       }
     ]
   }

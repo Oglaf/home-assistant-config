@@ -44,13 +44,13 @@
             "number_energy_price": null
           },
           {
-            "stat_energy_from": "sensor.local_heater_socket_energy_helper",
+            "stat_energy_from": "sensor.heater_socket_energy_helper",
             "stat_cost": null,
             "entity_energy_price": "sensor.tariff_price",
             "number_energy_price": null
           },
           {
-            "stat_energy_from": "sensor.local_washing_machine_socket_energy_helper",
+            "stat_energy_from": "sensor.washing_machine_socket_energy_helper",
             "stat_cost": null,
             "entity_energy_price": "sensor.tariff_price",
             "number_energy_price": null

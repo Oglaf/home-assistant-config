@@ -2,41 +2,52 @@
 - platform: wake_on_lan
   mac: A8:A1:59:45:CB:22
   name: christian_pc_wol
+  host: 192.168.1.81
   broadcast_address: 192.168.1.255
+  turn_off:
+      service: shell_command.christian_nb_shutdown
 
-# Circadian lighting
-- platform: circadian_lighting
-  name: Living room circadian lighting
-  initial_transition: 5
-  sleep_entity: input_boolean.sleep_time
-  sleep_state: "on"
-  sleep_colortemp: 2001
-  sleep_brightness: 2.5510204081632653
-  disable_entity: input_boolean.living_room_light_automation
-  disable_state: "off"
-  lights_ct:
-    - light.living_room_light
+- platform: wake_on_lan
+  mac: 80:FA:5B:A5:BA:D3
+  name: christian_nb_wol
+  host: 192.168.1.112
+  broadcast_address: 192.168.1.255
+  turn_off:
+      service: shell_command.christian_nb_shutdown
 
-- platform: circadian_lighting
-  name: Bedroom circadian lighting
-  initial_transition: 5
-  sleep_entity: input_boolean.sleep_time
-  sleep_state: "on"
-  sleep_colortemp: 2001
-  sleep_brightness: 2.5510204081632653
-  disable_entity: input_boolean.bedroom_light_automation
-  disable_state: "off"
-  lights_ct:
-    - light.bedroom_light
+# # Circadian lighting
+# - platform: circadian_lighting
+#   name: Living room circadian lighting
+#   initial_transition: 5
+#   sleep_entity: input_boolean.sleep_time
+#   sleep_state: "on"
+#   sleep_colortemp: 2001
+#   sleep_brightness: 2.5510204081632653
+#   disable_entity: input_boolean.living_room_light_automation
+#   disable_state: "off"
+#   lights_ct:
+#     - light.living_room_light
 
-- platform: circadian_lighting
-  name: Office circadian lighting
-  initial_transition: 5
-  sleep_entity: input_boolean.sleep_time
-  sleep_state: "on"
-  sleep_colortemp: 2001
-  sleep_brightness: 2.5510204081632653
-  disable_entity: input_boolean.office_light_automation
-  disable_state: "off"
-  lights_ct:
-    - light.local_office_light
+# - platform: circadian_lighting
+#   name: Bedroom circadian lighting
+#   initial_transition: 5
+#   sleep_entity: input_boolean.sleep_time
+#   sleep_state: "on"
+#   sleep_colortemp: 2001
+#   sleep_brightness: 2.5510204081632653
+#   disable_entity: input_boolean.bedroom_light_automation
+#   disable_state: "off"
+#   lights_ct:
+#     - light.bedroom_light
+
+# - platform: circadian_lighting
+#   name: Office circadian lighting
+#   initial_transition: 5
+#   sleep_entity: input_boolean.sleep_time
+#   sleep_state: "on"
+#   sleep_colortemp: 2001
+#   sleep_brightness: 2.5510204081632653
+#   disable_entity: input_boolean.office_light_automation
+#   disable_state: "off"
+#   lights_ct:
+#     - light.local_office_light

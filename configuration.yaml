@@ -1,6 +1,11 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
+logger:
+  default: warning
+  logs:
+    zigpy.zcl: error
+
 # Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
@@ -50,17 +55,22 @@ proximity:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 192.168.1.0/24
-    - 172.21.0.0/24
+    #- 192.168.1.0/24
+    - 172.21.0.0/16
+    - 127.0.0.1
+    - ::1
 
-# Cicardian light
-circadian_lighting:
-  min_colortemp: 2004
-  max_colortemp: 6535
+# # Cicardian light
+# circadian_lighting:
+#   min_colortemp: 2004
+#   max_colortemp: 6535
 
 # shell
 shell_command:
-  christian_pc_shutdown: ssh -o UserKnownHostsFile=/config/.ssh/known_hosts homeassistant@192.168.1.81 -i /config/.ssh/id_rsa "shutdown -s -t 30 -f"
+  christian_pc_shutdown:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.81 -i /config/ssh_keys/id_rsa_christian_pc "shutdown -s -t 30 -f"
+  server_shutdown:        ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.198 -i /config/ssh_keys/id_rsa_hass "sudo shutdown -h now"
+  christian_nb_shutdown:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.118 -i /config/ssh_keys/id_rsa_christian_nb "shutdown -s -t 30 -f"
+  docker_start_jellyfin:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.198 -i /config/ssh_keys/id_rsa_hass "docker start jellyfin"
 
 # recorder
 recorder:

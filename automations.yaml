@@ -190,6 +190,7 @@
     conditions:
     - condition: sun
       after: sunset
+      after_offset: '-15'
     - condition: or
       conditions:
       - condition: state
@@ -199,7 +200,7 @@
         entity_id: binary_sensor.cecilia_pc
         state: 'on'
     - condition: state
-      entity_id: input_boolean.office_light_automation
+      entity_id: switch.adaptive_lighting_office
       state: 'on'
   action:
   - service: light.turn_on
@@ -224,8 +225,8 @@
   action:
   - if:
     - condition: template
-      value_template: "{{ states('sensor.office_temperature_sensor_humidity') | float >\n
-        \  state_attr('weather.home', 'humidity') | float }}"
+      value_template: "{{ states('sensor.office_temperature_sensor_humidity') | float
+        >\n   state_attr('weather.home', 'humidity') | float }}"
     then:
     - service: input_select.select_option
       data:
@@ -353,7 +354,7 @@
     - condition: sun
       after: sunset
     - condition: state
-      entity_id: input_boolean.living_room_light_automation
+      entity_id: switch.adaptive_lighting_living_room
       state: 'on'
     - condition: state
       entity_id: light.living_room_light
@@ -374,11 +375,11 @@
   - platform: state
     entity_id:
     - media_player.living_room_tv
-    to: paused
     for:
       hours: 0
       minutes: 0
-      seconds: 10
+      seconds: 3
+    from: playing
   condition:
   - condition: and
     conditions:
@@ -389,7 +390,7 @@
       after: sunset
       before: sunrise
     - condition: state
-      entity_id: input_boolean.living_room_light_automation
+      entity_id: switch.adaptive_lighting_living_room
       state: 'off'
   action:
   - service: light.turn_on
@@ -416,7 +417,7 @@
       after: sunset
       before: sunrise
     - condition: state
-      entity_id: input_boolean.living_room_light_automation
+      entity_id: switch.adaptive_lighting_living_room
       state: 'off'
   action:
   - service: light.turn_off
@@ -441,7 +442,7 @@
     - service: input_boolean.turn_off
       data: {}
       target:
-        entity_id: input_boolean.living_room_light_automation
+        entity_id: switch.adaptive_lighting_living_room
     - service: automation.trigger
       data: {}
       target:
@@ -450,7 +451,7 @@
     - service: input_boolean.turn_on
       data: {}
       target:
-        entity_id: input_boolean.living_room_light_automation
+        entity_id: switch.adaptive_lighting_living_room
   mode: single
 - id: '1674779503847'
   alias: LIGHT - Turn off Office
@@ -545,7 +546,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.local_washing_machine_socket_power
+    entity_id: sensor.washing_machine_socket_power
     for:
       hours: 0
       minutes: 1
@@ -558,7 +559,7 @@
   action:
   - service: input_select.select_option
     data:
-      option: Running
+      option: 'On'
     target:
       entity_id: input_select.washing_machine_status
   mode: single
@@ -567,7 +568,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.local_washing_machine_socket_power
+    entity_id: sensor.washing_machine_socket_power
     for:
       hours: 0
       minutes: 10
@@ -576,7 +577,7 @@
   condition:
   - condition: state
     entity_id: input_select.washing_machine_status
-    state: Running
+    state: 'On'
   action:
   - service: input_select.select_option
     data:
@@ -588,23 +589,6 @@
       message: Wash completed.
       title: Washing machine
   mode: single
-- id: '1679015185293'
-  alias: LIGHT - Turn on bedroom based on motion
-  description: ''
-  use_blueprint:
-    path: Blackshome/sensor-light.yaml
-    input:
-      motion_trigger:
-      - binary_sensor.ewelink_ms01_iaszone
-      time_delay: 2
-      light_brightness: 10
-      motion_bypass: input_boolean.sleep_time
-      include_bypass: bypass_enabled
-      include_sun: sun_enabled
-      include_zone: zone_enabled
-      zone: zone.home
-      light_switch:
-        device_id: 8c89cf522eaceedec0b7a6b2c2150f80
 - id: '1680553973480'
   alias: SWITCH - Living room light
   description: ''
@@ -714,13 +698,6 @@
   alias: SWITCH - Turn on Heater
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.office_temperature_sensor_temperature
-    for:
-      hours: 0
-      minutes: 10
-      seconds: 0
-    below: input_number.thermostat_temperature
   - platform: state
     entity_id:
     - input_number.thermostat_temperature
@@ -728,6 +705,8 @@
     entity_id:
     - input_boolean.heater_automation
     to: 'on'
+  - platform: time_pattern
+    minutes: /10
   condition:
   - condition: state
     entity_id: input_boolean.heater_automation
@@ -747,7 +726,7 @@
   - service: switch.turn_on
     data: {}
     target:
-      entity_id: switch.local_heater_socket
+      entity_id: switch.heater_socket
   mode: single
 - id: '1684209316498'
   alias: SWITCH - Turn off heater
@@ -774,7 +753,7 @@
   - service: switch.turn_off
     data: {}
     target:
-      entity_id: switch.local_heater_socket
+      entity_id: switch.heater_socket
   mode: single
 - id: '1684209621936'
   alias: HEATER - Turn on automation
@@ -798,6 +777,9 @@
       after: 08:24:00
       weekday:
       - mon
+  - condition: state
+    entity_id: input_select.fan_mode
+    state: Heat
   action:
   - service: input_boolean.turn_on
     data: {}
@@ -826,4 +808,99 @@
     data: {}
     target:
       entity_id: input_boolean.heater_automation
+  mode: single
+- id: '1688854997782'
+  alias: LIGHT - Turn on bedroom light
+  description: ''
+  use_blueprint:
+    path: Blackshome/sensor-light.yaml
+    input:
+      light_switch:
+        entity_id: light.bedroom_light
+      motion_trigger:
+      - binary_sensor.ewelink_ms01_iaszone
+      include_bypass: bypass_disabled
+      motion_bypass: input_boolean.sleep_time
+      include_sun: sun_enabled
+      sun_elevation: -3.5
+      include_device_tracker: zone_people_enabled
+      zone: zone.home
+      people:
+      - person.cecilia_ueda
+      - person.christian_silva
+      time_delay: 1
+      include_time: time_enabled
+      after_time: 08:00:00
+      before_time: 01:00:00
+- id: '1688856012542'
+  alias: WASHER - Appliance has finished
+  description: ''
+  use_blueprint:
+    path: sbyx/notify-or-do-something-when-an-appliance-like-a-dishwasher-or-washing-machine-finishes.yaml
+    input:
+      power_sensor: sensor.washing_machine_socket_power
+      starting_threshold: 3
+      starting_hysteresis: 0.5
+      finishing_threshold: 1
+      finishing_hysteresis: 10
+      actions:
+      - service: notify.notify
+        data:
+          message: Washing complete
+          title: Home assistant
+      - service: input_select.set_options
+        data:
+          options: 'Off'
+        target:
+          entity_id: input_select.washing_machine_status
+      pre_actions:
+      - service: input_select.set_options
+        data:
+          options: 'On'
+        target:
+          entity_id: input_select.washing_machine_status
+- id: '1696091007734'
+  alias: IFTT automation
+  description: IFTT automation
+  trigger:
+  - platform: event
+    event_type: ifttt_webhook_received
+    event_data:
+      action: call_service
+  condition: []
+  action:
+  - service: '{{ trigger.event.data.service }}'
+    target:
+      entity_id: '{{ trigger.event.data.entity_id }}'
+  mode: single
+- id: '1697494475587'
+  alias: Turn off server
+  description: ''
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id:
+      - bedroom
+      - kitchen
+      - living_room
+      - office
+    enabled: true
+  - service: shell_command.server_shutdown
+    data: {}
+  mode: single
+- id: '1700481253602'
+  alias: JELLYFIN - Turn on
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:05:00
+  condition: []
+  action:
+  - service: shell_command.docker_start_jellyfin
+    data: {}
   mode: single

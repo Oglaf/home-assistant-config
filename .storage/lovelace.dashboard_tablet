@@ -8,10 +8,10 @@
         {
           "theme": "Backend-selected",
           "title": "Home",
-          "type": "custom:masonry-layout",
           "layout": {
             "max_cols": 3
           },
+          "type": "custom:horizontal-layout",
           "badges": [],
           "cards": [
             {
@@ -424,41 +424,6 @@
               "square": false,
               "columns": 1,
               "type": "grid",
-              "title": "Weather",
-              "cards": [
-                {
-                  "show_current": true,
-                  "show_forecast": true,
-                  "type": "weather-forecast",
-                  "entity": "weather.home",
-                  "secondary_info_attribute": "humidity",
-                  "name": "Curitiba"
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "sensor.next_sunrise",
-                      "name": "Sunrise",
-                      "icon": "mdi:weather-sunset-up",
-                      "icon_color": "amber"
-                    },
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "sensor.next_sunset",
-                      "name": "Sunset",
-                      "icon": "mdi:weather-sunset-down",
-                      "icon_color": "indigo"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "square": false,
-              "columns": 1,
-              "type": "grid",
               "title": "Office",
               "cards": [
                 {
@@ -505,49 +470,58 @@
                   "collapsible_controls": true
                 },
                 {
-                  "type": "custom:stack-in-card",
-                  "cards": [
+                  "type": "conditional",
+                  "conditions": [
                     {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_heater_socket",
-                      "name": "Heater",
-                      "icon": "mdi:radiator",
-                      "icon_color": "red",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "card_mod": {
-                        "style": "ha-card {\n  --ha-card-border-width: 0px;\n}\n"
-                      },
-                      "tap_action": {
-                        "action": "toggle"
-                      }
-                    },
-                    {
-                      "type": "custom:mushroom-number-card",
-                      "entity": "input_number.thermostat_temperature",
-                      "display_mode": "buttons",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "icon_type": "none",
-                      "card_mod": {
-                        "style": "ha-card {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 54px;\n  width: calc(87% - 54px);\n  --ha-card-border-width: 0px;\n  --control-height: 30px;\n  transition: all 0s;\n  font-size: calc(var(--control-height) / 2);\n}\n"
-                      }
-                    },
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "input_boolean.heater_automation",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "icon_color": "red",
-                      "icon": "mdi:thermostat-auto",
-                      "tap_action": {
-                        "action": "toggle"
-                      },
-                      "card_mod": {
-                        "style": "ha-card {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  width: fit-content;\n  --ha-card-border-width: 0px;\n}\n"
-                      }
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Heat"
                     }
-                  ]
+                  ],
+                  "card": {
+                    "type": "custom:stack-in-card",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "switch.heater_socket",
+                        "name": "Heater",
+                        "icon": "mdi:radiator",
+                        "icon_color": "red",
+                        "secondary_info": "none",
+                        "card_mod": {
+                          "style": "ha-card {\n  --ha-card-border-width: 0px;\n}\n"
+                        },
+                        "tap_action": {
+                          "action": "toggle"
+                        }
+                      },
+                      {
+                        "type": "custom:mushroom-number-card",
+                        "entity": "input_number.thermostat_temperature",
+                        "display_mode": "buttons",
+                        "primary_info": "none",
+                        "secondary_info": "none",
+                        "icon_type": "none",
+                        "card_mod": {
+                          "style": "ha-card {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 54px;\n  width: calc(70% - 54px);\n  --ha-card-border-width: 0px;\n  --control-height: 30px;\n  transition: all 0s;\n  font-size: calc(var(--control-height) / 2);\n}\n"
+                        }
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "input_boolean.heater_automation",
+                        "primary_info": "none",
+                        "secondary_info": "none",
+                        "icon_color": "red",
+                        "icon": "mdi:thermostat-auto",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "card_mod": {
+                          "style": "ha-card {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  width: fit-content;\n  --ha-card-border-width: 0px;\n}\n"
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             },
@@ -610,10 +584,112 @@
                       "primary": "Washer",
                       "secondary": "{{ (states('sensor.washer_running_time') | float(0) *60 *60) | timestamp_custom('%H:%M:%S', false)}}",
                       "icon": "mdi:washing-machine",
-                      "icon_color": "{% if is_state(\"input_select.washing_machine_status\", \"Running\") -%}\n  amber\n{%- else -%}\n  grey\n{%- endif %}",
+                      "icon_color": "{% if is_state(\"input_select.washing_machine_status\", \"On\") -%}\n  amber\n{%- else -%}\n  grey\n{%- endif %}",
                       "tap_action": {
                         "action": "more-info"
                       }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 1,
+              "type": "grid",
+              "title": "Weather",
+              "cards": [
+                {
+                  "show_current": true,
+                  "show_forecast": true,
+                  "type": "weather-forecast",
+                  "entity": "weather.home",
+                  "secondary_info_attribute": "humidity",
+                  "name": "Curitiba"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "sensor.next_sunrise",
+                      "name": "Sunrise",
+                      "icon": "mdi:weather-sunset-up",
+                      "icon_color": "amber"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "sensor.next_sunset",
+                      "name": "Sunset",
+                      "icon": "mdi:weather-sunset-down",
+                      "icon_color": "indigo"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Bedroom",
+              "cards": [
+                {
+                  "type": "custom:mushroom-light-card",
+                  "entity": "light.bedroom_light",
+                  "layout": "horizontal",
+                  "secondary_info": "none",
+                  "name": "Bedroom",
+                  "primary_info": "none",
+                  "use_light_color": true,
+                  "show_brightness_control": true,
+                  "show_color_temp_control": true,
+                  "collapsible_controls": true,
+                  "show_color_control": false
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Cool"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mushroom-entity-card",
+                    "entity": "switch.heater_socket",
+                    "name": "Fan",
+                    "icon": "mdi:fan",
+                    "icon_color": "green",
+                    "secondary_info": "none",
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "layout": "horizontal",
+                    "fill_container": false,
+                    "primary_info": "none"
+                  }
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_charger_socket",
+                      "name": "Charger",
+                      "layout": "vertical",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "icon": "mdi:battery-charging-medium",
+                      "icon_color": "green"
+                    },
+                    {
+                      "type": "custom:mushroom-entity-card",
+                      "entity": "switch.local_electric_blanket_socket",
+                      "icon": "mdi:air-filter",
+                      "icon_color": "red",
+                      "primary_info": "none",
+                      "secondary_info": "none",
+                      "layout": "vertical"
                     }
                   ]
                 }
@@ -662,49 +738,6 @@
                   "collapsible_controls": false,
                   "volume_controls": [],
                   "layout": "horizontal"
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "title": "Bedroom",
-              "cards": [
-                {
-                  "type": "custom:mushroom-light-card",
-                  "entity": "light.bedroom_light",
-                  "layout": "horizontal",
-                  "secondary_info": "none",
-                  "name": "Bedroom",
-                  "primary_info": "none",
-                  "use_light_color": true,
-                  "show_brightness_control": true,
-                  "show_color_temp_control": true,
-                  "collapsible_controls": true,
-                  "show_color_control": false
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_charger_socket",
-                      "name": "Charger",
-                      "layout": "vertical",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "icon": "mdi:battery-charging-medium",
-                      "icon_color": "green"
-                    },
-                    {
-                      "type": "custom:mushroom-entity-card",
-                      "entity": "switch.local_electric_blanket_socket",
-                      "icon": "mdi:air-filter",
-                      "icon_color": "red",
-                      "primary_info": "none",
-                      "secondary_info": "none",
-                      "layout": "vertical"
-                    }
-                  ]
                 }
               ]
             }

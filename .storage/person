@@ -8,7 +8,8 @@
         "name": "Christian Silva",
         "user_id": "2eb48afb57034b2eb5b96583279df927",
         "device_trackers": [
-          "device_tracker.christian_sp"
+          "device_tracker.christian_sp",
+          "device_tracker.christian_tb"
         ],
         "id": "christian_silva",
         "picture": "/api/image/serve/5e1b756c0dc6f69624d57c65a490b2cc/512x512"

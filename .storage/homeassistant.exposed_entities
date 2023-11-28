@@ -543,6 +543,20 @@
             "should_expose": false
           }
         }
+      },
+      "binary_sensor.christian_nb": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "binary_sensor.christian_nb_2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
       }
     }
   }
