@@ -5242,100 +5242,6 @@
       {
         "aliases": [],
         "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "1eedc3377dc01c273288c36ce53f8176",
-        "device_class": null,
-        "device_id": "b24fea79366d94f50ed5840373d4b20b",
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "sensor.watchman_last_updated",
-        "hidden_by": null,
-        "icon": null,
-        "id": "d860ae81eb26b959eabba97fb43b2621",
-        "has_entity_name": false,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": "timestamp",
-        "original_icon": "mdi:shield-half-full",
-        "original_name": "watchman_last_updated",
-        "platform": "watchman",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_last_updated",
-        "previous_unique_id": null,
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": {
-          "state_class": "measurement"
-        },
-        "config_entry_id": "1eedc3377dc01c273288c36ce53f8176",
-        "device_class": null,
-        "device_id": "b24fea79366d94f50ed5840373d4b20b",
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "sensor.watchman_missing_entities",
-        "hidden_by": null,
-        "icon": null,
-        "id": "3766c68d3b438b43713a17d6f9efdfae",
-        "has_entity_name": false,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": null,
-        "original_icon": "mdi:shield-half-full",
-        "original_name": "watchman_missing_entities",
-        "platform": "watchman",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_missing_entities",
-        "previous_unique_id": null,
-        "unit_of_measurement": "items"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": {
-          "state_class": "measurement"
-        },
-        "config_entry_id": "1eedc3377dc01c273288c36ce53f8176",
-        "device_class": null,
-        "device_id": "b24fea79366d94f50ed5840373d4b20b",
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "sensor.watchman_missing_services",
-        "hidden_by": null,
-        "icon": null,
-        "id": "cbc9d33e20185e454da9bd26a39213a2",
-        "has_entity_name": false,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": null,
-        "original_icon": "mdi:shield-half-full",
-        "original_name": "watchman_missing_services",
-        "platform": "watchman",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_missing_services",
-        "previous_unique_id": null,
-        "unit_of_measurement": "items"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
         "capabilities": {
           "id": "1675818897968"
         },
@@ -8788,8 +8694,8 @@
         "aliases": [],
         "area_id": null,
         "capabilities": {
-          "min": 0.0,
-          "max": 1440.0,
+          "min": 0,
+          "max": 86400,
           "step": 1.0,
           "mode": "auto"
         },
@@ -8907,8 +8813,8 @@
         "aliases": [],
         "area_id": null,
         "capabilities": {
-          "min": 0.0,
-          "max": 1440.0,
+          "min": 0,
+          "max": 86400,
           "step": 1.0,
           "mode": "auto"
         },
@@ -9311,162 +9217,6 @@
         "unique_id": "58463191ae3de9e2862f7d7e35f29cb4-solar_azimuth",
         "previous_unique_id": null,
         "unit_of_measurement": "°"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
-        "device_class": null,
-        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.ewelink_ms01_iaszone",
-        "hidden_by": null,
-        "icon": null,
-        "id": "ca5730927f54e8f84c16338ef9872c8d",
-        "has_entity_name": true,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": true
-          }
-        },
-        "original_device_class": "motion",
-        "original_icon": null,
-        "original_name": "Motion",
-        "platform": "zha",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "00:12:4b:00:25:13:d8:11-1-1280",
-        "previous_unique_id": null,
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
-        "device_class": null,
-        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "disabled_by": null,
-        "entity_category": "diagnostic",
-        "entity_id": "button.ewelink_ms01_identify",
-        "hidden_by": null,
-        "icon": null,
-        "id": "e2889f6b59dc9d08d0e75b31d8d13b77",
-        "has_entity_name": true,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": "identify",
-        "original_icon": null,
-        "original_name": "Identify",
-        "platform": "zha",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "00:12:4b:00:25:13:d8:11-1-3",
-        "previous_unique_id": null,
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": {
-          "state_class": "measurement"
-        },
-        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
-        "device_class": null,
-        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "disabled_by": null,
-        "entity_category": "diagnostic",
-        "entity_id": "sensor.ewelink_ms01_battery",
-        "hidden_by": null,
-        "icon": null,
-        "id": "ac30cf03029ab71fc1fde54c9547fbc0",
-        "has_entity_name": true,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": "battery",
-        "original_icon": null,
-        "original_name": "Battery",
-        "platform": "zha",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "00:12:4b:00:25:13:d8:11-1-1",
-        "previous_unique_id": null,
-        "unit_of_measurement": "%"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": {
-          "state_class": "measurement"
-        },
-        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
-        "device_class": null,
-        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "disabled_by": "integration",
-        "entity_category": "diagnostic",
-        "entity_id": "sensor.ewelink_ms01_rssi",
-        "hidden_by": null,
-        "icon": null,
-        "id": "b619c87dff87d7e8aa20769086e7c320",
-        "has_entity_name": true,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": "signal_strength",
-        "original_icon": null,
-        "original_name": "RSSI",
-        "platform": "zha",
-        "supported_features": 0,
-        "translation_key": "rssi",
-        "unique_id": "00:12:4b:00:25:13:d8:11-1-0-rssi",
-        "previous_unique_id": null,
-        "unit_of_measurement": "dBm"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": {
-          "state_class": "measurement"
-        },
-        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
-        "device_class": null,
-        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "disabled_by": "integration",
-        "entity_category": "diagnostic",
-        "entity_id": "sensor.ewelink_ms01_lqi",
-        "hidden_by": null,
-        "icon": null,
-        "id": "506d8360bcb7fe4361ecfefd61f5e589",
-        "has_entity_name": true,
-        "name": null,
-        "options": {
-          "conversation": {
-            "should_expose": false
-          }
-        },
-        "original_device_class": null,
-        "original_icon": null,
-        "original_name": "LQI",
-        "platform": "zha",
-        "supported_features": 0,
-        "translation_key": "lqi",
-        "unique_id": "00:12:4b:00:25:13:d8:11-1-0-lqi",
-        "previous_unique_id": null,
-        "unit_of_measurement": null
       },
       {
         "aliases": [],
@@ -17796,8 +17546,8 @@
         "aliases": [],
         "area_id": null,
         "capabilities": {
-          "min": 0.0,
-          "max": 1440.0,
+          "min": 0,
+          "max": 86400,
           "step": 1.0,
           "mode": "auto"
         },
@@ -22524,6 +22274,256 @@
       {
         "aliases": [],
         "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "device_class": null,
+        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.ewelink_ms01_rssi",
+        "hidden_by": null,
+        "icon": null,
+        "id": "b619c87dff87d7e8aa20769086e7c320",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "signal_strength",
+        "original_icon": null,
+        "original_name": "RSSI",
+        "platform": "zha",
+        "supported_features": 0,
+        "translation_key": "rssi",
+        "unique_id": "00:12:4b:00:25:13:d8:11-1-0-rssi",
+        "previous_unique_id": null,
+        "unit_of_measurement": "dBm"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "device_class": null,
+        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.ewelink_ms01_lqi",
+        "hidden_by": null,
+        "icon": null,
+        "id": "506d8360bcb7fe4361ecfefd61f5e589",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "LQI",
+        "platform": "zha",
+        "supported_features": 0,
+        "translation_key": "lqi",
+        "unique_id": "00:12:4b:00:25:13:d8:11-1-0-lqi",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "device_class": null,
+        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.zigbee_motion_sensor_battery",
+        "hidden_by": null,
+        "icon": null,
+        "id": "ac30cf03029ab71fc1fde54c9547fbc0",
+        "has_entity_name": true,
+        "name": "Zigbee motion sensor Battery",
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "battery",
+        "original_icon": null,
+        "original_name": "Battery",
+        "platform": "zha",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "00:12:4b:00:25:13:d8:11-1-1",
+        "previous_unique_id": null,
+        "unit_of_measurement": "%"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "device_class": null,
+        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "button.zigbee_motion_sensor_identify",
+        "hidden_by": null,
+        "icon": null,
+        "id": "e2889f6b59dc9d08d0e75b31d8d13b77",
+        "has_entity_name": true,
+        "name": "Zigbee motion sensor Identify",
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "identify",
+        "original_icon": null,
+        "original_name": "Identify",
+        "platform": "zha",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "00:12:4b:00:25:13:d8:11-1-3",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "d428b0ca8eddebd891d5deb8b9cd537b",
+        "device_class": null,
+        "device_id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "binary_sensor.zigbee_motion_sensor_motion",
+        "hidden_by": null,
+        "icon": null,
+        "id": "ca5730927f54e8f84c16338ef9872c8d",
+        "has_entity_name": true,
+        "name": "Zigbee motion sensor Motion",
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": "motion",
+        "original_icon": null,
+        "original_name": "Motion",
+        "platform": "zha",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "00:12:4b:00:25:13:d8:11-1-1280",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "87b33375c8aa82a80aad7cbd63a68c69",
+        "device_class": null,
+        "device_id": "b24fea79366d94f50ed5840373d4b20b",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.watchman_last_updated",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f1ea06c5701c87f59eec6366b99dc550",
+        "has_entity_name": false,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:shield-half-full",
+        "original_name": "watchman_last_updated",
+        "platform": "watchman",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "87b33375c8aa82a80aad7cbd63a68c69_watchman_last_updated",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "87b33375c8aa82a80aad7cbd63a68c69",
+        "device_class": null,
+        "device_id": "b24fea79366d94f50ed5840373d4b20b",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.watchman_missing_entities",
+        "hidden_by": null,
+        "icon": null,
+        "id": "a554aeb7a7d263fab7ae6bd303a2d228",
+        "has_entity_name": false,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:shield-half-full",
+        "original_name": "watchman_missing_entities",
+        "platform": "watchman",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "87b33375c8aa82a80aad7cbd63a68c69_watchman_missing_entities",
+        "previous_unique_id": null,
+        "unit_of_measurement": "items"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "87b33375c8aa82a80aad7cbd63a68c69",
+        "device_class": null,
+        "device_id": "b24fea79366d94f50ed5840373d4b20b",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.watchman_missing_services",
+        "hidden_by": null,
+        "icon": null,
+        "id": "785172f357226d797d2e7f8fe12d24ad",
+        "has_entity_name": false,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:shield-half-full",
+        "original_name": "watchman_missing_services",
+        "platform": "watchman",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "87b33375c8aa82a80aad7cbd63a68c69_watchman_missing_services",
+        "previous_unique_id": null,
+        "unit_of_measurement": "items"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
         "capabilities": null,
         "config_entry_id": "0c19b5e99ef143bb964ab2a275d6adfd",
         "device_class": null,
@@ -23502,6 +23502,30 @@
         "orphaned_timestamp": null,
         "platform": "zha",
         "unique_id": "a4:c1:38:7b:1f:21:83:72-1-2820-power_factor"
+      },
+      {
+        "config_entry_id": null,
+        "entity_id": "sensor.watchman_last_updated",
+        "id": "d860ae81eb26b959eabba97fb43b2621",
+        "orphaned_timestamp": 1701184860.0325398,
+        "platform": "watchman",
+        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_last_updated"
+      },
+      {
+        "config_entry_id": null,
+        "entity_id": "sensor.watchman_missing_entities",
+        "id": "3766c68d3b438b43713a17d6f9efdfae",
+        "orphaned_timestamp": 1701184860.0325398,
+        "platform": "watchman",
+        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_missing_entities"
+      },
+      {
+        "config_entry_id": null,
+        "entity_id": "sensor.watchman_missing_services",
+        "id": "cbc9d33e20185e454da9bd26a39213a2",
+        "orphaned_timestamp": 1701184860.0325398,
+        "platform": "watchman",
+        "unique_id": "1eedc3377dc01c273288c36ce53f8176_watchman_missing_services"
       }
     ]
   }

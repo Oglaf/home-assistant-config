@@ -272,31 +272,6 @@
       {
         "area_id": null,
         "config_entries": [
-          "1eedc3377dc01c273288c36ce53f8176"
-        ],
-        "configuration_url": "https://github.com/dummylabs/thewatchman",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "b24fea79366d94f50ed5840373d4b20b",
-        "identifiers": [
-          [
-            "watchman",
-            "watchman_unique_id"
-          ]
-        ],
-        "manufacturer": "dummylabs",
-        "model": "Watchman",
-        "name_by_user": null,
-        "name": "Watchman",
-        "serial_number": null,
-        "sw_version": "0.6.1",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
           "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
         "configuration_url": null,
@@ -347,8 +322,8 @@
       {
         "area_id": "bedroom",
         "config_entries": [
-          "6db6c61f82e6703a67364bc2230527e8",
-          "a8d93d42c04b2da7dec4e99b0859a03d"
+          "a8d93d42c04b2da7dec4e99b0859a03d",
+          "6db6c61f82e6703a67364bc2230527e8"
         ],
         "configuration_url": null,
         "connections": [],
@@ -373,8 +348,8 @@
       {
         "area_id": "office",
         "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd",
-          "8167790eccfbb9af2eae359bf0fd8d89"
+          "8167790eccfbb9af2eae359bf0fd8d89",
+          "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
         "configuration_url": null,
         "connections": [],
@@ -425,8 +400,8 @@
       {
         "area_id": "kitchen",
         "config_entries": [
-          "0c19b5e99ef143bb964ab2a275d6adfd",
-          "9b03b773cd3e8ae8da28fbfdceaf5213"
+          "9b03b773cd3e8ae8da28fbfdceaf5213",
+          "0c19b5e99ef143bb964ab2a275d6adfd"
         ],
         "configuration_url": null,
         "connections": [],
@@ -477,8 +452,8 @@
       {
         "area_id": "office",
         "config_entries": [
-          "186d71f2ab79626cf44d5f16b701412f",
-          "1d54b71446b557b8055f35bae2813e9f"
+          "1d54b71446b557b8055f35bae2813e9f",
+          "186d71f2ab79626cf44d5f16b701412f"
         ],
         "configuration_url": null,
         "connections": [],
@@ -503,8 +478,8 @@
       {
         "area_id": "kitchen",
         "config_entries": [
-          "9b03b773cd3e8ae8da28fbfdceaf5213",
-          "de08fb6596e4bba42483b8c1d9208f30"
+          "de08fb6596e4bba42483b8c1d9208f30",
+          "9b03b773cd3e8ae8da28fbfdceaf5213"
         ],
         "configuration_url": null,
         "connections": [],
@@ -847,36 +822,6 @@
         "serial_number": null,
         "sw_version": null,
         "via_device_id": null
-      },
-      {
-        "area_id": "bedroom",
-        "config_entries": [
-          "d428b0ca8eddebd891d5deb8b9cd537b"
-        ],
-        "configuration_url": null,
-        "connections": [
-          [
-            "zigbee",
-            "00:12:4b:00:25:13:d8:11"
-          ]
-        ],
-        "disabled_by": null,
-        "entry_type": null,
-        "hw_version": null,
-        "id": "bdff86ec3112a64b2a2fbea113bd2e0a",
-        "identifiers": [
-          [
-            "zha",
-            "00:12:4b:00:25:13:d8:11"
-          ]
-        ],
-        "manufacturer": "eWeLink",
-        "model": "MS01",
-        "name_by_user": "Zigbee motion sensor",
-        "name": "eWeLink MS01",
-        "serial_number": null,
-        "sw_version": null,
-        "via_device_id": "724191e2fcaac58833c1970dd7c83d84"
       },
       {
         "area_id": "living_room",
@@ -1252,12 +1197,12 @@
         "configuration_url": null,
         "connections": [
           [
-            "upnp",
-            "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4"
-          ],
-          [
             "mac",
             "c0:74:2b:ff:5b:17"
+          ],
+          [
+            "upnp",
+            "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4"
           ]
         ],
         "disabled_by": null,
@@ -1266,16 +1211,16 @@
         "id": "0acccc4f0e80747eb587cf5e4bb632b3",
         "identifiers": [
           [
-            "upnp_host",
-            "192.168.1.1"
+            "upnp_serial_number",
+            "00000000"
           ],
           [
             "upnp",
             "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
           ],
           [
-            "upnp_serial_number",
-            "00000000"
+            "upnp_host",
+            "192.168.1.1"
           ]
         ],
         "manufacturer": "OpenWRT",
@@ -1284,6 +1229,61 @@
         "name": "OpenWRT router",
         "serial_number": null,
         "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": "bedroom",
+        "config_entries": [
+          "d428b0ca8eddebd891d5deb8b9cd537b"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "zigbee",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "bdff86ec3112a64b2a2fbea113bd2e0a",
+        "identifiers": [
+          [
+            "zha",
+            "00:12:4b:00:25:13:d8:11"
+          ]
+        ],
+        "manufacturer": "eWeLink",
+        "model": "MS01",
+        "name_by_user": "Zigbee motion sensor",
+        "name": "eWeLink MS01",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "87b33375c8aa82a80aad7cbd63a68c69"
+        ],
+        "configuration_url": "https://github.com/dummylabs/thewatchman",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b24fea79366d94f50ed5840373d4b20b",
+        "identifiers": [
+          [
+            "watchman",
+            "watchman_unique_id"
+          ]
+        ],
+        "manufacturer": "dummylabs",
+        "model": "Watchman",
+        "name_by_user": null,
+        "name": "Watchman",
+        "serial_number": null,
+        "sw_version": "0.6.1",
         "via_device_id": null
       },
       {

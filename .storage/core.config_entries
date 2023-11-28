@@ -131,38 +131,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "1eedc3377dc01c273288c36ce53f8176",
-        "version": 1,
-        "domain": "watchman",
-        "title": "Watchman",
-        "data": {},
-        "options": {
-          "service_data": "{}",
-          "included_folders": [
-            "/config"
-          ],
-          "report_header": "-== Watchman Report ==-",
-          "report_path": "/config/watchman_report.txt",
-          "chunk_size": 3500,
-          "columns_width": [
-            30,
-            7,
-            60
-          ],
-          "startup_delay": 0,
-          "friendly_names": true,
-          "check_lovelace": true,
-          "ignored_items": [],
-          "ignored_states": [],
-          "ignored_files": []
-        },
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
         "entry_id": "6db6c61f82e6703a67364bc2230527e8",
         "version": 13,
         "domain": "tuya_local",
@@ -682,7 +650,7 @@
         "domain": "hacs",
         "title": "",
         "data": {
-          "token": "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"
+          "token": "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"
         },
         "options": {
           "sidepanel_title": "HACS",
@@ -945,6 +913,39 @@
         "pref_disable_polling": false,
         "source": "registration",
         "unique_id": "io.homeassistant.companion.android-599dd739d6f22260",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "87b33375c8aa82a80aad7cbd63a68c69",
+        "version": 1,
+        "domain": "watchman",
+        "title": "Watchman",
+        "data": {},
+        "options": {
+          "service": "",
+          "service_data": "{}",
+          "included_folders": [
+            "/config"
+          ],
+          "report_header": "-== Watchman Report ==-",
+          "report_path": "",
+          "ignored_items": [],
+          "ignored_states": [],
+          "chunk_size": 3500,
+          "ignored_files": [],
+          "check_lovelace": false,
+          "columns_width": [
+            30,
+            7,
+            60
+          ],
+          "startup_delay": 0,
+          "friendly_names": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
         "disabled_by": null
       }
     ]

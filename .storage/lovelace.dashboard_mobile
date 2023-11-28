@@ -27,7 +27,7 @@
                   "shadow": false,
                   "entities": [
                     "switch.adaptive_lighting_bedroom",
-                    "binary_sensor.ewelink_ms01_iaszone"
+                    "binary_sensor.zigbee_motion_sensor_motion"
                   ]
                 },
                 {

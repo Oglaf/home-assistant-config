@@ -818,7 +818,7 @@
       light_switch:
         entity_id: light.bedroom_light
       motion_trigger:
-      - binary_sensor.ewelink_ms01_iaszone
+      - binary_sensor.zigbee_motion_sensor_motion
       include_bypass: bypass_disabled
       motion_bypass: input_boolean.sleep_time
       include_sun: sun_enabled

@@ -700,7 +700,7 @@
                     },
                     {
                       "type": "entity",
-                      "entity": "binary_sensor.ewelink_ms01_iaszone"
+                      "entity": "binary_sensor.zigbee_motion_sensor_motion"
                     }
                   ]
                 },
@@ -1176,7 +1176,7 @@
               "title": "Battery levels",
               "entities": [
                 {
-                  "entity": "sensor.ewelink_ms01_battery",
+                  "entity": "sensor.zigbee_motion_sensor_battery",
                   "name": "Bedroom Motion Sensor"
                 },
                 {
