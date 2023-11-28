@@ -52,3 +52,5 @@ ip_bans.yaml
 .storage/androidtv_remote_key.pem
 .storage/tmp4l1bjjpc
 .storage/tmpbylqqny_
+.storage/assist_pipeline.pipelines
+custom_components/*
