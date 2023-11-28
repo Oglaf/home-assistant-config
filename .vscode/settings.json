@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "*.yaml": "home-assistant"
+        "*.yaml": "yaml"
     },
     "vscode-home-assistant.ignoreCertificates": true,
     "vscode-home-assistant.longLivedAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhOWNmNWE4OTVkNWY0NDBjYjExN2MyZDZjMWZiMmZiMCIsImlhdCI6MTY3NjUwMTE1NCwiZXhwIjoxOTkxODYxMTU0fQ.pHmgGt1NuU4nNcr49NelDtkP7P-dA_1eChs3uWZJgec",
