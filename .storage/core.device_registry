@@ -322,8 +322,8 @@
       {
         "area_id": "bedroom",
         "config_entries": [
-          "a8d93d42c04b2da7dec4e99b0859a03d",
-          "6db6c61f82e6703a67364bc2230527e8"
+          "6db6c61f82e6703a67364bc2230527e8",
+          "a8d93d42c04b2da7dec4e99b0859a03d"
         ],
         "configuration_url": null,
         "connections": [],
@@ -374,8 +374,8 @@
       {
         "area_id": "office",
         "config_entries": [
-          "997db7e634b0b049e4b51884c7e1b7f1",
-          "8167790eccfbb9af2eae359bf0fd8d89"
+          "8167790eccfbb9af2eae359bf0fd8d89",
+          "997db7e634b0b049e4b51884c7e1b7f1"
         ],
         "configuration_url": null,
         "connections": [],
@@ -452,8 +452,8 @@
       {
         "area_id": "office",
         "config_entries": [
-          "1d54b71446b557b8055f35bae2813e9f",
-          "186d71f2ab79626cf44d5f16b701412f"
+          "186d71f2ab79626cf44d5f16b701412f",
+          "1d54b71446b557b8055f35bae2813e9f"
         ],
         "configuration_url": null,
         "connections": [],
@@ -478,8 +478,8 @@
       {
         "area_id": "kitchen",
         "config_entries": [
-          "de08fb6596e4bba42483b8c1d9208f30",
-          "9b03b773cd3e8ae8da28fbfdceaf5213"
+          "9b03b773cd3e8ae8da28fbfdceaf5213",
+          "de08fb6596e4bba42483b8c1d9208f30"
         ],
         "configuration_url": null,
         "connections": [],
@@ -1211,16 +1211,16 @@
         "id": "0acccc4f0e80747eb587cf5e4bb632b3",
         "identifiers": [
           [
+            "upnp_host",
+            "fd04:8c52:7fca::1"
+          ],
+          [
             "upnp_serial_number",
             "00000000"
           ],
           [
             "upnp",
             "uuid:4beb4919-5ea8-44b4-b5a9-71e9f22afff4::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
-          ],
-          [
-            "upnp_host",
-            "192.168.1.1"
           ]
         ],
         "manufacturer": "OpenWRT",
@@ -1229,6 +1229,31 @@
         "name": "OpenWRT router",
         "serial_number": null,
         "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "87b33375c8aa82a80aad7cbd63a68c69"
+        ],
+        "configuration_url": "https://github.com/dummylabs/thewatchman",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b24fea79366d94f50ed5840373d4b20b",
+        "identifiers": [
+          [
+            "watchman",
+            "watchman_unique_id"
+          ]
+        ],
+        "manufacturer": "dummylabs",
+        "model": "Watchman",
+        "name_by_user": null,
+        "name": "Watchman",
+        "serial_number": null,
+        "sw_version": "0.6.1",
         "via_device_id": null
       },
       {
@@ -1259,31 +1284,6 @@
         "name": "eWeLink MS01",
         "serial_number": null,
         "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "87b33375c8aa82a80aad7cbd63a68c69"
-        ],
-        "configuration_url": "https://github.com/dummylabs/thewatchman",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "b24fea79366d94f50ed5840373d4b20b",
-        "identifiers": [
-          [
-            "watchman",
-            "watchman_unique_id"
-          ]
-        ],
-        "manufacturer": "dummylabs",
-        "model": "Watchman",
-        "name_by_user": null,
-        "name": "Watchman",
-        "serial_number": null,
-        "sw_version": "0.6.1",
         "via_device_id": null
       },
       {
