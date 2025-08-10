@@ -14,7 +14,6 @@ turn_on_off_christian_pc:
       target:
         entity_id: switch.christian_pc_wol
   mode: single
-
 turn_on_off_christian_nb:
   alias: Turn on/off Christian-NB
   sequence:
@@ -31,17 +30,88 @@ turn_on_off_christian_nb:
       target:
         entity_id: switch.christian_nb_wol
   mode: single
-
-clean_room:
-  alias: Clean room
+delete_orphaned_database_entities:
+  alias: Delete orphaned database entities
   sequence:
-  - service: vacuum.start
-    data: {}
+  - action: homeassistant.list_orphaned_database_entities
+    response_variable: orphaned
+  - action: recorder.purge_entities
     target:
-      entity_id: vacuum.local_cleaner_robot
-  - service: vacuum.send_command
+      entity_id: '{{ orphaned.entities }}'
     data:
-      command: single_room
-    target:
-      entity_id: vacuum.local_cleaner_robot
+      keep_days: 0
   mode: single
+  description: ''
+vacuum_daily_routine:
+  alias: VACUUM - Daily routine
+  sequence:
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 18
+        - 23
+        - 22
+        - 25
+        - 19
+        - 16
+        - 24
+        - 17
+        repeat: 1
+    action: vacuum.send_command
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      fan_speed: balanced
+    action: vacuum.set_fan_speed
+  - target:
+      entity_id: select.q7_max_mop_intensity
+    data:
+      option: 'off'
+    action: select.select_option
+vacuum_room_cleaning:
+  alias: VACUUM - Room Cleaning
+  sequence:
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      command: app_segment_clean
+      params:
+      - repeat: '{{ states(''input_number.vacuum_cycles'') | int }}'
+        segments: "{% set vacrooms = namespace(roomid=[]) %} {% for rooms in state_attr('sensor.roborock_rooms',
+          'rooms') %}\n  {% if is_state(rooms.boolean, 'on') %}\n    {% set vacrooms.roomid
+          = vacrooms.roomid + [rooms.id | replace('input_boolean.vacuum_room_', '')
+          | int] %}\n  {% endif %}\n{% endfor %} {{ vacrooms.roomid }}\n"
+    action: vacuum.send_command
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      fan_speed: '{{ states(''input_select.vacuum_speed'') | lower }}'
+    action: vacuum.set_fan_speed
+  description: ''
+  icon: mdi:texture-box
+vacuum_office_cleaning:
+  alias: VACUUM - Office cleaning
+  sequence:
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 21
+        repeat: 1
+    action: vacuum.send_command
+  - target:
+      device_id: 46a4050c35790c809d9df75315ee7559
+    data:
+      fan_speed: balanced
+    action: vacuum.set_fan_speed
+  - target:
+      entity_id: select.q7_max_mop_intensity
+    data:
+      option: 'off'
+    action: select.select_option
+  description: ''

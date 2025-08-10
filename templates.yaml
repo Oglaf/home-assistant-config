@@ -1,148 +1,22 @@
 - sensor:
-    # Energy
-    - name: "Total Consumption"
-      unit_of_measurement: "kWh"
-      state: >
-        {{
-          [
-            states('sensor.bedroom_light_powercalc_energy') | float(0),
-            states('sensor.living_room_light_powercalc_energy') | float(0),
-            states('sensor.local_office_light_powercalc_energy') | float(0),
-            states('sensor.local_computer_socket_energy_helper') | float(0),
-            states('sensor.local_electric_blanket_socket_energy_helper') | float(0),
-            states('sensor.local_charger_socket_energy_helper') | float(0),
-            states('sensor.washing_machine_socket_energy_helper') | float(0),
-            states('sensor.heater_socket_energy_helper') | float(0),
-            states('sensor.living_room_plug_summation_delivered') | float(0)
-          ]
-          | map('float') | sum | round(4)
-        }}
-
     - name: "Tariff price"
+      unique_id: 01933acb-183d-7526-b92b-8df18246fbc9
       unit_of_measurement: BRL/kWh
       state: >
-        {% if is_state('select.monthly_energy', 'peak') %}
-          {{ 1.2839 }}
-        {% elif is_state('select.monthly_energy', 'shoulder') %}
-          {{ 0.86071 }}
-        {% elif is_state('select.monthly_energy', 'offpeak') %}
-          {{ 0.61755 }}
+        {% if is_state('input_select.tariff_type', 'Peak') %}
+          {{ 1.45522 }}
+        {% elif is_state('input_select.tariff_type', 'Shoulder') %}
+          {{ 0.96261 }}
+        {% elif is_state('input_select.tariff_type', 'Off peak') %}
+          {{ 0.67977 }}
         {% endif %}
-
-    - name: "pc_energy_cost_total"
-      unique_id: 98d9e46f-20cb-4c7c-9156-1ea149cef937
-      unit_of_measurement: BRL
-      state: >
-        {{
-          (
-            (states('sensor.pc_energy_cost_offpeak')  | float(0)) * 0.61755 +
-            (states('sensor.pc_energy_cost_peak')     | float(0)) * 1.28390 +
-            (states('sensor.pc_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2)
-        }}
-
-    - name: "heater_energy_cost_total"
-      unique_id: 2d97c4a5-95c7-4778-92fd-0144b96c4ba4
-      unit_of_measurement: BRL
-      state: >
-        {{
-          (
-            (states('sensor.heater_energy_cost_offpeak')  | float(0)) * 0.61755 +
-            (states('sensor.heater_energy_cost_peak')     | float(0)) * 1.28390 +
-            (states('sensor.heater_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2)
-        }}
-
-    - name: "electric_blanket_energy_cost_total"
-      unique_id: 937b656f-bc84-42ff-b927-ea7bd9de1395
-      unit_of_measurement: BRL
-      state: >
-        {{
-          (
-            (states('sensor.electric_blanket_energy_cost_offpeak')  | float(0)) * 0.61755 +
-            (states('sensor.electric_blanket_energy_cost_peak')     | float(0)) * 1.28390 +
-            (states('sensor.electric_blanket_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2)
-        }}
-
-    - name: "fan_energy_cost_total"
-      unique_id: 5d4a20cc-e32e-41cc-acd8-e9ede84707ed
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.fan_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.fan_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.fan_energy_cost_shoulder')  | float(0)) * 0.86071
-          ) | round(2) 
-        }}
-
-    - name: "washer_energy_cost_total"
-      unique_id: 9582350a-df3a-4b3e-9451-da094d9bf380
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.washer_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.washer_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.washer_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2) 
-        }}
-
-    - name: "living_room_tv_energy_cost_total"
-      unique_id: f99fee64-35c5-4401-aec7-b71fad020889
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.living_room_tv_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.living_room_tv_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.living_room_tv_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2) 
-        }}
-
-    - name: "office_light_energy_cost_total"
-      unique_id: f9683de0-7feb-495a-8483-856ce12a537a
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.local_office_light_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.local_office_light_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.local_office_light_energy_cost_shoulder') | float(0)) * 0.86071
-          ) | round(2) 
-        }}
-
-    - name: "living_room_light_energy_cost_total"
-      unique_id: 99411bd3-2c4c-4232-8b79-4be335bdd4fb
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.living_room_light_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.living_room_light_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.living_room_light_energy_cost_shoulder')  | float(0)) * 0.86071
-          ) | round(2) 
-        }}
-
-    - name: "bedroom_light_energy_cost_total"
-      unique_id: 38b4c97c-c6ae-4635-9690-eab85ebdfef4
-      unit_of_measurement: BRL
-      state: >
-        {{ 
-          (
-          (states('sensor.bedroom_light_energy_cost_offpeak') 	| float(0)) * 0.61755 + 
-          (states('sensor.bedroom_light_energy_cost_peak')  		| float(0)) * 1.28390 + 
-          (states('sensor.bedroom_light_energy_cost_shoulder')  | float(0)) * 0.86071
-          ) | round(2) 
-        }}
 
     # Presence detection
     - name: "christian_christian_sp_home"
       state: >-
         {%
-          if (states('sensor.christian_sp_wifi_connection') == "ZAITSU") 
-          or (states('sensor.christian_sp_wifi_connection') == "ZAITSU_2G")
+          if (states('sensor.christian_sp_wi_fi_connection') == "ZAITSU") 
+          or (states('sensor.christian_sp_wi_fi_connection') == "ZAITSU_2G")
         %}
           home
         {% else %}
@@ -182,26 +56,6 @@
       state_class: measurement
       state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload / 125000) | round(2) }}"
 
-    # # Sonarr sensor
-    # - name: "sonarr.disk_free_percent"
-    #   unit_of_measurement: "%"
-    #   state_class: measurement
-    #   state: >
-    #     {{
-    #       ((1000 - states('sensor.sonarr_disk_space') | float(0)) * 100 / 1000
-    #       ) | round(1)
-    #     }}
-
-    # - name: "sonarr.disk_used_space"
-    #   unit_of_measurement: "GiB"
-    #   state_class: measurement
-    #   device_class: data_size
-    #   state: >
-    #     {{
-    #       ((1000 - states('sensor.sonarr_disk_space') | float(0))
-    #       ) | round(1)
-    #     }}
-
     # Sun
     - name: "next_sunrise"
       state: >-
@@ -216,6 +70,7 @@
       icon: mdi:lightning-bolt
       unit_of_measurement: W
       state_class: measurement
+      device_class: power
       state: >-
        {{ ((states('sensor.gpu_data') | from_json).gpu_power_draw) | round(2) }}
 
@@ -223,6 +78,7 @@
       unique_id: gpu_temperature
       unit_of_measurement: °C
       state_class: measurement
+      device_class: temperature
       state: >-
         {{ ((states('sensor.gpu_data') | from_json).gpu_temperature) | round(2) }}
 
@@ -237,7 +93,7 @@
     - name: "GPU Memory Utilization"
       unique_id: gpu_memory_utilization
       icon: mdi:speedometer
-      unit_of_measurement: "%"
+      unit_of_measurement: "MB"
       state_class: measurement
       state: >-
         {{ ((states('sensor.gpu_data') | from_json).gpu_memory_utilization) | round(2) }}

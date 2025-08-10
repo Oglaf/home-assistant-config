@@ -1,17 +1,3 @@
-- id: '1672349680012'
-  alias: Alexa-IFFT - Turn off PC
-  description: ''
-  trigger:
-  - platform: webhook
-    webhook_id: alexa-ifft-turn-off-pc-Qo0cs6z0nqSKDQ_2vVKqnLw0
-    allowed_methods:
-    - POST
-    local_only: false
-  condition: []
-  action:
-  - service: shell_command.christian_pc_shutdown
-    data: {}
-  mode: single
 - id: '1672522611577'
   alias: ENERGY - Tariff automation
   description: Tariff automation
@@ -40,21 +26,11 @@
         - thu
         - fri
       sequence:
-      - service: select.select_option
-        data:
-          option: offpeak
+      - service: input_select.select_option
         target:
-          entity_id:
-          - select.monthly_energy
-          - select.pc_energy_cost
-          - select.bedroom_light_energy_cost
-          - select.electric_blanket_energy_cost
-          - select.living_room_light_energy_cost
-          - select.living_room_tv_energy_cost
-          - select.fan_energy_cost
-          - select.heater_energy_cost
-          - select.washer_energy_cost
-          - select.local_office_light_energy_cost
+          entity_id: input_select.tariff_type
+        data:
+          option: Off peak
     - conditions:
       - condition: time
         after: '17:00:00'
@@ -66,21 +42,11 @@
         - thu
         - fri
       sequence:
-      - service: select.select_option
-        data:
-          option: shoulder
+      - service: input_select.select_option
         target:
-          entity_id:
-          - select.monthly_energy
-          - select.pc_energy_cost
-          - select.bedroom_light_energy_cost
-          - select.electric_blanket_energy_cost
-          - select.living_room_light_energy_cost
-          - select.living_room_tv_energy_cost
-          - select.fan_energy_cost
-          - select.heater_energy_cost
-          - select.washer_energy_cost
-          - select.local_office_light_energy_cost
+          entity_id: input_select.tariff_type
+        data:
+          option: Shoulder
     - conditions:
       - condition: time
         after: '18:00:00'
@@ -92,21 +58,11 @@
         - thu
         - fri
       sequence:
-      - service: select.select_option
-        data:
-          option: peak
+      - service: input_select.select_option
         target:
-          entity_id:
-          - select.monthly_energy
-          - select.pc_energy_cost
-          - select.bedroom_light_energy_cost
-          - select.electric_blanket_energy_cost
-          - select.living_room_light_energy_cost
-          - select.living_room_tv_energy_cost
-          - select.fan_energy_cost
-          - select.heater_energy_cost
-          - select.washer_energy_cost
-          - select.local_office_light_energy_cost
+          entity_id: input_select.tariff_type
+        data:
+          option: Peak
     - conditions:
       - condition: time
         after: '21:00:00'
@@ -118,37 +74,17 @@
         - thu
         - fri
       sequence:
-      - service: select.select_option
-        data:
-          option: shoulder
+      - service: input_select.select_option
         target:
-          entity_id:
-          - select.monthly_energy
-          - select.pc_energy_cost
-          - select.bedroom_light_energy_cost
-          - select.electric_blanket_energy_cost
-          - select.living_room_light_energy_cost
-          - select.living_room_tv_energy_cost
-          - select.fan_energy_cost
-          - select.heater_energy_cost
-          - select.washer_energy_cost
-          - select.local_office_light_energy_cost
+          entity_id: input_select.tariff_type
+        data:
+          option: Shoulder
     default:
-    - service: select.select_option
-      data:
-        option: offpeak
+    - service: input_select.select_option
       target:
-        entity_id:
-        - select.monthly_energy
-        - select.pc_energy_cost
-        - select.bedroom_light_energy_cost
-        - select.electric_blanket_energy_cost
-        - select.living_room_light_energy_cost
-        - select.living_room_tv_energy_cost
-        - select.fan_energy_cost
-        - select.heater_energy_cost
-        - select.washer_energy_cost
-        - select.local_office_light_energy_cost
+        entity_id: input_select.tariff_type
+      data:
+        option: Off peak
   mode: single
 - id: '1672712190023'
   alias: PC - Daily Christian-PC WoL
@@ -204,76 +140,95 @@
       state: 'on'
   action:
   - service: light.turn_on
-    data:
-      transition: 5
+    data: {}
     target:
       area_id: office
   mode: single
 - id: '1673492717992'
   alias: WEATHER - Determine best humidity
   description: ''
-  trigger:
-  - platform: time_pattern
+  triggers:
+  - trigger: time_pattern
     hours: /2
-  condition:
+  conditions:
   - condition: time
     after: 09:00:00
     before: '19:00:00'
   - condition: state
     entity_id: group.residents
-    state: home
-  action:
+    state: 'on'
+  actions:
   - if:
     - condition: template
-      value_template: "{{ states('sensor.office_temperature_sensor_humidity') | float
-        >\n   state_attr('weather.home', 'humidity') | float }}"
+      value_template: "{{ states('sensor.house_humidity') | float >\n   state_attr('weather.home',
+        'humidity') | float }}"
     then:
-    - service: input_select.select_option
-      data:
+    - data:
         option: Outside
       target:
         entity_id: input_select.best_humidity
+      action: input_select.select_option
     else:
-    - service: input_select.select_option
-      data:
+    - data:
         option: Inside
       target:
         entity_id: input_select.best_humidity
+      action: input_select.select_option
   mode: single
 - id: '1673493242815'
   alias: WEATHER - Humidity Alert
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - input_select.best_humidity
-  condition:
-  - condition: time
-    after: 09:00:00
-    before: '19:00:00'
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.christian_home
-      state: home
-    - condition: state
-      entity_id: group.cecilia_home
-      state: home
-  action:
+    trigger: state
+  conditions: []
+  actions:
   - if:
-    - condition: state
-      entity_id: input_select.best_humidity
-      state: Inside
+    - condition: and
+      conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: group.christian_home
+          state: 'on'
+        - condition: state
+          entity_id: group.cecilia_home
+          state: 'on'
+      - condition: time
+        after: 09:00:00
+        before: '19:00:00'
+      - condition: state
+        entity_id: input_select.best_humidity
+        state: Inside
     then:
-    - service: notify.notify
-      data:
-        message: Humidity outside is higher, close your windows!
+    - data:
         title: Humidity Alert
+        message: Close windows.
+      action: notify.notify
     else:
-    - service: notify.notify
-      data:
-        message: Humidity inside is higher, open your windows!
-        title: Humidity Alert
+    - if:
+      - condition: and
+        conditions:
+        - condition: or
+          conditions:
+          - condition: state
+            entity_id: group.christian_home
+            state: 'on'
+          - condition: state
+            entity_id: group.cecilia_home
+            state: 'on'
+        - condition: time
+          after: 09:00:00
+          before: '19:00:00'
+        - condition: state
+          entity_id: input_select.best_humidity
+          state: Outside
+      then:
+      - data:
+          title: Humidity Alert
+          message: Open windows.
+        action: notify.notify
   mode: single
 - id: '1673494217272'
   alias: Advanced medication reminder
@@ -282,28 +237,9 @@
     path: Aohzan/medication_reminder_android.yaml
     input:
       reminder_time: '10:00:00'
-      notify_device: c64d919497fe1f5e4c511f1d631e5f77
+      notify_device: 8a131ca4e20a3734b8ca80461f781e5f
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
-- id: '1674136089586'
-  alias: MEDIA - Turn off Living Room TV after 15 minutes
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - media_player.living_room_tv
-    to: idle
-    for:
-      hours: 0
-      minutes: 15
-      seconds: 0
-  condition: []
-  action:
-  - service: remote.turn_off
-    data: {}
-    target:
-      device_id: be47f007e7bf0b6911b54fe459312703
-  mode: single
 - id: '1674182650722'
   alias: LIGHT - Turn off all lights when away
   description: ''
@@ -311,7 +247,7 @@
   - platform: state
     entity_id:
     - group.residents
-    to: not_home
+    to: 'off'
     for:
       hours: 0
       minutes: 5
@@ -326,15 +262,12 @@
       - living_room
       - office
       - kitchen
-      entity_id: light.kitchen_light_group
-  - service: switch.turn_off
-    data: {}
-    target:
-      area_id: bedroom
   - service: remote.turn_off
     data: {}
     target:
-      area_id: living_room
+      entity_id:
+      - remote.bedroom_tv
+      - remote.living_room_tv
   mode: single
 - id: '1674225267956'
   alias: LIGHT - Turn on living room light
@@ -343,11 +276,15 @@
   - platform: sun
     event: sunset
     offset: 0
-  - platform: device
-    type: turned_on
-    device_id: be47f007e7bf0b6911b54fe459312703
-    entity_id: remote.living_room_tv
-    domain: remote
+  - platform: state
+    entity_id:
+    - remote.living_room_tv
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
   condition:
   - condition: and
     conditions:
@@ -371,16 +308,17 @@
 - id: '1674367256897'
   alias: MEDIA - Theater mode paused
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - media_player.living_room_tv
     for:
       hours: 0
       minutes: 0
       seconds: 3
     from: playing
-  condition:
+    to: paused
+    trigger: state
+  conditions:
   - condition: and
     conditions:
     - condition: state
@@ -392,22 +330,22 @@
     - condition: state
       entity_id: switch.adaptive_lighting_living_room
       state: 'off'
-  action:
-  - service: light.turn_on
-    data:
-      transition: 10
+  actions:
+  - data: {}
     target:
       area_id: living_room
+    action: light.turn_on
   mode: single
 - id: '1674367315493'
   alias: MEDIA - Theater mode playing
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - media_player.living_room_tv
     to: playing
-  condition:
+    from:
+    trigger: state
+  conditions:
   - condition: and
     conditions:
     - condition: state
@@ -419,11 +357,11 @@
     - condition: state
       entity_id: switch.adaptive_lighting_living_room
       state: 'off'
-  action:
-  - service: light.turn_off
-    data: {}
+  actions:
+  - data: {}
     target:
       area_id: living_room
+    action: light.turn_off
   mode: single
 - id: '1674368220338'
   alias: MEDIA - Toggle theater mode
@@ -432,6 +370,8 @@
   - platform: state
     entity_id:
     - input_boolean.theater_mode
+    from: 'off'
+    to: 'on'
   condition: []
   action:
   - if:
@@ -456,9 +396,8 @@
 - id: '1674779503847'
   alias: LIGHT - Turn off Office
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - group.computers
     from: 'on'
     to: 'off'
@@ -466,13 +405,17 @@
       hours: 0
       minutes: 0
       seconds: 30
-  condition: []
-  action:
-  - service: light.turn_off
-    data:
+    trigger: state
+  conditions:
+  - condition: state
+    entity_id: switch.adaptive_lighting_office
+    state: 'on'
+  actions:
+  - data:
       transition: 5
     target:
       area_id: office
+    action: light.turn_off
   mode: single
 - id: '1674924848329'
   alias: SWITCH - Toggle Office light
@@ -483,49 +426,31 @@
       remote: 5edfb7a20cc6bb8f565bac615b96acb1
       single_press:
       - service: light.toggle
-        data:
-          transition: 30
+        data: {}
         target:
-          area_id: office
+          entity_id: light.office_light
       double_press:
       - service: script.turn_on_off_christian_pc
         data: {}
-- id: '1675818897968'
-  alias: Alexa-IFTTT - Start sleep time
-  description: ''
-  trigger:
-  - platform: webhook
-    webhook_id: alexa-ifttt-sleep-time-LP34aHLRNGZJnZOhSJiG4FAz
-    allowed_methods:
-    - POST
-    local_only: false
-  condition: []
-  action:
-  - service: input_boolean.turn_on
-    data: {}
-    target:
-      entity_id: input_boolean.sleep_time
-  - service: light.turn_off
-    data: {}
-    target:
-      area_id:
-      - bedroom
-      - kitchen
-      - living_room
-      - office
-  mode: single
 - id: '1675913952899'
   alias: LIGHT - Turn on sleep time
   description: ''
   trigger:
   - platform: time
-    at: 01:00:00
+    at: '23:00:00'
   condition: []
   action:
   - service: input_boolean.turn_on
     data: {}
     target:
       entity_id: input_boolean.sleep_time
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.adaptive_lighting_sleep_mode_office
+      - switch.adaptive_lighting_sleep_mode_living_room
+      - switch.adaptive_lighting_sleep_mode_bedroom
   mode: single
 - id: '1675914003290'
   alias: LIGHT - Turn off sleep time
@@ -540,6 +465,13 @@
     data: {}
     target:
       entity_id: input_boolean.sleep_time
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.adaptive_lighting_sleep_mode_living_room
+      - switch.adaptive_lighting_sleep_mode_office
+      - switch.adaptive_lighting_sleep_mode_bedroom
   mode: single
 - id: '1676734805757'
   alias: WASHER - Status Running
@@ -564,30 +496,30 @@
       entity_id: input_select.washing_machine_status
   mode: single
 - id: '1676744130645'
-  alias: WASHER - Turn off
+  alias: WASHER -  Finished
   description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.washing_machine_socket_power
+  triggers:
+  - entity_id: sensor.washing_machine_socket_power
     for:
       hours: 0
       minutes: 10
       seconds: 0
     below: 1
-  condition:
+    trigger: numeric_state
+  conditions:
   - condition: state
     entity_id: input_select.washing_machine_status
     state: 'On'
-  action:
-  - service: input_select.select_option
-    data:
+  actions:
+  - data:
       option: 'Off'
     target:
       entity_id: input_select.washing_machine_status
-  - service: notify.notify
-    data:
+    action: input_select.select_option
+  - data:
       message: Wash completed.
       title: Washing machine
+    action: notify.notify
   mode: single
 - id: '1680553973480'
   alias: SWITCH - Living room light
@@ -612,16 +544,7 @@
       - service: light.toggle
         data: {}
         target:
-          entity_id: light.kitchen_light_group
-- id: '1683953508588'
-  alias: SWITCH - Turn off charging
-  description: ''
-  use_blueprint:
-    path: vorion/turn-off-phone-charging-after-the-phone-is-charged.yaml
-    input:
-      switch: switch.local_charger_socket
-      phone_battery: sensor.cecilia_sp_battery_level
-      charged_percent: 99
+          entity_id: light.kitchen_wall_switch_laundry_light
 - id: '1684086727943'
   alias: ZONE - Cecilia arrived home
   description: ''
@@ -642,25 +565,6 @@
         data:
           title: Home assistant
           message: Cecilia has arrived home
-- id: '1684087993536'
-  alias: VACUUM - Notify error
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - vacuum.local_cleaner_robot
-    to: error
-    for:
-      hours: 0
-      minutes: 1
-      seconds: 0
-  condition: []
-  action:
-  - service: notify.notify
-    data:
-      title: Home assistant
-      message: Vacuum cleaner stuck
-  mode: single
 - id: '1684184359544'
   alias: SWITCH - Turn off blanket after 3 hours
   description: ''
@@ -677,201 +581,6 @@
       value: '180'
     target:
       entity_id: number.local_electric_blanket_socket_timer
-  mode: single
-- id: '1684185616423'
-  alias: VACUUM - Work is done
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - vacuum.local_cleaner_robot
-    attribute: status
-    to: workcompleted
-  condition: []
-  action:
-  - service: notify.notify
-    data:
-      title: Vacuum cleaner
-      message: Job completed
-  mode: single
-- id: '1684208941685'
-  alias: SWITCH - Turn on Heater
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - input_number.thermostat_temperature
-  - platform: state
-    entity_id:
-    - input_boolean.heater_automation
-    to: 'on'
-  - platform: time_pattern
-    minutes: /10
-  condition:
-  - condition: state
-    entity_id: input_boolean.heater_automation
-    state: 'on'
-  - condition: numeric_state
-    entity_id: sensor.office_temperature_sensor_temperature
-    below: input_number.thermostat_temperature
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: binary_sensor.christian_pc
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.cecilia_pc
-      state: 'on'
-  action:
-  - service: switch.turn_on
-    data: {}
-    target:
-      entity_id: switch.heater_socket
-  mode: single
-- id: '1684209316498'
-  alias: SWITCH - Turn off heater
-  description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.office_temperature_sensor_temperature
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 0
-    above: input_number.thermostat_temperature
-  - platform: state
-    entity_id:
-    - input_number.thermostat_temperature
-  condition:
-  - condition: state
-    entity_id: input_boolean.heater_automation
-    state: 'on'
-  - condition: numeric_state
-    entity_id: sensor.office_temperature_sensor_temperature
-    above: input_number.thermostat_temperature
-  action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      entity_id: switch.heater_socket
-  mode: single
-- id: '1684209621936'
-  alias: HEATER - Turn on automation
-  description: ''
-  trigger:
-  - platform: time
-    at: 08:55:00
-  - platform: time
-    at: 08:25:00
-  condition:
-  - condition: or
-    conditions:
-    - condition: time
-      after: 08:54:00
-      weekday:
-      - tue
-      - wed
-      - thu
-      - fri
-    - condition: time
-      after: 08:24:00
-      weekday:
-      - mon
-  - condition: state
-    entity_id: input_select.fan_mode
-    state: Heat
-  action:
-  - service: input_boolean.turn_on
-    data: {}
-    target:
-      entity_id: input_boolean.heater_automation
-  mode: single
-- id: '1684209757433'
-  alias: HEATER - Turn off automation
-  description: ''
-  trigger:
-  - platform: time
-    at: '17:30:00'
-  condition:
-  - condition: or
-    conditions:
-    - condition: time
-      after: '17:29:00'
-      weekday:
-      - tue
-      - wed
-      - thu
-      - fri
-      - mon
-  action:
-  - service: input_boolean.turn_off
-    data: {}
-    target:
-      entity_id: input_boolean.heater_automation
-  mode: single
-- id: '1688854997782'
-  alias: LIGHT - Turn on bedroom light
-  description: ''
-  use_blueprint:
-    path: Blackshome/sensor-light.yaml
-    input:
-      light_switch:
-        entity_id: light.bedroom_light
-      motion_trigger:
-      - binary_sensor.zigbee_motion_sensor_motion
-      include_bypass: bypass_disabled
-      motion_bypass: input_boolean.sleep_time
-      include_sun: sun_enabled
-      sun_elevation: -3.5
-      include_device_tracker: zone_people_enabled
-      zone: zone.home
-      people:
-      - person.cecilia_ueda
-      - person.christian_silva
-      time_delay: 1
-      include_time: time_enabled
-      after_time: 08:00:00
-      before_time: 01:00:00
-- id: '1688856012542'
-  alias: WASHER - Appliance has finished
-  description: ''
-  use_blueprint:
-    path: sbyx/notify-or-do-something-when-an-appliance-like-a-dishwasher-or-washing-machine-finishes.yaml
-    input:
-      power_sensor: sensor.washing_machine_socket_power
-      starting_threshold: 3
-      starting_hysteresis: 0.5
-      finishing_threshold: 1
-      finishing_hysteresis: 10
-      actions:
-      - service: notify.notify
-        data:
-          message: Washing complete
-          title: Home assistant
-      - service: input_select.set_options
-        data:
-          options: 'Off'
-        target:
-          entity_id: input_select.washing_machine_status
-      pre_actions:
-      - service: input_select.set_options
-        data:
-          options: 'On'
-        target:
-          entity_id: input_select.washing_machine_status
-- id: '1696091007734'
-  alias: IFTT automation
-  description: IFTT automation
-  trigger:
-  - platform: event
-    event_type: ifttt_webhook_received
-    event_data:
-      action: call_service
-  condition: []
-  action:
-  - service: '{{ trigger.event.data.service }}'
-    target:
-      entity_id: '{{ trigger.event.data.entity_id }}'
   mode: single
 - id: '1697494475587'
   alias: Turn off server
@@ -897,10 +606,217 @@
   alias: JELLYFIN - Turn on
   description: ''
   trigger:
-  - platform: time
-    at: 08:05:00
+  - platform: homeassistant
+    event: start
   condition: []
   action:
   - service: shell_command.docker_start_jellyfin
+    data: {}
+  mode: single
+- id: '1707155189687'
+  alias: LIGHT - Turn off after HA starts
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      area_id:
+      - kitchen
+      - living_room
+      - office
+      - bedroom
+  mode: single
+- id: '1712541558722'
+  alias: SWITCH - Toggle bedroom lights
+  description: ''
+  use_blueprint:
+    path: seamus65/ZHA - Sonoff SNZB-01.yaml
+    input:
+      remote: 18facb5be70163a5e4608f84f8df9613
+      single_press:
+      - metadata: {}
+        data: {}
+        target:
+          entity_id: light.bedroom_lights
+        action: light.toggle
+      double_press:
+      - metadata: {}
+        data: {}
+        action: light.toggle
+        target:
+          entity_id: light.closet_lightbulb
+- id: '1726461621874'
+  alias: SWITCH - Turn on CHRISTIAN-PC
+  description: ''
+  triggers:
+  - at: 08:30:00
+    trigger: time
+  conditions:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: calendar.feriados
+    state: 'off'
+  actions:
+  - action: script.turn_on_off_christian_pc
+    data: {}
+  mode: single
+- id: '1731122472243'
+  alias: WEATHER - Change sunset offset
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.weather_clear_sky
+  conditions: []
+  actions:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.weather_clear_sky
+      state: 'off'
+    then:
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_bedroom
+        sunset_offset: -360
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_living_room
+        sunset_offset: -360
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_office
+        sunset_offset: -360
+    else:
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_bedroom
+        sunset_offset: 0
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_living_room
+        sunset_offset: 0
+    - action: adaptive_lighting.change_switch_settings
+      metadata: {}
+      data:
+        use_defaults: current
+        entity_id: switch.adaptive_lighting_office
+        sunset_offset: 0
+  mode: single
+- id: '1732076375503'
+  alias: FAN - Turn off after 4 hours
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 208f96a94932b423396ca080292e6d7d
+    entity_id: be8dd8aeff6add07dc6b91c62bf0ba5d
+    domain: switch
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 208f96a94932b423396ca080292e6d7d
+    domain: number
+    entity_id: 8d0925ed90248965044f65cb5528eadb
+    type: set_value
+    value: 420
+  mode: single
+- id: '1747626186543'
+  alias: SWITCH - Turn off TV
+  description: ''
+  triggers:
+  - trigger: time
+    at: 00:00:00
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 652cc01e99bf73414b83f1c055690f55
+    entity_id: ccdf6818efa76df2585e16a6a79bc25a
+    domain: light
+  actions:
+  - type: turn_off
+    device_id: 027ef1e9569e2ed83b65c5645613b2f3
+    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
+    domain: switch
+  mode: single
+- id: '1747626567554'
+  alias: SWITCH - Turn on TV
+  description: ''
+  triggers:
+  - trigger: time
+    at: 08:00:00
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 027ef1e9569e2ed83b65c5645613b2f3
+    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
+    domain: switch
+  actions:
+  - sequence:
+    - type: turn_on
+      device_id: 027ef1e9569e2ed83b65c5645613b2f3
+      entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
+      domain: switch
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 30
+        milliseconds: 0
+    - type: turn_on
+      device_id: 19742bb5f634c575882bde80529497c1
+      entity_id: db4802ea444f35f822f99976c5f05f17
+      domain: remote
+    - delay:
+        hours: 0
+        minutes: 1
+        seconds: 0
+        milliseconds: 0
+    - type: turn_off
+      device_id: 19742bb5f634c575882bde80529497c1
+      entity_id: db4802ea444f35f822f99976c5f05f17
+      domain: remote
+  mode: single
+- id: '1749960944020'
+  alias: OFFICE - Turn off thermostat
+  description: ''
+  triggers:
+  - entity_id:
+    - group.computers
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+    trigger: state
+  conditions: []
+  actions:
+  - action: climate.turn_off
+    target:
+      entity_id: climate.office_thermostat
     data: {}
   mode: single

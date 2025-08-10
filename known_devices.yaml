@@ -1,0 +1,156 @@
+08_00_27_9f_c8_35:
+  name: 08_00_27_9f_c8_35
+  mac: 08:00:27:9F:C8:35
+  icon:
+  picture:
+  track: false
+72_9a_ce_7d_7d_ed:
+  name: 72_9a_ce_7d_7d_ed
+  mac: 72:9A:CE:7D:7D:ED
+  icon:
+  picture:
+  track: false
+04_e5_98_97_2a_c4:
+  name: 04_e5_98_97_2a_c4
+  mac: 04:E5:98:97:2A:C4
+  icon:
+  picture:
+  track: false
+unknown:
+  name: '*'
+  mac: 4C:53:FD:EB:48:67
+  icon:
+  picture:
+  track: false
+1c_cc_d6_01_18_78:
+  name: 1c_cc_d6_01_18_78
+  mac: 1C:CC:D6:01:18:78
+  icon:
+  picture:
+  track: false
+1c_53_f9_16_3c_36:
+  name: 1c_53_f9_16_3c_36
+  mac: 1C:53:F9:16:3C:36
+  icon:
+  picture:
+  track: false
+ea_92_91_bd_7d_e4:
+  name: ea_92_91_bd_7d_e4
+  mac: EA:92:91:BD:7D:E4
+  icon:
+  picture:
+  track: false
+f8_32_e4_9b_2a_6e:
+  name: f8_32_e4_9b_2a_6e
+  mac: F8:32:E4:9B:2A:6E
+  icon:
+  picture:
+  track: false
+smart_plug_bed:
+  name: SMART_PLUG_BED
+  mac: 7C:F6:66:86:BF:06
+  icon:
+  picture:
+  track: false
+fc_73_fb_fb_69_29:
+  name: fc_73_fb_fb_69_29
+  mac: FC:73:FB:FB:69:29
+  icon:
+  picture:
+  track: false
+d8_1f_12_c9_54_66:
+  name: d8_1f_12_c9_54_66
+  mac: D8:1F:12:C9:54:66
+  icon:
+  picture:
+  track: false
+smart_plug_bedroom:
+  name: SMART_PLUG_BEDROOM
+  mac: D8:1F:12:D2:57:71
+  icon:
+  picture:
+  track: false
+7c_f6_66_22_b7_b0:
+  name: 7c_f6_66_22_b7_b0
+  mac: 7C:F6:66:22:B7:B0
+  icon:
+  picture:
+  track: false
+e0_f6_b5_3f_8f_3c:
+  name: e0_f6_b5_3f_8f_3c
+  mac: E0:F6:B5:3F:8F:3C
+  icon:
+  picture:
+  track: false
+d8_1f_12_d2_55_d1:
+  name: d8_1f_12_d2_55_d1
+  mac: D8:1F:12:D2:55:D1
+  icon:
+  picture:
+  track: false
+38_1f_8d_4f_66_f6:
+  name: 38_1f_8d_4f_66_f6
+  mac: 38:1F:8D:4F:66:F6
+  icon:
+  picture:
+  track: false
+d8_1f_12_c9_54_c4:
+  name: d8_1f_12_c9_54_c4
+  mac: D8:1F:12:C9:54:C4
+  icon:
+  picture:
+  track: false
+cc_8c_bf_2a_11_0d:
+  name: cc_8c_bf_2a_11_0d
+  mac: CC:8C:BF:2A:11:0D
+  icon:
+  picture:
+  track: false
+3c_8d_20_eb_c8_b9:
+  name: 3c_8d_20_eb_c8_b9
+  mac: 3C:8D:20:EB:C8:B9
+  icon:
+  picture:
+  track: false
+minint_57ehfhj:
+  name: MININT-57EHFHJ
+  mac: 00:15:5D:01:51:00
+  icon:
+  picture:
+  track: false
+galaxy_tab_a7:
+  name: Galaxy-Tab-A7
+  mac: CA:AE:0A:A5:1A:4D
+  icon:
+  picture:
+  track: false
+98_01_a7_8f_0c_bd:
+  name: 98_01_a7_8f_0c_bd
+  mac: 98:01:A7:8F:0C:BD
+  icon:
+  picture:
+  track: false
+3a_07_02_d8_4f_69:
+  name: 3a_07_02_d8_4f_69
+  mac: 3A:07:02:D8:4F:69
+  icon:
+  picture:
+  track: false
+unknown_2:
+  name: '*'
+  mac: 02:76:52:54:08:9B
+  icon:
+  picture:
+  track: false
+unknown_3:
+  name: '*'
+  mac: 76:0B:DA:E4:41:AF
+  icon:
+  picture:
+  track: false
+ce_ff_80_0f_f1_29:
+  name: ce_ff_80_0f_f1_29
+  mac: CE:FF:80:0F:F1:29
+  icon:
+  picture:
+  track: false

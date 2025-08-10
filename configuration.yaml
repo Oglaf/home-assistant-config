@@ -5,6 +5,9 @@ logger:
   default: warning
   logs:
     zigpy.zcl: error
+  filters:
+    homeassistant.components.homeassistant_alerts:
+      - "Timeout fetching homeassistant_alerts data"
 
 # Load frontend themes from the themes folder
 frontend:
@@ -36,20 +39,35 @@ homeassistant:
 # PowerCalc
 powercalc:
 
-# Proximity
-proximity:
-  home_christian:
-    zone: home
-    devices:
-      - device_tracker.christian_sp
-    tolerance: 50
-    unit_of_measurement: km
-  home_cecilia:
-    zone: home
-    devices:
-      - device_tracker.cecilia_sp
-    tolerance: 50
-    unit_of_measurement: km
+# Conversation
+conversation:
+
+alexa:
+  smart_home:
+    locale: pt-BR
+    filter:
+      include_domains:
+        - light
+        - scene
+        - script
+      exclude_entities:
+        - light.bedroom_lightbulb
+        - light.kitchen_wall_switch_light_3
+        - script.delete_orphaned_database_entities
+        - script.vacuum_room_cleaning
+      exclude_domains:
+        - automation
+        - binary_sensor
+        - camera
+        - device_tracker
+        - lock
+        - media_player
+        - remote
+        - sensor
+        - switch
+        - climate
+        - input_button
+        - group
 
 # Cloud tunnel
 http:
@@ -57,23 +75,20 @@ http:
   trusted_proxies:
     #- 192.168.1.0/24
     - 172.21.0.0/16
+    - 172.19.0.0/16
     - 127.0.0.1
     - ::1
-
-# # Cicardian light
-# circadian_lighting:
-#   min_colortemp: 2004
-#   max_colortemp: 6535
 
 # shell
 shell_command:
   christian_pc_shutdown:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.81 -i /config/ssh_keys/id_rsa_christian_pc "shutdown -s -t 30 -f"
-  server_shutdown:        ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.198 -i /config/ssh_keys/id_rsa_hass "sudo shutdown -h now"
-  christian_nb_shutdown:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.118 -i /config/ssh_keys/id_rsa_christian_nb "shutdown -s -t 30 -f"
-  docker_start_jellyfin:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.198 -i /config/ssh_keys/id_rsa_hass "docker start jellyfin"
+  server_shutdown:        ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.198 -i /config/ssh_keys/id_rsa_server "sudo shutdown -h now"
+  christian_nb_shutdown:  ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.118 -i /config/ssh_keys/id_rsa_christian_nb "shutdown -s -t 30 -f"
+  docker_start_jellyfin:  ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.198 -i /config/ssh_keys/id_rsa_server "docker start jellyfin"
 
 # recorder
 recorder:
   exclude:
     entities:
       - sensor.gpu_data
+      - sensor.roborock_rooms

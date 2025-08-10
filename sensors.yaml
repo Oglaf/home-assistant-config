@@ -6,6 +6,17 @@
   start: "{{ now().replace(hour=0, minute=0, second=0) }}"
   end: "{{ now() }}"
 
+- platform: rest
+  name: roborock_rooms
+  unique_id: 1f571dbe-7405-40d6-92e9-01d0ce4f4b8b
+  resource: http://192.168.1.198:8123/local/Roborock/roborock.json
+  value_template: "{{ now() }}"
+  json_attributes:
+    - rooms
+    
+- platform: openhardwaremonitor
+  host: 192.168.1.116
+
 # Powercalc
 # - platform: powercalc
 #   entity_id: binary_sensor.christian_srv
@@ -23,27 +34,3 @@
 #           6.5 + 0.6 + 4 + 5
 #         ) | round(2) 
 #       }}
-
-- platform: systemmonitor
-  resources:
-    - type: disk_use_percent
-      arg: /config
-    - type: disk_use
-      arg: /config
-    - type: disk_free
-      arg: /config
-    - type: disk_use_percent
-      arg: /mnt/fileStorage
-    - type: disk_use
-      arg: /mnt/fileStorage
-    - type: disk_free
-      arg: /mnt/fileStorage
-    - type: memory_use_percent
-    - type: memory_use
-    - type: memory_free
-    - type: swap_use_percent
-    - type: swap_use
-    - type: swap_free
-    - type: processor_use
-    - type: processor_temperature
-    - type: last_boot

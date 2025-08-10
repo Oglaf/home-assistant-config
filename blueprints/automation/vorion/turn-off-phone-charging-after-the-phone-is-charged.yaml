@@ -9,15 +9,18 @@ blueprint:
       description: Smart plug/relay to turn off
       selector:
         entity:
-          domain: switch
+          domain:
+          - switch
           multiple: false
     phone_battery:
       name: Phone Battery
       description: Battery level sensor
       selector:
         entity:
-          domain: sensor
-          device_class: battery
+          domain:
+          - sensor
+          device_class:
+          - battery
           multiple: false
     charged_percent:
       name: Charge percent

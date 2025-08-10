@@ -37,7 +37,8 @@ blueprint:
       description: Send the notification when this boolean turns on
       selector:
         entity:
-          domain: group
+          domain:
+          - input_boolean
           multiple: false
     notification_title:
       name: Notification title (Optional)
@@ -116,9 +117,11 @@ variables:
 trigger:
   platform: state
   entity_id: !input trigger_entity
-  from: home
-  to: away
+  from: 'off'
+  to: 'on'
 action:
+- service: input_boolean.turn_off
+  entity_id: !input trigger_entity
 - domain: mobile_app
   type: notify
   device_id: !input notify_device

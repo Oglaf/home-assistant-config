@@ -5,7 +5,7 @@
   host: 192.168.1.81
   broadcast_address: 192.168.1.255
   turn_off:
-      service: shell_command.christian_nb_shutdown
+    service: shell_command.christian_nb_shutdown
 
 - platform: wake_on_lan
   mac: 80:FA:5B:A5:BA:D3
@@ -13,41 +13,25 @@
   host: 192.168.1.112
   broadcast_address: 192.168.1.255
   turn_off:
-      service: shell_command.christian_nb_shutdown
+    service: shell_command.christian_nb_shutdown
 
-# # Circadian lighting
-# - platform: circadian_lighting
-#   name: Living room circadian lighting
-#   initial_transition: 5
-#   sleep_entity: input_boolean.sleep_time
-#   sleep_state: "on"
-#   sleep_colortemp: 2001
-#   sleep_brightness: 2.5510204081632653
-#   disable_entity: input_boolean.living_room_light_automation
-#   disable_state: "off"
-#   lights_ct:
-#     - light.living_room_light
+- platform: wake_on_lan
+  mac: 80:FA:5B:4A:21:7E
+  name: hyper_v_server
+  host: 192.168.1.116
+  broadcast_address: 192.168.1.255
 
-# - platform: circadian_lighting
-#   name: Bedroom circadian lighting
-#   initial_transition: 5
-#   sleep_entity: input_boolean.sleep_time
-#   sleep_state: "on"
-#   sleep_colortemp: 2001
-#   sleep_brightness: 2.5510204081632653
-#   disable_entity: input_boolean.bedroom_light_automation
-#   disable_state: "off"
-#   lights_ct:
-#     - light.bedroom_light
-
-# - platform: circadian_lighting
-#   name: Office circadian lighting
-#   initial_transition: 5
-#   sleep_entity: input_boolean.sleep_time
-#   sleep_state: "on"
-#   sleep_colortemp: 2001
-#   sleep_brightness: 2.5510204081632653
-#   disable_entity: input_boolean.office_light_automation
-#   disable_state: "off"
-#   lights_ct:
-#     - light.local_office_light
+- platform: template
+  switches:
+    zigbee_kitchen_wall_switch_plug:
+      unique_id: d463d2ce-ca24-4cce-901e-d1642aeeff4f
+      friendly_name: "Kitchen wall switch plug"
+      value_template: "{{ is_state('light.kitchen_wall_switch_light_3', 'on') }}"
+      turn_on:
+        service: light.turn_on
+        target:
+          entity_id: light.kitchen_wall_switch_light_3
+      turn_off:
+        service: light.turn_off
+        target:
+          entity_id: light.kitchen_wall_switch_light_3
