@@ -1,4 +1,4 @@
-# Oglaf's Home Assistant Configuration 🏠
+# Home Assistant Configuration 🏠
 
 Welcome to my Home Assistant configuration repository! This setup is built with three core principles in mind: **Convenience**, **Energy Savings**, and **100% Local Control**. Everything is designed to be automated, efficient, and reliable.
 
