@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_vacuum",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Vacuum",
+          "path": "vacuum",
+          "icon": "mdi:robot-vacuum",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Run",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "",
+                  "secondary": "",
+                  "icon": "mdi:broom",
+                  "grid_options": {
+                    "columns": 2,
+                    "rows": 1
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.vacuum_room_cleaning",
+                    "target": {}
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "double_tap_action": {
+                    "action": "none"
+                  },
+                  "icon_color": "blue"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity_id": "vacuum.q7_max",
+                  "primary": "",
+                  "secondary": "",
+                  "icon": "mdi:pause",
+                  "icon_color": "red",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "vacuum.pause",
+                    "data": {},
+                    "target": {
+                      "entity_id": "vacuum.q7_max"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 2,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "",
+                  "secondary": "",
+                  "icon": "mdi:home-import-outline",
+                  "icon_color": "orange",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "data": {},
+                    "target": {
+                      "entity_id": "vacuum.q7_max"
+                    },
+                    "perform_action": "vacuum.return_to_base"
+                  },
+                  "grid_options": {
+                    "columns": 2,
+                    "rows": 1
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "double_tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "",
+                  "secondary": "",
+                  "icon": "mdi:map-marker",
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "double_tap_action": {
+                    "action": "none"
+                  },
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "vacuum.locate",
+                    "target": {
+                      "entity_id": "vacuum.q7_max"
+                    },
+                    "data": {}
+                  },
+                  "grid_options": {
+                    "columns": 2,
+                    "rows": 1
+                  },
+                  "icon_color": "green"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "{{ states('vacuum.q7_max') | capitalize }}",
+                  "secondary": "",
+                  "icon": "",
+                  "layout": "vertical",
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 1
+                  },
+                  "tap_action": {
+                    "action": "more-info"
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "double_tap_action": {
+                    "action": "none"
+                  },
+                  "entity": "vacuum.q7_max"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Daily routine",
+                  "secondary": "",
+                  "icon": "mdi:home",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.vacuum_daily_routine",
+                    "target": {}
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Office cleaning",
+                  "secondary": "",
+                  "icon": "mdi:desk-lamp",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.vacuum_office_cleaning",
+                    "target": {}
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.q7_max_cleaning_area",
+                  "name": "Cleaning Area"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Cleaning time",
+                  "secondary": "{{ ((states('sensor.q7_max_cleaning_time') | float / 60) | round(2)) ~ ' Min' }}",
+                  "icon": "mdi:progress-clock",
+                  "icon_color": "blue"
+                },
+                {
+                  "type": "heading",
+                  "heading": "Settings",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "custom:mushroom-select-card",
+                  "entity": "input_select.vacuum_speed",
+                  "name": "Fan Speed",
+                  "primary_info": "name",
+                  "secondary_info": "none",
+                  "grid_options": {
+                    "columns": "full"
+                  },
+                  "layout": "horizontal",
+                  "icon_color": "light-green"
+                },
+                {
+                  "type": "custom:mushroom-select-card",
+                  "entity": "select.q7_max_mop_intensity",
+                  "grid_options": {
+                    "columns": "full"
+                  },
+                  "layout": "horizontal",
+                  "secondary_info": "none",
+                  "name": "Mop Itensity",
+                  "icon": "mdi:water",
+                  "icon_color": "primary"
+                },
+                {
+                  "type": "custom:mushroom-number-card",
+                  "entity": "input_number.vacuum_cycles",
+                  "layout": "horizontal",
+                  "grid_options": {
+                    "columns": "full"
+                  },
+                  "name": "Cyles",
+                  "secondary_info": "none",
+                  "display_mode": "buttons",
+                  "icon_color": "red"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Rooms",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_balcony",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "icon_tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "name": "Balcony",
+                  "icon": "mdi:flower-tulip-outline"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_bathroom",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Bathroom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_corridor",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Corridor"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_dining_room",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Dining Room",
+                  "icon": "mdi:silverware-variant"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_en_suite",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Suite"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_hall",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Hall"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_kitchen",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Kitchen",
+                  "icon": "mdi:fridge-outline"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_living_room",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Living Room",
+                  "icon": "mdi:sofa-outline"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_master_bedroom",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "name": "Master Bedroom",
+                  "icon": "mdi:bed-king-outline"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.vacuum_study",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "icon": "mdi:desk-lamp",
+                  "name": "Office"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Status",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.q7_max_battery",
+                  "name": "Battery"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.q7_max_mop_attached",
+                  "name": "Mop Cloth",
+                  "icon": "mdi:waves"
+                },
+                {
+                  "type": "heading",
+                  "heading": "Maintenance",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "sensor.q7_max_sensor_time_left",
+                  "icon": "mdi:eye",
+                  "primary": "Sensor",
+                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
+                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "sensor.q7_max_filter_time_left",
+                  "icon": "mdi:air-filter",
+                  "primary": "Filter",
+                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
+                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "sensor.q7_max_side_brush_time_left",
+                  "icon": "mdi:brush",
+                  "primary": "Side Brush",
+                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
+                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "sensor.q7_max_main_brush_time_left",
+                  "primary": "Main Brush",
+                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
+                  "icon": "mdi:broom",
+                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                }
+              ]
+            }
+          ],
+          "dense_section_placement": true,
+          "cards": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_mobile",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Mobile",
+          "path": "cellphone",
+          "type": "sections",
+          "dense_section_placement": true,
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Bedroom",
+                  "area": "bedroom",
+                  "hide_unavailable": true,
+                  "shadow": true,
+                  "entities": [
+                    "switch.adaptive_lighting_bedroom",
+                    "binary_sensor.zigbee_motion_sensor_motion"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.bedroom_lights",
+                  "icon": "mdi:ceiling-light-multiple",
+                  "name": "Spotlights",
+                  "state_content": "state",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
+                },
+                {
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "light.closet_lightbulb",
+                  "icon": "mdi:lightbulb",
+                  "name": "Closet lamp",
+                  "state_content": "state"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.bedroom_fan",
+                  "name": "Table fan",
+                  "icon": "mdi:fan"
+                },
+                {
+                  "type": "tile",
+                  "entity": "remote.bedroom_tv",
+                  "name": "TV",
+                  "icon": "mdi:television",
+                  "state_content": "state"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.local_electric_blanket_socket",
+                  "name": "Electric blanket",
+                  "icon": "mdi:heating-coil",
+                  "layout_options": {
+                    "grid_columns": "full"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Office",
+                  "area": "office",
+                  "hide_unavailable": true,
+                  "shadow": true,
+                  "entities": [
+                    "sensor.office_temperature_sensor_temperature",
+                    "sensor.office_temperature_sensor_humidity",
+                    "switch.adaptive_lighting_office"
+                  ]
+                },
+                {
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "light.office_light",
+                  "name": "Spotlight",
+                  "icon": "mdi:ceiling-light",
+                  "state_content": "state",
+                  "vertical": false,
+                  "show_entity_picture": false,
+                  "layout_options": {
+                    "grid_columns": 2,
+                    "grid_rows": 2
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "climate.office_thermostat",
+                  "name": "Thermostat"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.christian_pc",
+                  "name": "Computer",
+                  "icon": "mdi:desktop-classic",
+                  "state_content": "state",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.turn_on_off_christian_pc",
+                    "target": {}
+                  }
+                }
+              ],
+              "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Living room",
+                  "area": "living_room",
+                  "hide_unavailable": true,
+                  "shadow": false,
+                  "entities": [
+                    "switch.adaptive_lighting_living_room"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.living_room_light",
+                  "name": "Spotlight",
+                  "hide_state": false,
+                  "show_entity_picture": false,
+                  "vertical": false,
+                  "state_content": "state",
+                  "icon": "mdi:ceiling-light",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ],
+                  "layout_options": {
+                    "grid_columns": 2,
+                    "grid_rows": 2
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "remote.living_room_tv",
+                  "name": "TV",
+                  "icon": "mdi:television",
+                  "state_content": "state"
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.theater_mode",
+                  "name": "Theater"
+                },
+                {
+                  "type": "custom:mushroom-vacuum-card",
+                  "entity": "vacuum.q7_max",
+                  "name": "Bender",
+                  "icon_animation": false,
+                  "commands": [
+                    "locate",
+                    "return_home"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.christian_nb",
+                  "name": "Notebook",
+                  "icon": "mdi:laptop",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.turn_on_off_christian_nb",
+                    "target": {}
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Pet feeder",
+                  "secondary": "{{ 'Off' if is_state('binary_sensor.pet_feeder_feeding', 'unavailable') else 'On' }}",
+                  "icon": "mdi:cat",
+                  "entity": "binary_sensor.pet_feeder_feeding",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.feed"
+                    }
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "double_tap_action": {
+                    "action": "more-info"
+                  },
+                  "icon_color": "{{ 'disabled-text-color' if is_state('binary_sensor.pet_feeder_feeding', 'unavailable') else 'primary' }}",
+                  "layout_options": {
+                    "grid_columns": 2,
+                    "grid_rows": 1
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:minimalistic-area-card",
+                  "title": "Kitchen",
+                  "area": "kitchen",
+                  "hide_unavailable": false,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "/config/areas/area/kitchen"
+                  },
+                  "entities": [
+                    "sensor.kitchen_temperature_sensor_temperature",
+                    "sensor.kitchen_temperature_sensor_humidity"
+                  ]
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.kitchen_wall_switch_light",
+                  "name": "Spotlights",
+                  "icon": "mdi:vanity-light"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.kitchen_wall_switch_laundry_light",
+                  "name": "Laundry",
+                  "icon": "mdi:ceiling-light"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "input_select.washing_machine_status",
+                  "primary": "Washing Machine",
+                  "secondary": "{{ (states('input_select.washing_machine_status'))}}",
+                  "icon": "mdi:washing-machine",
+                  "icon_color": "{% if is_state(\"input_select.washing_machine_status\", \"On\") -%}\n  amber\n{%- else -%}\n  grey\n{%- endif %}",
+                  "tap_action": {
+                    "action": "more-info"
+                  },
+                  "layout_options": {
+                    "grid_columns": "full"
+                  }
+                }
+              ]
+            }
+          ],
+          "cards": [],
+          "badges": [],
+          "icon": "mdi:cellphone",
+          "max_columns": 1
+        }
+      ],
+      "title": "Home"
+    }
+  }
+}

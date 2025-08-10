@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "url": "/hacsfiles/mini-graph-card/mini-graph-card-bundle.js?hacstag=1512800620130",
+        "type": "module",
+        "id": "bf45a820ea73463db877409772a8493a"
+      },
+      {
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375450",
+        "type": "module",
+        "id": "e0c16174a16d4a8f825286803f30f4ed"
+      },
+      {
+        "url": "/hacsfiles/vacuum-card/vacuum-card.js?hacstag=2612912952110",
+        "type": "module",
+        "id": "cf31f35aa1b34d118ad3f238f2b72b6b"
+      },
+      {
+        "url": "/hacsfiles/uptime-card/uptime-card.js?hacstag=3505098670160",
+        "type": "module",
+        "id": "af4fa0a032c041fda0436e80db9e7537"
+      },
+      {
+        "url": "/hacsfiles/light-entity-card/light-entity-card.js?hacstag=168744428613",
+        "type": "module",
+        "id": "1ae406ba33ca4dae9c9c8fc8ff5783ee"
+      },
+      {
+        "url": "/hacsfiles/homeassistant-minimalistic-area-card/minimalistic-area-card.js?hacstag=489457357120",
+        "type": "module",
+        "id": "7e8e379bffb749efb5afda20c6aa7b01"
+      },
+      {
+        "url": "/hacsfiles/ha-energy-overview-card/energy-overview-card.js?hacstag=594389396250",
+        "type": "module",
+        "id": "d8baa673a5d04c398a2f8753443df084"
+      },
+      {
+        "id": "bc285ccfc60045a4ac27c0e034296fec",
+        "url": "/hacsfiles/battery-state-card/battery-state-card.js?hacstag=256292682321",
+        "type": "module"
+      },
+      {
+        "id": "21aa84508cd14992b5ab452c1aea8c2a",
+        "url": "/local/layout-card.js?v=1",
+        "type": "module"
+      },
+      {
+        "id": "63984ce56dfd4a729c3d71b055c8af64",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325412",
+        "type": "module"
+      },
+      {
+        "id": "4173835f63124af1a7690e0d3b44bdcf",
+        "url": "/hacsfiles/modern-circular-gauge/modern-circular-gauge.js?hacstag=8717303430112",
+        "type": "module"
+      }
+    ]
+  }
+}

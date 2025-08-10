@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:server-network",
+        "title": "Server",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-network",
+        "id": "dashboard_network"
+      },
+      {
+        "show_in_sidebar": false,
+        "icon": "mdi:cellphone",
+        "title": "Mobile",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-mobile",
+        "id": "dashboard_mobile"
+      },
+      {
+        "show_in_sidebar": true,
+        "icon": "mdi:home",
+        "title": "Home",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-home",
+        "id": "dashboard_home"
+      },
+      {
+        "id": "map",
+        "icon": "mdi:map",
+        "title": "Map",
+        "url_path": "map",
+        "show_in_sidebar": true,
+        "mode": "storage",
+        "require_admin": false
+      },
+      {
+        "id": "dashboard_vacuum",
+        "show_in_sidebar": true,
+        "icon": "mdi:robot-vacuum",
+        "title": "Vacuum",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-vacuum"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1080 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_network",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "server",
+          "path": "server",
+          "icon": "mdi:server-network",
+          "type": "sections",
+          "max_columns": 3,
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Network",
+                  "heading_style": "title",
+                  "icon": "mdi:wan"
+                },
+                {
+                  "type": "custom:uptime-card",
+                  "entity": "binary_sensor.cloudflare",
+                  "icon": "mdi:wan",
+                  "title_template": "WAN uptime",
+                  "duration": {
+                    "quantity": 7,
+                    "unit": "day"
+                  },
+                  "status_adaptive_color": true,
+                  "color_thresholds": [
+                    {
+                      "value": 90,
+                      "color": "#C66445"
+                    },
+                    {
+                      "value": 99.96,
+                      "color": "#C6B145"
+                    },
+                    {
+                      "value": 100,
+                      "color": "#45C669"
+                    }
+                  ],
+                  "tooltip": {
+                    "hour24": true
+                  },
+                  "bar": {
+                    "amount": 7
+                  },
+                  "show": {
+                    "footer": true
+                  },
+                  "layout_options": {
+                    "grid_rows": "auto"
+                  }
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mini-graph-card",
+                      "icon": "mdi:cloud-download",
+                      "hours_to_show": 12,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "line_color": "red",
+                      "line_width": 8,
+                      "font_size": 73,
+                      "entities": [
+                        {
+                          "entity": "sensor.speedtest_cli_download",
+                          "name": "Download"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "icon": "mdi:cloud-upload",
+                      "hours_to_show": 12,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "line_width": 8,
+                      "font_size": 73,
+                      "entities": [
+                        {
+                          "entity": "sensor.speedtest_cli_upload",
+                          "name": "Upload"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "hours_to_show": 12,
+                      "points_per_hour": 1,
+                      "state": "last",
+                      "line_color": "blue",
+                      "line_width": 8,
+                      "font_size": 73,
+                      "icon": "mdi:lan-pending",
+                      "entities": [
+                        {
+                          "entity": "sensor.speedtest_cli_ping",
+                          "name": "Ping"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        {
+                          "entity": "sensor.cloudflare_round_trip_time_average"
+                        }
+                      ],
+                      "name": "Cloudflare",
+                      "line_color": "lightblue",
+                      "icon": "mdi:lan-pending",
+                      "hours_to_show": 0.5,
+                      "decimals": 0,
+                      "aggregate_func": "avg",
+                      "group_by": "interval",
+                      "points_per_hour": 10,
+                      "unit": "ms",
+                      "show": {
+                        "graph": "bar"
+                      }
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        {
+                          "entity": "sensor.google_round_trip_time_average"
+                        }
+                      ],
+                      "name": "Google",
+                      "line_color": "orange",
+                      "icon": "mdi:lan-pending",
+                      "hours_to_show": 0.5,
+                      "decimals": 0,
+                      "aggregate_func": "avg",
+                      "group_by": "interval",
+                      "points_per_hour": 10,
+                      "unit": "ms",
+                      "show": {
+                        "graph": "bar"
+                      }
+                    },
+                    {
+                      "type": "custom:mini-graph-card",
+                      "entities": [
+                        {
+                          "entity": "sensor.ffxiv_round_trip_time_average"
+                        }
+                      ],
+                      "name": "FFXIV",
+                      "line_color": "red",
+                      "icon": "mdi:lan-pending",
+                      "hours_to_show": 0.5,
+                      "decimals": 0,
+                      "aggregate_func": "avg",
+                      "group_by": "interval",
+                      "points_per_hour": 10,
+                      "unit": "ms",
+                      "show": {
+                        "graph": "bar"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Server",
+                  "heading_style": "title",
+                  "icon": "mdi:server"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:harddisk",
+                  "heading": "Storage",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.disk_free",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:linux",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 40,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 109,
+                  "name": "OS Disk"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.disk_free_mnt_filestorage",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:folder-network",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    },
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ],
+                      "from": 610
+                    },
+                    {
+                      "from": 305,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 916,
+                  "name": "File Storage"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.system_monitor_disk_free_mnt_backupstorage",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:folder-network",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    },
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ],
+                      "from": 274
+                    },
+                    {
+                      "from": 137,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 458,
+                  "name": "Backup Storage"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:cpu-64-bit",
+                  "heading": "CPU",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.processor_temperature",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:thermometer-low",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 40,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Temp"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.processor_use",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:cpu-64-bit",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Load"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.memory_use_percent",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:memory",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "RAM"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:expansion-card",
+                  "heading": "GPU",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.gpu_temperature",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:thermometer-low",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 40,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Temp"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.gpu_utilization",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:cpu-64-bit",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Load"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.gpu_memory_utilization",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:memory",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 3712,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 4915,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 6144,
+                  "name": "RAM"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Hyper-V Host",
+                  "heading_style": "title",
+                  "icon": "mdi:microsoft-windows"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:server",
+                  "heading": "Server",
+                  "heading_style": "subtitle",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:harddisk",
+                  "heading": "Storage",
+                  "heading_style": "subtitle",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.hyper_v_server",
+                  "name": "Hyper-V Host",
+                  "icon": "mdi:microsoft-windows",
+                  "grid_options": {
+                    "rows": 3,
+                    "columns": 6
+                  }
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_generic_hard_disk_load_used_space",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:harddisk",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "name": "Disk Usage",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": []
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:cpu-64-bit",
+                  "heading": "CPU",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_intel_core_i7_7700hq_temperatures_cpu_package",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:thermometer-low",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 40,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Temp"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_intel_core_i7_7700hq_load_cpu_total",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:cpu-64-bit",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Load"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_generic_memory_load_memory",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:memory",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "RAM"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:expansion-card",
+                  "heading": "GPU",
+                  "heading_style": "subtitle"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.processor_temperature",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:thermometer-low",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 40,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Temp"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_nvidia_nvidia_geforce_mx150_load_gpu_core",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:cpu-64-bit",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 60,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 80,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 100,
+                  "name": "Load"
+                },
+                {
+                  "type": "custom:modern-circular-gauge",
+                  "entity": "sensor.christian_ateli_nvidia_nvidia_geforce_mx150_data_gpu_memory_used",
+                  "secondary": {},
+                  "tertiary": {},
+                  "icon": "mdi:memory",
+                  "header_position": "bottom",
+                  "needle": false,
+                  "smooth_segments": false,
+                  "show_header": true,
+                  "grid_options": {
+                    "columns": 4,
+                    "rows": 3
+                  },
+                  "segments": [
+                    {
+                      "color": [
+                        67,
+                        160,
+                        71
+                      ]
+                    },
+                    {
+                      "from": 1228,
+                      "color": [
+                        255,
+                        166,
+                        0
+                      ]
+                    },
+                    {
+                      "from": 1638,
+                      "color": [
+                        219,
+                        68,
+                        55
+                      ]
+                    }
+                  ],
+                  "show_unit": true,
+                  "show_icon": true,
+                  "show_state": true,
+                  "adaptive_icon_color": true,
+                  "icon_entity": "primary",
+                  "adaptive_state_color": false,
+                  "min": 0,
+                  "max": 2048,
+                  "name": "RAM"
+                }
+              ]
+            }
+          ],
+          "badges": [
+            {
+              "type": "entity",
+              "show_name": true,
+              "show_state": true,
+              "show_icon": true,
+              "entity": "sensor.watchman_missing_entities",
+              "color": "",
+              "name": "Missing entities"
+            },
+            {
+              "type": "entity",
+              "show_name": true,
+              "show_state": true,
+              "show_icon": true,
+              "entity": "sensor.last_boot",
+              "color": "",
+              "name": "Last boot"
+            }
+          ],
+          "cards": []
+        }
+      ]
+    }
+  }
+}
