@@ -1,59 +1,74 @@
-# File extensions
-*.crt
-*.csr
-*.db-journal
-*.fault
-*.key
-*.log
-*.log.*
-*.pid
-*.py
+# ===================================================================
+#  .gitignore for Home Assistant
+#  Revised based on your list and current best practices.
+# ===================================================================
 
-# Logs
-home-assistant.db
-home-assistant.log
-home-assistant_v2.db
-home-assistant_v2.db-*
-home-assistant_v2.db.*
-watchman_report.txt
-
-# Hidden folders
-.HA_VERSION
-.cloud
-.google.token 
-.ssh/
-.storage/core.restore_state
-.vscode
-
-# Folders
-auth*
-custom_components*
-deps
-frontend.*
-hacs*
-http*
-id_rsa*
-image
-lib
-tts
-www
-zigbee.*
-zone*
-.vscode/settings.json
-
-# Sensitive files
-device_tracker.yaml
-known_devices.yaml
+# ######################################
+# ##  SENSITIVE FILES & FOLDERS (DO NOT COMMIT)
+# ######################################
 secrets.yaml
 ip_bans.yaml
-.storage/core.config
-.vscode/settings.json
-.storage/androidtv_remote_cert.pem
-.storage/androidtv_remote_key.pem
-.storage/tmp4l1bjjpc
-.storage/tmpbylqqny_
-.storage/assist_pipeline.pipelines
-.storage/tmp6wx6an09
-.storage/tmpad35yk4x
-.storage/trace.saved_traces
-.storage/core.config_entries
+.google.token
+
+# All SSL certificates and private keys
+*.crt
+*.csr
+*.key
+/ssl/
+
+# SSH keys
+.ssh/
+id_rsa*
+
+# ######################################
+# ##  HOME ASSISTANT CORE & DATABASE
+# ######################################
+
+# The .storage directory contains sensitive info and runtime data.
+# It is STRONGLY recommended to ignore the entire directory.
+/.storage/
+
+# Database and log files
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.log
+*.log.*
+*.fault
+*.pid
+watchman_report.txt
+
+# Home Assistant version file
+.HA_VERSION
+
+# ######################################
+# ##  CACHE & DEPENDENCIES
+# ######################################
+__pycache__/
+/deps/
+/lib/
+/tts/
+
+# ######################################
+# ##  ADD-ONS & INTEGRATIONS
+# ######################################
+
+/custom_components/
+/www/community/
+
+# ESPHome build files
+/esphome/build/
+/esphome/.esphome/
+/esphome/*.bin
+
+# Zigbee2MQTT data (example)
+/zigbee2mqtt/data/
+
+# ######################################
+# ##  EDITOR & OS FILES
+# ######################################
+.vscode/
+.idea/
+*.swp
+*.swo
