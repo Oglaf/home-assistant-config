@@ -42,6 +42,20 @@ watchman_report.txt
 # Home Assistant version file
 .HA_VERSION
 
+# ===================================================================
+# EXCEPTIONS FOR LOVELACE DASHBOARDS
+# We are creating exceptions to the rule above for specific files.
+# ===================================================================
+#
+# Un-ignore the main dashboard index file
+!/.storage/lovelace_dashboards
+#
+# Un-ignore all files that start with "lovelace.dashboard_"
+!/.storage/lovelace.dashboard_*
+#
+# (Recommended) Also un-ignore your Lovelace resources (for custom cards)
+!/.storage/lovelace_resources
+
 # ######################################
 # ##  CACHE & DEPENDENCIES
 # ######################################
