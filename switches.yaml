@@ -1,11 +1,11 @@
 # WOL
 - platform: wake_on_lan
-  mac: A8:A1:59:45:CB:22
+  mac: A0:AD:9F:1A:4C:22
   name: christian_pc_wol
   host: 192.168.1.81
   broadcast_address: 192.168.1.255
   turn_off:
-    service: shell_command.christian_nb_shutdown
+    service: shell_command.christian_pc_shutdown
 
 - platform: wake_on_lan
   mac: 80:FA:5B:A5:BA:D3
