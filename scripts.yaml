@@ -6,11 +6,11 @@ turn_on_off_christian_pc:
       entity_id: binary_sensor.christian_pc
       state: 'on'
     then:
-    - service: shell_command.christian_pc_shutdown
-      data: {}
+    - data: {}
+      action: shell_command.christian_pc_shutdown
     else:
-    - service: switch.turn_on
-      data: {}
+    - data: {}
+      action: switch.turn_on
       target:
         entity_id: switch.christian_pc_wol
   mode: single
