@@ -10,7 +10,7 @@
         "id": "bf45a820ea73463db877409772a8493a"
       },
       {
-        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375450",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375508",
         "type": "module",
         "id": "e0c16174a16d4a8f825286803f30f4ed"
       },
@@ -51,12 +51,12 @@
       },
       {
         "id": "63984ce56dfd4a729c3d71b055c8af64",
-        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325412",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325701",
         "type": "module"
       },
       {
         "id": "4173835f63124af1a7690e0d3b44bdcf",
-        "url": "/hacsfiles/modern-circular-gauge/modern-circular-gauge.js?hacstag=8717303430112",
+        "url": "/hacsfiles/modern-circular-gauge/modern-circular-gauge.js?hacstag=8717303430131",
         "type": "module"
       }
     ]

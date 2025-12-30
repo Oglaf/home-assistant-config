@@ -73,11 +73,11 @@ alexa:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    #- 192.168.1.0/24
-    - 172.21.0.0/16
-    - 172.19.0.0/16
+    - 172.16.0.0/12
+    - 192.168.0.0/16
     - 127.0.0.1
-    - ::1
+  cors_allowed_origins:
+    - http://ha.local
 
 # shell
 shell_command:

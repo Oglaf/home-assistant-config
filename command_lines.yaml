@@ -1,7 +1,8 @@
 - sensor:
       name: "SpeedTest CLI Data"
       unique_id: speedtest_cli_data
-      command: '/config/speedtest/speedtest --format=json --server-id=29814 --accept-license --accept-gdpr'
+      #command: '/config/speedtest/speedtest --format=json --server-id=29814 --accept-license --accept-gdpr'
+      command: '/config/speedtest/speedtest --format=json --accept-license --accept-gdpr'
       scan_interval: 3600
       command_timeout: 60
       value_template: >-

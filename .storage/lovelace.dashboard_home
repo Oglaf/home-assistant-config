@@ -468,7 +468,29 @@
                 {
                   "type": "tile",
                   "entity": "climate.office_thermostat",
-                  "name": "Thermostat"
+                  "name": "Thermostat",
+                  "vertical": false,
+                  "features_position": "bottom",
+                  "visibility": [
+                    {
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Heat"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-entity-card",
+                  "entity": "switch.heater_socket",
+                  "name": "Fan",
+                  "icon_color": "light-green",
+                  "visibility": [
+                    {
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Cool"
+                    }
+                  ]
                 },
                 {
                   "type": "tile",
@@ -552,13 +574,8 @@
                   "show_current": true,
                   "show_forecast": true,
                   "type": "weather-forecast",
-                  "entity": "weather.home",
-                  "forecast_type": "daily",
-                  "secondary_info_attribute": "humidity",
-                  "layout_options": {
-                    "grid_columns": "full",
-                    "grid_rows": 4
-                  }
+                  "entity": "weather.openweathermap",
+                  "forecast_type": "daily"
                 },
                 {
                   "type": "tile",
@@ -687,11 +704,6 @@
                   "state_content": "state"
                 },
                 {
-                  "type": "tile",
-                  "entity": "input_boolean.theater_mode",
-                  "name": "Theater"
-                },
-                {
                   "type": "custom:mushroom-vacuum-card",
                   "entity": "vacuum.q7_max",
                   "name": "Bender",
@@ -793,7 +805,7 @@
               "show_name": false,
               "show_state": true,
               "show_icon": true,
-              "entity": "sensor.washing_machine_socket_power",
+              "entity": "sensor.kitchen_plug_power",
               "color": "light-grey",
               "icon": "mdi:washing-machine"
             },
@@ -1026,9 +1038,9 @@
                   "icon_trailing": "mdi:thermostat-box"
                 },
                 {
-                  "power": "sensor.washing_machine_socket_power",
-                  "current": "sensor.washing_machine_socket_current",
-                  "voltage": "sensor.washing_machine_socket_voltage",
+                  "power": "sensor.kitchen_plug_power",
+                  "current": "sensor.kitchen_plug_current",
+                  "voltage": "sensor.kitchen_plug_voltage",
                   "icon_leading": "mdi:transmission-tower",
                   "icon_trailing": "mdi:washing-machine"
                 },

@@ -25,6 +25,7 @@ blueprint:
           domain:
           - input_boolean
           multiple: false
+          reorder: false
     notification_title:
       name: Notification title (Optional)
       description: 'Default: Medication reminder'
@@ -113,6 +114,8 @@ action:
       title: !input notification_title
       message: !input notification_message
       data:
+        ttl: 0
+        priority: high
         actions:
         - title: !input notification_action_taken
           action: taken

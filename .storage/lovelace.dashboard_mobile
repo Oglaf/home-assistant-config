@@ -21,8 +21,7 @@
                   "hide_unavailable": true,
                   "shadow": true,
                   "entities": [
-                    "switch.adaptive_lighting_bedroom",
-                    "binary_sensor.zigbee_motion_sensor_motion"
+                    "switch.adaptive_lighting_bedroom"
                   ]
                 },
                 {
@@ -109,7 +108,29 @@
                 {
                   "type": "tile",
                   "entity": "climate.office_thermostat",
-                  "name": "Thermostat"
+                  "name": "Thermostat",
+                  "vertical": false,
+                  "features_position": "bottom",
+                  "visibility": [
+                    {
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Heat"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mushroom-entity-card",
+                  "entity": "switch.heater_socket",
+                  "name": "Fan",
+                  "icon_color": "light-green",
+                  "visibility": [
+                    {
+                      "condition": "state",
+                      "entity": "input_select.fan_mode",
+                      "state": "Cool"
+                    }
+                  ]
                 },
                 {
                   "type": "tile",
@@ -164,11 +185,6 @@
                   "name": "TV",
                   "icon": "mdi:television",
                   "state_content": "state"
-                },
-                {
-                  "type": "tile",
-                  "entity": "input_boolean.theater_mode",
-                  "name": "Theater"
                 },
                 {
                   "type": "custom:mushroom-vacuum-card",

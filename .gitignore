@@ -86,3 +86,4 @@ __pycache__/
 .idea/
 *.swp
 *.swo
+.ha_run.lock

@@ -160,7 +160,7 @@
   actions:
   - if:
     - condition: template
-      value_template: "{{ states('sensor.house_humidity') | float >\n   state_attr('weather.home',
+      value_template: "{{ states('sensor.house_humidity') | float >\n   state_attr('weather.openweathermap',
         'humidity') | float }}"
     then:
     - data:
@@ -476,30 +476,32 @@
 - id: '1676734805757'
   alias: WASHER - Status Running
   description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.washing_machine_socket_power
+  triggers:
+  - entity_id:
+    - sensor.kitchen_plug_power
     for:
       hours: 0
       minutes: 1
       seconds: 0
     above: 1
-  condition:
+    trigger: numeric_state
+  conditions:
   - condition: state
     entity_id: input_select.washing_machine_status
     state: 'Off'
-  action:
-  - service: input_select.select_option
-    data:
+  actions:
+  - data:
       option: 'On'
     target:
       entity_id: input_select.washing_machine_status
+    action: input_select.select_option
   mode: single
 - id: '1676744130645'
   alias: WASHER -  Finished
   description: ''
   triggers:
-  - entity_id: sensor.washing_machine_socket_power
+  - entity_id:
+    - sensor.kitchen_plug_power
     for:
       hours: 0
       minutes: 10

@@ -52,6 +52,7 @@ blueprint:
               filter:
               - domain:
                 - person
+              reorder: false
         zone2monitor:
           name: Zone to watch
           description: "Select the Zone you want this BP to trigger on when this person
@@ -66,6 +67,7 @@ blueprint:
               filter:
               - domain:
                 - zone
+              reorder: false
         enter_action:
           name: Enter the Zone Action
           description: 'Build the action here that you want to happen when they enter

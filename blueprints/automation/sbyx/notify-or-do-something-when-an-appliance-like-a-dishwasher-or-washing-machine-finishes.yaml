@@ -11,6 +11,7 @@ blueprint:
         entity:
           domain:
           - sensor
+          reorder: false
           multiple: false
     starting_threshold:
       name: Starting power threshold

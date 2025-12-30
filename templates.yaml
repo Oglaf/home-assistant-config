@@ -1,99 +1,98 @@
-- sensor:
-    - name: "Tariff price"
-      unique_id: 01933acb-183d-7526-b92b-8df18246fbc9
-      unit_of_measurement: BRL/kWh
-      state: >
-        {% if is_state('input_select.tariff_type', 'Peak') %}
-          {{ 1.45522 }}
-        {% elif is_state('input_select.tariff_type', 'Shoulder') %}
-          {{ 0.96261 }}
-        {% elif is_state('input_select.tariff_type', 'Off peak') %}
-          {{ 0.67977 }}
-        {% endif %}
+sensor:
+  - name: "Tariff price"
+    unique_id: 01933acb-183d-7526-b92b-8df18246fbc9
+    unit_of_measurement: BRL/kWh
+    state: >
+      {% if is_state('input_select.tariff_type', 'Peak') %}
+        {{ 1.45522 }}
+      {% elif is_state('input_select.tariff_type', 'Shoulder') %}
+        {{ 0.96261 }}
+      {% elif is_state('input_select.tariff_type', 'Off peak') %}
+        {{ 0.67977 }}
+      {% endif %}
 
-    # Presence detection
-    - name: "christian_christian_sp_home"
-      state: >-
-        {%
-          if (states('sensor.christian_sp_wi_fi_connection') == "ZAITSU") 
-          or (states('sensor.christian_sp_wi_fi_connection') == "ZAITSU_2G")
-        %}
-          home
-        {% else %}
-          not_home
-        {% endif %}
+  - name: "christian_christian_sp_home"
+    state: >-
+      {% if states('sensor.christian_sp_wi_fi_connection') in ["ZAITSU","ZAITSU_2G"] %}
+        home
+      {% else %}
+        not_home
+      {% endif %}
 
-    - name: "cecilia_redminote8_home"
-      state: >-
-        {%
-          if (states('sensor.cecilia_sp_wifi_connection') == "ZAITSU") 
-          or (states('sensor.cecilia_sp_wifi_connection') == "ZAITSU_2G")
-        %}
-          home
-        {% else %}
-          not_home
-        {% endif %}
+  - name: "cecilia_redminote8_home"
+    state: >-
+      {% if states('sensor.cecilia_sp_wifi_connection') in ["ZAITSU","ZAITSU_2G"] %}
+        home
+      {% else %}
+        not_home
+      {% endif %}
 
-    # Speedtest sensors
-    - name: "SpeedTest CLI Ping"
-      unique_id: speedtest_cli_ping
-      icon: mdi:speedometer
-      unit_of_measurement: ms
-      state_class: measurement
-      state: "{{ (states('sensor.speedtest_cli_data') | from_json).ping | round(2) }}"
+  - name: "SpeedTest CLI Ping"
+    unique_id: speedtest_cli_ping
+    icon: mdi:speedometer
+    unit_of_measurement: ms
+    state_class: measurement
+    state: "{{ (states('sensor.speedtest_cli_data') | from_json).ping | round(2) }}"
 
-    - name: "SpeedTest CLI Download"
-      unique_id: speedtest_cli_download
-      icon: mdi:speedometer
-      unit_of_measurement: MB/s
-      state_class: measurement
-      state: "{{ ((states('sensor.speedtest_cli_data') | from_json).download / 125000) | round(2) }}"
+  - name: "SpeedTest CLI Download"
+    unique_id: speedtest_cli_download
+    icon: mdi:speedometer
+    unit_of_measurement: MB/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).download / 125000) | round(2) }}"
 
-    - name: "SpeedTest CLI Upload"
-      unique_id: speedtest_cli_upload
-      icon: mdi:speedometer
-      unit_of_measurement: MB/s
-      state_class: measurement
-      state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload / 125000) | round(2) }}"
+  - name: "SpeedTest CLI Upload"
+    unique_id: speedtest_cli_upload
+    icon: mdi:speedometer
+    unit_of_measurement: MB/s
+    state_class: measurement
+    state: "{{ ((states('sensor.speedtest_cli_data') | from_json).upload / 125000) | round(2) }}"
 
-    # Sun
-    - name: "next_sunrise"
-      state: >-
-        {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%H:%M') }}
+  - name: "next_sunrise"
+    state: "{{ as_timestamp(state_attr('sun.sun','next_rising')) | timestamp_custom('%H:%M') }}"
 
-    - name: "next_sunset"
-      state: >-
-        {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%H:%M') }}
+  - name: "next_sunset"
+    state: "{{ as_timestamp(state_attr('sun.sun','next_setting')) | timestamp_custom('%H:%M') }}"
 
-    - name: "GPU Power"
-      unique_id: gpu_power_draw
-      icon: mdi:lightning-bolt
-      unit_of_measurement: W
-      state_class: measurement
-      device_class: power
-      state: >-
-       {{ ((states('sensor.gpu_data') | from_json).gpu_power_draw) | round(2) }}
+  - name: "GPU Power"
+    unique_id: gpu_power_draw
+    icon: mdi:lightning-bolt
+    unit_of_measurement: W
+    state_class: measurement
+    device_class: power
+    state: "{{ (states('sensor.gpu_data') | from_json).gpu_power_draw | round(2) }}"
 
-    - name: "GPU Temperature"
-      unique_id: gpu_temperature
-      unit_of_measurement: °C
-      state_class: measurement
-      device_class: temperature
-      state: >-
-        {{ ((states('sensor.gpu_data') | from_json).gpu_temperature) | round(2) }}
+  - name: "GPU Temperature"
+    unique_id: gpu_temperature
+    unit_of_measurement: °C
+    state_class: measurement
+    device_class: temperature
+    state: "{{ (states('sensor.gpu_data') | from_json).gpu_temperature | round(2) }}"
 
-    - name: "GPU Utilization"
-      unique_id: gpu_utilization
-      icon: mdi:speedometer
-      unit_of_measurement: "%"
-      state_class: measurement
-      state: >-
-        {{ ((states('sensor.gpu_data') | from_json).gpu_utilization) | round(2) }}
+  - name: "GPU Utilization"
+    unique_id: gpu_utilization
+    unit_of_measurement: "%"
+    icon: mdi:speedometer
+    state_class: measurement
+    state: "{{ (states('sensor.gpu_data') | from_json).gpu_utilization | round(2) }}"
 
-    - name: "GPU Memory Utilization"
-      unique_id: gpu_memory_utilization
-      icon: mdi:speedometer
-      unit_of_measurement: "MB"
-      state_class: measurement
-      state: >-
-        {{ ((states('sensor.gpu_data') | from_json).gpu_memory_utilization) | round(2) }}
+  - name: "GPU Memory Utilization"
+    unique_id: gpu_memory_utilization
+    unit_of_measurement: MB
+    icon: mdi:speedometer
+    state_class: measurement
+    state: "{{ (states('sensor.gpu_data') | from_json).gpu_memory_utilization | round(2) }}"
+
+switch:
+  - unique_id: d463d2ce-ca24-4cce-901e-d1642aeeff4f
+    name: Kitchen wall switch plug
+    default_entity_id: switch.zigbee_kitchen_wall_switch_plug
+    state: "{{ is_state('light.kitchen_wall_switch_light_3', 'on') }}"
+    turn_on:
+      - action: light.turn_on
+        target:
+          entity_id: light.kitchen_wall_switch_light_3
+    turn_off:
+      - action: light.turn_off
+        target:
+          entity_id: light.kitchen_wall_switch_light_3
