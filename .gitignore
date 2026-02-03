@@ -38,6 +38,7 @@ id_rsa*
 *.fault
 *.pid
 watchman_report.txt
+backups/*
 
 # Home Assistant version file
 .HA_VERSION
