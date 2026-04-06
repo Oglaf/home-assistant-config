@@ -1,14 +1,34 @@
 {
     "rooms": [
         {
+            "name": "balcony",
+            "boolean": "input_boolean.vacuum_balcony",
+            "id": "16"
+        },
+        {
+            "name": "en_suite",
+            "boolean": "input_boolean.vacuum_en_suite",
+            "id": "17"
+        },
+        {
             "name": "master_bedroom",
             "boolean": "input_boolean.vacuum_master_bedroom",
             "id": "18"
         },
         {
-            "name": "kitchen",
-            "boolean": "input_boolean.vacuum_kitchen",
-            "id": "23"
+            "name": "study",
+            "boolean": "input_boolean.vacuum_study",
+            "id": "19"
+        },
+        {
+            "name": "hall",
+            "boolean": "input_boolean.vacuum_hall",
+            "id": "20"
+        },
+        {
+            "name": "corridor",
+            "boolean": "input_boolean.vacuum_corridor",
+            "id": "21"
         },
         {
             "name": "bathroom",
@@ -16,39 +36,19 @@
             "id": "22"
         },
         {
-            "name": "en_suite",
-            "boolean": "input_boolean.vacuum_en_suite",
-            "id": "25"
-        },
-        {
-            "name": "balcony",
-            "boolean": "input_boolean.vacuum_balcony",
-            "id": "20"
+            "name": "kitchen",
+            "boolean": "input_boolean.vacuum_kitchen",
+            "id": "23"
         },
         {
             "name": "living_room",
             "boolean": "input_boolean.vacuum_living_room",
-            "id": "19"
+            "id": "24"
         },
         {
             "name": "dining_room",
             "boolean": "input_boolean.vacuum_dining_room",
-            "id": "16"
-        },
-        {
-            "name": "hall",
-            "boolean": "input_boolean.vacuum_hall",
-            "id": "24"
-        },
-        {
-            "name": "study",
-            "boolean": "input_boolean.vacuum_study",
-            "id": "21"
-        },
-        {
-            "name": "corridor",
-            "boolean": "input_boolean.vacuum_corridor",
-            "id": "17"
+            "id": "25"
         }
     ]
 }

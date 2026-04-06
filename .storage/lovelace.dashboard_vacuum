@@ -341,32 +341,36 @@
                   "entity": "sensor.q7_max_sensor_time_left",
                   "icon": "mdi:eye",
                   "primary": "Sensor",
-                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
-                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                  "secondary": "{{ states(entity) | float | round(0) }} hours\n",
+                  "color": "{% if (states(entity) | float | round(0)) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n",
+                  "features_position": "bottom"
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "entity": "sensor.q7_max_filter_time_left",
                   "icon": "mdi:air-filter",
                   "primary": "Filter",
-                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
-                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                  "secondary": "{{ states(entity) | float(0) | round(0) }} hours\n",
+                  "color": "{% if (states(entity) | float(0) | round(0)) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n",
+                  "features_position": "bottom"
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "entity": "sensor.q7_max_side_brush_time_left",
                   "icon": "mdi:brush",
                   "primary": "Side Brush",
-                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
-                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                  "secondary": "{% set hrs = states(entity) | float(0) | round(0) %}\n{% if hrs < 0 %}\n  Overdue!\n{% else %}\n  {{ hrs }} hours\n{% endif %}\n",
+                  "color": "{% set hrs = states(entity) | float(0) | round(0) %}\n{% if hrs < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n",
+                  "features_position": "bottom"
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "entity": "sensor.q7_max_main_brush_time_left",
-                  "primary": "Main Brush",
-                  "secondary": "{{ ((states(entity) | int ) / 3600) | round(0)  }} hours\n",
                   "icon": "mdi:broom",
-                  "icon_color": "{% if ((states(entity) | int ) / 3600) | round(0) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n"
+                  "primary": "Main Brush",
+                  "secondary": "{{ states(entity) | float(0) | round(0) }} hours\n",
+                  "color": "{% if (states(entity) | float(0) | round(0)) < 20 %}\n  red\n{% else %}\n  orange\n{% endif %}\n",
+                  "features_position": "bottom"
                 }
               ]
             }

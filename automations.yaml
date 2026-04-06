@@ -236,38 +236,32 @@
   use_blueprint:
     path: Aohzan/medication_reminder_android.yaml
     input:
-      reminder_time: '10:00:00'
+      reminder_time: '13:00:00'
       notify_device: 8a131ca4e20a3734b8ca80461f781e5f
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
 - id: '1674182650722'
   alias: LIGHT - Turn off all lights when away
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - group.residents
     to: 'off'
     for:
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
-  - service: light.turn_off
-    data: {}
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
       area_id:
       - bedroom
       - living_room
       - office
       - kitchen
-  - service: remote.turn_off
-    data: {}
-    target:
-      entity_id:
-      - remote.bedroom_tv
-      - remote.living_room_tv
+    action: light.turn_off
   mode: single
 - id: '1674225267956'
   alias: LIGHT - Turn on living room light
@@ -531,10 +525,11 @@
     input:
       remote: dce92ffa17e37194c258023c978b2cb9
       single_press:
-      - service: light.toggle
-        data: {}
+      - action: light.toggle
         target:
-          area_id: living_room
+          entity_id: light.living_room_light
+        data:
+          brightness_pct: 100
 - id: '1680556356761'
   alias: SWITCH - Kitchen light
   description: ''
@@ -765,43 +760,6 @@
     entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
     domain: switch
   mode: single
-- id: '1747626567554'
-  alias: SWITCH - Turn on TV
-  description: ''
-  triggers:
-  - trigger: time
-    at: 08:00:00
-  conditions:
-  - condition: device
-    type: is_off
-    device_id: 027ef1e9569e2ed83b65c5645613b2f3
-    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
-    domain: switch
-  actions:
-  - sequence:
-    - type: turn_on
-      device_id: 027ef1e9569e2ed83b65c5645613b2f3
-      entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
-      domain: switch
-    - delay:
-        hours: 0
-        minutes: 0
-        seconds: 30
-        milliseconds: 0
-    - type: turn_on
-      device_id: 19742bb5f634c575882bde80529497c1
-      entity_id: db4802ea444f35f822f99976c5f05f17
-      domain: remote
-    - delay:
-        hours: 0
-        minutes: 1
-        seconds: 0
-        milliseconds: 0
-    - type: turn_off
-      device_id: 19742bb5f634c575882bde80529497c1
-      entity_id: db4802ea444f35f822f99976c5f05f17
-      domain: remote
-  mode: single
 - id: '1749960944020'
   alias: OFFICE - Turn off thermostat
   description: ''
@@ -821,4 +779,22 @@
     target:
       entity_id: climate.office_thermostat
     data: {}
+  mode: single
+- id: '1772383657027'
+  alias: SWITCH - Turn on TV
+  description: ''
+  triggers:
+  - trigger: time
+    at: 08:00:00
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 027ef1e9569e2ed83b65c5645613b2f3
+    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
+    domain: switch
+  actions:
+  - type: turn_on
+    device_id: 027ef1e9569e2ed83b65c5645613b2f3
+    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
+    domain: switch
   mode: single
