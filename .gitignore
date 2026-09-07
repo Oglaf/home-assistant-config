@@ -90,3 +90,10 @@ __pycache__/
 .ha_run.lock
 core
 .cache/**
+# ######################################
+# ##  RUNTIME DATABASES & MISC (added 2026-09-06)
+# ######################################
+/zigbee.db*
+/core.config_entries_copy
+/*.core
+/image/

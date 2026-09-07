@@ -419,13 +419,23 @@
     input:
       remote: 5edfb7a20cc6bb8f565bac615b96acb1
       single_press:
-      - service: light.toggle
-        data: {}
-        target:
-          entity_id: light.office_light
+      - choose:
+        - conditions:
+          - condition: state
+            entity_id: light.office_light
+            state: 'on'
+          sequence:
+          - target:
+              entity_id: light.office_light
+            action: light.turn_off
+        - conditions: []
+          sequence:
+          - target:
+              entity_id: light.office_light
+            action: light.turn_on
       double_press:
-      - service: script.turn_on_off_christian_pc
-        data: {}
+      - data: {}
+        action: script.turn_on_off_christian_pc
 - id: '1675913952899'
   alias: LIGHT - Turn on sleep time
   description: ''
@@ -525,11 +535,23 @@
     input:
       remote: dce92ffa17e37194c258023c978b2cb9
       single_press:
-      - action: light.toggle
-        target:
-          entity_id: light.living_room_light
-        data:
-          brightness_pct: 100
+      - choose:
+        - conditions:
+          - condition: state
+            entity_id: light.living_room_light
+            state: 'on'
+          sequence:
+          - target:
+              entity_id: light.living_room_light
+            data: {}
+            action: light.turn_off
+        - conditions: []
+          sequence:
+          - target:
+              entity_id: light.living_room_light
+            action: light.turn_on
+      double_press: []
+      hold: []
 - id: '1680556356761'
   alias: SWITCH - Kitchen light
   description: ''
@@ -538,10 +560,20 @@
     input:
       remote: 32eb643cc51b1ff3098e619b102a920f
       single_press:
-      - service: light.toggle
-        data: {}
-        target:
-          entity_id: light.kitchen_wall_switch_laundry_light
+      - choose:
+        - conditions:
+          - condition: state
+            entity_id: light.kitchen_wall_switch_laundry_light
+            state: 'on'
+          sequence:
+          - target:
+              entity_id: light.kitchen_wall_switch_laundry_light
+            action: light.turn_off
+        - conditions: []
+          sequence:
+          - target:
+              entity_id: light.kitchen_wall_switch_laundry_light
+            action: light.turn_on
 - id: '1684086727943'
   alias: ZONE - Cecilia arrived home
   description: ''
@@ -565,19 +597,19 @@
 - id: '1684184359544'
   alias: SWITCH - Turn off blanket after 3 hours
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - switch.local_electric_blanket_socket
     from: 'off'
     to: 'on'
-  condition: []
-  action:
-  - service: number.set_value
-    data:
-      value: '180'
+    trigger: state
+  conditions: []
+  actions:
+  - action: time.set_value
     target:
-      entity_id: number.local_electric_blanket_socket_timer
+      entity_id: time.local_electric_blanket_socket_timer
+    data:
+      time: 03:00:00
   mode: single
 - id: '1697494475587'
   alias: Turn off server
@@ -633,25 +665,6 @@
       - office
       - bedroom
   mode: single
-- id: '1712541558722'
-  alias: SWITCH - Toggle bedroom lights
-  description: ''
-  use_blueprint:
-    path: seamus65/ZHA - Sonoff SNZB-01.yaml
-    input:
-      remote: 18facb5be70163a5e4608f84f8df9613
-      single_press:
-      - metadata: {}
-        data: {}
-        target:
-          entity_id: light.bedroom_lights
-        action: light.toggle
-      double_press:
-      - metadata: {}
-        data: {}
-        action: light.toggle
-        target:
-          entity_id: light.closet_lightbulb
 - id: '1726461621874'
   alias: SWITCH - Turn on CHRISTIAN-PC
   description: ''
@@ -672,75 +685,6 @@
   actions:
   - action: script.turn_on_off_christian_pc
     data: {}
-  mode: single
-- id: '1731122472243'
-  alias: WEATHER - Change sunset offset
-  description: ''
-  triggers:
-  - trigger: state
-    entity_id:
-    - binary_sensor.weather_clear_sky
-  conditions: []
-  actions:
-  - if:
-    - condition: state
-      entity_id: binary_sensor.weather_clear_sky
-      state: 'off'
-    then:
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_bedroom
-        sunset_offset: -360
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_living_room
-        sunset_offset: -360
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_office
-        sunset_offset: -360
-    else:
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_bedroom
-        sunset_offset: 0
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_living_room
-        sunset_offset: 0
-    - action: adaptive_lighting.change_switch_settings
-      metadata: {}
-      data:
-        use_defaults: current
-        entity_id: switch.adaptive_lighting_office
-        sunset_offset: 0
-  mode: single
-- id: '1732076375503'
-  alias: FAN - Turn off after 4 hours
-  description: ''
-  triggers:
-  - type: turned_on
-    device_id: 208f96a94932b423396ca080292e6d7d
-    entity_id: be8dd8aeff6add07dc6b91c62bf0ba5d
-    domain: switch
-    trigger: device
-  conditions: []
-  actions:
-  - device_id: 208f96a94932b423396ca080292e6d7d
-    domain: number
-    entity_id: 8d0925ed90248965044f65cb5528eadb
-    type: set_value
-    value: 420
   mode: single
 - id: '1747626186543'
   alias: SWITCH - Turn off TV
@@ -797,4 +741,94 @@
     device_id: 027ef1e9569e2ed83b65c5645613b2f3
     entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
     domain: switch
+  mode: single
+- id: '1778474602363'
+  alias: 'OFFICE - Tutn on thermostat '
+  description: ''
+  triggers:
+  - trigger: time
+    at: 08:33:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  conditions:
+  - type: is_connected
+    condition: device
+    device_id: 55aa16b6b49ef3e2cd4642fb41a5567d
+    entity_id: ac01661b33d61514703e140542ff02b9
+    domain: binary_sensor
+  actions:
+  - action: climate.toggle
+    metadata: {}
+    target:
+      entity_id: climate.office_thermostat
+    data: {}
+  mode: single
+- id: '1780780747056'
+  alias: bedroom_synced_lights
+  description: ''
+  use_blueprint:
+    path: alexdelprete/ha-blueprint-linked-entities.yaml
+    input:
+      linked_entity:
+      - light.bedroom_lights
+      - switch.bedroom_bedroom_switch
+- id: '1788739059272'
+  alias: test
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id: switch.bedroom_bedroom_switch
+  conditions: []
+  actions:
+  - if:
+    - condition: switch.is_on
+      target:
+        device_id: 400cae0e0ad4c912804f0b1d10f0aaaa
+      options:
+        behavior: any
+    then:
+    - sequence:
+      - action: homeassistant.enable_device
+        metadata: {}
+        data:
+          device_id:
+          - 6dc5848c79cfb5f1b6969ac217fb92f9
+          - 6a77ff231598e11b70d3e09ca379f4c5
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 5
+          milliseconds: 0
+        enabled: true
+      - action: homeassistant.reload_config_entry
+        metadata: {}
+        target:
+          entity_id:
+          - light.closet_lightbulb
+          - light.bedroom_lightbulb
+        data: {}
+        enabled: true
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 3
+          milliseconds: 0
+        enabled: true
+      - action: light.turn_on
+        metadata: {}
+        target:
+          entity_id: light.bedroom_lights
+        data: {}
+        enabled: true
+    else:
+    - action: homeassistant.disable_device
+      metadata: {}
+      data:
+        device_id:
+        - 6dc5848c79cfb5f1b6969ac217fb92f9
+        - 6a77ff231598e11b70d3e09ca379f4c5
   mode: single

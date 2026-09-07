@@ -50,8 +50,13 @@ alexa:
         - light
         - scene
         - script
+      include_entities:
+        - switch.christian_pc_wol
+        - switch.bedroom_bedroom_switch
       exclude_entities:
         - light.bedroom_lightbulb
+        - light.bedroom_lights
+        - light.closet_lightbulb
         - light.kitchen_wall_switch_light_3
         - script.delete_orphaned_database_entities
         - script.vacuum_room_cleaning
@@ -69,19 +74,9 @@ alexa:
         - input_button
         - group
 
-# Cloud tunnel
-http:
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - 172.16.0.0/12
-    - 192.168.0.0/16
-    - 127.0.0.1
-  cors_allowed_origins:
-    - http://ha.local
-
 # shell
 shell_command:
-  christian_pc_shutdown:  ssh -o 'StrictHostKeyChecking=no' hass@192.168.1.81 -i /config/ssh_keys/id_rsa_christian_pc "shutdown -s -t 30 -f"
+  christian_pc_shutdown:  ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.81 -i /config/.ssh/id_ed25519 "shutdown -s -t 30 -f"
   server_shutdown:        ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.198 -i /config/ssh_keys/id_rsa_server "sudo shutdown -h now"
   christian_nb_shutdown:  ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.118 -i /config/ssh_keys/id_rsa_christian_nb "shutdown -s -t 30 -f"
   docker_start_jellyfin:  ssh -o 'StrictHostKeyChecking=no' christian@192.168.1.198 -i /config/ssh_keys/id_rsa_server "docker start jellyfin"

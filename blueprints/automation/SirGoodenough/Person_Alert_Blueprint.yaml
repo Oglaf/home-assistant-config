@@ -141,7 +141,8 @@ blueprint:
             minutes: 0
             seconds: 0
           selector:
-            duration: {}
+            duration:
+              enable_second: true
         enable_time:
           name: Time of day to begin action(s)
           description: 'Set this for the time of day you want to allow action(s) to
@@ -201,8 +202,8 @@ blueprint:
           default: []
           selector:
             condition: {}
-trigger:
-- platform: state
+triggers:
+- trigger: state
   id: Persons state has changed
   entity_id: !input people2monitor
 variables:
@@ -215,7 +216,7 @@ variables:
     '
   to_state: '{{ trigger.to_state.state | lower }}'
   from_state: '{{ trigger.from_state.state | lower }}'
-condition:
+conditions:
 - alias: Make sure there even was a move
   condition: template
   value_template: '{{ to_state != from_state }}'
@@ -232,7 +233,7 @@ condition:
   weekday: !input weekday
 - alias: User pick
   condition: !input additional_conditions
-action:
+actions:
 - alias: Determine if there was an actionable event
   choose:
   - conditions:

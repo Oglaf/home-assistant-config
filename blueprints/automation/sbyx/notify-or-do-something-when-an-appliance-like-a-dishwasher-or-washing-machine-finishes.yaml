@@ -11,8 +11,8 @@ blueprint:
         entity:
           domain:
           - sensor
-          reorder: false
           multiple: false
+          reorder: false
     starting_threshold:
       name: Starting power threshold
       description: Power threshold above which we assume the appliance has started.

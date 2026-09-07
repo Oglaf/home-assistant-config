@@ -12,6 +12,7 @@ blueprint:
           domain:
           - switch
           multiple: false
+          reorder: false
     phone_battery:
       name: Phone Battery
       description: Battery level sensor
@@ -22,6 +23,7 @@ blueprint:
           device_class:
           - battery
           multiple: false
+          reorder: false
     charged_percent:
       name: Charge percent
       description: Charge device to this percent

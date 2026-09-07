@@ -13,9 +13,6 @@
   value_template: "{{ now() }}"
   json_attributes:
     - rooms
-    
-- platform: openhardwaremonitor
-  host: 192.168.1.116
 
 # Powercalc
 # - platform: powercalc

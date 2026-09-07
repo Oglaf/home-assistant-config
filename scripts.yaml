@@ -51,14 +51,14 @@ vacuum_daily_routine:
       command: app_segment_clean
       params:
       - segments:
-        - 18
-        - 23
-        - 22
-        - 25
-        - 19
-        - 16
-        - 24
         - 17
+        - 18
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
         repeat: 1
     action: vacuum.send_command
   - target:
@@ -101,7 +101,7 @@ vacuum_office_cleaning:
       command: app_segment_clean
       params:
       - segments:
-        - 21
+        - 19
         repeat: 1
     action: vacuum.send_command
   - target:
