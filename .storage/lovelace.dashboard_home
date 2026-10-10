@@ -25,393 +25,96 @@
                   }
                 },
                 {
-                  "type": "horizontal-stack",
+                  "type": "vertical-stack",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  },
                   "cards": [
                     {
-                      "type": "custom:button-card",
+                      "type": "custom:mushroom-template-card",
                       "entity": "person.christian_silva",
-                      "show_name": false,
-                      "show_state": true,
-                      "show_label": false,
-                      "show_icon": true,
-                      "show_last_changed": false,
-                      "show_entity_picture": true,
+                      "picture": "{{ state_attr('person.christian_silva','entity_picture') }}",
+                      "primary": "Christian",
+                      "secondary": "{{ 'At home' if is_state('person.christian_silva','home') else 'Away' }}",
+                      "badge_icon": "{{ 'mdi:home' if is_state('person.christian_silva','home') else 'mdi:map-marker-off' }}",
+                      "badge_color": "{{ 'green' if is_state('person.christian_silva','home') else 'red' }}",
+                      "icon_color": "{{ 'green' if is_state('person.christian_silva','home') else 'grey' }}",
                       "tap_action": {
-                        "action": "more-info",
-                        "haptic": "light"
-                      },
-                      "label": "&nbsp;",
-                      "off_icon_color": "gray",
-                      "off_name_color": "gray",
-                      "off_state_color": "gray",
-                      "styles": {
-                        "icon": [
-                          {
-                            "grid-column": 1
-                          },
-                          {
-                            "grid-row": "1 / 4"
-                          }
-                        ],
-                        "label": [
-                          {
-                            "color": "gray"
-                          },
-                          {
-                            "font-size": "11px"
-                          },
-                          {
-                            "padding": "0px 10px"
-                          },
-                          {
-                            "justify-self": "start"
-                          }
-                        ],
-                        "state": [
-                          {
-                            "font-size": "12px"
-                          },
-                          {
-                            "padding": "0px 10px"
-                          },
-                          {
-                            "justify-self": "start"
-                          },
-                          {
-                            "text-transform": "capitalize"
-                          },
-                          {
-                            "font-weight": "bold"
-                          },
-                          {
-                            "padding-left": "10px"
-                          },
-                          {
-                            "color": "var(--primary-text-color)"
-                          }
-                        ],
-                        "grid": [
-                          {
-                            "grid-template-areas": "\"i s\" \"i battery\" \"i home\" \"i wifi\""
-                          },
-                          {
-                            "grid-template-columns": "50% 50%"
-                          },
-                          {
-                            "grid-template-rows": "25% 25% 25% 25%"
-                          }
-                        ],
-                        "img_cell": [
-                          {
-                            "align-self": "start"
-                          },
-                          {
-                            "text-align": "start"
-                          }
-                        ],
-                        "name": [
-                          {
-                            "justify-self": "start"
-                          },
-                          {
-                            "padding-left": "10px"
-                          },
-                          {
-                            "font-weight": "bold"
-                          },
-                          {
-                            "font-size": "13px"
-                          }
-                        ],
-                        "entity_picture": [
-                          {
-                            "height": "60px"
-                          },
-                          {
-                            "width": "60px"
-                          },
-                          {
-                            "border-radius": "100%"
-                          }
-                        ],
-                        "custom_fields": {
-                          "battery": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            }
-                          ],
-                          "home": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            },
-                            {
-                              "decimals": 2
-                            }
-                          ],
-                          "wifi": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            }
-                          ]
-                        }
-                      },
-                      "custom_fields": {
-                        "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
-                        "battery": "[[[ if (states['sensor.christian_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.christian_sp_battery_level'].state}%</span>`\n} ]]]\n",
-                        "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['sensor.home_christian_christian_sp_distance_2'].state} Km</span></span>`\n]]]\n",
-                        "wifi": "[[[\n  if (states['sensor.christian_sp_wi_fi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.christian_sp_wi_fi_connection'].state}</span></span>`;\n  }\n]]]\n"
-                      },
-                      "state": [
-                        {
-                          "value": "not_home",
-                          "styles": {
-                            "card": [
-                              {
-                                "opacity": 0.6
-                              }
-                            ],
-                            "entity_picture": [
-                              {
-                                "border": "2px solid var(--severity-1)"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "value": "home",
-                          "styles": {
-                            "entity_picture": [
-                              {
-                                "border": "2px solid var(--severity-5)"
-                              }
-                            ]
-                          }
-                        }
-                      ]
+                        "action": "more-info"
+                      }
                     },
                     {
-                      "type": "custom:button-card",
-                      "entity": "person.cecilia_ueda",
-                      "size": "auto",
-                      "color": "auto",
-                      "background_color": "var(--primary-background-color)",
-                      "variable": "spin",
-                      "spin": false,
-                      "show_name": false,
-                      "show_state": true,
-                      "show_label": false,
-                      "show_icon": true,
-                      "show_last_changed": false,
-                      "show_entity_picture": true,
-                      "tap_action": {
-                        "action": "more-info",
-                        "haptic": "light"
-                      },
-                      "label": "&nbsp;",
-                      "off_icon_color": "gray",
-                      "off_name_color": "gray",
-                      "off_state_color": "gray",
-                      "styles": {
-                        "icon": [
-                          {
-                            "grid-column": 1
-                          },
-                          {
-                            "grid-row": "1 / 4"
-                          }
-                        ],
-                        "label": [
-                          {
-                            "color": "gray"
-                          },
-                          {
-                            "font-size": "11px"
-                          },
-                          {
-                            "padding": "0px 10px"
-                          },
-                          {
-                            "justify-self": "start"
-                          }
-                        ],
-                        "state": [
-                          {
-                            "font-size": "12px"
-                          },
-                          {
-                            "padding": "0px 10px"
-                          },
-                          {
-                            "justify-self": "start"
-                          },
-                          {
-                            "text-transform": "capitalize"
-                          },
-                          {
-                            "font-weight": "bold"
-                          },
-                          {
-                            "padding-left": "10px"
-                          },
-                          {
-                            "color": "var(--primary-text-color)"
-                          }
-                        ],
-                        "grid": [
-                          {
-                            "grid-template-areas": "\"i s\" \"i battery\" \"i home\" \"i wifi\""
-                          },
-                          {
-                            "grid-template-columns": "50% 50%"
-                          },
-                          {
-                            "grid-template-rows": "25% 25% 25% 25%"
-                          }
-                        ],
-                        "img_cell": [
-                          {
-                            "align-self": "start"
-                          },
-                          {
-                            "text-align": "start"
-                          }
-                        ],
-                        "name": [
-                          {
-                            "justify-self": "start"
-                          },
-                          {
-                            "padding-left": "10px"
-                          },
-                          {
-                            "font-weight": "bold"
-                          },
-                          {
-                            "font-size": "13px"
-                          }
-                        ],
-                        "entity_picture": [
-                          {
-                            "height": "60px"
-                          },
-                          {
-                            "width": "60px"
-                          },
-                          {
-                            "border-radius": "100%"
-                          }
-                        ],
-                        "custom_fields": {
-                          "battery": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            }
-                          ],
-                          "home": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            }
-                          ],
-                          "wifi": [
-                            {
-                              "align-self": "start"
-                            },
-                            {
-                              "justify-self": "start"
-                            },
-                            {
-                              "font-size": "12px"
-                            },
-                            {
-                              "color": "var(--secondary-text-color)"
-                            }
-                          ]
-                        }
-                      },
-                      "custom_fields": {
-                        "icon": "[[[ return entity === undefined ? null : `<img src=\"${states[entity.entity_id].attributes.entity_picture}\" width=\"100%\">`; ]]]\n",
-                        "battery": "[[[ if (states['sensor.cecilia_sp_battery_state'].state =='discharging') {\n  return `<ha-icon\n    icon=\"mdi:battery\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon><span>${states['sensor.cecilia_sp_battery_level'].state}%</span>`\n} else { \n  return `<ha-icon\n  icon=\"mdi:battery-charging\"\n  style=\"; --mdc-icon-size: 14px; padding-left: 5px; padding-right: 5px; color: var(--primary-color);\">\n  </ha-icon><span>${states['sensor.cecilia_sp_battery_level'].state}%</span>`\n} ]]]\n",
-                        "home": "[[[\n  return `<ha-icon\n    icon=\"mdi:map-marker-distance\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon>  <span>\\<span style=\"color: var(--text-color-sensor);\">${states['sensor.home_2_cecilia_sp_distance'].state} Km</span></span>`\n]]]\n",
-                        "wifi": "[[[\n  if (states['sensor.cecilia_sp_wifi_connection'].state =='<not connected>') { \n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"width: 20px; height: 20px; color: var(--text-wifi-color-sensor);\">\n    </ha-icon> <span><span style=\"color: var(--text-wifi-color-sensor);\">Disconnected</span></span>`; \n  } else {\n    return `<ha-icon\n    icon=\"mdi:wifi\"\n    style=\"; --mdc-icon-size: 14px; padding-left: 6px; padding-right: 5px; color: var(--primary-color);\">\n    </ha-icon> <span><span style=\"color: var(--text-color-sensor);\">${states['sensor.cecilia_sp_wifi_connection'].state}</span></span>`;\n  }\n]]]\n"
-                      },
-                      "state": [
+                      "type": "custom:mushroom-chips-card",
+                      "alignment": "center",
+                      "chips": [
                         {
-                          "value": "not_home",
-                          "styles": {
-                            "card": [
-                              {
-                                "opacity": 0.6
-                              }
-                            ],
-                            "entity_picture": [
-                              {
-                                "border": "2px solid var(--severity-1)"
-                              }
-                            ]
-                          }
+                          "type": "template",
+                          "icon": "{% set l=states('sensor.christian_sp_battery_level')|int(0) %}{% if states('sensor.christian_sp_battery_state')!='discharging' %}mdi:battery-charging{% elif l>=90 %}mdi:battery{% else %}mdi:battery-{{ (l//10)*10 }}{% endif %}",
+                          "icon_color": "{% set l=states('sensor.christian_sp_battery_level')|int(0) %}{{ 'red' if l<20 else 'orange' if l<40 else 'green' }}",
+                          "content": "{{ states('sensor.christian_sp_battery_level') }}%"
                         },
                         {
-                          "value": "home",
-                          "styles": {
-                            "entity_picture": [
-                              {
-                                "border": "2px solid var(--severity-5)"
-                              }
-                            ]
-                          }
+                          "type": "template",
+                          "icon": "mdi:map-marker-distance",
+                          "icon_color": "blue",
+                          "content": "{% set d=states('sensor.home_christian_christian_sp_distance_2') %}{% if not d|is_number %}—{% else %}{% set v=d|float(0) %}{% if v>=1000 %}{{ (v/1000)|round(1) }}k{% elif v>=100 %}{{ v|round(0)|int }}{% else %}{{ v|round(1) }}{% endif %}{% endif %}"
+                        },
+                        {
+                          "type": "template",
+                          "icon": "{{ 'mdi:wifi-off' if states('sensor.christian_sp_wi_fi_connection')=='<not connected>' else 'mdi:wifi' }}",
+                          "icon_color": "{{ 'grey' if states('sensor.christian_sp_wi_fi_connection')=='<not connected>' else 'teal' }}",
+                          "content": "{% set s=states('sensor.christian_sp_wi_fi_connection') %}{% if s=='<not connected>' %}Offline{% elif s|length>6 %}{{ s[:5] }}…{% else %}{{ s }}{% endif %}"
                         }
                       ]
                     }
-                  ],
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
                   "grid_options": {
-                    "columns": 12,
-                    "rows": 2
-                  }
+                    "columns": 6,
+                    "rows": "auto"
+                  },
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "entity": "person.cecilia_ueda",
+                      "picture": "{{ state_attr('person.cecilia_ueda','entity_picture') }}",
+                      "primary": "Cecilia",
+                      "secondary": "{{ 'At home' if is_state('person.cecilia_ueda','home') else 'Away' }}",
+                      "badge_icon": "{{ 'mdi:home' if is_state('person.cecilia_ueda','home') else 'mdi:map-marker-off' }}",
+                      "badge_color": "{{ 'green' if is_state('person.cecilia_ueda','home') else 'red' }}",
+                      "icon_color": "{{ 'green' if is_state('person.cecilia_ueda','home') else 'grey' }}",
+                      "tap_action": {
+                        "action": "more-info"
+                      }
+                    },
+                    {
+                      "type": "custom:mushroom-chips-card",
+                      "alignment": "center",
+                      "chips": [
+                        {
+                          "type": "template",
+                          "icon": "{% set l=states('sensor.cecilia_sp_battery_level')|int(0) %}{% if states('sensor.cecilia_sp_battery_state')!='discharging' %}mdi:battery-charging{% elif l>=90 %}mdi:battery{% else %}mdi:battery-{{ (l//10)*10 }}{% endif %}",
+                          "icon_color": "{% set l=states('sensor.cecilia_sp_battery_level')|int(0) %}{{ 'red' if l<20 else 'orange' if l<40 else 'green' }}",
+                          "content": "{{ states('sensor.cecilia_sp_battery_level') }}%"
+                        },
+                        {
+                          "type": "template",
+                          "icon": "mdi:map-marker-distance",
+                          "icon_color": "blue",
+                          "content": "{% set d=states('sensor.home_2_cecilia_sp_distance') %}{% if not d|is_number %}—{% else %}{% set v=d|float(0) %}{% if v>=1000 %}{{ (v/1000)|round(1) }}k{% elif v>=100 %}{{ v|round(0)|int }}{% else %}{{ v|round(1) }}{% endif %}{% endif %}"
+                        },
+                        {
+                          "type": "template",
+                          "icon": "{{ 'mdi:wifi-off' if states('sensor.cecilia_sp_wifi_connection')=='<not connected>' else 'mdi:wifi' }}",
+                          "icon_color": "{{ 'grey' if states('sensor.cecilia_sp_wifi_connection')=='<not connected>' else 'teal' }}",
+                          "content": "{% set s=states('sensor.cecilia_sp_wifi_connection') %}{% if s=='<not connected>' %}Offline{% elif s|length>6 %}{{ s[:5] }}…{% else %}{{ s }}{% endif %}"
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "tile",
