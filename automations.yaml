@@ -236,7 +236,7 @@
   use_blueprint:
     path: Aohzan/medication_reminder_android.yaml
     input:
-      reminder_time: '13:00:00'
+      reminder_time: '23:00:00'
       notify_device: 8a131ca4e20a3734b8ca80461f781e5f
       notification_title: Medication Reminder
       input_boolean: input_boolean.medication
@@ -693,16 +693,13 @@
   - trigger: time
     at: 00:00:00
   conditions:
-  - condition: device
-    type: is_off
-    device_id: 652cc01e99bf73414b83f1c055690f55
-    entity_id: ccdf6818efa76df2585e16a6a79bc25a
-    domain: light
+  - condition: state
+    entity_id: light.living_room_light
+    state: 'off'
   actions:
-  - type: turn_off
-    device_id: 027ef1e9569e2ed83b65c5645613b2f3
-    entity_id: c846fdf5c8a2f0cceb365b0df0e4deca
-    domain: switch
+  - action: switch.turn_off
+    target:
+      entity_id: switch.living_room_plug
   mode: single
 - id: '1749960944020'
   alias: OFFICE - Turn off thermostat
@@ -777,7 +774,7 @@
       - light.bedroom_lights
       - switch.bedroom_bedroom_switch
 - id: '1788739059272'
-  alias: test
+  alias: LIGHT - Bedroom bulbs enable/disable on bedroom switch
   description: ''
   triggers:
   - trigger: state
@@ -831,4 +828,18 @@
         device_id:
         - 6dc5848c79cfb5f1b6969ac217fb92f9
         - 6a77ff231598e11b70d3e09ca379f4c5
+  mode: single
+- id: '1790000000001'
+  alias: SWITCH - Turn on blanket at midnight when cold
+  description: Turns on the electric blanket at 00:00 if the house temperature is 15 C or below. The 3-hour auto-off automation then applies.
+  triggers:
+  - trigger: time
+    at: 00:00:00
+  conditions:
+  - condition: template
+    value_template: "{{ states('sensor.house_temperature') | float(99) <= 15 }}"
+  actions:
+  - action: switch.turn_on
+    target:
+      entity_id: switch.local_electric_blanket_socket
   mode: single
