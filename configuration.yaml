@@ -87,3 +87,6 @@ recorder:
     entities:
       - sensor.gpu_data
       - sensor.roborock_rooms
+# ZHA custom quirks
+zha:
+  custom_quirks_path: custom_zha_quirks/

@@ -101,3 +101,4 @@ core
 # Manual backups (added 2026-10-09)
 *.bak
 *.bak-*
+__pycache__/
