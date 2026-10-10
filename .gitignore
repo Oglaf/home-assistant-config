@@ -97,3 +97,7 @@ core
 /core.config_entries_copy
 /*.core
 /image/
+
+# Manual backups (added 2026-10-09)
+*.bak
+*.bak-*
