@@ -408,10 +408,34 @@
                       ]
                     }
                   ],
-                  "layout_options": {
-                    "grid_columns": 4,
-                    "grid_rows": 1
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 2
                   }
+                },
+                {
+                  "type": "tile",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": "auto"
+                  },
+                  "entity": "binary_sensor.christian_pc",
+                  "name": "CHRISTIAN-PC",
+                  "icon": "mdi:desktop-classic",
+                  "show_entity_picture": false,
+                  "state_content": "state",
+                  "vertical": false,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.turn_on_off_christian_pc",
+                    "target": {}
+                  },
+                  "icon_tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.turn_on_off_christian_pc",
+                    "target": {}
+                  },
+                  "features_position": "bottom"
                 }
               ]
             },
@@ -505,32 +529,18 @@
                 },
                 {
                   "type": "tile",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": "auto"
+                  },
                   "entity": "cover.office_blinds",
+                  "vertical": false,
                   "features": [
                     {
                       "type": "cover-position-favorite"
                     }
-                  ]
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.christian_pc",
-                  "name": "CHRISTIAN-PC",
-                  "icon": "mdi:desktop-classic",
-                  "show_entity_picture": false,
-                  "state_content": "state",
-                  "vertical": true,
-                  "tap_action": {
-                    "action": "perform-action",
-                    "perform_action": "script.turn_on_off_christian_pc",
-                    "target": {}
-                  },
-                  "icon_tap_action": {
-                    "action": "perform-action",
-                    "perform_action": "script.turn_on_off_christian_pc",
-                    "target": {}
-                  },
-                  "features_position": "bottom"
+                  ],
+                  "features_position": "inline"
                 }
               ],
               "column_span": 1
