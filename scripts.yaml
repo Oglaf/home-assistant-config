@@ -42,75 +42,77 @@ delete_orphaned_database_entities:
       keep_days: 0
   mode: single
   description: ''
+vacuum_clean_segments:
+  alias: VACUUM - Clean segments (shared)
+  description: Cleans the given room segment IDs on the Q7 Max. Used by the daily and office scripts.
+  fields:
+    segments:
+      description: List of Roborock segment IDs
+      example: '[18, 19]'
+    repeat:
+      description: Number of cleaning passes
+      default: 1
+  sequence:
+  - action: vacuum.send_command
+    target:
+      entity_id: vacuum.q7_max
+    data:
+      command: app_segment_clean
+      params:
+      - segments: '{{ segments }}'
+        repeat: '{{ repeat | default(1) | int }}'
+  - action: vacuum.set_fan_speed
+    target:
+      entity_id: vacuum.q7_max
+    data:
+      fan_speed: balanced
+  - action: select.select_option
+    target:
+      entity_id: select.q7_max_mop_intensity
+    data:
+      option: 'off'
+  mode: single
+  icon: mdi:robot-vacuum
 vacuum_daily_routine:
   alias: VACUUM - Daily routine
   sequence:
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
+  - action: script.vacuum_clean_segments
     data:
-      command: app_segment_clean
-      params:
-      - segments:
-        - 18
-        - 19
-        - 20
-        - 21
-        - 22
-        - 23
-        - 25
-        repeat: 1
-    action: vacuum.send_command
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
-    data:
-      fan_speed: balanced
-    action: vacuum.set_fan_speed
-  - target:
-      entity_id: select.q7_max_mop_intensity
-    data:
-      option: 'off'
-    action: select.select_option
+      segments: [18, 19, 20, 21, 22, 23, 25]
+      repeat: 1
+  mode: single
 vacuum_room_cleaning:
   alias: VACUUM - Room Cleaning
   sequence:
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
+  - action: vacuum.send_command
+    target:
+      entity_id: vacuum.q7_max
     data:
       command: app_segment_clean
       params:
-      - repeat: '{{ states(''input_number.vacuum_cycles'') | int }}'
-        segments: "{% set vacrooms = namespace(roomid=[]) %} {% for rooms in state_attr('sensor.roborock_rooms',
-          'rooms') %}\n  {% if is_state(rooms.boolean, 'on') %}\n    {% set vacrooms.roomid
-          = vacrooms.roomid + [rooms.id | replace('input_boolean.vacuum_room_', '')
-          | int] %}\n  {% endif %}\n{% endfor %} {{ vacrooms.roomid }}\n"
-    action: vacuum.send_command
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
+      - repeat: "{{ states('input_number.vacuum_cycles') | int }}"
+        segments: >-
+          {% set ns = namespace(ids=[]) %}
+          {% for room in state_attr('sensor.roborock_rooms', 'rooms') %}
+            {% if is_state(room.boolean, 'on') %}
+              {% set ns.ids = ns.ids + [room.id | int] %}
+            {% endif %}
+          {% endfor %}
+          {{ ns.ids }}
+  - action: vacuum.set_fan_speed
+    target:
+      entity_id: vacuum.q7_max
     data:
-      fan_speed: '{{ states(''input_select.vacuum_speed'') | lower }}'
-    action: vacuum.set_fan_speed
+      fan_speed: "{{ states('input_select.vacuum_speed') | lower }}"
   description: ''
   icon: mdi:texture-box
+  mode: single
 vacuum_office_cleaning:
   alias: VACUUM - Office cleaning
   sequence:
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
+  - action: script.vacuum_clean_segments
     data:
-      command: app_segment_clean
-      params:
-      - segments:
-        - 24
-        repeat: 1
-    action: vacuum.send_command
-  - target:
-      device_id: 46a4050c35790c809d9df75315ee7559
-    data:
-      fan_speed: balanced
-    action: vacuum.set_fan_speed
-  - target:
-      entity_id: select.q7_max_mop_intensity
-    data:
-      option: 'off'
-    action: select.select_option
+      segments: [24]
+      repeat: 1
   description: ''
+  mode: single
