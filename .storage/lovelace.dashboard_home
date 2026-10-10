@@ -505,18 +505,32 @@
                 },
                 {
                   "type": "tile",
+                  "entity": "cover.office_blinds",
+                  "features": [
+                    {
+                      "type": "cover-position-favorite"
+                    }
+                  ]
+                },
+                {
+                  "type": "tile",
                   "entity": "binary_sensor.christian_pc",
-                  "name": "Computer",
+                  "name": "CHRISTIAN-PC",
                   "icon": "mdi:desktop-classic",
+                  "show_entity_picture": false,
                   "state_content": "state",
+                  "vertical": true,
                   "tap_action": {
                     "action": "perform-action",
                     "perform_action": "script.turn_on_off_christian_pc",
                     "target": {}
                   },
-                  "grid_options": {
-                    "columns": "full"
-                  }
+                  "icon_tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.turn_on_off_christian_pc",
+                    "target": {}
+                  },
+                  "features_position": "bottom"
                 }
               ],
               "column_span": 1

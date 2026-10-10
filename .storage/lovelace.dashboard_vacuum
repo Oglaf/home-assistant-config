@@ -251,15 +251,6 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "input_boolean.vacuum_dining_room",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "name": "Dining Room",
-                  "icon": "mdi:silverware-variant"
-                },
-                {
-                  "type": "tile",
                   "entity": "input_boolean.vacuum_en_suite",
                   "tap_action": {
                     "action": "toggle"
